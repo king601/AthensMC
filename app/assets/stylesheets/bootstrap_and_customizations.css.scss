@@ -9,6 +9,7 @@ $brand-primary: #c0392b;
 $jumbotron-bg: white;
 $well-bg: white;
 
+
 $brand-success: #8e44ad;
 
 @import 'bootstrap';
@@ -21,5 +22,11 @@ $brand-success: #8e44ad;
 	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .athensbanner {
-	background: #e74c3c;
+	background: #7f8c8d; //e74c3c
+}
+.infowell {
+	background: #ecf0f1;
+	color: black;
+	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: bold;
 }
