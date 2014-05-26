@@ -1,10 +1,11 @@
 AthensMC::Application.routes.draw do
   root 'pages#home'
-  
+
   get "support" => "pages#support"
   get "downloads" => "pages#downloads"
   get "information" => 'pages#information'
   get "change_log" => "pages#change_log"
+  get "subscribe" => "pages#subscribe"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -45,7 +46,7 @@ AthensMC::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
