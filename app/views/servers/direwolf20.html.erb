@@ -1,9 +1,151 @@
 <% content_for :title, "Direwolf20 FTB Pack" %>
 <div class="well">
-  <div class="page-header">
-    <h1>Direwolf20 FTB Pack</h1>
+  <div class="row">
+    <div class="col-md-12">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= link_to image_tag("../images/direwolf20/dire1.png"), servers_direwolf20_path %>
+          </div>
+
+          <div class="item">
+            <img src="../images/direwolf20/dire2.png" class="img-responsive" />
+          </div>
+
+          <div class="item">
+              <img src="../images/direwolf20/dire3.png" class="img-responsive" />
+          </div>
+          <div class="item">
+              <img src="../images/direwolf20/dire4.png" class="img-responsive" />
+          </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+<br />
+
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="well well-sm">
+        <h2>Direwolf20 FTB Pack</h2>
+        <p>Athens currently hosts a Direwolf20 modded Minecraft server. To play, after you've been whitelisted, you will need to download the Feed the Beast launcher at this link:
+        </p>
+      <p><%= link_to 'Feed The Beast', 'http://www.feed-the-beast.com' %></p>
+
+      <p>Once you've downloaded it, and run the launcher, you will select the Direwolf20 pack from the list on the left. You will also need to change the version dropdown from 'Recommended' to '1.0.21' - this is located directly under the 'maps' tab. Once that's done, click "Launch" and the pack will download and install for you. If the server version changes, it will always be visible when you attempt to connect to the server in the server description. We try to update this about once a week.
+      </p>
+    </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="well infowell">
+        <h4><Strong>Server Addreses</strong></h4>
+         <p><strong>Minecraft IP:</strong> dire.athensmc.com</p>
+         <p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
+
+      </div>
+    </div>
   </div>
 
-  <p>Find me in app/views/servers/direwolf20.html.erb</p>
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="well">
+      <h2>FAQ</h2>
+        <div class="panel-group" id="accordion">
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                  What are your server rules?
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse in">
+              <div class="panel-body">
+            In general, our rules are - don't be a jerk. Treat others as you'd want to be treated. And do your best to reduce lag by limiting or minimizing the number of chunk loaders, resource intensive machines, etc - especially when you're not online. A full list of rules will be set up and linked as soon as it's complete.
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  How do I get whitelisted?
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+              <div class="panel-body">
+                <%= link_to 'Currently you will need to fill out an application on this thread.', 'http://forums.athensmc.com/threads/whitelist-application.12/'%> We may also request an example of a recent build, at our discretion. Whitelists are shared between all servers, so our members will get access to our Vanilla and modded servers.
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  Do I have to subscribe to play/pay any money?
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+                We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
+
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                  Can you add mod XYZ?
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+                  At this time, we're not looking to add additional mods to this pack. We do offer other packs for shorter time periods on a regular basis, so let us know what your interests are and we may use those ideas for one of our 'temporary' mod packs!
+              </div>
+            </div>
+          </div>
+
+      </div> <!-- End FAQ -->
+
+    </div> <!-- End Well-->
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AthensMinecraft" data-widget-id="471126696138002432">Tweets by @AthensMinecraft</a>
+              <script src="//platform.twitter.com/widgets.js"></script>
+    </div>
+  </div>
+
+</div>
+
+
+
 
 </div> <!-- End of Page Well -->
