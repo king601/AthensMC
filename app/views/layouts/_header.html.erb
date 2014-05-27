@@ -14,30 +14,22 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-        <%= link_to raw("Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
-          <ul class="dropdown-menu">
-            <li role="presentation" class="dropdown-header">Vanilla Server</li>
-            <li><%= link_to "Information", servers_vanilla_path %></li>
-            <li><%= link_to 'Map Overviewer', 'http://maps.athensmc.com' %></li>
-            <li><%= link_to "Map Downloads", downloads_path %></li>
-            <li class="divider"></li>
-            <li role="presentation" class="dropdown-header">Modded Servers</li>
-            <li><a href="#">Rockets Rifles Robots</a></li>
-            <li><a href="#">Direwolf20 FTB Pack</a></li>
-            
-            <!--
-            <li><%= link_to "Rockets Rifles Robots", servers_rrr_path %></li>
-            <li><%= link_to "Direwolf20 FTB Pack", servers_direwolf20_path %></li> -->
-          </ul>
-        </li>
-
+        <li class="dropdown"> <!-- Servers Dropdown -->
+          <%= link_to raw("Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
+            <ul class="dropdown-menu">
+              <li role="presentation" class="dropdown-header">Vanilla Server</li>
+              <li><%= link_to "Information", servers_vanilla_path %></li>
+              <li><%= link_to "Map Downloads", downloads_path %></li>
+              <li><%= link_to 'Map Overviewer', 'http://maps.athensmc.com' %></li>
+              <li class="divider"></li>
+              <li role="presentation" class="dropdown-header">Modded Servers</li>
+              <li><% link_to "Rockets Rifles Robots", servers_rrr_path %></li>
+              <li><% link_to "Direwolf20 FTB Pack", servers_direwolf20_path %></li>
+            </ul>
+          </li> <!-- End Servers Dropdown -->
         <li><%= link_to "Community Rules & Info", information_path %></li>
         <li><%= link_to "Subscribe", subscribe_path %></li>
-        <!--
-        <li><%= link_to "Overviewer Map", "http://maps.athensmc.com" %></li> -->
-
-          <li><%= link_to "Forums", "http://forums.athensmc.com" %></li>
+        <li><%= link_to "Forums", "http://forums.athensmc.com" %></li>
 
     </ul>
   </div><!-- /.navbar-collapse -->

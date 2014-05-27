@@ -1,9 +1,144 @@
-<% content_for :title, "Rockets Rifles Robots" %>
-<div class="well">
-  <div class="page-header">
-    <h1>Rockets Rifles Robots</h1>
+  <% content_for :title, "Rockets Rifles Robots" %>
+  <div class="well">
+    <div class="row">
+      <div class="col-md-12">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= link_to image_tag("http://placehold.it/1100x200"), servers_vanilla_path %>
+            </div>
+
+            <div class="item">
+              <img src="http://placehold.it/1100x200" class="img-responsive" />
+              <!--<img src="http://placehold.it/1100x200" alt="" /> -->
+            </div>
+
+            <div class="item">
+                <img src="http://placehold.it/1100x200" class="img-responsive" />
+            </div>
+          </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  <br />
+    <div class="row">
+      <div class="col-md-8">
+        <div class="well well-sm">
+          <h2>Rockets Rifles Robots</h2>
+          <p>Rockets, Rifles and Robots is our signature Athens modded Minecraft pack. Designed and hosted via the Technic launcher, using Solder for ease of maintenance. In order to connect to our server, you will need to begin by downloading the Technic launcher. </p>
+          <p>You can download the Technic Launcher from <%= link_to "this link", "http://www.technicpack.net " %>. Once you have downloaded and installed it you can get the pack by clicking 'Add New Pack' and putting in
+            <blockquote>http://www.technicpack.net/api/modpack/rrrv2-test</blockquote>
+   when it asks for the URL.
+      </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="well infowell">
+          <h4><Strong>Server Addreses</strong></h4>
+           <p><strong>Minecraft IP:</strong> rrr.athensmc.com</p>
+           <p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
+
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="well">
+        <h2>FAQ</h2>
+          <div class="panel-group" id="accordion">
+
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                    What are your server rules?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse in">
+                <div class="panel-body">
+              In general, our rules are - don't be a jerk. Treat others as you'd want to be treated. And do your best to reduce lag by limiting or minimizing the number of chunk loaders, resource intensive machines, etc - especially when you're not online. A full list of rules will be set up and linked as soon as it's complete.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    How do I get whitelisted?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <%= link_to 'Currently you will need to fill out an application on this thread.', 'http://forums.athensmc.com/threads/whitelist-application.12/'%> We may also request an example of a recent build, at our discretion. Whitelists are shared between all servers, so our members will get access to our Vanilla and modded servers.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    Do I have to subscribe to play/pay any money?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                  We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
+
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    Can I purchase any in-game items to help me get started?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    No, we are a vanilla survival server and regardless of your subscription rank <strong>we do not give any in-game perks</strong>. We feel this is the best way to level the playing field for those who cannot subscribe to support us.
+                </div>
+              </div>
+            </div>
+
+        </div> <!-- End FAQ -->
+
+      </div> <!-- End Well-->
+    </div>
+    <div class="col-md-6">
+      <div class="well">
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AthensMinecraft" data-widget-id="471126696138002432">Tweets by @AthensMinecraft</a>
+                <script src="//platform.twitter.com/widgets.js"></script>
+      </div>
+    </div>
+
   </div>
 
-  <p>Find me in app/views/servers/rrr.html.erb</p>
 
-</div> <!-- End of Page Well -->
+
+
+  </div> <!-- End of Page Well -->
