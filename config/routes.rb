@@ -7,6 +7,7 @@ AthensMC::Application.routes.draw do
   get "change_log" => "pages#change_log"
   get "subscribe" => "pages#subscribe"
 
+  get "servers" => "servers#home"
   get "servers/vanilla" => "servers#vanilla"
   get "servers/rrr" => "servers#rrr"
   get "servers/direwolf20" => "servers#direwolf20"
