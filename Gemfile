@@ -45,3 +45,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'bootstrap-sass', '~> 3.0.2.0'
+
+gem  'piwik_analytics'
