@@ -3,23 +3,33 @@
   <div class="page-header">
     <h1>Servers</h1>
   </div>
-
+  <p>Whoops, we're not sure how you got here... please click one of the buttons below to get back on track :)</p>
   <div class="row center">
     <div class="col-md-4">
       <div class="well">
-<button type="button" class="btn btn-primary">Survival</button>
+        <h3>Vanilla Survival</h3>
+        <img src="images/server_icons/vanillaLogo.png" /><br />
+
+        <%= link_to raw("View Server"), servers_vanilla_path, :class => "btn btn-primary" %>
       </div>
     </div>
     <div class="col-md-4">
       <div class="well">
-        Rockets Rifles Robots
+          <h3>Rockets Rifles Robots</h3>
+          <img src="images/server_icons/rrrLogo.png" /><br />
+
+          <%= link_to raw("View Server"), servers_rrr_path, :class => "btn btn-primary" %>
       </div>
     </div>
     <div class="col-md-4">
       <div class="well">
-        Direwolf20 FTB Pack
+        <h3>Athens Sunrise Pack</h3>
+        <img src="images/server_icons/sunriseLogo.png" /><br />
+
+        <%= link_to raw("Coming Soon!"), root_path, :class => "btn btn-primary" %>
       </div>
     </div>
+
 
   </div> <!-- End Row -->
 
