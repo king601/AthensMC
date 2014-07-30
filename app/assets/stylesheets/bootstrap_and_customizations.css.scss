@@ -3,7 +3,7 @@
 $body-bg: #ecf0f1;
 $font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-inverse-bg: #3498db; //#2c3e50
-$navbar-height: 55px;
+$navbar-height: 60px;
 $navbar-inverse-link-color: white;
 $brand-primary: #c0392b;
 $jumbotron-bg: white;
@@ -22,6 +22,9 @@ $brand-success: #8e44ad;
 .navbar-brand {
 	font-weight: bold;
 	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.navbar-links {
+padding-top: 10px;
 }
 .athensbanner {
 	background: #7f8c8d; //e74c3c
