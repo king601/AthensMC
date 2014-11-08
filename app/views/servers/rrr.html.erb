@@ -2,136 +2,186 @@
   <div class="well">
     <div class="row">
       <div class="col-md-12">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <%= link_to image_tag("../images/rrr/rrr1.png"), servers_vanilla_path %>
-            </div>
-
-            <div class="item">
-              <img src="../images/rrr/rrr2.png" class="img-responsive" />
-            </div>
-
-            <div class="item">
-                <img src="../images/rrr/rrr3.png" class="img-responsive" />
-            </div>
-            <div class="item">
-                <img src="../images/rrr/rrr4.png" class="img-responsive" />
-            </div>
-          </div>
-          <!-- Controls -->
-          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-        </div>
-
-
+        <!-- Header Image -->
+           <%= link_to image_tag("../images/rockets-rifles-robots/rrr_website_banner_trans.png"), servers_rrr_path %>
       </div>
-    </div>
+  <br />
   <br />
     <div class="row">
       <div class="col-md-8">
         <div class="well well-sm">
           <h2>Rockets Rifles Robots</h2>
-          <p>Rockets, Rifles and Robots is our signature Athens modded Minecraft pack. Designed and hosted via the Technic launcher, using Solder for ease of maintenance. In order to connect to our server, you will need to begin by downloading the Technic launcher. </p>
-          <p>You can download the Technic Launcher from <%= link_to "this link", "http://www.technicpack.net " %>. Once you have downloaded and installed it you can get the pack by clicking 'Add New Pack' and putting in
-            <blockquote>http://www.technicpack.net/api/modpack/rrrv2-test</blockquote>
-   when it asks for the URL.
+            <p>  Do you dream of piloting a spaceship across the stars? Of building a super scientist’s lab and delving into technical mysteries and designing fantastic machines? Do you hope to have an army of robot minions, waiting to carry out your nefarious schemes?</p>
+
+            <p>Or do you just want a bunch of guns to shoot zombie hordes with?</p>
+
+            <p>If any of those things sound like fun, then Rockets, Rifles and Robots is the pack for you. This pack has a technical/industrial focus and all kinds of mods - old friends with exciting updated features, and new favorites! Join us and explore everything our signature mod pack has to offer. </p>
+          <h3>Installing</h3>
+
+            <p>Rockets, Rifles and Robots is our signature Athens modded Minecraft pack, designed by our staff and hosted via the Technic launcher, using Solder for ease of maintenance. In order to connect to our server, you will need to begin by downloading the Technic launcher at: </p>
+
+            <p>You can download the Technic Launcher from <%= link_to "this link", "http://www.technicpack.net " %>.</p>
+
+            <p>Once you have the Technic launcher installed, you will “+ Add New Pack” on the left side of the interface and when prompted, paste in the link below:</p>
+              <blockquote><samp>http://www.technicpack.net/api/modpack/rockets-rifles-robots</samp></blockquote>
+
+           <p>Next check “Always use recommended builds.” This will keep your version of the pack in sync with whatever updates and changes are made. A full mod list and updates can be found here:
+            <%= link_to("http://www.technicpack.net/modpack/details/rockets-rifles-robots", "http://www.technicpack.net/modpack/details/rockets-rifles-robots") %>
       </div>
       </div>
 
       <div class="col-md-4">
+        <!-- Things to Know Well -->
         <div class="well infowell">
-          <h4><Strong>Server Addreses</strong></h4>
-           <p><strong>Minecraft IP:</strong> rrr.athensmc.com</p>
+          <h4><Strong>Things to Know</strong></h4>
+           <p><strong>Server IP:</strong> rrr.athensmc.com</p>
            <p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
-
+           <p><%= link_to("Forums", "http://forums.athensmc.com") %> | <%= link_to("Technic Launcher", "http://technicpack.net") %></p>
         </div>
+        <!-- Other Downloads Well -->
+         <div class="well">
+            <h4><Strong>Other Downloads</strong></h4>
+             <p><strong>Art Assets:</strong>  <%= link_to("RRR Assets", "http://cdn.athensmc.com/resources/downloads/rrr_assets.zip") %><br />
+            <strong>DIY Launcher Kit:</strong> <%= link_to("RRRv3.31_Client.zip", "http://cdn.athensmc.com/resources/downloads/RRRv3.31_Client.zip") %></p>
+             <p><%= link_to("MultiMC", "http://multimc.org/") %> | <%= link_to("Installing Forge on the Vanilla Launcher", "http://www.minecraftforge.net/wiki/Installation/Universal") %></p>
+         </div>
       </div>
+
+
     </div>
 
   <div class="row">
 
-    <div class="col-md-6">
+     <div class="col-md-6">
       <div class="well">
         <h2>FAQ</h2>
-          <div class="panel-group" id="accordion">
-
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                    What are your server rules?
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseFour" class="panel-collapse collapse in">
-                <div class="panel-body">
-              In general, our rules are - don't be a jerk. Treat others as you'd want to be treated. And do your best to reduce lag by limiting or minimizing the number of chunk loaders, resource intensive machines, etc - especially when you're not online. A full list of rules will be set up and linked as soon as it's complete.
-                </div>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  How do I get whitelisted?
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <%= link_to 'Currently you will need to fill out an application on this thread.', 'http://forums.athensmc.com/threads/snapshot-application-rules.170/'%> We may also request an example of a recent build, at our discretion. Whitelists are shared between all servers, so our members will get access to our Vanilla and modded servers.
               </div>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    How do I get whitelisted?
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <%= link_to 'Currently you will need to fill out an application on this thread.', 'http://forums.athensmc.com/threads/whitelist-application.12/'%> We may also request an example of a recent build, at our discretion. Whitelists are shared between all servers, so our members will get access to our Vanilla and modded servers.
-                </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  Do I have to subscribe to play/pay any money?
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+                We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
+
               </div>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                    Do I have to subscribe to play/pay any money?
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                  We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
-
-                </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                  Can you add mod XYZ to the pack?
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+                  At this time, we’re not looking to add additional mods to this pack. We do offer other packs for shorter time periods on a regular basis, so let us know what your interests are and we may use those ideas for one of our “temporary” mod packs! And as is the case with every mod pack, sooner or later everyone gets a hankering for the “new shinies”. When that happens we’ll most likely launch a new version of this pack, and start the process over again. But not enough until Elynn gets caught up on her sleep ;) 
               </div>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                    Can you add mod XYZ?
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    At this time, we're not looking to add additional mods to this pack. We do offer other packs for shorter time periods on a regular basis, so let us know what your interests are and we may use those ideas for one of our 'temporary' mod packs!
-                </div>
+          </div>
+
+       <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                  What mods are in the pack? (Warning long list!)
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+              <div class="panel-body">
+                 <table class="table table-bordered table-striped">
+                    <tr><td><strong>Mod List:</strong></td></tr>
+                    <tr><td>AppliedEnergistics</td></tr>
+                    <tr><td>ArchimedesShips</td></tr>
+                    <tr><td>BiblioCraft</td></tr>
+                    <tr><td>BigReactors</td></tr>
+                    <tr><td>BiomesOPlenty</td></tr>
+                    <tr><td>BuildCraft</td></tr>
+                    <tr><td>Carpenter’sBlocks</td></tr>
+                    <tr><td>ChickenChunks</td></tr>
+                    <tr><td>Chisel</td></tr>
+                    <tr><td>CodeChickenCore</td></tr>
+                    <tr><td>CoFHCore</td></tr>
+                    <tr><td>EnderIO</td></tr>
+                    <tr><td>EnderZoo</td></tr>
+                    <tr><td>EnderStorage</td></tr>
+                    <tr><td>ExtraCells</td></tr>
+                    <tr><td>ExtraUtilities</td></tr>
+                    <tr><td>FlansMod</td></tr>
+                    <tr><td>Galacticraft</td></tr>
+                    <tr><td>Gravisuite</td></tr>
+                    <tr><td>HatStand</td></tr>
+                    <tr><td>Hats</td></tr>
+                    <tr><td>HardcoreQuestingMod</td></tr>
+                    <tr><td>IndustrialCraft2</td></tr>
+                    <tr><td>inPURECore</td></tr>
+                    <tr><td>InventoryTweaks</td></tr>
+                    <tr><td>IronChests</td></tr>
+                    <tr><td>JABBA</td></tr>
+                    <tr><td>JourneyMap</td></tr>
+                    <tr><td>Mekanism</td></tr>
+                    <tr><td>MFFS(Shields)</td></tr>
+                    <tr><td>MinecraftForge</td></tr>
+                    <tr><td>MinefactoryReloaded</td></tr>
+                    <tr><td>Minetweaker</td></tr>
+                    <tr><td>Morpheus</td></tr>
+                    <tr><td>Natura</td></tr>
+                    <tr><td>NEIPlugins</td></tr>
+                    <tr><td>NetherOres</td></tr>
+                    <tr><td>NotEnoughItems</td></tr>
+                    <tr><td>NuclearControl2</td></tr>
+                    <tr><td>OpenBlocks</td></tr>
+                    <tr><td>OpenComputers</td></tr>
+                    <tr><td>OpenLib</td></tr>
+                    <tr><td>Pam'sHarvestCraft</td></tr>
+                    <tr><td>PneumaticCraft</td></tr>
+                    <tr><td>ProjectRed</td></tr>
+                    <tr><td>Railcraft</td></tr>
+                    <tr><td>ResonantEngine</td></tr>
+                    <tr><td>RoguelikeDungeons</td></tr>
+                    <tr><td>SimplyJetpacks</td></tr>
+                    <tr><td>SpecialMobs</td></tr>
+                    <tr><td>SpecialMobs</td></tr>
+                    <tr><td>Steve’sCarts</td></tr>
+                    <tr><td>Sync</td></tr>
+                    <tr><td>ThermalExpansion</td></tr>
+                    <tr><td>ThermalFoundation</td></tr>
+                    <tr><td>TinkersMechworks</td></tr>
+                    <tr><td>Tinker’sConstruct</td></tr>
+                    <tr><td>UniversalElectricityCore</td></tr>
+                    <tr><td>WAILA</td></tr>
+                    <tr><td>WAILAHarvestability</td></tr>
+                    <tr><td>What'sThisPack(WTP)</td></tr>          
+                  </table>
               </div>
             </div>
+          </div>
 
-        </div> <!-- End FAQ -->
-
-      </div> <!-- End Well-->
+      </div> <!-- End FAQ -->
+    </div> <!-- End Well-->
     </div>
+  <!-- Twitter Col- -->
     <div class="col-md-6">
       <div class="well">
         <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AthensMinecraft" data-widget-id="471126696138002432">Tweets by @AthensMinecraft</a>
@@ -140,7 +190,7 @@
     </div>
 
   </div>
-
+</div>
 
 
 
