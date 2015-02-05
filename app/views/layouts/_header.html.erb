@@ -21,19 +21,46 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse navbar-links">
       <ul class="nav navbar-nav navbar-right">
           <li class="dropdown"> <!-- Servers Dropdown -->
-            <%= link_to raw("Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
+            <%= link_to raw(("<i class='fa fa-inverse fa-list-alt fa-lg'></i> &nbsp;") + "Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
-                <li role="presentation" class="dropdown-header">Minecraft</li>
-                <li><%= link_to "Survival Server", servers_vanilla_path %></li>
-                <li><%= link_to "Rockets Rifles Robots", servers_rrr_path %></li>
+                <!--<li role="presentation" class="dropdown-header">Minecraft</li> -->
+                <li>
+                  <%= link_to servers_vanilla_path do %>
+                    <i class="fa fa-life-ring fa-lg fa-fw"></i> &nbsp; Vanilla Server
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to servers_rrr_path do %>
+                    <i class="fa fa-th-large fa-lg fa-fw"></i> &nbsp; Rockets Rifles Robots
+                  <% end %>
+                </li>
+
+                
                 <li class="divider"></li>
-                <li><%= link_to "Map Downloads", downloads_path %></li>
+                <li>
+                  <%= link_to downloads_path do %>
+                    <i class="fa fa-cloud-download fa-fw fa-lg"></i> &nbsp; Map Downloads
+                  <% end %>
+                </li>
               </ul>
             </li> <!-- End Servers Dropdown -->
-          <li><%= link_to "Community Rules & Info", information_path %></li>
-          <li><%= link_to "Subscribe", subscribe_path %></li>
-          <li><%= link_to "Forums", "http://forums.athensmc.com" %></li>
-
+          <li>
+            <%= link_to information_path do %>
+              <i class="fa fa-info-circle fa-lg"></i> &nbsp; Community Rules & Info
+            <% end %>
+          </li>
+          <li>
+            <%= link_to subscribe_path do %>
+              <i class="fa fa-money fa-lg"></i> &nbsp; 
+              Subscribe
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://forums.athensmc.com" do %>
+              <i class="fa fa-weixin fa-lg"></i> &nbsp; 
+              Forums
+            <% end %>
+          </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- End Container to help pull in navbar content-->
