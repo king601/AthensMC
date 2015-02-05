@@ -44,4 +44,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Bootstrap for Style Icons
 gem 'bootstrap-sass', '~> 3.0.2.0'
+
+#Font Awesome for Visual Improvements
+gem 'font-awesome-rails'
