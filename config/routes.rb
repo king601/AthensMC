@@ -2,12 +2,10 @@ AthensMC::Application.routes.draw do
   root 'pages#home'
 
   get "/support", :to => redirect("/subscribe")
-  #  get "support", to: "pages#subscribe"
   get "downloads" => "pages#downloads"
   get "information" => 'pages#information'
   get "change_log" => "pages#change_log"
   get "subscribe" => "pages#subscribe"
-
   get "servers" => "servers#home"
   get "servers/vanilla" => "servers#vanilla"
   get "servers/rrr" => "servers#rrr"
