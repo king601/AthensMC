@@ -49,3 +49,7 @@ gem 'bootstrap-sass', '~> 3.0.2.0'
 
 #Font Awesome for Visual Improvements
 gem 'font-awesome-sass'
+
+group :development do
+	gem "better_errors"
+end
