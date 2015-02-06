@@ -51,5 +51,6 @@ gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'font-awesome-sass'
 
 group :development do
-	gem "better_errors"
+	gem 'better_errors'
+	gem 'binding_of_caller'
 end
