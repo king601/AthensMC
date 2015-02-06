@@ -10,7 +10,8 @@
 		<!-- Start Changes Post -->
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<strong><%= changes.title %></strong>
+				<strong><%= changes.title %> | 
+  Submitted <%= time_tag(changes.created_at) %> Ago</strong>
 			</div>
 
 			<div class="panel-body">
