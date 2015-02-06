@@ -36,6 +36,13 @@ class ChangesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@changes = Changes.find(params[:id])
+		@changes.destroy
+
+		redirect_to changes_path
+	end
+
 private
 	def changes_params
 		params.require(:changes).permit(:title, :text)

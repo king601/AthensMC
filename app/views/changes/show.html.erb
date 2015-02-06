@@ -1,5 +1,16 @@
-<%= @changes.title %>
+<div class="well">
+	<div class="page-header">
+		<h1> <%= @changes.title %> </h1>
+	</div>
+	<%= @changes.text %>
 
-<br />
+	<hr>
+ 	<%= link_to raw("Edit Change"), edit_change_path(@changes), :class => "btn btn-info" %>
 
-<%= @changes.text %>
+
+ 	<%= link_to raw("Back to Changes"), changes_path, :class => "btn btn-primary" %>
+<%= link_to 'Destroy', change_path(@changes),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+</div>
