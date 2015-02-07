@@ -1,4 +1,4 @@
-AthensMC::Application.routes.draw do
+Rails.application.routes.draw do
   root 'pages#home'
 
   resources :changes
