@@ -40,7 +40,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 #Bootstrap for Style Icons
-gem 'bootstrap-sass', '~> 3.0.2.0'
+gem 'bootstrap-sass', '~> 3.3.3'
 
 #Font Awesome for Visual Improvements
 gem 'font-awesome-sass'

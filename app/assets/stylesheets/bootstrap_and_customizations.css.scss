@@ -12,8 +12,9 @@ $well-bg: white;
 
 $brand-success: #8e44ad;
 
-@import 'bootstrap';
 
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 @import "bootstrap/glyphicons";
 
 .center {
@@ -24,7 +25,7 @@ $brand-success: #8e44ad;
 	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .navbar-links {
-	padding-top: 10px;
+	padding-top: 8px;
 }
 .athensbanner {
 	background: #7f8c8d; //e74c3c

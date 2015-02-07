@@ -13,8 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20150206024841) do
 
-  create_table "changes", force: true do |t|
-    t.string   "title"
+  create_table "changes", force: :cascade do |t|
+    t.string   "title",      limit: 255
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
