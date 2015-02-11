@@ -1,10 +1,9 @@
 <div class="well">
 	<div class="page-header">
-		<h1>Here's what Changed</h1>
+		<h1>Changes</h1>
 	</div>
 
-        <%= link_to raw("New Change"), new_change_path, :class => "btn btn-primary" %>
-		<p>Index Placeholder</p>
+		<p>Here you can see the changes we make to the AthensMC community and website. If you have a suggestion please feel free to get in touch. We look forward to making this site great for you.</p>
 
 		<%  @changes.each do |changes| %>
 		<!-- Start Changes Post -->
@@ -46,6 +45,9 @@
 		</div>
 		<!-- End of Changes Post -->
 
+		<!-- Start Buttons Shown to Admins) -->
+		<hr />
+        <%= link_to raw("New Change"), new_change_path, :class => "btn btn-primary" %>
 </div>
 
 
