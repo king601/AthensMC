@@ -1,30 +1,35 @@
-<h1>New Change</h1>
-
-<%= form_for :changes, url: changes_path do |f| %>
-	<% if @changes.errors.any? %>
-		<div id="error_explanation">
-		<h2><%= @changes.errors.count %> Error(s) prohibited this change from being saved:
-		</h2>
-		<ul>
-		<% @changes.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
+<% page_title "Create a Change" %>
+<div class="well">
+	<div class="page-header">
+		<h1>New Change</h1>
+	</div>
+	
+	<%= form_for :changes, url: changes_path do |f| %>
+		<% if @changes.errors.any? %>
+			<div id="error_explanation">
+			<h2><%= @changes.errors.count %> Error(s) prohibited this change from being saved:
+			</h2>
+			<ul>
+			<% @changes.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+			</div>
 		<% end %>
-		</ul>
+
+		<div class="form-group">
+		<%= f.label :title %>
+		<%= f.text_field :title, :placeholder => "Please enter a title here", class: "form-control input-lg" %>
 		</div>
+		<div class="form-group">
+		<%= f.label :text %>
+		<%= f.text_area :text, :placeholder => "Post changes here... Markdown supported!", :rows => 5,  class: "form-control" %>
+		</div>
+	  	<div class="form-actions">
+		<%= f.submit class: "btn btn-primary" %>
+		</div>
+
 	<% end %>
+	<%= link_to "Back", changes_path %>
 
-	<p>
-	<%= f.label :title %><br>
-	<%= f.text_field :title %>
-	</p>
-	<p>
-	<%= f.label :text %><br>
-	<%= f.text_area :text %>
-	</p>
-	<p>
-	<%= f.submit %>
-	</p>
-
-<% end %>
-
-<%= link_to "Back", changes_path %>
+</div>

@@ -12,15 +12,14 @@
 	<% end %>
 
 	<div class="form-group">
-	<%= f.label :title %><br>
-	<%= f.text_field :title %>
+	<%= f.label :title %>
+	<%= f.text_field :title, :placeholder => "Please enter a title here", class: "form-control input-lg" %>
 	</div>
 	<div class="form-group">
-	<%= f.label :text %><br>
-	<%= f.text_area :text %>
+	<%= f.label :text %>
+	<%= f.text_area :text, :placeholder => "Post changes here... Markdown supported!", :rows => 5,  class: "form-control" %>
 	</div>
   	<div class="form-actions">
-	<%= f.submit %>
+	<%= f.submit class: "btn btn-primary" %>
 	</div>
-
 <% end %>
