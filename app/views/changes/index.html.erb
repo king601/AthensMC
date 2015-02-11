@@ -15,7 +15,7 @@
 
 			<div class="panel-body">
 				<p>
-					<%= changes.text %>
+					<%= markdownify changes.text %>
 				</p>
 				<p>
 				<%= link_to "Edit", edit_change_path(changes) %> |<%= link_to "Show", change_path(changes) %> 
@@ -49,5 +49,3 @@
 		<hr />
         <%= link_to raw("New Change"), new_change_path, :class => "btn btn-primary" %>
 </div>
-
-

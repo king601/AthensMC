@@ -60,3 +60,11 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
+
+#Formatting for Text Stuff!
+gem 'html-pipeline'
+# Markdown Requirements
+gem 'github-markdown'
+# Sanitize Requirement
+gem 'sanitize'
