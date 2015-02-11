@@ -1,3 +1,4 @@
+<% page_title "Change Log" %>
 <div class="well">
 	<div class="page-header">
 		<h1>Changes</h1>
@@ -15,7 +16,7 @@
 
 			<div class="panel-body">
 				<p>
-					<%= markdownify changes.text %>
+					<%=  markdownify(changes.text) %>
 				</p>
 				<p>
 				<%= link_to "Edit", edit_change_path(changes) %> |<%= link_to "Show", change_path(changes) %> 
