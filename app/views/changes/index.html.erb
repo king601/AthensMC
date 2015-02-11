@@ -8,12 +8,13 @@
 
 		<%  @changes.each do |changes| %>
 		<!-- Start Changes Post -->
-		<div class="panel panel-info">
+		<div class="panel panel-default">
 			<div class="panel-heading">
-				<strong><h2><%= changes.title %></h2></strong><small>  Submitted <%= time_tag(changes.created_at) %> Ago</small>
+				<h4><%= changes.title %></h4>
 			</div>
 
 			<div class="panel-body">
+			<small>  Submitted <strong><%= time_ago_in_words(changes.created_at) %></strong> ago</small>
 				<p>
 					<%=  markdownify(changes.text) %>
 				</p>
