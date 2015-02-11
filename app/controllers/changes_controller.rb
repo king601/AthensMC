@@ -1,6 +1,6 @@
 class ChangesController < ApplicationController
 	def index
-		@changes = Changes.order("created_at DESC")
+		@changes = Changes.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def show

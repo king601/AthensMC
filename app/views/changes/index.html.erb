@@ -4,14 +4,13 @@
 		<h1>Changes</h1>
 	</div>
 
-		<p>Here you can see the changes we make to the AthensMC community and website. If you have a suggestion please feel free to get in touch. We look forward to making this site great for you.</p>
+		<p>Here you can see the changes we make to the AthensMC community and website. If you have a suggestion please feel free to get in touch. We look forward to making this site great for you. You can see the most recent changes at the top, to go back in time check some of the later pages</p>
 
 		<%  @changes.each do |changes| %>
 		<!-- Start Changes Post -->
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<strong><%= changes.title %> | 
-  Submitted <%= time_tag(changes.created_at) %> Ago</strong>
+				<strong><h2><%= changes.title %></h2></strong><small>  Submitted <%= time_tag(changes.created_at) %> Ago</small>
 			</div>
 
 			<div class="panel-body">
@@ -26,6 +25,11 @@
 		</div>
 		<!-- End of Changes Post -->
 		<% end %>
+
+		<!-- Pagination Stuff  -->
+		<div class="center">
+		<%= will_paginate @changes, renderer: BootstrapPagination::Rails %>
+		</div>
 		<hr />
 		Example Post:
 		<!-- Start Changes Post -->
