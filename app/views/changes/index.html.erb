@@ -14,10 +14,14 @@
 			</div>
 
 			<div class="panel-body">
-			<small>  Submitted <strong><%= time_ago_in_words(changes.created_at) %></strong> ago</small>
+				<div class="pull-right">
+					<small>Submitted <strong><%= time_ago_in_words(changes.created_at) %></strong> ago</small>
+				</div>
+				
 				<p>
 					<%=  markdownify(changes.text) %>
 				</p>
+				<hr />
 				<p>
 				<%= link_to "Edit", edit_change_path(changes) %> |<%= link_to "Show", change_path(changes) %> 
 
@@ -31,25 +35,6 @@
 		<div class="center">
 		<%= will_paginate @changes, renderer: BootstrapPagination::Rails %>
 		</div>
-		<hr />
-		Example Post:
-		<!-- Start Changes Post -->
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<strong>v0.1.0.1 - 2/5/2015</strong>
-			</div>
-
-			<div class="panel-body">
-				<p><strong>Things Changed:</strong></p>
-				<ul>
-					<li>Reopened the Vanilla Survival Server on 1.7.9 - survival.athensmc.com</li>
-					<li>Various Site Modifications</li>
-					<li>Added a way for users to <%= link_to 'Subscribe to Support AthensMC', subscribe_path %></li>
-					<li>Posted <%= link_to'Subscribe to support us Discussion', 'http://forums.athensmc.com/threads/subscribe-to-support-us.101' %> on the Forums</li>
-				</ul>
-			</div>
-		</div>
-		<!-- End of Changes Post -->
 
 		<!-- Start Buttons Shown to Admins) -->
 		<hr />
