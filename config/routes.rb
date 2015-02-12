@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :changes
-
+  
   get "/support", :to => redirect("/subscribe")
   get "downloads" => "pages#downloads"
   get "information" => 'pages#information'
