@@ -75,3 +75,6 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 #Local Time
 gem 'local_time', '~> 1.0.2'
+
+# User Accounts
+gem 'devise', '~> 3.4.1'
