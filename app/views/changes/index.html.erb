@@ -20,9 +20,15 @@
 				<hr />
 				<p>
 				<div class="pull-right">
-					<small>Posted <strong><%= local_time_ago(changes.created_at) %></strong></small>
+					<i class="fa fa-clock-o"></i> Posted <strong><%= local_time_ago(changes.created_at) %></strong>
 				</div>
-				<%= link_to "Permalink", change_path(changes) %>  | <%= link_to "Edit", edit_change_path(changes) %>
+				<%= link_to change_path(changes) do %> 
+				<i class="fa fa-link"></i> Permalink
+				<% end %>
+				&nbsp; | &nbsp;
+				<%= link_to edit_change_path(changes) do %>
+				<i class="fa fa-pencil-square-o"></i> Edit
+				<% end %>
 			</div>
 		</div>
 		<!-- End of Changes Post -->
