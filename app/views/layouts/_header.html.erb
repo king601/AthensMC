@@ -32,9 +32,7 @@
                   <%= link_to servers_rrr_path do %>
                     <i class="fa fa-th-large fa-lg fa-fw"></i> &nbsp; Rockets Rifles Robots
                   <% end %>
-                </li>
-
-                
+                </li>           
                 <li class="divider"></li>
                 <li>
                   <%= link_to downloads_path do %>
@@ -48,18 +46,64 @@
               <i class="fa fa-info-circle fa-lg"></i> &nbsp; Community Rules & Info
             <% end %>
           </li>
-          <li>
-            <%= link_to subscribe_path do %>
-              <i class="fa fa-money fa-lg"></i> &nbsp; 
-              Subscribe
-            <% end %>
-          </li>
+
           <li>
             <%= link_to "http://forums.athensmc.com" do %>
               <i class="fa fa-weixin fa-lg"></i> &nbsp; 
               Forums
             <% end %>
           </li>
+
+
+          <% if user_signed_in? #User is signed in, so show account dropdown and signed in links... %>
+
+            <li class="dropdown"> <!-- Signed In Dropdown -->
+            <%= link_to raw(("<i class='fa fa-inverse fa-cogs fa-lg'></i> &nbsp;") + "Settings" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
+              <ul class="dropdown-menu">
+                <!--<li role="presentation" class="dropdown-header">Minecraft</li> -->
+                <li>
+                  <%= link_to subscribe_path do %>
+                    <i class="fa fa-money fa-lg fa-fw"></i> &nbsp; 
+                    Subscribe
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to downloads_path do %>
+                    <i class="fa fa-cloud-download fa-fw fa-lg"></i> &nbsp; Map Downloads
+                  <% end %>
+                </li>
+
+                <li class="divider"></li>
+                <li>
+                  <%= link_to edit_user_registration_path do %>
+                    <i class="fa fa-cog fa-fw fa-lg"></i> &nbsp; Edit Account Settings
+                  <% end %>
+                </li>           
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete  do %>
+                   <i class="fa fa-sign-out fa-fw fa-lg"></i> &nbsp;
+                   Sign Out
+                  <% end %>
+                </li>
+
+              </ul>
+            </li> <!-- End User Signed In Dropdown -->
+
+          <% else #User is not signed in, so show sign in and create buttons %> 
+            <li>
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-sign-in"></i> &nbsp;
+                Sign In
+              <% end %>
+            </li>
+           <li>
+              <%= link_to new_user_registration_path do %>
+                <i class="fa fa-user-plus"></i> &nbsp;
+                Create Account
+              <% end %>
+            </li>
+          <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- End Container to help pull in navbar content-->
