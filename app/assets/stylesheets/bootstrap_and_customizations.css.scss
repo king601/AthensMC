@@ -1,6 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
 @import url(//fonts.googleapis.com/css?family=Lato:400,700);
-$body-bg: #ecf0f1;
+$body-bg: #ecf0f1; //ecf0f1
 $font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-inverse-bg: #3498db; //#2c3e50
 $navbar-height: 55px;
@@ -35,7 +35,13 @@ body {
 	background: #7f8c8d; //e74c3c
 }
 .infowell {
-	background: #ecf0f1; //#ecf0f1;
+	background: #90C695; //#ecf0f1;
+	color: black;
+	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+.alertwell {
+	background: #F5AB35; //Nice pretty orange
 	color: black;
 	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: bold;
