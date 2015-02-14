@@ -11,4 +11,9 @@
 						</p>
 					</div>
 				</div>
+
+				<% if current_user.admin? %>
+					You are an administrator
+				<% end %>
+
 			</div>
