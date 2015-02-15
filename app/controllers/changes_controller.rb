@@ -1,4 +1,7 @@
 class ChangesController < ApplicationController
+	before_action :authenticate_user!, except: [:index]
+	before_filter :check_admin_status, :only => [:new, :edit, :create, :destroy, :update] 
+
 	def index
 		@changes = Changes.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 	end
@@ -46,6 +49,16 @@ class ChangesController < ApplicationController
 private
 	def changes_params
 		params.require(:changes).permit(:title, :text)
+	end
+
+	def check_admin_status
+		authenticate_user!
+
+		if current_user.admin
+			return
+		else
+			redirect_to changes_path
+		end
 	end
 
 end

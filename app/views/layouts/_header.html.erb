@@ -58,7 +58,7 @@
           <% if user_signed_in? #User is signed in, so show account dropdown and signed in links... %>
 
             <li class="dropdown"> <!-- Signed In Dropdown -->
-            <%= link_to raw(("<i class='fa fa-inverse fa-cogs fa-lg'></i> &nbsp;") + "Settings" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
+            <%= link_to raw(("<i class='fa fa-inverse fa-home fa-lg'></i> &nbsp;") + "#{current_user.username}" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
                 <!--<li role="presentation" class="dropdown-header">Minecraft</li> -->
                 <li>
