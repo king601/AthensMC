@@ -64,9 +64,7 @@ end
 
 #Formatting for Text Stuff!
 gem 'html-pipeline'
-# Markdown Requirements
 gem 'github-markdown'
-# Sanitize Requirement
 gem 'sanitize'
 
 # Pagination
