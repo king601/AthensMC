@@ -59,6 +59,9 @@ group :development, :test do
   #Better Errors
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  #be quiet asset pipeline pls
+  gem 'quiet_assets'
 end
 
 

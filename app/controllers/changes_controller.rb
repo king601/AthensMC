@@ -1,5 +1,5 @@
 class ChangesController < ApplicationController
-	before_action :authenticate_user!, except: [:index]
+	before_action :authenticate_user!, except: [:index, :show]
 	before_filter :check_admin_status, :only => [:new, :edit, :create, :destroy, :update] 
 
 	def index
