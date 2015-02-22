@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :revisions
+  resources :casts
 
   root 'pages#home'
 
