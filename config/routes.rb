@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   resources :revisions
 
-  devise_for :users
   root 'pages#home'
-  
+
   get "/support", :to => redirect("/subscribe")
   get "downloads" => "pages#downloads"
   get "information" => 'pages#information'
-  get "change_log" => "pages#change_log"
+  get "/change_log", :to => redirect("/revisions")
   get "subscribe" => "pages#subscribe"
   get "servers" => "servers#home"
   get "servers/vanilla" => "servers#vanilla"
