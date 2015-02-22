@@ -1,17 +1,33 @@
 <% page_title @revision.title %>
-<div class="well">
-	<div class="page-header">
-		<h1> <%= @revision.title %> <small>Posted <%= time_ago_in_words(@revision.created_at) %> ago</small></h1>
+
+<!-- Start Revision Post -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2><strong><%= @revision.title %></strong></h2>
+		</div>
+
+		<div class="panel-body">
+			<p>
+				<%=  markdownify(@revision.text) %>
+			</p>
+			<hr />
+			<p>
+			<div class="pull-right">
+				<i class="fa fa-user"></i> <strong>Username</strong> | <i class="fa fa-clock-o"></i> Posted <strong><%= local_time_ago(@revision.created_at) %></strong>
+			</div>
+			<% if current_user.try(:admin?) %>
+				<%= link_to edit_revision_path(@revision) do %>
+					<i class="fa fa-pencil-square-o"></i> Edit
+				<% end %>
+				&nbsp; | &nbsp;
+				<%= link_to revision_path(@revision), method: :delete,
+            		  data: { confirm: 'Are you sure?' } do %>
+					<i class="fa fa-trash-o"></i> Delete
+				<% end %>
+			<% end %>
+		</div>
 	</div>
-	<%= markdownify @revision.text %>
+	<!-- End of Revisions Post -->
+ 	<%= link_to raw("Back to Revisions"), revisions_path, :class => "btn btn-primary btn-lg btn-block" %>
 
-	<hr>
- 	<%= link_to raw("Edit Revision"), edit_revision_path(@revision), :class => "btn btn-info" %>
-
-
- 	<%= link_to raw("Back to Revisions"), revisions_path, :class => "btn btn-primary" %>
-<%= link_to 'Destroy', revision_path(@revision),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-
-</div>
+<hr />
