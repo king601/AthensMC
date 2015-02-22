@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :revisions
+
   devise_for :users
   root 'pages#home'
 

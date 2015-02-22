@@ -57,7 +57,7 @@ private
 		if current_user.admin
 			return
 		else
-			redirect_to changes_path, notice: "You don't have permission to do that"
+			redirect_to changes_path, notice: "You do not have permission to do that"
 		end
 	end
 

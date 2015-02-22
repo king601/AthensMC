@@ -1,0 +1,46 @@
+<% page_title "Revisions" %>
+<div class="well">
+	<div class="page-header">
+		<h1>Website Revisions</h1>
+	</div>
+	<p>Here you can see the changes we make to the AthensMC community and website. If you have a suggestion please feel free to get in touch. We look forward to making this site great for you. You can see the most recent changes at the top, to go back in time check some of the later pages</p>
+
+	<% @revision.each do |revision| %>
+	<!-- Start Revision Post -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"><strong><%= revision.title %></strong></h3>
+		</div>
+
+		<div class="panel-body">
+			<p>
+				<%=  markdownify(revision.text) %>
+			</p>
+			<hr />
+			<p>
+			<div class="pull-right">
+				<i class="fa fa-user"></i> <strong>Username</strong> | <i class="fa fa-clock-o"></i> Posted <strong><%= local_time_ago(revision.created_at) %></strong>
+			</div>
+			<%= link_to revision_path(revision) do %> 
+			<i class="fa fa-link"></i> Permalink
+			<% end %>
+			&nbsp; | &nbsp;
+			<%= link_to edit_revision_path(revision) do %>
+			<i class="fa fa-pencil-square-o"></i> Edit
+			<% end %>
+		</div>
+	</div>
+	<!-- End of Changes Post -->
+	<% end %>
+
+	<!-- Pagination Stuff  -->
+	<div class="center">
+	<%= will_paginate @revision, renderer: BootstrapPagination::Rails %>
+	</div>
+
+
+	<!-- Start Buttons Shown to Admins) -->
+	<hr />
+	<%= link_to raw("New Revision"), new_revision_path, :class => "btn btn-primary" %>
+
+</div>
