@@ -24,9 +24,11 @@
 			<%= link_to revision_path(revision) do %> 
 			<i class="fa fa-link"></i> Permalink
 			<% end %>
-			&nbsp; | &nbsp;
-			<%= link_to edit_revision_path(revision) do %>
-			<i class="fa fa-pencil-square-o"></i> Edit
+			<% if current_user.try(:admin?) %>
+				&nbsp; | &nbsp;
+				<%= link_to edit_revision_path(revision) do %>
+				<i class="fa fa-pencil-square-o"></i> Edit
+				<% end %>
 			<% end %>
 		</div>
 	</div>
@@ -38,9 +40,9 @@
 	<%= will_paginate @revision, renderer: BootstrapPagination::Rails %>
 	</div>
 
-
+	<% if current_user.try(:admin?) %>
 	<!-- Start Buttons Shown to Admins) -->
 	<hr />
 	<%= link_to raw("New Revision"), new_revision_path, :class => "btn btn-primary" %>
-
+	<% end %>
 </div>
