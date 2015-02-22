@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'pages#home'
-
-  resources :changes
   
   get "/support", :to => redirect("/subscribe")
   get "downloads" => "pages#downloads"

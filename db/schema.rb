@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150222001805) do
 
-  create_table "changes", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "changes", ["user_id"], name: "index_changes_on_user_id"
-
   create_table "revisions", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
