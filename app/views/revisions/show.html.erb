@@ -6,10 +6,10 @@
 	<%= markdownify @revision.text %>
 
 	<hr>
- 	<%= link_to raw("Edit Change"), edit_revision_path(@revision), :class => "btn btn-info" %>
+ 	<%= link_to raw("Edit Revision"), edit_revision_path(@revision), :class => "btn btn-info" %>
 
 
- 	<%= link_to raw("Back to Changes"), revisions_path, :class => "btn btn-primary" %>
+ 	<%= link_to raw("Back to Revisions"), revisions_path, :class => "btn btn-primary" %>
 <%= link_to 'Destroy', revision_path(@revision),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
