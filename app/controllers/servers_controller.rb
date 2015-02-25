@@ -4,4 +4,7 @@ class ServersController < ApplicationController
 
   def direwolf20
   end
+
+  def snapshot
+  end
 end

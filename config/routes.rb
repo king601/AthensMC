@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "servers/vanilla" => "servers#vanilla"
   get "servers/rrr" => "servers#rrr"
   get "servers/direwolf20" => "servers#direwolf20"
+  get "servers/snapshot" => "servers#vanilla"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
