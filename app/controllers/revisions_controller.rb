@@ -1,6 +1,6 @@
 class RevisionsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
-	before_filter :check_admin_status, :only => [:new, :edit, :create, :destroy, :update] 
+	before_action :check_admin_status, :only => [:new, :edit, :create, :destroy, :update] 
 
 	def index
 		@revision = Revision.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
