@@ -1,5 +1,5 @@
 class CastsController < ApplicationController
-	before_action :authenticate_user!, except: [:index]
+	before_action :authenticate_user!, except: [:index, :show]
 	before_action :check_admin_status, :only => [:new, :edit, :create, :destroy, :update]
 
 	def index
@@ -21,6 +21,10 @@ class CastsController < ApplicationController
 	end
 
 	private
+	
+	def casts_params
+		params.require(:cast).permit(:episode, :date, :description, :embedcode)
+	end
 
 	def check_admin_status
 		authenticate_user!
