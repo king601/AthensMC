@@ -4,15 +4,18 @@ class RevisionsController < ApplicationController
 
 	def index
 		@revision = Revision.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+		
 	end
 
 	def show
 		@revision = Revision.find(params[:id])
+		@revision_email = @revision.user
 	end
 
 	def create
 		#render plain: params[:revision].inspect
-		@revision = Revision.new(revision_params)
+		#@revision = Revision.new(revision_params)
+		@revision = current_user.revisions.build(revision_params)
 
 		if @revision.save
 			redirect_to @revision
@@ -22,7 +25,7 @@ class RevisionsController < ApplicationController
 	end
 
 	def new
-		@revision = Revision.new
+		@revision = current_user.revisions.build
 	end
 
 	def edit
