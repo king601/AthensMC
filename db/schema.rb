@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226173753) do
+ActiveRecord::Schema.define(version: 20150306015005) do
+
+  create_table "casts", force: :cascade do |t|
+    t.string   "episode"
+    t.string   "releasedate"
+    t.text     "description"
+    t.text     "embedcode"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "casts", ["episode"], name: "index_casts_on_episode", unique: true
+  add_index "casts", ["user_id"], name: "index_casts_on_user_id"
 
   create_table "revisions", force: :cascade do |t|
     t.string   "title"

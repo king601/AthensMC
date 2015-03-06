@@ -1,1 +1,41 @@
 New Cast
+
+
+<%= form_for :cast, url: casts_path do |f| %>
+		<% if @cast.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= @cast.errors.count %> Error(s) prohibited this from being saved:</h2>
+				<ul>
+					<% @cast.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="form-group">
+			<%= f.label :episode %>
+			<%= f.text_field :episode, :placeholder => "Episode Number", class: "form-control" %>
+		</div>
+		
+
+		<div class="form-group">
+			<%= f.label :releasedate %>
+			<%= f.text_field :releasedate, :placeholder => "Release Date (Ex: 2/25/2015)", class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description %>
+			<%= f.text_area :description, :placeholder => "Short description of AthensCast Episode", :rows => 5, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.label :embedcode %>
+			<%= f.text_area :embedcode, :placeholder => "Insert embedcode from Wistia or YouTube", :rows => 10, class: "form-control" %>
+		</div>
+		
+	  	<div class="form-actions">
+		<%= f.button "Add AthensCast", class: "btn btn-primary" %>
+		<%= link_to "Cancel", casts_path, :class => "btn btn-default" %>
+		</div>
+
+	<% end %>

@@ -3,12 +3,19 @@ class CastsController < ApplicationController
 	before_action :check_admin_status, :only => [:new, :edit, :create, :destroy, :update]
 
 	def index
+		@cast = Cast.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def show
+		@cast = Cast.find(params[:episode])
+	end
+
+	def create
+		render plain: params[:cast].inspect
 	end
 
 	def new
+		@cast = current_user.casts.build
 	end
 
 	def edit
