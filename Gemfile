@@ -70,6 +70,10 @@ gem 'html-pipeline'
 gem 'github-markdown'
 gem 'sanitize'
 
+#Syntax Highlighting
+#gem 'github-linguist'
+#gem 'pygments.rb', '~> 0.6.2'
+
 # Pagination
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0.1'

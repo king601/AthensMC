@@ -23,7 +23,7 @@ class CastsController < ApplicationController
 	private
 	
 	def casts_params
-		params.require(:cast).permit(:episode, :date, :description, :embedcode)
+		params.require(:cast).permit(:episode, :releasedate, :description, :embedcode)
 	end
 
 	def check_admin_status
