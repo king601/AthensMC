@@ -12,6 +12,9 @@
 		<h1>All Episodes</h1>
 	</div>
 
+<% if @cast.empty? %>
+	<h3 class="center">Whoops! We don't have any casts right now. Check back soon!</h3>
+<% else %>
 	<% @cast.each do |cast| %>
 	  <div class="episode-card">
  		  <h3 style="margin-top:0px">
@@ -36,7 +39,7 @@
  	  </div>
           <hr />
         <% end %>
-	  
+<% end # Cast empty check? %>
 	  
 
 	<!-- Pagination Stuff  -->
