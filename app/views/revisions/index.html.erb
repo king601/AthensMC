@@ -5,6 +5,13 @@
 	</div>
 	<p>Here you can see the changes we make to the AthensMC community and website. If you have a suggestion please feel free to get in touch. We look forward to making this site great for you. You can see the most recent changes at the top, to go back in time check some of the later pages</p>
 
+	<% if @revision.empty? %>
+	<div class="center">
+		<h2>Whoops! It appears we don't have any posted changes! Check back soon!</h2>
+		<p class="text-muted">No really, we're probably working on it. Check back in a bit :)</p>
+	</div>
+	<% end %>
+
 	<% @revision.each do |revision| %>
 	<!-- Start Revision Post -->
 	<div class="panel panel-default">
