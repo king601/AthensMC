@@ -88,4 +88,4 @@ gem 'local_time', '~> 1.0.2'
 gem 'devise', '~> 3.4.1'
 
 #Postgres for deployment
-gem 'pg'
+#gem 'pg'

@@ -9,7 +9,7 @@ role :web, %w{deploy@a02.athensmc.com}
 role :db,  %w{deploy@a02.athensmc.com}
 
 set :rvm_type, :user                     # Defaults to: :auto
-set :rvm_ruby_version, '2.2.1-p85'  
+set :rvm_ruby_version, '2.2.1'  
 
 
 # Extended Server Syntax
