@@ -1,6 +1,9 @@
 # config valid only for current version of Capistrano
 lock '3.3.5'
 
+SSHKit.config.command_map[:rake] = "bundle exec rake"
+
+
 set :application, 'athensmc'
 set :repo_url, 'git@git.athensmc.com:king601/AthensMC.git'
 set :branch, 'master'
@@ -41,13 +44,23 @@ set :rvm_ruby_version, '2.2.1'
 
 namespace :deploy do
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
+	desc 'Restart application'
+	  task :restart do
+	    on roles(:app), in: :sequence, wait: 5 do
+	      # Restarts Phusion Passenger
+	      execute :touch, release_path.join('tmp/restart.txt')
+	    end
+	  end
+	 
+	  after :publishing, :restart
+	 
+	  after :restart, :clear_cache do
+	    on roles(:web), in: :groups, limit: 3, wait: 10 do
+	      # Here we can do anything such as:
+	      # within release_path do
+	      #   execute :rake, 'cache:clear'
+	      # end
+	    end
+	  end
 
 end
