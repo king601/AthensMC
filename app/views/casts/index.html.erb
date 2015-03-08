@@ -3,30 +3,47 @@
 
 	<div class="jumbotron center jumboalert">
 		<h1 class="jumbo-header">Got a suggestion?</h1>
-		<p>Give us a hollar and we'll look into it for the next episode!</p>
-		<button class="btn btn-primary btn-lg">I have something you should talk about</button>
+		<!--<button class="btn btn-primary btn-lg">I have something you should talk about</button>-->
+		<p>Email us at king601@athensmc.com with suggestions</p>
 	</div>
 
 
 	<div class="page-header">
-		<h1>Episodes</h1>
+		<h1>All Episodes</h1>
 	</div>
 
+	<% @cast.each do |cast| %>
 	  <div class="episode-card">
  		  <h3 style="margin-top:0px">
-				<img src="http://placehold.it/300x150" class="img-responsive img_gloss">
-	              <span class="pull-right label label-danger">New Episode</span>
-	              <a href="/episodes/concerns-making-soft-deletable-module">Concerns: Making a Soft Deletable module</a>
+ 		  <!--<img src="http://placehold.it/300x150" class="img-responsive img_gloss"> -->
+	              <% if cast == @cast_latest %> <span class="pull-right label label-danger">New Episode</span> <% end %>
+	              <%= link_to cast.episode, cast_path(cast) %>
           </h3>
            <p><strong class="text-muted">
-              Episode 42 · February 12, 2015 · Length: 18:10
+              <%= cast.releasedate %>
             </strong></p>
-            <p>An introduction to Ruby on Rails concerns where we build a Soft Deletable module like the Paranoia gem</p>
+            <p><%= short_markdownify(cast.description).html_safe %></p>
 
-              <p><a class="plain-link" href="/episodes/concerns-making-soft-deletable-module">Watch this Episode <span class="arrow">→</span></a></p>
+              <p>
+              <%= link_to raw('Watch this Episode <span class="arrow">→</span>'), cast, class: "plain-link" %>
+              </a></p>
+              <% if current_user.try(:admin?) %>
+				 &nbsp;
+				<%= link_to edit_cast_path(cast) do %>
+				<i class="fa fa-pencil-square-o"></i> Edit
+				<% end %>
+			<% end %>
  	  </div>
           <hr />
+        <% end %>
 	  
+	  
+
+	<!-- Pagination Stuff  -->
+	<div class="center">
+	<%= will_paginate @cast, renderer: BootstrapPagination::Rails %>
+	</div>
+
 
 	<!--
 	<div class="row">

@@ -1,0 +1,21 @@
+<% page_title @cast.episode %>
+
+<!-- Start Cast Page -->
+<div class="well">
+	<!-- Render iFrame/Wistia Code -->
+	<div class="castholder embed-responsive embed-responsive-16by9">
+		<%= @cast.embedcode.to_s.html_safe %>	
+	</div>
+
+	<hr />
+	<h2><%= @cast.episode %> - <%= @cast.releasedate %></h2>
+	<%= markdownify @cast.description %>
+ 		
+ 	<%= link_to raw("Back to Casts"), casts_path, :class => "btn btn-primary btn-lg" %>
+ 	<% if current_user.try(:admin?) %>
+				 &nbsp;
+				<%= link_to edit_cast_path(@cast) do %>
+				<i class="fa fa-pencil-square-o"></i> Edit
+				<% end %>
+			<% end %>
+</div>

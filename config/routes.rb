@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :revisions
-  resources :casts
+  resources :casts do
+  # collection do
+  #      get 'suggest'
+  #      post 'suggest'
+  #  end
+  end
 
   root 'pages#home'
 

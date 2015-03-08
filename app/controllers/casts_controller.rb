@@ -4,14 +4,23 @@ class CastsController < ApplicationController
 
 	def index
 		@cast = Cast.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+		@cast_latest = Cast.last
+
 	end
 
 	def show
-		@cast = Cast.find(params[:episode])
+		@cast = Cast.find(params[:id])
 	end
 
 	def create
-		render plain: params[:cast].inspect
+		#render plain: params[:cast].inspect
+		@cast = current_user.casts.build(casts_params)
+
+		if @cast.save
+			redirect_to @cast
+		else
+			render 'new'
+		end
 	end
 
 	def new
@@ -19,12 +28,25 @@ class CastsController < ApplicationController
 	end
 
 	def edit
+		@cast = Cast.find(params[:id])
 	end
 
 	def update
+		@cast = Cast.find(params[:id])
+
+		if @cast.update(casts_params)
+			redirect_to @cast
+		else
+			render 'edit'
+		end
+
 	end
 
 	def destroy
+	end
+
+	def suggest
+		render plain: "Hello Suggestions"
 	end
 
 	private
