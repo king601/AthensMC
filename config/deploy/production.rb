@@ -4,9 +4,13 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{deploy@athensmc.com}
-role :web, %w{deploy@athensmc.com}
-role :db,  %w{deploy@athensmc.com}
+role :app, %w{deploy@a02.athensmc.com}
+role :web, %w{deploy@a02.athensmc.com}
+role :db,  %w{deploy@a02.athensmc.com}
+
+set :rvm_type, :user                     # Defaults to: :auto
+set :rvm_ruby_version, '2.2.1'  
+
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +18,7 @@ role :db,  %w{deploy@athensmc.com}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'athensmc.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server 'a02.athensmc.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 
 # Custom SSH Options
