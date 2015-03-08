@@ -83,3 +83,7 @@ production:
   database: athensmc_production
   username: athensmc
   password: tmcis21
+
+staging:
+  <<: *default
+  database: athensmc_staging
