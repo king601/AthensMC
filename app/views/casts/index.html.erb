@@ -9,12 +9,20 @@
 
 
 	<div class="page-header">
+		<% if current_user.try(:admin) %>
+			<div class="pull-right">
+				<%= link_to "New Cast", new_cast_path, class: "btn btn-warning" %>
+			</div>	
+		<% end %>
 		<h1>All Episodes</h1>
+
 	</div>
 
 <% if @cast.empty? %>
-	<h3 class="center">Whoops! We don't have any casts right now. Check back soon!</h3>
-<% else %>
+	<h3 class="center">Oh no! I couldn't find any casts right now. Check back soon!</h3>
+
+	<hr/>
+<% end %>
 	<% @cast.each do |cast| %>
 	  <div class="episode-card">
  		  <h3 style="margin-top:0px">
@@ -39,7 +47,6 @@
  	  </div>
           <hr />
         <% end %>
-<% end # Cast empty check? %>
 	  
 
 	<!-- Pagination Stuff  -->
@@ -47,6 +54,7 @@
 	<%= will_paginate @cast, renderer: BootstrapPagination::Rails %>
 	</div>
 
+	<p class="center text-muted">We livestream AthensCasts on our twitch page <%= link_to "located here", "http://twitch.tv/kaptoye" %></p>
 
 	<!--
 	<div class="row">
