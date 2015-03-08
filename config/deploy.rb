@@ -1,14 +1,16 @@
 # config valid only for current version of Capistrano
 lock '3.3.5'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'athensmc'
+set :repo_url, 'git@git.athensmc.com:king601/AthensMC.git'
+set :branch, 'master'
+set :deploy_to, '/home/deploy/athensmc'
+set :user, "deploy"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
 
 # Default value for :scm is :git
 # set :scm, :git
