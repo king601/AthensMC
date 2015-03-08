@@ -63,8 +63,6 @@ group :development, :test do
   #be quiet asset pipeline pls
   gem 'quiet_assets'
 
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 end
 
 
@@ -88,4 +86,4 @@ gem 'local_time', '~> 1.0.2'
 gem 'devise', '~> 3.4.1'
 
 #Postgres for deployment
-#gem 'pg'
+gem 'pg'
