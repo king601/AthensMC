@@ -10,7 +10,9 @@ role :db,  %w{deploy@a02.athensmc.com}
 
 set :rvm_type, :user                     # Defaults to: :auto
 set :rvm_ruby_version, '2.2.1'  
-
+set :bundle_path, nil
+set :bundle_binstubs, nil
+set :bundle_flags, '--system'
 
 # Extended Server Syntax
 # ======================
