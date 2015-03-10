@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/support", :to => redirect("/subscribe")
   get "downloads" => "pages#downloads"
   get "information" => 'pages#information'
+  get "stats" => "pages#stats"
   get "/change_log", :to => redirect("/revisions")
   get "subscribe" => "pages#subscribe"
   get "servers" => "servers#home"
