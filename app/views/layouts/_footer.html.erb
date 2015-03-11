@@ -1,17 +1,17 @@
-			<div class="well footer-well">
-				<div class="row">
-					<div class="col-md-6">
-						<p>&copy; 2015 AthensMC &nbsp;<%= link_to "Revisions", revisions_path %> | <%= link_to "Subscribe", subscribe_path %></p>
-					</div>
-					<div class="col-md-6">
-						<p class="pull-right">
+<div class="well footer-well">
+	<div class="row">
+		<div class="col-md-6">
+			<p>&copy; 2015 AthensMC &nbsp;<%= link_to "Revisions", revisions_path %> | <%= link_to "Subscribe", subscribe_path %></p>
+		</div>
+		<div class="col-md-6">
+			<p class="pull-right">
 
-							<%= link_to 'http://twitter.com/AthensMinecraft' do %>
-							<i class="fa fa-twitter-square fa-2x"></i>	
-							<% end %>		
-						</p>
-					</div>
-				</div>
+				<%= link_to 'http://twitter.com/AthensMinecraft' do %>
+				<i class="fa fa-twitter-square fa-2x"></i>	
+				<% end %>		
+			</p>
+		</div>
+	</div>
 
 	<% if user_signed_in? %>
 	  <%= "You are logged in as #{current_user.username}" %>
@@ -19,7 +19,4 @@
 	<% if current_user.try(:admin?) %>
 		and you are an administrator
 	<% end %>
-
-
-
-			</div>
+</div> <!-- /.footer-well well -->
