@@ -24,6 +24,8 @@ class CastsController < ApplicationController
 	end
 
 	def new
+		@last_cast = Cast.last
+
 		@cast = current_user.casts.build
 	end
 
