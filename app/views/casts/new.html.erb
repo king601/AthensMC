@@ -22,7 +22,7 @@
 				<%= f.label :episode %>
 				<%= f.text_field :episode, :placeholder => "Episode Number", class: "form-control" %>
 			</div>
-			
+
 
 			<div class="form-group">
 				<%= f.label :releasedate %>
@@ -30,6 +30,7 @@
 			</div>
 
 			<div class="form-group">
+				<div class="pull-right"><p class="text-muted"><%= link_to "Text formatted via Markdown Formatting", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet", :target => "blank" %></p></div>
 				<%= f.label :description %>
 				<%= f.text_area :description, :placeholder => "Short description of AthensCast Episode", :rows => 5, class: "form-control" %>
 			</div>
@@ -37,7 +38,7 @@
 				<%= f.label :embedcode %>
 				<%= f.text_area :embedcode, :placeholder => "Insert embedcode from Wistia or YouTube", :rows => 10, class: "form-control" %>
 			</div>
-			
+
 		  	<div class="form-actions">
 			<%= f.button "Add AthensCast", class: "btn btn-primary" %>
 			<%= link_to "Cancel", casts_path, :class => "btn btn-default" %>
