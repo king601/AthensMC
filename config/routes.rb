@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   resources :revisions
   resources :casts do
-  # collection do
-  #      get 'suggest'
-  #      post 'suggest'
-  #  end
+#   collection do
+#        get 'suggest'
+#        post 'suggest'
+#    end
   end
 
   root 'pages#home'

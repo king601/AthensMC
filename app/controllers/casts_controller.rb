@@ -52,7 +52,10 @@ class CastsController < ApplicationController
 	end
 
 	private
-	
+	def suggestion_params
+		params.require(:suggestion).permit(:suggestion_text)
+	end
+
 	def casts_params
 		params.require(:cast).permit(:episode, :releasedate, :description, :embedcode)
 	end

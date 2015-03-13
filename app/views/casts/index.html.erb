@@ -3,8 +3,8 @@
 
 	<div class="jumbotron center jumboalert">
 		<h1 class="jumbo-header">Got a suggestion?</h1>
-		<!--<button class="btn btn-primary btn-lg">I have something you should talk about</button>-->
 		<p>Email us at king601@athensmc.com with suggestions</p>
+		<% # link_to "Suggest something today!", suggest_casts_path, class: "btn btn-primary btn-lg"%>
 	</div>
 
 
@@ -12,7 +12,7 @@
 		<% if current_user.try(:admin) %>
 			<div class="pull-right">
 				<%= link_to "New Cast", new_cast_path, class: "btn btn-warning" %>
-			</div>	
+			</div>
 		<% end %>
 		<h1>All Episodes</h1>
 
@@ -30,24 +30,29 @@
 	              <% if cast == @cast_latest %> <span class="pull-right label label-danger">New Episode</span> <% end %>
 	              <%= link_to cast.episode, cast_path(cast) %>
           </h3>
-           <p><strong class="text-muted">
-              <%= cast.releasedate %>
-            </strong></p>
+           	<p><!-- Cast Release Date -->
+							 <strong class="text-muted">
+								<%= cast.releasedate %>
+            	 </strong>
+						</p>
             <p><%= short_markdownify(cast.description).html_safe %></p>
 
               <p>
               <%= link_to raw('Watch this Episode <span class="arrow">→</span>'), cast, class: "plain-link" %>
               </a></p>
-              <% if current_user.try(:admin?) %>
-				 &nbsp;
-				<%= link_to edit_cast_path(cast) do %>
-				<i class="fa fa-pencil-square-o"></i> Edit
+
+	      <% #Admin Links for Casts %>
+				<% if current_user.try(:admin?) %>
+					<div class="pull-right">
+						<%= link_to edit_cast_path(cast) do %>
+							<i class="fa fa-pencil-square-o"></i> Edit
+						<% end %>
+					</div>
 				<% end %>
-			<% end %>
  	  </div>
-          <hr />
-        <% end %>
-	  
+    <hr />
+  <% end %>
+
 
 	<!-- Pagination Stuff  -->
 	<div class="center">
@@ -56,41 +61,4 @@
 
 	<p class="center text-muted">We livestream AthensCasts on our twitch page <%= link_to "located here", "http://twitch.tv/kaptoye" %></p>
 
-	<!--
-	<div class="row">
-		<div class="col-md-4">
-			<img src="http://placehold.it/350x150" class="img-responsive">
-			<strong>Episode 25</strong> 
-			<div class="pull-right">January 22nd, 2015</div>
-		</div>
-		<div class="col-md-4">
-			<img src="http://placehold.it/350x150" class="img-responsive">
-			<strong>Episode 24</strong> 
-			<div class="pull-right">January 22nd, 2015</div>
-		</div>
-		<div class="col-md-4">
-			<img src="http://placehold.it/350x150" class="img-responsive">
-			<strong>Episode 23</strong> 
-			<div class="pull-right">January 22nd, 2015</div>
-		</div>
-	</div>
-	<br />	<div class="row">
-		<div class="col-md-4">
-			<img src="http://placehold.it/350x150" class="img-responsive">
-			<strong>Episode 22</strong> 
-			<div class="pull-right">January 22nd, 2015</div>
-		</div>
-		<div class="col-md-4">
-			<img src="http://placehold.it/350x150" class="img-responsive">
-			<strong>Episode 21</strong> 
-			<div class="pull-right">January 22nd, 2015</div>
-		</div>
-		<div class="col-md-4">
-			<img src="http://placehold.it/350x150" class="img-responsive">
-			<strong>Episode 20</strong> 
-			<div class="pull-right">January 22nd, 2015</div>
-		</div>
-	</div>
-
-	-->
 </div>
