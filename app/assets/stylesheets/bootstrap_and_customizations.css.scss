@@ -11,7 +11,8 @@ $well-bg: white;
 $brand-success: #8e44ad;
 $brand-primary: #c0392b;
 
-$font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-with-orbitron: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
@@ -22,7 +23,7 @@ $font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Aria
 }
 .navbar-brand {
 	font-weight: bold;
-	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-family-sans-serif;
 }
 .navbar-links {
 	padding-top: 10px;
@@ -33,14 +34,22 @@ $font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Aria
 .infowell {
 	background: #90C695; //#ecf0f1;
 	color: black;
-	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-family-with-orbitron;
 	font-weight: bold;
 }
 .alertwell {
 	background: #F5AB35; //Nice pretty orange
 	color: black;
-	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-family-with-orbitron;
 	font-weight: bold;
+}
+.eventswell {
+	background: #BE90D4; //Light Purple
+	color: white;
+	font-family: $font-family-with-orbitron;
+}
+.eventswell a {
+	color: black;
 }
 .jumboalert {
 	background: #C8F7C5; //#ecf0f1;
@@ -58,7 +67,7 @@ $font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Aria
 .loginwell {
 	background: #ecf0f1;
 }
-.wrapper-login {	
+.wrapper-login {
   margin-top: 15px;
   margin-bottom: 20px;
 }
@@ -89,10 +98,10 @@ $font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Aria
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);  
+  border: 1px solid rgba(0,0,0,0.1);
   .form-signin-heading,
 	.checkbox {
-	  margin-bottom: 30px;	  
+	  margin-bottom: 30px;
 	  font-weight: normal;
 	}
 	.fancyfont {
@@ -116,10 +125,10 @@ $font-family-sans-serif:               'Lato', 'Helvetica Neue', Helvetica, Aria
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);  
+  border: 1px solid rgba(0,0,0,0.1);
   .form-signin-heading,
 	.checkbox {
-	  margin-bottom: 30px;	  
+	  margin-bottom: 30px;
 	  font-weight: normal;
 	}
 	.fancyfont {
