@@ -11,7 +11,6 @@
     </button>
     <div class="navbar-text">
     <%= link_to image_tag("athensLogo.png", :width  => "229", :height => "40"), root_path %>
-   <!--- <img src="http://www.athensmc.com/athensLogo.png"  width="229" height="40" /> -->
     </div>
     <% link_to "AthensMC", root_path, class: "navbar-brand" %>
   </div>
@@ -19,10 +18,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse navbar-links">
       <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown"> <!-- Servers Dropdown -->
+          <!-- Servers Dropdown -->
+          <li class="dropdown">
             <%= link_to raw(("<i class='fa fa-inverse fa-server fa-lg'></i> &nbsp;") + "Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
-                <li role="presentation" class="dropdown-header">Minecraft</li> 
+                <li role="presentation" class="dropdown-header">Minecraft</li>
                 <li>
                   <%= link_to servers_vanilla_path do %>
                     <i class="fa fa-bolt fa-lg fa-fw"></i> &nbsp; Vanilla Minecraft Server
@@ -37,10 +37,10 @@
                   <%= link_to servers_snapshot_path do %>
                     <i class="fa fa-camera-retro fa-lg fa-fw"></i> &nbsp; Snapshot Survival
                   <% end %>
-                </li>          
-                <!--<li class="divider"></li>-->
+                </li>
               </ul>
-            </li> <!-- End Servers Dropdown -->
+            </li>
+            <!-- End Servers Dropdown -->
           <li>
             <%= link_to information_path do %>
               <i class="fa fa-info-circle fa-lg"></i> &nbsp; Support
@@ -49,7 +49,7 @@
 
           <li>
             <%= link_to "http://forums.athensmc.com" do %>
-              <i class="fa fa-weixin fa-lg"></i> &nbsp; 
+              <i class="fa fa-weixin fa-lg"></i> &nbsp;
               Forums
             <% end %>
           </li>
@@ -63,7 +63,7 @@
                 <!--<li role="presentation" class="dropdown-header">Minecraft</li> -->
                 <li>
                   <%= link_to subscribe_path do %>
-                    <i class="fa fa-money fa-lg fa-fw"></i> &nbsp; 
+                    <i class="fa fa-money fa-lg fa-fw"></i> &nbsp;
                     Subscribe
                   <% end %>
                 </li>
@@ -83,7 +83,7 @@
                   <%= link_to edit_user_registration_path do %>
                     <i class="fa fa-cog fa-fw fa-lg"></i> &nbsp; Edit Account Settings
                   <% end %>
-                </li>           
+                </li>
                 <li>
                   <%= link_to destroy_user_session_path, method: :delete  do %>
                    <i class="fa fa-sign-out fa-fw fa-lg"></i> &nbsp;
@@ -94,7 +94,7 @@
               </ul>
             </li> <!-- End User Signed In Dropdown -->
 
-          <% else #User is not signed in, so show sign in and create buttons %> 
+          <% else #User is not signed in, so show sign in and create buttons %>
             <li>
               <%= link_to new_user_session_path do %>
                 <i class="fa fa-sign-in"></i> &nbsp;
