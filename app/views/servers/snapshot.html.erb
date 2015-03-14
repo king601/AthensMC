@@ -1,5 +1,38 @@
 <% page_title "Snapshot Survival" %>
-
+<!-- Start of Page Content -->
 <div class="well">
-	<h1 class="center">This page is coming soon!</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron center">
+				<h1>This page is under construction!</h1>
+			</div>
+		</div> <!-- /.col-md-12 -->
+	</div> <!-- /.row -->
+
+	<div class="row">
+		<div class="col-md-8">
+			<div class="well serverwell">
+				Snapshot Survival Server
+			</div> <!-- /.well -->
+		</div> <!-- /.col-md-8 -->
+
+		<div class="col-md-4">
+			<!-- Things to Know Well -->
+			<div class="well alertwell">
+				<h4><strong>Things to Know</strong></h4>
+				<p><strong>Server IP:</strong> snapshot.athensmc.com</p>
+				<p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
+				<p><%= link_to("Server Map", "http://a02.athensmc.com") %> | <%= link_to("Forums", "http://forums.athensmc.com") %></p>
+			</div>
+			<% if false #Lets Hide this for Now %>
+			<!-- Events Well -->
+			<div class="well eventswell">
+					<h4><Strong>Upcoming Events</strong></h4>
+						<p><strong>March 23rd, 2015:</strong>  <%= link_to("UHC EVENT #3", servers_snapshot_path ) %><br />
+						<p><strong>March 25th, 2015:</strong>  <%= link_to("UHC EVENT #4", servers_snapshot_path ) %><br />
+			</div>
+			<% end %>
+		</div> <!-- /col-md-4 -->
+	</div> <!-- /.row -->
+
 </div>

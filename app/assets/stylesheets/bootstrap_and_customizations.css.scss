@@ -56,12 +56,12 @@ $font-family-with-orbitron: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Ar
 }
 .jumbo-header {
 	color: black;
-	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-family-with-orbitron;
 }
 .footer-well {
 	background: #ecf0f1;
 	color: black;
-	font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-family-with-orbitron;
 	font-weight: bold;
 }
 .loginwell {
@@ -105,7 +105,7 @@ $font-family-with-orbitron: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Ar
 	  font-weight: normal;
 	}
 	.fancyfont {
-		font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: $font-family-with-orbitron;
 	}
 	.form-control {
 	  position: relative;
@@ -132,7 +132,7 @@ $font-family-with-orbitron: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Ar
 	  font-weight: normal;
 	}
 	.fancyfont {
-		font-family: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: $font-family-with-orbitron;
 	}
 	.form-control {
 	  position: relative;
