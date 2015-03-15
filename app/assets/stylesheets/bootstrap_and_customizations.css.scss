@@ -1,15 +1,22 @@
 @import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
 @import url(//fonts.googleapis.com/css?family=Lato:400,700);
-$navbar-inverse-bg: #3498db; //#2c3e50
+
+//Colors for Athens
+$athens_blue: #3498db; //Blue Navbar
+$athens_grey: #ecf0f1; //Background color
+$athens_red: #c0392b; //c0392b
+
+
+$navbar-inverse-bg: $athens_blue;
 $navbar-height: 55px;
 $navbar-inverse-link-color: white;
 
-$body-bg: #ecf0f1; //ecf0f1
+$body-bg: $athens_grey;
 $jumbotron-bg: white;
 $well-bg: white;
 
-$brand-success: #8e44ad;
-$brand-primary: #c0392b;
+//$brand-success: #8e44ad;
+$brand-primary: $athens_red;
 
 $font-family-sans-serif:  'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-with-orbitron: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
