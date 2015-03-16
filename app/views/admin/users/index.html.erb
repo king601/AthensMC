@@ -11,7 +11,7 @@
           <th>Email Address:</th>
           <th>IP:</th>
           <th>Last Seen:</th>
-          <th>Admin?</th>
+          <th>Rank</th>
         </tr>
       </thead>
       <tbody>
@@ -23,7 +23,7 @@
 	    <td><%= link_to user.email, admin_user_path(user.id) %> </td>
         <td><%= user.last_sign_in_ip %></td>
         <td><%= local_time_ago(user.last_sign_in_at) %> </td>
-         <td><% if user.admin? %> Yes <% else %> No <% end %></td>
+         <td><% if user.admin? %> <span class="label label-danger">Admin</span> <% else %> <span class="label label-green">User</span> <% end %></td>
         </tr>
 <% end %>
       </tbody>
@@ -35,5 +35,7 @@
 	</div>
 
 </table>
-
+<div class="alert alert-green">
+derp
+</div>
     </div><!-- /.well -->
