@@ -1,0 +1,39 @@
+<% page_title "All Users" %>
+<div class="well">
+<div class="page-heading">
+	<h1>All Users</h1>
+</div>
+<table class="table table-hover table-striped table-bordered">
+ <thead>
+        <tr>
+          <th>User ID:</th>
+          <th>Username:</th>
+          <th>Email Address:</th>
+          <th>IP:</th>
+          <th>Last Seen:</th>
+          <th>Admin?</th>
+        </tr>
+      </thead>
+      <tbody>
+
+<% @users.each do |user| %>
+        <tr>
+        <td> <%= link_to user.id, admin_user_path(user.id) %> </td>
+		<td><%= user.username %></td>
+	    <td><%= link_to user.email, admin_user_path(user.id) %> </td>
+        <td><%= user.last_sign_in_ip %></td>
+        <td><%= local_time_ago(user.last_sign_in_at) %> </td>
+         <td><% if user.admin? %> Yes <% else %> No <% end %></td>
+        </tr>
+<% end %>
+      </tbody>
+    </table>
+
+<% #Pagination Renderer %>
+	<div class="center">
+	<%= will_paginate @user, renderer: BootstrapPagination::Rails %>
+	</div>
+
+</table>
+
+    </div><!-- /.well -->

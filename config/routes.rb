@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 #    end
   end
 
+  namespace :admin do
+    resources :users
+  end
+
   root 'pages#home'
 
   get "/support", :to => redirect("/subscribe")
