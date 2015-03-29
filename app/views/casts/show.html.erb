@@ -4,12 +4,25 @@
 <div class="well">
 	<!-- Render iFrame/Wistia Code -->
 	<div class="castholder embed-responsive embed-responsive-16by9">
-		<%= @cast.embedcode.to_s.html_safe %>
+		<%= @cast.embedcode.html_safe %>
 	</div>
 
 	<hr />
-	<h2><%= @cast.episode %> - <%= @cast.releasedate %></h2>
-	<%= markdownify @cast.description %>
+	<h1><%= @cast.episode %> - <%= @cast.releasedate %></h1>
+	<p><%= markdownify @cast.description %></p>
+
+	<h2>Show Notes:</h2>
+			<% if @cast.shownotes.nil? %>
+					<div class="well shownotes-well">
+						No show notes have been posted.
+					</div>
+				<% else %>
+					<div class="well shownotes-well">
+						<%= @cast.shownotes %>
+				</div>
+			<% end %>
+
+<hr />
 
  	<%= link_to raw("Back to Casts"), casts_path, :class => "btn btn-primary btn-lg" %>
 
@@ -20,4 +33,5 @@
 					<% end %>
 			</div>
 	  <% end %>
+
 </div>
