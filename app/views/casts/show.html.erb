@@ -18,12 +18,11 @@
 					</div>
 				<% else %>
 					<div class="well shownotes-well">
-						<%= @cast.shownotes %>
+						<%= markdownify @cast.shownotes %>
 				</div>
 			<% end %>
 
-<hr />
-
+	<hr />
  	<%= link_to raw("Back to Casts"), casts_path, :class => "btn btn-primary btn-lg" %>
 
 	 	<% if current_user.try(:admin?) %>

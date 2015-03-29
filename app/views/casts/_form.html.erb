@@ -20,20 +20,28 @@
 			<%= f.label :releasedate %>
 			<%= f.text_field :releasedate, :placeholder => "Release Date (Ex: 2/25/2015)", class: "form-control" %>
 		</div>
-
 		<div class="form-group">
 			<div class="pull-right"><p class="text-muted"><%= link_to "Text formatted via Markdown Formatting", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet", :target => "blank" %></p></div>
 			<%= f.label :description %>
-			<%= f.text_area :description, :placeholder => "Short description of AthensCast Episode", :rows => 5, class: "form-control" %>
+			<%= f.text_area :description, :placeholder => "Short description of AthensCast Episode", :rows => 2, class: "form-control" %>
 		</div>
 		<div class="form-group">
 			<%= f.label :embedcode %>
-			<%= f.text_area :embedcode, :placeholder => "Insert embedcode from Wistia or YouTube", :rows => 5, class: "form-control" %>
+			<%= f.text_area :embedcode, :placeholder => "Insert embedcode from Wistia or YouTube", :rows => 3, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<div class="pull-right"><p class="text-muted"><%= link_to "Text formatted via Markdown Formatting", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet", :target => "blank" %></p></div>
+			<%= f.label :shownotes %>
+			<%= f.text_area :shownotes, :placeholder => "Show notes for the episode", :rows => 5, class: "form-control" %>
 		</div>
 
 	  	<div class="form-actions">
 		<%= f.button "Update Cast", class: "btn btn-primary" %>
 		<%= link_to "Cancel", casts_path, :class => "btn btn-default" %>
 		</div>
+		<h2>Example Embed Code <small>Be sure to change the YT ID link after /embed/</small> </h2>
+		<code><%= iframecode = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9J8p-qz8O3M" frameborder="0" allowfullscreen></iframe>' %>
+		</code>
+		<hr />
 
 	<% end %>
