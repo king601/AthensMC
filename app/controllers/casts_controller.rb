@@ -45,6 +45,7 @@ class CastsController < ApplicationController
 	end
 
 	def destroy
+		render text: "Sorry this functionality is not built in!"
 	end
 
 	def suggest
