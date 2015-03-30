@@ -11,7 +11,7 @@ set :deploy_to, '/home/deploy/athensmc'
 set :user, "deploy"
 
 set :rvm_type, :user                     # Defaults to: :auto
-set :rvm_ruby_version, '2.2.1'  
+set :rvm_ruby_version, '2.2.1'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -51,9 +51,9 @@ namespace :deploy do
 	      execute :touch, release_path.join('tmp/restart.txt')
 	    end
 	  end
-	 
+
 	  after :publishing, :restart
-	 
+
 	  after :restart, :clear_cache do
 	    on roles(:web), in: :groups, limit: 3, wait: 10 do
 	      # Here we can do anything such as:
@@ -63,6 +63,17 @@ namespace :deploy do
 	    end
 	  end
 
+end
+
+namespace :app do
+
+	desc 'Restart application'
+	  task :restart do
+	    on roles(:app), in: :sequence, wait: 5 do
+	      # Restarts Phusion Passenger
+	      execute :touch, release_path.join('tmp/restart.txt')
+	    end
+	  end
 end
 
 namespace :rails do
