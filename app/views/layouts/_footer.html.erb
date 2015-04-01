@@ -7,8 +7,8 @@
 			<p class="pull-right">
 
 				<%= link_to 'http://twitter.com/AthensMinecraft' do %>
-				<i class="fa fa-twitter-square fa-2x"></i>	
-				<% end %>		
+				<i class="fa fa-twitter-square fa-2x"></i>
+				<% end %>
 			</p>
 		</div>
 	</div>
@@ -17,6 +17,18 @@
 	  <%= "You are logged in as #{current_user.username}" %>
 	<% end %>
 	<% if current_user.try(:admin?) %>
+		<div class="pull-right">
+			<div class="dropup">
+			  <button class="btn btn-warning dropdown-toggle" type="button" id="admin_quickaction" data-toggle="dropdown" aria-expanded="true">
+			    Admin QuickAction
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu" aria-labelledby="admin_quickaction">
+			    <li role="presentation"><%= link_to "All Users", admin_users_path, role: "menuitem", tabindex: "-1" %></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+			  </ul>
+			</div>
+		</div>
 		and you are an administrator
 	<% end %>
 </div> <!-- /.footer-well well -->

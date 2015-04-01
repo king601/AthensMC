@@ -69,6 +69,12 @@ $font-family-with-orbitron: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Ar
 	color: black;
 	font-family: $font-family-with-orbitron;
 	font-weight: bold;
+	ul {
+		font-family: $font-family-sans-serif;
+	}
+	button {
+		font-family: $font-family-sans-serif;
+	}
 }
 .loginwell {
 	background: #ecf0f1;
