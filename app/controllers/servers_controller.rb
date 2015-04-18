@@ -7,4 +7,7 @@ class ServersController < ApplicationController
 
   def snapshot
   end
+
+  def vanilla
+  end
 end
