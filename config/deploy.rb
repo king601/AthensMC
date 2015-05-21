@@ -96,3 +96,18 @@ namespace :rails do
     exec %Q(ssh #{user}@#{host} -t "bash --login -c 'cd #{fetch(:deploy_to)}/current && #{command}'")
   end
 end
+
+Rake::Task['deploy:assets:backup_manifest'].clear_actions
+namespace :deploy do
+  namespace :assets do
+    task :backup_manifest do
+      on roles(fetch(:assets_roles)) do
+        within release_path do
+          execute :cp,
+                  release_path.join('public', fetch(:assets_prefix), '.sprockets-manifest*'),
+                  release_path.join('assets_manifest_backup')
+        end
+      end
+    end
+  end
+end
