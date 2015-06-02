@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
-  validates :username, format: {message: "can only contain letters, numbers or underscores", with: /\A[a-zA-Z0-9]+\z/ }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { in: 2..32 }
+  validates :username, format: {message: "can only contain letters, numbers, underscores or dashes.", with: /\A[A-Za-z0-9\-\_]+\z/ }
 
   validates :minecraft_uuid, presence: true, uniqueness: { case_sensitive: false }
 
