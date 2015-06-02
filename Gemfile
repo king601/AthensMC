@@ -87,3 +87,6 @@ gem 'devise', '~> 3.4.1'
 
 #Postgres for deployment
 gem 'pg'
+
+#Mojang API Gem..
+gem 'mojang_api', '~> 0.0.2'
