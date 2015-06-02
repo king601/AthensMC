@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
+
+  get "links/minecraft" => "links#minecraft"
+  post "links" => "links#create"
+  
   resources :revisions
   resources :casts do
 #   collection do
@@ -27,9 +31,6 @@ Rails.application.routes.draw do
   get "servers/direwolf20" => "servers#direwolf20"
   get "servers/snapshot" => "servers#snapshot"
 
-  get "links/minecraft" => "links#minecraft"
-  post "links" => "links#create"
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

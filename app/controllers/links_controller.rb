@@ -1,10 +1,11 @@
 class LinksController < ApplicationController
 	def minecraft
+		@user = current_user
 	end
 
 	def create
 		if current_user.update(user_params)
-			redirect_to action: :minecraft, notice: "Successfully saved your Minecraft UUID"
+			redirect_to links_minecraft_path, notice: "Successfully saved your Minecraft UUID"
 		else
 			redirect_to action: :minecraft, alert: "Please input a valid ID"
 		end
