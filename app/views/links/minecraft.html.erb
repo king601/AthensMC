@@ -13,7 +13,7 @@
 
       <%= form_for @user, url: links_path, action: 'create', method: :post do |f| %>
       	      <div class="form-group">
-	        <%= f.label :minecraft_uuid %><br />
+	        <%= f.label :minecraft_uuid, "Minecraft Username"%><br />
 	        <%= f.text_field :minecraft_uuid, autofocus: false, class: "form-control" %>
 	      </div>
 
