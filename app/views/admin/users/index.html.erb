@@ -7,6 +7,7 @@
  <thead>
         <tr>
           <th>User ID:</th>
+          <th>Avatar</th>
           <th>Username:</th>
           <th>Email Address:</th>
           <th>IP:</th>
@@ -20,6 +21,12 @@
 <% @users.each do |user| %>
         <tr>
         <td> <%= link_to user.id, admin_user_path(user.id) %> </td>
+        <td><% if user.minecraft_uuid.blank? %> 
+              <img src="https://i.imgur.com/ocJVWAc.png" height="64px" />
+            <% else %>
+              <img src="https://crafatar.com/avatars/<%= user.minecraft_uuid %>?helm&size=64" />
+             <% end %>
+        </td>
 		<td><%= user.username %></td>
 	    <td><%= link_to user.email, admin_user_path(user.id) %> </td>
         <td><%= user.last_sign_in_ip %></td>
