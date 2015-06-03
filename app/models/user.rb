@@ -16,9 +16,9 @@ class User < ActiveRecord::Base
   def load_profile
   	profile = MojangApi.get_profile_from_name(minecraft_uuid)
   	assign_attributes(minecraft_uuid: profile.uuid)
-  	if profile.uuid.nil?
-  		raise "an error occured"
-	end
+  	#if profile.uuid.nil?
+  	#	raise "an error occured"
+	#end
 
   end
 
