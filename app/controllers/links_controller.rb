@@ -7,7 +7,7 @@ class LinksController < ApplicationController
 		if current_user.update(user_params)
 			redirect_to links_minecraft_path, notice: "Successfully saved your Minecraft UUID"
 		else
-			redirect_to links_minecraft_path, alert: "Please input a valid ID"
+			redirect_to links_minecraft_path, error: "An error occured and we could not save your Minecraft UUID"
 		end
 	end
 
