@@ -18,13 +18,15 @@
       </thead>
       <tbody>
 
-<% @users.each do |user| %>
+<% @users.each do |user| %> 
         <tr>
-        <td> <%= link_to user.id, admin_user_path(user.id) %> </td>
+        <td> <%= link_to user.id, admin_user_path(user.id),class: "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: "Tooltip on left" } %> </td>
         <td><% if user.minecraft_uuid.blank? %> 
-              <img src="https://i.imgur.com/ocJVWAc.png" height="64px" />
+              <%= image_tag "https://i.imgur.com/ocJVWAc.png", :height => "64px", :class => "tag-tooltip" %>
+              <!--<img src="https://i.imgur.com/ocJVWAc.png" height="64px" /> -->
             <% else %>
-              <img src="https://crafatar.com/avatars/<%= user.minecraft_uuid %>?helm&size=64" />
+             <%= image_tag "https://crafatar.com/avatars/" + user.minecraft_uuid + "?helm&size=64", :height => "64px", :class => "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: user.minecraft_uuid }   %>
+              <!--<img src="https://crafatar.com/avatars/<%= user.minecraft_uuid %>?helm&size=64" /> -->
              <% end %>
         </td>
 		<td><%= user.username %></td>

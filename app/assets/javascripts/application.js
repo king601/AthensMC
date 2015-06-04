@@ -16,3 +16,10 @@
 //= require turbolinks
 //= require local_time
 //= require_tree .
+
+//$(function () {
+//  $('[data-toggle="tooltip"]').tooltip()
+//})
+$(document).on("ready page:change", function() {
+    $('.tag-tooltip').tooltip();
+});
