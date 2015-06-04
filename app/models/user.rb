@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :username, format: {message: "can only contain letters, numbers, underscores or dashes.", with: /\A[A-Za-z0-9\-\_]+\z/ }
 
   #validates :minecraft_uuid, presence: true
-  validates :minecraft_uuid, presence: true, uniqueness: { case_sensitive: false }
+  validates :minecraft_uuid, presence: true, uniqueness: { case_sensitive: false }, :on => [ :update ]
 
   has_many :revisions
   has_many :casts
