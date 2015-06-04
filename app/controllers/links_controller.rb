@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+	before_action :authenticate_user!
+
 	def minecraft
 		@user = current_user
 	end
@@ -8,7 +10,8 @@ class LinksController < ApplicationController
 			redirect_to root_path, notice: "Successfully saved your Minecraft account!"
 		else
 			if !current_user.update(user_params)
-				redirect_to links_minecraft_path, alert: "An error occurred while looking up your Minecraft UUID, please try again!  Make sure you double check your spelling."
+				redirect_to links_minecraft_path, alert: "An error occurred while looking up your Minecraft UUID, please try again!  
+				Make sure you double check your spelling.. In addition the Minecraft account cannot already be associated with an account."
 			end
 		end
 	end
