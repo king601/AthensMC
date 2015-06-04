@@ -14,6 +14,12 @@
 	</div>
 
 	<% if user_signed_in? %>
+	  <% if current_user.minecraft_uuid.blank? %> 
+              <img src="https://i.imgur.com/ocJVWAc.png" height="64px" />
+            <% else %>
+              <img src="https://crafatar.com/avatars/<%= current_user.minecraft_uuid %>?helm&size=64" />
+             <% end %>
+
 	  <%= "You are logged in as #{current_user.username}" %>
 		<% if current_user.try(:admin?) %>
 			<div class="pull-right">
