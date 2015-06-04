@@ -11,8 +11,18 @@
         below and we will handle the rest.
       </p>
 
-      <%= form_for @user, url: links_path, action: 'create', method: :post do |f| %>
-          
+      <%= form_for @user, url: links_path, action: 'update', method: :post do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= @user.errors.count %> Error(s) prohibited this from being saved:</h2>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
         <div class="form-group">
 	        <%= f.label :minecraft_uuid, "Minecraft Username"%><br />
 	        <%= f.text_field :minecraft_uuid, autofocus: false, class: "form-control" %>

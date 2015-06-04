@@ -5,9 +5,11 @@ class LinksController < ApplicationController
 
 	def create
 		if current_user.update(user_params)
-			redirect_to links_minecraft_path, notice: "Successfully saved your Minecraft UUID"
+			redirect_to root_path, notice: "Successfully saved your Minecraft account!"
 		else
-			redirect_to links_minecraft_path, error: "An error occured and we could not save your Minecraft UUID"
+			if !current_user.update(user_params)
+				redirect_to links_minecraft_path, alert: "An error occurred while looking up your Minecraft UUID, please try again!  Make sure you double check your spelling."
+			end
 		end
 	end
 

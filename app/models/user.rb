@@ -30,7 +30,6 @@ class User < ActiveRecord::Base
   	begin
   	  self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid	 	
   	 rescue Exception => e
-  	 	 flash[:error] = "The internet broke"
   	 end  
   end
 
