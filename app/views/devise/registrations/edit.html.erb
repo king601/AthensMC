@@ -34,7 +34,6 @@
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
       </div>
-
       <div class="actions">
         <%= f.submit "Update Settings", class: "btn btn-primary btn-lg btn-block" %>
       </div>
@@ -49,6 +48,7 @@
           <i><strong><%= link_to "Contact Support to Change", root_path %></strong></i>
           <% end %>
       </div>
+
     <% end %>
 
 

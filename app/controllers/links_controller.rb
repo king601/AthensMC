@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
 	before_action :authenticate_user!
-
+	before_action :check_uuid, :only => [:create]
 	def minecraft
 		@user = current_user
 	end
@@ -19,5 +19,12 @@ class LinksController < ApplicationController
 	private
 		def user_params
 			params.require(:user).permit(:minecraft_uuid)
+		end
+
+		def check_uuid
+			if (:minecraft_uuid).nil?
+				flash[:alert] = "You need to fill out the Minecraft UUID"
+				redirect_to links_minecraft_path
+			end
 		end
 end
