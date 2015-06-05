@@ -20,16 +20,9 @@
 
 <% @users.each do |user| %> 
         <tr>
-        <td> <%= link_to user.id, admin_user_path(user.id),class: "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: "Tooltip on left" } %> </td>
-        <td><% if user.minecraft_uuid.blank? %> 
-              <%= image_tag "https://i.imgur.com/ocJVWAc.png", :height => "64px", :class => "tag-tooltip" %>
-              <!--<img src="https://i.imgur.com/ocJVWAc.png" height="64px" /> -->
-            <% else %>
-             <%= image_tag "https://crafatar.com/avatars/" + user.minecraft_uuid + "?helm&size=64", :height => "64px", :class => "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: user.dashed_uuid }   %>
-              <!--<img src="https://crafatar.com/avatars/<%= user.minecraft_uuid %>?helm&size=64" /> -->
-             <% end %>
-        </td>
-		<td><%= user.username %></td>
+      <td> <%= link_to user.id, admin_user_path(user.id),class: "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: "Tooltip on left" } %> </td>
+      <td> <%= image_tag user.minecraft_avatar, :height => "64px", :class => "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: user.dashed_uuid }  %> </td>
+  		<td><%= user.username %></td>
 	    <td><%= link_to user.email, admin_user_path(user.id) %> </td>
         <td><%= user.last_sign_in_ip %></td>
         <td><%= local_time_ago(user.last_sign_in_at) %> </td>
