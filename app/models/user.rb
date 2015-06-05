@@ -36,9 +36,21 @@ class User < ActiveRecord::Base
   end
 
   def dashed_uuid
-    uuid = self.minecraft_uuid.to_s
-    "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{uuid[20..31]}"
+    unless self.minecraft_uuid.nil?
+      uuid = self.minecraft_uuid.to_s
+      "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{uuid[20..31]}"
+    else
+      "No UUID associated with this account"
+    end
    end
+
+  def minecraft_avatar
+    unless self.minecraft_uuid.nil?
+      "https://crafatar.com/avatars/#{self.minecraft_uuid}?helm&size=64"
+    else
+      "https://i.imgur.com/ocJVWAc.png"
+    end
+  end
 
 end
 

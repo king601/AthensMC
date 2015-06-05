@@ -38,7 +38,19 @@
       <div class="actions">
         <%= f.submit "Update Settings", class: "btn btn-primary btn-lg btn-block" %>
       </div>
+      <hr />
+      <div class="form-group">
+          <%= image_tag current_user.minecraft_avatar, style: "float:right", height: "64px" %>
+          <%= f.label :minecraft_uuid, "Minecraft UUID" %> <br />
+          <%= current_user.dashed_uuid %> <br />
+          <% if current_user.minecraft_uuid.nil? %>
+          <i><strong><%= link_to "Link Minecraft Account", links_minecraft_path %></strong></i>
+          <% else %>
+          <i><strong><%= link_to "Contact Support to Change", root_path %></strong></i>
+          <% end %>
+      </div>
     <% end %>
+
 
   </div><!-- Form Signin -->
 
