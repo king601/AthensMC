@@ -25,7 +25,7 @@
               <%= image_tag "https://i.imgur.com/ocJVWAc.png", :height => "64px", :class => "tag-tooltip" %>
               <!--<img src="https://i.imgur.com/ocJVWAc.png" height="64px" /> -->
             <% else %>
-             <%= image_tag "https://crafatar.com/avatars/" + user.minecraft_uuid + "?helm&size=64", :height => "64px", :class => "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: user.minecraft_uuid }   %>
+             <%= image_tag "https://crafatar.com/avatars/" + user.minecraft_uuid + "?helm&size=64", :height => "64px", :class => "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: user.dashed_uuid }   %>
               <!--<img src="https://crafatar.com/avatars/<%= user.minecraft_uuid %>?helm&size=64" /> -->
              <% end %>
         </td>
@@ -35,6 +35,7 @@
         <td><%= local_time_ago(user.last_sign_in_at) %> </td>
          <td><% if user.admin? %> <span class="label label-danger">Admin</span> <% else %> <span class="label label-green">User</span> <% end %></td>
         <td><% if user.minecraft_uuid.blank? %> No UUID has been linked <% else %> <%= user.minecraft_uuid %> <% end %></td>
+        <td><%= user.dashed_uuid %> </td>
         </tr>
 <% end %>
       </tbody>

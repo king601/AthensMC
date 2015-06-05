@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :revisions
   has_many :casts
 
+  attr_accessor :dashed_uuid
+
   #before_update :load_profile
 
   #def load_profile
@@ -32,6 +34,11 @@ class User < ActiveRecord::Base
   	 rescue Exception => e
   	 end  
   end
+
+  def dashed_uuid
+    uuid = self.minecraft_uuid.to_s
+    "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{uuid[20..31]}"
+   end
 
 end
 
