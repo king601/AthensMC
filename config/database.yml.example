@@ -82,8 +82,8 @@ test:
 production:
   <<: *default
   database: athensmc_production
-  username: athensmc
-  password: tmcis21
+  username: 
+  password:
 
 staging:
   <<: *default
