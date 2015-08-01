@@ -9,7 +9,6 @@ class RevisionsController < ApplicationController
 	end
 
 	def show
-		@revision_email = @revision.user
 	end
 
 	def create
