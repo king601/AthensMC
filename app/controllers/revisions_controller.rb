@@ -1,14 +1,14 @@
 class RevisionsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :check_admin_status, :only => [:new, :edit, :create, :destroy, :update] 
+	before_action :find_revision, only: [:show, :edit, :update, :destroy]
+	before_action :check_admin_status, :only => [:new, :edit, :create, :destroy, :update]
 
 	def index
 		@revision = Revision.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
-		
+
 	end
 
 	def show
-		@revision = Revision.find(params[:id])
 		@revision_email = @revision.user
 	end
 
@@ -29,12 +29,9 @@ class RevisionsController < ApplicationController
 	end
 
 	def edit
-		@revision = Revision.find(params[:id])
 	end
 
 	def update
-		@revision = Revision.find(params[:id])
-
 		if @revision.update(revision_params)
 			redirect_to @revision
 		else
@@ -43,13 +40,16 @@ class RevisionsController < ApplicationController
 	end
 
 	def destroy
-		@revision = Revision.find(params[:id])
 		@revision.destroy
 
 		redirect_to revisions_path
 	end
 
 	private
+
+		def find_revision
+			@revision = Revision.find(params[:id])
+		end
 
 	def revision_params
 		params.require(:revision).permit(:title, :text)
