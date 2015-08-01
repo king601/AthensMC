@@ -1,5 +1,6 @@
 class CastsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
+	before_action :find_cast, only: [:show, :edit, :update, :destroy]
 	before_action :check_admin_status, :only => [:new, :edit, :create, :destroy, :update]
 
 	def index
@@ -9,7 +10,6 @@ class CastsController < ApplicationController
 	end
 
 	def show
-		@cast = Cast.find(params[:id])
 	end
 
 	def create
@@ -30,12 +30,9 @@ class CastsController < ApplicationController
 	end
 
 	def edit
-		@cast = Cast.find(params[:id])
 	end
 
 	def update
-		@cast = Cast.find(params[:id])
-
 		if @cast.update(casts_params)
 			redirect_to @cast
 		else
@@ -53,6 +50,10 @@ class CastsController < ApplicationController
 	end
 
 	private
+	def find_cast
+		@cast = Cast.friendly.find(params[:id])
+	end
+
 	def suggestion_params
 		params.require(:suggestion).permit(:suggestion_text)
 	end
