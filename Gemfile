@@ -90,3 +90,6 @@ gem 'pg'
 
 #Mojang API Gem..
 gem 'mojang_api', '~> 0.0.2'
+
+# Friendly ID
+gem 'friendly_id', '~> 5.1.0'
