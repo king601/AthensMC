@@ -13,6 +13,8 @@ set :user, "deploy"
 set :rvm_type, :user                     # Defaults to: :auto
 set :rvm_ruby_version, '2.2.1'
 
+set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
