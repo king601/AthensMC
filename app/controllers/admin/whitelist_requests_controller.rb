@@ -32,13 +32,13 @@ class Admin::WhitelistRequestsController < ApplicationController
     def approve
       @whitelist_request = WhitelistRequest.find_by_id(params[:format])
       @whitelist_request.update_attributes(:approved_on => Time.now, :status => "approved")
-      redirect_to admin_whitelist_requests_path, notice: "Request Approved!"
+      redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been approved!"
     end
     # For denying whitelist requests via a patch method
     def deny
       @whitelist_request = WhitelistRequest.find_by_id(params[:format])
       @whitelist_request.update_attributes(:denied_on => Time.now, :status => "denied")
-      redirect_to admin_whitelist_requests_path, notice: "Request Denied!"
+      redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been denied!"
     end
 
     private
