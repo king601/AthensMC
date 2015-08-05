@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get "links/minecraft" => "links#minecraft"
   post "links" => "links#create"
-  
+
+  resources :whitelist_requests, path: "request"
   resources :revisions
   resources :casts do
 #   collection do
@@ -15,6 +16,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :whitelist_requests do
+      collection do
+        get :pending
+        get :approved
+        get :denied
+        get :whitelist
+        patch :approve
+        patch :deny
+      end
+    end
   end
 
   root 'pages#home'

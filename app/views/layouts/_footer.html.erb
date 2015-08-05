@@ -14,7 +14,7 @@
 	</div>
 
 	<% if user_signed_in? %>
-	  <% if current_user.minecraft_uuid.blank? %> 
+	  <% if current_user.minecraft_uuid.blank? %>
               <img src="https://i.imgur.com/ocJVWAc.png" height="64px" />
             <% else %>
               <img src="https://crafatar.com/avatars/<%= current_user.minecraft_uuid %>?helm&size=64" />
@@ -30,6 +30,7 @@
 				  </button>
 				  <ul class="dropdown-menu" role="menu" aria-labelledby="admin_quickaction">
 				    <li role="presentation"><%= link_to "All Users", admin_users_path, role: "menuitem", tabindex: "-1" %></li>
+					    <li role="presentation"><%= link_to "Whitelist Requests", admin_whitelist_requests_path, role: "menuitem", tabindex: "-1" %></li>
 				  </ul>
 				</div>
 			</div>

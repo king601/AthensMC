@@ -1,0 +1,24 @@
+<% if @user_whitelist_request %>
+  <h1>You have submitted an application already! It is <%= @user_whitelist_request.status %></h1>
+<% else %>
+  <%= form_for @whitelist_request do |f| %>
+  <% if @whitelist_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @whitelist_request.errors.count %> Error(s) prohibited this from being saved:</h2>
+      <ul>
+        <% @whitelist_request.errors.each do |field, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group">
+      <%= f.check_box :agree_rules, as: "Community Rules" %>
+      <%= f.label :agree_rules, "Do you Agree to the Community Rules?" %><br>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Request Access to the Servers", class: "btn btn-primary", :onclick => "validateCheckbox()" %>
+    </div>
+  <% end %>
+<% end %>

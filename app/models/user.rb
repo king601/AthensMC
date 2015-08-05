@@ -13,14 +13,15 @@ class User < ActiveRecord::Base
 
   has_many :revisions
   has_many :casts
+  has_one :whitelist_request
 
   attr_accessor :dashed_uuid
 
   def set_uuid
   	begin
-  	  self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid  	
+  	  self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid
   	 rescue Exception => e
-  	 end  
+  	 end
   end
 
   def dashed_uuid
@@ -41,4 +42,3 @@ class User < ActiveRecord::Base
   end
 
 end
-
