@@ -27,6 +27,7 @@ Rails.application.routes.draw do
         get :denied
         patch :approve
         patch :deny
+        delete :destroy
       end
     end
   end

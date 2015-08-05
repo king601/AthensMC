@@ -1,7 +1,7 @@
 class Admin::WhitelistRequestsController < ApplicationController
   	before_action :authenticate_user!
     before_action :check_admin_status?
-    before_action :set_whitelist_id, only: [:approve, :deny]
+    before_action :set_whitelist_id, only: [:approve, :deny, :destroy]
 
     def index
       @whitelist_requests = WhitelistRequest.order("created_at DESC")
@@ -37,8 +37,6 @@ class Admin::WhitelistRequestsController < ApplicationController
     end
 
     def destroy
-      @whitelist_request.find(params[:id])
-
       @whitelist_request.destroy
       redirect_to admin_whitelist_requests_path, notice: "Whitelist Request Destroyed"
     end
