@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
   before_validation :set_uuid, if: :minecraft_uuid_changed?
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { in: 2..32 }

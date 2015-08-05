@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users
+    resources :users do
+      collection do
+        get :whitelisted
+      end
+    end
     resources :whitelist_requests do
       collection do
         get :pending
