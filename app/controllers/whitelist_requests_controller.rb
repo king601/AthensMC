@@ -4,7 +4,6 @@ class WhitelistRequestsController < ApplicationController
 
   def index
 		@whitelist_request = WhitelistRequest.new
-		@user_whitelist_request = current_user.whitelist_request
   end
 
   def new
@@ -20,7 +19,7 @@ class WhitelistRequestsController < ApplicationController
 			render 'index', alert: "An error occurred while submitting your request. Please try again."
 		end
 	end
-	
+
 	private
 
 		def whitelist_request_params
