@@ -1,7 +1,4 @@
-<% if @user_whitelist_request %>
-  <h1>You have submitted an application already! It is <%= @user_whitelist_request.status %></h1>
-<% else %>
-  <%= form_for @whitelist_request do |f| %>
+<%= form_for @whitelist_request do |f| %>
   <% if @whitelist_request.errors.any? %>
     <div id="error_explanation">
       <h2><%= @whitelist_request.errors.count %> Error(s) prohibited this from being saved:</h2>
@@ -20,5 +17,4 @@
     <div class="form-group">
       <%= f.submit "Request Access to the Servers", class: "btn btn-primary", :onclick => "validateCheckbox()" %>
     </div>
-  <% end %>
 <% end %>

@@ -36,6 +36,13 @@ class Admin::WhitelistRequestsController < ApplicationController
       redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been denied!"
     end
 
+    def destroy
+      @whitelist_request.find(params[:id])
+
+      @whitelist_request.destroy
+      redirect_to admin_whitelist_requests_path, notice: "Whitelist Request Destroyed"
+    end
+
     private
       def set_whitelist_id
         @whitelist_request = WhitelistRequest.find_by_id(params[:format])

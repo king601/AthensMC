@@ -24,6 +24,10 @@ $font-family-with-orbitron: 'Orbitron' , 'Lato', 'Helvetica Neue', Helvetica, Ar
 @import 'bootstrap';
 @import "bootstrap/glyphicons";
 
+.text-middle {
+	line-height: 48px;
+	vertical-align: middle;
+}
 .center {
 	text-align: center;
 }
