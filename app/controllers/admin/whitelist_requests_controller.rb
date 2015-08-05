@@ -5,10 +5,6 @@ class Admin::WhitelistRequestsController < ApplicationController
 
     def index
       @whitelist_requests = WhitelistRequest.order("created_at DESC")
-      respond_to do |format|
-        format.html
-        format.json { render :json => @whitelist_requests }
-      end
     end
 
     def pending
