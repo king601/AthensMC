@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "links/minecraft" => "links#minecraft"
   post "links" => "links#create"
 
-  resources :whitelist_requests, path: "request"
+  resources :whitelist_requests, path: "join"
   resources :revisions
   resources :casts do
 #   collection do
