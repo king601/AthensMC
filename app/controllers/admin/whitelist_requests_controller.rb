@@ -41,10 +41,6 @@ class Admin::WhitelistRequestsController < ApplicationController
       redirect_to admin_whitelist_requests_path, notice: "Request Denied!"
     end
 
-    def whitelist
-      @whitelist_requests = WhitelistRequest.order("created_at DESC").status("approved")
-      render :json => @whitelist_requests
-    end
     private
       def check_admin_status?
         if current_user.admin?

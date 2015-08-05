@@ -25,7 +25,6 @@ Rails.application.routes.draw do
         get :pending
         get :approved
         get :denied
-        get :whitelist
         patch :approve
         patch :deny
       end
