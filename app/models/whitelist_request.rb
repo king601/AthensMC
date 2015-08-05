@@ -6,15 +6,4 @@ class WhitelistRequest < ActiveRecord::Base
   scope :status, -> (status) { where(status: status) } #WhitelistRequest.status("pending") || WhitelistRequest.status("approved")
   scope :agree, -> (agree) { where(agree_rules: agree) }
 
-#  def as_json(options={})
-#    ActiveRecord::Base.include_root_in_json = false
-#  super(:only => [:id, :status, :user[:minecraft_uuid.to_s]],
-#      :include => {
-#        :user => {
-#          :only => [:minecraft_uuid]
-#            }
-#      }
-#    )
-#  end
-
 end
