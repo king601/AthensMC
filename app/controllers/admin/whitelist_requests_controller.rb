@@ -25,18 +25,23 @@ class Admin::WhitelistRequestsController < ApplicationController
     def show
       @whitelist_request = WhitelistRequest.find(params[:id])
     end
+
     # For Approving Whitelist Requests via patch
     def approve
       @whitelist_request.update_attributes(:approved_on => Time.now, :status => "approved")
       redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been approved!"
+      WhitelistMailer.request_approved(@whitelist_request).deliver_later
     end
+
     # For denying whitelist requests via a patch method
     def deny
       @whitelist_request.update_attributes(:denied_on => Time.now, :status => "denied")
       redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been denied!"
+      WhitelistMailer.request_denied(@whitelist_request).deliver_later
     end
 
     def destroy
+      WhitelistMailer.request_removed(@whitelist_request).deliver_later
       @whitelist_request.destroy
       redirect_to admin_whitelist_requests_path, notice: "Whitelist Request Destroyed"
     end
