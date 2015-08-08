@@ -46,4 +46,7 @@ Rails.application.configure do
 
   config.web_console.whitelisted_ips = '10.0.0.2'
 
+  # Add Sucker_punch as background job queue
+  config.active_job.queue_adapter = :sucker_punch
+
 end
