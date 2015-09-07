@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801203420) do
+ActiveRecord::Schema.define(version: 20150907042716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20150801203420) do
 
   add_index "casts", ["episode"], name: "index_casts_on_episode", unique: true, using: :btree
   add_index "casts", ["user_id"], name: "index_casts_on_user_id", using: :btree
+
+  create_table "map_downloads", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "revisions", force: :cascade do |t|
     t.string   "title"

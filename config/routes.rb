@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 #    end
   end
 
+  resources :downloads
+
   namespace :admin do
     resources :users do
       collection do
