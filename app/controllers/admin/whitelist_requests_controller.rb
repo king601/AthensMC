@@ -51,11 +51,4 @@ class Admin::WhitelistRequestsController < ApplicationController
         @whitelist_request = WhitelistRequest.find_by_id(params[:format])
       end
 
-      def check_admin_status?
-        if current_user.admin?
-          return
-        else
-          redirect_to root_path, alert: "You do not have permission to do that"
-        end
-      end
 end

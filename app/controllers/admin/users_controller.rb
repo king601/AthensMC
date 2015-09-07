@@ -19,13 +19,4 @@ class Admin::UsersController < ApplicationController
 		end
 	end
 
-
-	private
-	  def check_admin_status?
-	  	if current_user.admin?
-	  		return
-	  	else
-	  		redirect_to root_path, notice: "You do not have permission to do that"
-	  	end
-	  end
 end
