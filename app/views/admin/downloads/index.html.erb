@@ -46,7 +46,9 @@
               <i class="fa fa-pencil fa-2x"></i>
             <% end %>
             &nbsp;
-              Edit | Delete
+            <%= link_to admin_download_path(map), :method => :delete, data: { confirm: "Are you sure you want to delete this download?" } do %>
+              <i class="fa fa-trash-o fa-2x"></i>
+            <% end %>
             </td>
           </tr>
       <% end %>

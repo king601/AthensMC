@@ -32,6 +32,10 @@ class Admin::DownloadsController < ApplicationController
   def edit
   end
 
+  def destroy
+    @map_download.destroy
+    redirect_to admin_downloads_path, notice: "Download has been removed from the site."
+  end
 
   private
     def find_map_download
