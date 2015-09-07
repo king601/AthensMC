@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 #    end
   end
 
-  resources :downloads
+  resources :downloads, only: [:index]
 
   namespace :admin do
     resources :downloads

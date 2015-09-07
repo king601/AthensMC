@@ -1,7 +1,7 @@
 <% page_title "Map Downloads" %>
 <div class="well">
   <div class="page-header">
-    <h1>Whitelist Requests</h1>
+    <h1>Map Downloads</h1>
   </div>
 
   <p class="center">There are <%= @map_downloads.count %> map downloads.</p>
@@ -18,36 +18,46 @@
     </div>
   </div>
 
-  <% if @map_downloads.empty? %>
-    <h2>There are no map downloads currently! Check back soon!</h2>
-  <% else %>
 
-    <table class="table table-hover table-striped table-bordered">
-     <thead>
-            <tr>
-              <th>Date Posted:</th>
-              <th>Download Name:</th>
-              <th>Download description:</th>
-              <th>Link:</th>
-            </tr>
-          </thead>
-          <tbody>
+  	<% if @map_downloads.empty? %>
+      <h2>There are no map downloads currently! Check back soon!</h2>
+    <% else %>
 
-    <% @map_downloads.each do |map| %>
-        <tr>
-          <td><%= map.created_at.strftime("%B %dth %Y") %>
-          <td><%= map.name %></td>
-          <td><%= map.description %></td>
-          <td><%= link_to "Download", map.link %></td>
-        </tr>
+      <table class="table table-hover table-striped table-bordered">
+       <thead>
+              <tr>
+                <th>Date Posted:</th>
+                <th>Name:</th>
+                <th>Description:</th>
+                <th>Map Download:</th>
+                <th>Admin Actions:</th>
+              </tr>
+            </thead>
+            <tbody>
+
+      <% @map_downloads.each do |map| %>
+  				<tr>
+            <td><%= map.created_at.strftime("%m/%d/%Y") %>
+            <td><%= map.name %></td>
+            <td><%= map.description %></td>
+            <td><%= link_to "Download", map.link %></td>
+            <td>
+            <%= link_to edit_admin_download_path(map) do %>
+              <i class="fa fa-pencil fa-2x"></i>
+            <% end %>
+            &nbsp;
+              Edit | Delete
+            </td>
+          </tr>
+      <% end %>
+            </tbody>
+          </table>
     <% end %>
-          </tbody>
-        </table>
-  <% end %>
 
-  <% #Pagination Renderer %>
-  	<div class="center">
-  	<%= will_paginate @map_downloads, renderer: BootstrapPagination::Rails %>
-  	</div>
+  	<% #Pagination Renderer %>
+  		<div class="center">
+  		<%= will_paginate @map_downloads, renderer: BootstrapPagination::Rails %>
+  		</div>
+
 
 </div>
