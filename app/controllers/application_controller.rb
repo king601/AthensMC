@@ -13,7 +13,14 @@ class ApplicationController < ActionController::Base
         redirect_to links_minecraft_path
       end
     end
-
+    
+    def check_admin_status?
+      if current_user.admin?
+        return
+      else
+        redirect_to root_path, alert: "You do not have permission to do that"
+      end
+    end
 
   protected
     def configure_permitted_parameters
