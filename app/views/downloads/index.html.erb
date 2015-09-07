@@ -7,10 +7,48 @@
 
 	<p>To use these downloads, you'll need a program like <%= link_to "7-Zip", "http://www.7-zip.org/" %></p>
 
-	<div class="alert alert-danger">
-		<p>These downloads are not automatic and may not be updated quickly!</p>
-	</div>
+	<hr />
 
+	<% if @map_downloads.empty? %>
+    <h2>There are no map downloads currently! Check back soon!</h2>
+  <% else %>
+
+    <table class="table table-hover table-striped table-bordered">
+     <thead>
+            <tr>
+              <th>Date Posted:</th>
+              <th>Name:</th>
+              <th>Description:</th>
+              <th>Map Download:</th>
+            </tr>
+          </thead>
+          <tbody>
+
+    <% @map_downloads.each do |map| %>
+				<tr>
+          <td><%= map.created_at.strftime("%m/%d/%Y") %>
+          <td><%= map.name %></td>
+          <td><%= map.description %></td>
+          <td><%= link_to "Download", map.link %></td>
+        </tr>
+    <% end %>
+          </tbody>
+        </table>
+  <% end %>
+
+	<% #Pagination Renderer %>
+		<div class="center">
+		<%= will_paginate @map_downloads, renderer: BootstrapPagination::Rails %>
+		</div>
+
+		<hr />
+
+		<div class="page-header">
+			<h1>Archived Downloads</h1>
+		</div>
+		<div class="alert alert-danger">
+			<p>The downloads down here are from before the system was switched over, and are here until we can get them into the system</p>
+		</div>
 	<table class="table table-bordered table-striped">
 		<tr>
 			<td><strong>Date</strong></td>

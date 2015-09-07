@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :downloads
 
   namespace :admin do
-    resources :downloads, only: [:index, :new, :edit, :destroy]
+    resources :downloads
     resources :users do
       collection do
         get :whitelisted
