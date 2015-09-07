@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, :only => [:stats]
+  before_action :authenticate_user!, :only => [:stats, :downloads]
   def home
   end
 
