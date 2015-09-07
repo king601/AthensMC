@@ -37,7 +37,6 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get "/support", :to => redirect("/subscribe")
-  get "downloads" => "pages#downloads"
   get "information" => 'pages#information'
   get "stats" => "pages#stats"
   get "/change_log", :to => redirect("/revisions")
