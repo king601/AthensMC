@@ -16,7 +16,6 @@
     <table class="table table-hover table-striped table-bordered">
      <thead>
             <tr>
-              <th>Date Posted:</th>
               <th>Name:</th>
               <th>Description:</th>
               <th>Map Download:</th>
@@ -26,7 +25,6 @@
 
     <% @map_downloads.each do |map| %>
 				<tr>
-          <td><%= map.created_at.strftime("%m/%d/%Y") %>
           <td><%= map.name %></td>
           <td><%= map.description %></td>
           <td><%= link_to "Download", map.link %></td>
