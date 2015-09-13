@@ -20,22 +20,22 @@
       <ul class="nav navbar-nav navbar-right">
           <!-- Servers Dropdown -->
           <li class="dropdown">
-            <%= link_to raw(("<i class='fa fa-inverse fa-server fa-lg'></i> &nbsp;") + "Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
+            <%= link_to raw(("<i class='fa fa-inverse fa-server'></i> &nbsp;") + "Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
                 <li role="presentation" class="dropdown-header">Minecraft</li>
                 <li>
                   <%= link_to servers_vanilla_path do %>
-                    <i class="fa fa-bolt fa-lg fa-fw"></i> &nbsp; Vanilla Minecraft Server
+                    <i class="fa fa-bolt fa-fw"></i> &nbsp; Vanilla Minecraft Server
                   <% end %>
                 </li>
                 <li>
                   <%= link_to servers_rrr_path do %>
-                    <i class="fa fa-th-large fa-lg fa-fw"></i> &nbsp; Rockets Rifles Robots
+                    <i class="fa fa-th-large fa-fw"></i> &nbsp; Rockets Rifles Robots
                   <% end %>
                 </li>
                 <li>
                   <%= link_to servers_snapshot_path do %>
-                    <i class="fa fa-camera-retro fa-lg fa-fw"></i> &nbsp; Snapshot Survival
+                    <i class="fa fa-camera-retro fa-fw"></i> &nbsp; Snapshot Survival
                   <% end %>
                 </li>
               </ul>
@@ -43,13 +43,13 @@
             <!-- End Servers Dropdown -->
           <li>
             <%= link_to information_path do %>
-              <i class="fa fa-info-circle fa-lg"></i> &nbsp; Support
+              <i class="fa fa-info-circle"></i> &nbsp; Support
             <% end %>
           </li>
 
           <li>
             <%= link_to "http://forums.athensmc.com" do %>
-              <i class="fa fa-weixin fa-lg"></i> &nbsp;
+              <i class="fa fa-weixin"></i> &nbsp;
               Forums
             <% end %>
           </li>
@@ -58,35 +58,35 @@
           <% if user_signed_in? #User is signed in, so show account dropdown and signed in links... %>
 
             <li class="dropdown"> <!-- Signed In Dropdown -->
-            <%= link_to raw(("<i class='fa fa-inverse fa-home fa-lg'></i> &nbsp;") + "#{current_user.username}" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
+            <%= link_to raw(("<i class='fa fa-inverse fa-home'></i> &nbsp;") + "#{current_user.username}" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
                 <!--<li role="presentation" class="dropdown-header">Minecraft</li> -->
                 <li>
                   <%= link_to subscribe_path do %>
-                    <i class="fa fa-money fa-lg fa-fw"></i> &nbsp;
+                    <i class="fa fa-money fa-fw"></i> &nbsp;
                     Subscribe
                   <% end %>
                 </li>
                 <li>
                   <%= link_to downloads_path do %>
-                    <i class="fa fa-cloud-download fa-fw fa-lg"></i> &nbsp; Map Downloads
+                    <i class="fa fa-cloud-download fa-fw"></i> &nbsp; Map Downloads
                   <% end %>
                 </li>
               <li>
                   <%= link_to casts_path do %>
-                    <i class="fa fa-microphone fa-fw fa-lg"></i> &nbsp; AthensCasts
+                    <i class="fa fa-microphone fa-fw"></i> &nbsp; AthensCasts
                   <% end %>
                 </li>
 
                 <li class="divider"></li>
                 <li>
                   <%= link_to edit_user_registration_path do %>
-                    <i class="fa fa-cog fa-fw fa-lg"></i> &nbsp; Edit Account Settings
+                    <i class="fa fa-cog fa-fw"></i> &nbsp; Edit Account Settings
                   <% end %>
                 </li>
                 <li>
                   <%= link_to destroy_user_session_path, method: :delete  do %>
-                   <i class="fa fa-sign-out fa-fw fa-lg"></i> &nbsp;
+                   <i class="fa fa-sign-out fa-fw"></i> &nbsp;
                    Sign Out
                   <% end %>
                 </li>
