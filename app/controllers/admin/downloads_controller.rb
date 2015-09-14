@@ -23,7 +23,7 @@ class Admin::DownloadsController < ApplicationController
 
   def update
     if @map_download.update(map_download_params)
-			redirect_to admin_downloads_path
+			redirect_to admin_downloads_path, notice: "Download has been updated!"
 		else
 			render 'edit'
 		end
