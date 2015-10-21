@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  resources :users, only: [:show], param: :username
 
   get "links/minecraft" => "links#minecraft"
   post "links" => "links#create"
