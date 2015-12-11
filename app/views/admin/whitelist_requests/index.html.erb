@@ -44,7 +44,7 @@
         <tr>
           <td><%= r.id %></td>
           <td><%= image_tag r.user.minecraft_avatar %></td>
-            <td><%= r.user.username %></td>
+            <td><%= link_to r.user.username, user_path(r.user.username) %></td>
           <td><%= r.user.dashed_uuid %></td>
           <td>
             <% if r.status == "approved" %>
