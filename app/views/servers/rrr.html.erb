@@ -26,7 +26,7 @@
 
             <p>Once you have the Technic launcher installed, you will “+ Add New Pack” on the left side of the interface and when prompted, paste in the link below:</p>
               <blockquote><samp>http://www.technicpack.net/api/modpack/rockets-rifles-robots</samp></blockquote>
-
+          <p><strong>Or search in the top left "Rockets Rifles Robots" and click the "Install" button on their new launcher</strong></p>
            <p>Next check “Always use recommended builds.” This will keep your version of the pack in sync with whatever updates and changes are made. A full mod list and updates can be found here:
             <%= link_to("http://www.technicpack.net/modpack/details/rockets-rifles-robots", "http://www.technicpack.net/modpack/details/rockets-rifles-robots") %>
         </div>
@@ -36,17 +36,19 @@
         <!-- Things to Know Well -->
         <div class="well alertwell">
           <h4><strong>Things to Know</strong></h4>
-           <p><strong>Server IP:</strong> rrr.athensmc.com OR rrrv3.athensmc.com</p>
+           <p><strong>Server IP:</strong> rrr.athensmc.com</p>
            <p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
            <p><%= link_to("Forums", "http://forums.athensmc.com") %> | <%= link_to("Technic Launcher", "http://technicpack.net") %></p>
         </div>
         <!-- Other Downloads Well -->
+        <!-- Hiding this because it's not useful for v4.0 at the moment -
          <div class="well infowell">
             <h4><Strong>Other Downloads</strong></h4>
              <p><strong>Art Assets:</strong>  <%= link_to("RRR Assets", "http://cdn.athensmc.com/resources/downloads/rrr_assets.zip") %><br />
                <strong>DIY Launcher Kit:</strong> <%= link_to("RRRv3.5_Client.zip", "http://cdn.athensmc.com/resources/downloads/RRRv3.5_Client.zip") %></p>
              <p><%= link_to("MultiMC", "http://multimc.org/") %> | <%= link_to("Installing Forge on the Vanilla Launcher", "http://www.minecraftforge.net/wiki/Installation/Universal") %></p>
          </div>
+       -->
       </div>
 
 
@@ -68,7 +70,7 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
               <div class="panel-body">
-                <%= link_to 'Currently you will need to fill out an application on this thread.', 'http://forums.athensmc.com/threads/snapshot-application-rules.170/'%> We may also request an example of a recent build, at our discretion. Whitelists are shared between all servers, so our members will get access to our Vanilla and modded servers.
+                If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
               </div>
             </div>
           </div>
@@ -106,7 +108,7 @@
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                  What mods are in the pack? (Warning long list!)
+                  What mods are in the pack?
                 </a>
               </h4>
             </div>
@@ -114,11 +116,11 @@
               <div class="panel-body">
                  <table class="table table-bordered table-striped">
                     <tr><td><strong>Mod List:</strong></td></tr>
-                    <tr><td>AppliedEnergistics</td></tr>
+                    <tr><td>AppliedEnergistics 2</td></tr>
                     <tr><td>ArchimedesShips</td></tr>
                     <tr><td>BiblioCraft</td></tr>
                     <tr><td>BigReactors</td></tr>
-                    <tr><td>BiomesOPlenty</td></tr>
+                    <tr><td>Highlands</td></tr>
                     <tr><td>BuildCraft</td></tr>
                     <tr><td>Carpenter’sBlocks</td></tr>
                     <tr><td>ChickenChunks</td></tr>
@@ -143,20 +145,16 @@
                     <tr><td>JABBA</td></tr>
                     <tr><td>JourneyMap</td></tr>
                     <tr><td>Mekanism</td></tr>
-                    <tr><td>MFFS(Shields)</td></tr>
                     <tr><td>MinecraftForge</td></tr>
                     <tr><td>MinefactoryReloaded</td></tr>
                     <tr><td>Minetweaker</td></tr>
                     <tr><td>Morpheus</td></tr>
                     <tr><td>Natura</td></tr>
-                    <tr><td>NEIPlugins</td></tr>
                     <tr><td>NetherOres</td></tr>
                     <tr><td>NotEnoughItems</td></tr>
-                    <tr><td>NuclearControl2</td></tr>
                     <tr><td>OpenBlocks</td></tr>
                     <tr><td>OpenComputers</td></tr>
                     <tr><td>OpenLib</td></tr>
-                    <tr><td>Pam'sHarvestCraft</td></tr>
                     <tr><td>PneumaticCraft</td></tr>
                     <tr><td>ProjectRed</td></tr>
                     <tr><td>Railcraft</td></tr>
@@ -166,15 +164,12 @@
                     <tr><td>SpecialMobs</td></tr>
                     <tr><td>SpecialMobs</td></tr>
                     <tr><td>Steve’sCarts</td></tr>
-                    <tr><td>Sync</td></tr>
                     <tr><td>ThermalExpansion</td></tr>
                     <tr><td>ThermalFoundation</td></tr>
                     <tr><td>TinkersMechworks</td></tr>
                     <tr><td>Tinker’sConstruct</td></tr>
-                    <tr><td>UniversalElectricityCore</td></tr>
                     <tr><td>WAILA</td></tr>
                     <tr><td>WAILAHarvestability</td></tr>
-                    <tr><td>What'sThisPack(WTP)</td></tr>
                   </table>
               </div>
             </div>
