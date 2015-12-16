@@ -6,6 +6,13 @@ Source code for the webapp for AthensMC.com
 * Try and be clean with HTML/ERB
 * Work in a branch, then do a pull request!
 
+## Roadmap
+* Forum System
+* User Profile Pages
+* Revisit whitelist System
+* @User Mentions / Emojis
+* Search across Forums / Site
+
 ## Setting up local development environment
 1. Install Ruby
 2. Install Bundler
