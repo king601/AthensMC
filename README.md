@@ -30,18 +30,3 @@ Then you should be good to go!
 
 You can start the development server locally by running:
 `rails server -b 0.0.0.0`
-
-
-
---------
-If having issues with assets pipeline, run "RAILS_ENV=production rake assets:precompile"
-then restart the server
-
-
-Rails 4.2.0 Upgrade
-==============
-Update Rails to 4.2.0
-Tested against Ruby 2.1.2p95
-
-may need to install "apt-get install libicu-dev" for syntax highlighting
-"sudo apt-get install cmake" for rugged gem install
