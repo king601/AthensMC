@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.3'
 
 #Font Awesome for Visual Improvements
-gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 
 #New for Rails 4.2.0
 group :development, :test do
