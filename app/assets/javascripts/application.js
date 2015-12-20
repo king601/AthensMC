@@ -23,3 +23,12 @@
 $(document).on("ready page:change", function() {
     $('.tag-tooltip').tooltip();
 });
+
+// Make alerts / notices fade out automatically after 5.5 seconds
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".flash-message").fadeOut("slow", function() {
+            $(this).remove();
+        })
+    }, 5500 );
+});
