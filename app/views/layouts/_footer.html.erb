@@ -15,9 +15,9 @@
 
 	<% if user_signed_in? %>
 	  <% if current_user.minecraft_uuid.blank? %>
-              <img src="https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?helm" height="64px" />
+              <img src="https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?overlay" height="64px" />
             <% else %>
-              <img src="https://crafatar.com/avatars/<%= current_user.minecraft_uuid %>?helm&size=64" />
+              <img src="https://crafatar.com/avatars/<%= current_user.minecraft_uuid %>?overlay&size=64" />
              <% end %>
 
 	  <%= "You are logged in as #{current_user.username}" %>

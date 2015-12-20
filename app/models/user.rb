@@ -36,9 +36,9 @@ class User < ActiveRecord::Base
 
   def minecraft_avatar
     unless self.minecraft_uuid.nil?
-      "https://crafatar.com/avatars/#{self.minecraft_uuid}?helm&size=64"
+      "https://crafatar.com/avatars/#{self.minecraft_uuid}?overlay&size=64"
     else
-      "https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?helm&size=64"
+      "https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?overlay&size=64"
     end
   end
 
