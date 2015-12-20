@@ -23,11 +23,13 @@
             <%= link_to raw(("<i class='fa fa-inverse fa-server'></i> &nbsp;") + "Servers" +(" <b class= 'caret'></b>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
                 <li role="presentation" class="dropdown-header">Minecraft</li>
+                <!-- Hiding the Vanilla Server for now because it's been offline over a year
                 <li>
                   <%= link_to servers_vanilla_path do %>
                     <i class="fa fa-bolt fa-fw"></i> &nbsp; Vanilla Minecraft Server
                   <% end %>
                 </li>
+              -->
                 <li>
                   <%= link_to servers_rrr_path do %>
                     <i class="fa fa-th-large fa-fw"></i> &nbsp; Rockets Rifles Robots
