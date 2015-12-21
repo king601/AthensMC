@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907042716) do
+ActiveRecord::Schema.define(version: 20151221051245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150907042716) do
     t.datetime "denied_on"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "referred_by"
   end
 
   add_index "whitelist_requests", ["user_id"], name: "index_whitelist_requests_on_user_id", using: :btree
