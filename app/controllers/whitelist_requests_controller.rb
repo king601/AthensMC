@@ -24,7 +24,7 @@ class WhitelistRequestsController < ApplicationController
 	private
 
 		def whitelist_request_params
-			params.require(:whitelist_request).permit(:status, :agree_rules)
+			params.require(:whitelist_request).permit(:status, :agree_rules, :referred_by)
 		end
 
 end
