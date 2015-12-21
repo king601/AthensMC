@@ -12,6 +12,7 @@ Source code for the webapp for AthensMC.com
 * Revisit whitelist System
 * @User Mentions / Emojis
 * Search across Forums / Site
+* Make the Linking Minecraft flash message actually link/explain why we need to link accounts
 
 ## Setting up local development environment
 1. Install Ruby
