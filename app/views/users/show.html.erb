@@ -4,17 +4,17 @@
     <div class="col-md-12">
       <h1>
         <% if @user.minecraft_uuid.blank? %>
-          <%= image_tag "https://crafatar.com/renders/body/606e2ff0ed7748429d6ce1d3321c7838?scale=4&overlay" %>    
+          <%= image_tag "https://crafatar.com/renders/body/606e2ff0ed7748429d6ce1d3321c7838?scale=4&overlay" %>
         <% else %>
           <%= image_tag "https://crafatar.com/renders/body/#{@user.minecraft_uuid}?scale=4&overlay", class: 'text-left' %>
         <% end %>
-        <%= @user.username.humanize %>'s Profile <small>(minecraft uuid: <%= @user.dashed_uuid %>)</small></h1>
+        <%= @user.username %>'s Profile <small>(minecraft uuid: <%= @user.dashed_uuid %>)</small></h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-12">
-      <p><%= @user.username %></p>
+      <p>Profiles are coming to the website soon.</p>
     </div>
   </div>
 </div>
