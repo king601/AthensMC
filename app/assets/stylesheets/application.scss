@@ -25,6 +25,17 @@
  .athensbanner {
  	background: #7f8c8d; //e74c3c
  }
+ // New Home Page Jumbotro
+ .athens-banner {
+   background: #45687F; //#d5abff;
+   color: $white;
+ }
+ p {
+   .lead-link {
+    font-weight: bold;
+    color: darken($athens_grey, 20%);
+   }
+ }
  .infowell {
  	background: #90C695; //#ecf0f1;
  	color: black;
