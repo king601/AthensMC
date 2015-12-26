@@ -5,11 +5,11 @@ one:
   releasedate: MyString
   description: MyText
   embedcode: MyText
-  user: 
+  user:
 
 two:
-  episode: MyString
-  releasedate: MyString
-  description: MyText
-  embedcode: MyText
-  user: 
+  episode: MyString2
+  releasedate: MyString2
+  description: MyText2
+  embedcode: MyText2
+  user:

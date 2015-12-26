@@ -8,3 +8,10 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActionController::TestCase
+    # Because we use Devise lets include the devise test helpers
+    # We have to put it into ActionController::TestCase Because
+    # Otherwise we error out about nomethoderror 'env' when its in ActiveSupport
+    include Devise::TestHelpers
+end

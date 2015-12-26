@@ -6,6 +6,6 @@ one:
   link: MyString
 
 two:
-  name: MyString
-  description: MyText
-  link: MyString
+  name: MyString2
+  description: MyText2
+  link: MyString2
