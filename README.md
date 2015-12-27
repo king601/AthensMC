@@ -12,6 +12,7 @@ Source code for the webapp for AthensMC.com
 * Revisit whitelist System
 * @User Mentions / Emojis
 * Search across Forums / Site
+* Give the ability to change MC Accounts for users to Admins
 * Make the Linking Minecraft flash message actually link/explain why we need to link accounts
 
 ## Setting up local development environment
