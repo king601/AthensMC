@@ -7,12 +7,7 @@ Rails.application.routes.draw do
 
   resources :whitelist_requests, path: "join"
   resources :revisions
-  resources :casts do
-#   collection do
-#        get 'suggest'
-#        post 'suggest'
-#    end
-  end
+  resources :casts
 
   resources :downloads, only: [:index]
 
