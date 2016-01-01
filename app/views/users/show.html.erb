@@ -8,12 +8,17 @@
         <% else %>
           <%= image_tag "https://crafatar.com/renders/body/#{@user.minecraft_uuid}?scale=4&overlay", class: 'text-left' %>
         <% end %>
-        <%= @user.username %>'s Profile <small>(minecraft uuid: <%= @user.dashed_uuid %>)</small></h1>
+        <%= @user.username %>'s Profile <small>(minecraft uuid: <%= @user.dashed_uuid %>)</small>
+
+</h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-12">
+      <% if @user.whitelisted? %>
+        <%= @user.username + " is whitelisted" %>
+      <% end %>
       <p>Profiles are coming to the website soon.</p>
     </div>
   </div>

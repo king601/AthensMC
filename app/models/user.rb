@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
   attr_accessor :dashed_uuid
 
+  def whitelisted?
+    self.whitelist_request.status == "approved"
+  end
+  
   def set_uuid
   	begin
   	  self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid

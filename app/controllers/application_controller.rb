@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  helper_method :whitelisted?
-  def whitelisted?
-    user_signed_in? && current_user.whitelist_request.status == "approved"
+  helper_method :user_signed_in_is_whitelisted?
+  def user_signed_in_is_whitelisted?
+    user_signed_in? && current_user.whitelisted?
   end
 
   private

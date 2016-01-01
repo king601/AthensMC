@@ -1,5 +1,9 @@
 <% page_title "Home" %>
 <div class="well">
+	<% if user_signed_in_is_whitelisted? %>
+		Welcome back! <%= current_user.username %>
+	<% end %>
+
 	<div class="jumbotron athens-banner center">
 		<div class="container">
 			<h1>Want a great gaming community?</h1>
