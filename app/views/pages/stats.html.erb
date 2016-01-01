@@ -5,7 +5,7 @@
 	</div>
 
 	<!-- Stats Table -->
-	<table class="table table-striped table-bordered table-condensed table-responsive">	
+	<table class="table table-striped table-bordered table-condensed table-responsive">
 	  <tr>
 		<td>Type:</td>
 		<td>Number of:</td>
@@ -20,11 +20,16 @@
 	  	<td>Revisions</td>
 	  	<td><%= @revisions.count %></td>
 	  </tr>
-	  <!-- Casts -->
+		<!-- Casts -->
 	  <tr>
 	  	<td>Casts</td>
 	  	<td><%= @casts.count %> </td>
 	  </tr>
+		<!-- Whitelisted Members -->
+			  <tr>
+			  	<td>Whitelisted members</td>
+			  	<td><%= @whitelist_requests.count %> </td>
+			  </tr>
 	</table>
 	<!-- End Stats Table -->
 </div>
