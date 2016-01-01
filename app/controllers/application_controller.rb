@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  helper_method :whitelisted?
+  def whitelisted?
+    user_signed_in? && current_user.whitelist_request.status == "approved"
+  end
+
   private
     def check_minecraft_uuid?
       # Check that the Minecraft UUID for the user isn't nil, if it is make them fill it out
@@ -13,7 +18,7 @@ class ApplicationController < ActionController::Base
         redirect_to links_minecraft_path
       end
     end
-    
+
     def check_admin_status?
       if current_user.admin?
         return
