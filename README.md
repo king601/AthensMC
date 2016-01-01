@@ -7,6 +7,7 @@ Source code for the webapp for AthensMC.com
 * Work in a branch, then do a pull request!
 
 ## Roadmap
+* Upgrade to Ruby 2.2.4 or 2.3.0 + test app to ensure it doesn't break anything
 * Forum System
 * User Profile Pages
 * Revisit whitelist System
@@ -18,7 +19,7 @@ Source code for the webapp for AthensMC.com
 ## Setting up local development environment
 1. Install Ruby
 2. Install Bundler
-3. Install Rails (v.4.2.0 currently)
+3. Install Rails (v4.2.5 currently)
 4. Install PostgreSQL/all requirements for OS
 5. Run
   * `cp config/secrets.yml.example config/secrets.yml`
@@ -31,4 +32,4 @@ Source code for the webapp for AthensMC.com
 Then you should be good to go!
 
 You can start the development server locally by running:
-`rails server -b 0.0.0.0`
+`rails server`
