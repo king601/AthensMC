@@ -7,7 +7,10 @@
 
  @import "font-awesome";
 
-
+ html.turbolinks-progress-bar::before {
+   background-color: $athens_red !important;
+   height: 5px !important;
+ }
  .text-middle {
  	line-height: 48px;
  	vertical-align: middle;
