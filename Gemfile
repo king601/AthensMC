@@ -82,3 +82,9 @@ gem 'friendly_id', '~> 5.1.0'
 
 # Background Job Processing
 gem 'sucker_punch'
+
+# Search is Awesome
+gem 'searchkick'
+
+# jQuery UI Gem for autocomplete and other stuff
+gem 'jquery-ui-rails'

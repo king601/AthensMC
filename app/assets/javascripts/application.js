@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//=require jquery-ui
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require local_time
@@ -20,6 +21,9 @@
 //$(function () {
 //  $('[data-toggle="tooltip"]').tooltip()
 //})
+$(function() {
+  $('.datepicker').datepicker();
+});
 $(document).on("ready page:change", function() {
     $('.tag-tooltip').tooltip();
 });

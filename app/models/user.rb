@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  searchkick text_start: [:username], callbacks: :async, suggest: [:username]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,10 +19,19 @@ class User < ActiveRecord::Base
 
   attr_accessor :dashed_uuid
 
-  def whitelisted?
-    self.whitelist_request.status == "approved"
+  def search_data
+    {
+      username: username,
+      minecraft_uuid: minecraft_uuid,
+      email: email
+    }
   end
-  
+
+  def whitelisted?
+    # Check to make sure they have a whitelist request, then check if its approved.
+    self.whitelist_request && self.whitelist_request.status == "approved"
+  end
+
   def set_uuid
   	begin
   	  self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid

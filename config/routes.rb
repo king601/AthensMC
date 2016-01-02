@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :downloads
     resources :users do
       collection do
+        get :autocomplete
         get :whitelisted
       end
     end
