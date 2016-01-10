@@ -6,11 +6,9 @@
  @import "athensmc/bootstrap_and_customizations";
  @import "font-awesome";
 
+ @import "athensmc/turbolinks";
 
- html.turbolinks-progress-bar::before {
-   background-color: $athens_red !important;
-   height: 5px !important;
- }
+
  .text-middle {
  	line-height: 48px;
  	vertical-align: middle;
