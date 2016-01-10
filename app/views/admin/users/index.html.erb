@@ -1,18 +1,19 @@
 <% page_title "All Users" %>
 <div class="well">
 <div class="page-heading">
-		<div class="col-sm-4 pull-right">
+		<!--<div class="col-sm-4 pull-right">
 			<%= form_tag admin_users_path, method: :get do %>
 				<%= text_field_tag :q, nil,  placeholder: 'Search Users', class: 'form-control'  %>
 			<% end %>
 		</div>
+		--->
 
 	<h1>All Users</h1>
 </div>
 
-	<% if @users.suggestions.any? %>
-		<p class="lead">Did you mean: <%= @users.suggestions.first %>?</p>
-	<% end %>
+	<%# if @users.suggestions.any? %>
+		<!-- <p class="lead">Did you mean: <%# @users.suggestions.first %>?</p> -->
+	<%# end %>
 <table class="table table-hover table-striped table-bordered">
  <thead>
         <tr>
