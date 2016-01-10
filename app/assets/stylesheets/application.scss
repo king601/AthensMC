@@ -29,34 +29,34 @@
  }
  .infowell {
  	background: #90C695; //#ecf0f1;
- 	color: black;
+ 	color: $black;
  	font-family: $font-family-with-orbitron;
  	font-weight: bold;
  }
  .alertwell {
  	background: #F5AB35; //Nice pretty orange
- 	color: black;
+ 	color: $black;
  	font-family: $font-family-with-orbitron;
  	font-weight: bold;
  }
  .eventswell {
  	background: #BE90D4; //Light Purple
- 	color: white;
+ 	color: $white;
  	font-family: $font-family-with-orbitron;
  }
  .eventswell a {
- 	color: black;
+ 	color: $black;
  }
  .jumboalert {
  	background: #C8F7C5; //#ecf0f1;
  }
  .jumbo-header {
- 	color: black;
+ 	color: $black;
  	font-family: $font-family-with-orbitron;
  }
  .footer-well {
  	background: #ecf0f1;
- 	color: black;
+ 	color: $black;
  	font-family: $font-family-with-orbitron;
  	font-weight: bold;
  	ul {
@@ -170,7 +170,7 @@
   padding: 4px 0;
   margin: 2px 0 0 2px;
   list-style: none;
-  background-color: #ffffff;
+  background-color: $white;
   border-color: #ccc;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
@@ -197,7 +197,7 @@
     white-space: nowrap;
 
     &.ui-state-hover, &.ui-state-active {
-      color: #ffffff;
+      color: $white;
       text-decoration: none;
       background-color: #0088cc;
       border-radius: 0px;
