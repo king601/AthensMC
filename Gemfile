@@ -88,3 +88,6 @@ gem 'sucker_punch'
 
 # jQuery UI Gem for autocomplete and other stuff
 gem 'jquery-ui-rails'
+
+# Slack Notifer
+gem 'slack-notifier'
