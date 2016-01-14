@@ -7,6 +7,8 @@ Source code for the webapp for AthensMC.com
 * Work in a branch, then do a pull request!
 
 ## Roadmap
+* Add welcome email
+* Add repeating email every month that sends an email with instructions to users who aren't whitelisted/have a whitelist app existing.
 * Upgrade to Ruby 2.2.4 or 2.3.0 + test app to ensure it doesn't break anything
 * Forum System
 * User Profile Pages
