@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
 	before_action :check_admin_status?, except: [:whitelisted]
 
 	def index
-		@users = User.order("id ASC").paginate(:page => params[:page], :per_page => 10)
+		@users = User.order("id ASC").paginate(:page => params[:page], :per_page => 20)
 		#query = params[:q].presence || "*"
 		#@users = User.search query, misspellings: {below: 5}, page: params[:page], per_page: 10, suggest: true
 	end
