@@ -34,6 +34,7 @@
               <th>Avatar:</th>
               <th>AthensMC Username:</th>
               <th>Minecraft UUID:</th>
+              <th>Last Sign In IP Address:</th>
               <th>Referred by:</th>
               <th>Status:</th>
               <th>Actions:</th>
@@ -47,6 +48,7 @@
           <td><%= image_tag r.user.minecraft_avatar %></td>
             <td><%= link_to r.user.username, user_path(r.user.username) %></td>
           <td><%= r.user.dashed_uuid %></td>
+        <td><%= r.user.last_sign_in_ip %></td>
           <td><%= r.referred_by %></td>
           <td>
             <% if r.status == "approved" %>
