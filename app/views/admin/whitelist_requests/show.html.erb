@@ -1,6 +1,10 @@
-<%= @whitelist_request.id %>
-<Br >
-<%= @whitelist_request.status %>
-<%= link_to approve_admin_whitelist_requests_path(@whitelist_request), method: :patch do %>
-  <i class="fa fa-check fa-2x"></i>
-<% end %>
+<% page_title "#{@whitelist_request.user.username}'s whitelist application" %>
+<div class="well pagewell">
+
+  <h2>Request #<%= @whitelist_request.id %> - Username: <%= @whitelist_request.user.username %></h2>
+  <Br >
+  <%= @whitelist_request.status %>
+  <%= link_to approve_admin_whitelist_requests_path(@whitelist_request), method: :patch do %>
+    <i class="fa fa-check fa-2x"></i>
+  <% end %>
+</div>
