@@ -7,6 +7,10 @@ class Admin::WhitelistRequestsController < ApplicationController
       @whitelist_requests = WhitelistRequest.order("created_at DESC")
     end
 
+    def charts
+      @whitelist_requests_chart = WhitelistRequest.all.group_by_day(:created_at).count
+    end
+
     def pending
       @whitelist_requests = WhitelistRequest.status("pending")
       render action: :index

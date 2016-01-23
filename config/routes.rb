@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     end
     resources :whitelist_requests do
       collection do
+        get :charts
         get :pending
         get :approved
         get :denied

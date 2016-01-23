@@ -89,5 +89,11 @@ gem 'sucker_punch'
 # jQuery UI Gem for autocomplete and other stuff
 gem 'jquery-ui-rails'
 
-# Slack Notifer
+# Slack Notifier
 gem 'slack-notifier'
+
+# Charts are cool!
+gem 'chartkick'
+
+# Group things by their dates
+gem 'groupdate'
