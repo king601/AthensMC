@@ -9,6 +9,7 @@ class Admin::WhitelistRequestsController < ApplicationController
 
     def charts
       @whitelist_requests_chart = WhitelistRequest.current_month.group_by_day(:created_at).count
+      @whitelist_requests_by_status = WhitelistRequest.current_month.group(:status).group_by_week(:created_at).count
     end
 
     def pending
