@@ -24,8 +24,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-#Bootstrap for Style Icons
-gem 'bootstrap-sass', '~> 3.3.3'
+#Bootstrap for HTML framework
+gem 'bootstrap-sass', '~> 3.3.6'
 
 #Font Awesome for Visual Improvements
 gem 'font-awesome-rails'
@@ -90,10 +90,10 @@ gem 'sucker_punch'
 gem 'jquery-ui-rails'
 
 # Slack Notifier
-gem 'slack-notifier'
+gem 'slack-notifier', '~> 1.5.1'
 
 # Charts are cool!
-gem 'chartkick'
+gem 'chartkick', '~> 1.4.1'
 
 # Group things by their dates
 gem 'groupdate'

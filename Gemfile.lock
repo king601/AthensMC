@@ -251,13 +251,13 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 3.3.3)
+  bootstrap-sass (~> 3.3.6)
   byebug
   capistrano (~> 3.3.0)
   capistrano-bundler (~> 1.1.4)
   capistrano-rails (~> 1.1.2)
   capistrano-rvm (~> 0.1.2)
-  chartkick
+  chartkick (~> 1.4.1)
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
   font-awesome-rails
@@ -276,7 +276,7 @@ DEPENDENCIES
   sanitize
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  slack-notifier
+  slack-notifier (~> 1.5.1)
   spring
   sucker_punch
   turbolinks
