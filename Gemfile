@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -81,7 +81,7 @@ gem 'mojang_api', '~> 0.0.2'
 gem 'friendly_id', '~> 5.1.0'
 
 # Background Job Processing
-gem 'sucker_punch'
+gem 'sucker_punch', '~> 1.6.0'
 
 # Search is Awesome
 # gem 'searchkick'
