@@ -1,17 +1,17 @@
 class Admin::DownloadsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_admin_status?
-	before_action :find_map_download, only: [:edit, :update, :destroy]
+  before_action :find_map_download, only: [:edit, :update, :destroy]
 
   def index
-    @map_downloads = MapDownload.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+    @map_downloads = MapDownload.order('created_at DESC').paginate(page: params[:page], per_page: 15)
   end
 
   def create
     @map_download = MapDownload.new(map_download_params)
 
     if @map_download.save
-      redirect_to admin_downloads_path, notice: "Download has been added!"
+      redirect_to admin_downloads_path, notice: 'Download has been added!'
     else
       render 'new'
     end
@@ -23,10 +23,10 @@ class Admin::DownloadsController < ApplicationController
 
   def update
     if @map_download.update(map_download_params)
-			redirect_to admin_downloads_path, notice: "Download has been updated!"
-		else
-			render 'edit'
-		end
+      redirect_to admin_downloads_path, notice: 'Download has been updated!'
+    else
+      render 'edit'
+    end
   end
 
   def edit
@@ -34,15 +34,16 @@ class Admin::DownloadsController < ApplicationController
 
   def destroy
     @map_download.destroy
-    redirect_to admin_downloads_path, notice: "Download has been removed from the site."
+    redirect_to admin_downloads_path, notice: 'Download has been removed from the site.'
   end
 
   private
-    def find_map_download
-      @map_download = MapDownload.find(params[:id])
-    end
 
-    def map_download_params
-      params.require(:map_download).permit(:name, :description, :link)
-    end
+  def find_map_download
+    @map_download = MapDownload.find(params[:id])
+  end
+
+  def map_download_params
+    params.require(:map_download).permit(:name, :description, :link)
+  end
 end
