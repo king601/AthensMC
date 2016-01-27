@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, path: 'u', only: [:show], param: :username
 
-  get "links/minecraft" => "links#minecraft"
-  post "links" => "links#create"
+  get 'links/minecraft' => 'links#minecraft'
+  post 'links' => 'links#create'
 
-  resources :whitelist_requests, path: "join"
+  resources :whitelist_requests, path: 'join'
   resources :revisions
   resources :casts
 
@@ -34,15 +34,15 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get "/support", :to => redirect("/subscribe")
-  get "information" => 'pages#information'
-  get "stats" => "pages#stats"
-  get "/change_log", :to => redirect("/revisions")
-  get "subscribe" => "pages#subscribe"
-  get "servers" => "servers#home"
-  get "servers/vanilla" => "servers#vanilla"
-  get "servers/rrr" => "servers#rrr"
-  get "servers/direwolf20" => "servers#direwolf20"
-  get "servers/snapshot" => "servers#snapshot"
+  get '/support', :to => redirect('/subscribe')
+  get 'information' => 'pages#information'
+  get 'stats' => 'pages#stats'
+  get '/change_log', :to => redirect('/revisions')
+  get 'subscribe' => 'pages#subscribe'
+  get 'servers' => 'servers#home'
+  get 'servers/vanilla' => 'servers#vanilla'
+  get 'servers/rrr' => 'servers#rrr'
+  get 'servers/direwolf20' => 'servers#direwolf20'
+  get 'servers/snapshot' => 'servers#snapshot'
 
 end
