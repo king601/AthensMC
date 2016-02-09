@@ -17,10 +17,10 @@
 
 	<% if user_signed_in? %>
 	  <% if current_user.minecraft_uuid.blank? %>
-              <img src="https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?overlay" height="64px" />
-            <% else %>
-              <img src="https://crafatar.com/avatars/<%= current_user.minecraft_uuid %>?overlay&size=64" />
-             <% end %>
+    	<img src="https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?overlay" height="64px" />
+    <% else %>
+      <img src="https://crafatar.com/avatars/<%= current_user.minecraft_uuid %>?overlay&size=64" />
+    <% end #end if current_user.minecraft_uuid.blank? %>
 
 	  <%= "You are logged in as" %> <%= link_to "#{current_user.username}", user_path(current_user.username) %>
 		<% if current_user.try(:admin?) %>
@@ -37,6 +37,6 @@
 				  </ul>
 				</div>
 			</div>
-		<% end %>
-	<% end %>
+		<% end # End admin only section %>
+	<% end # end if user is signed in section %>
 </div> <!-- /.footer-well well -->
