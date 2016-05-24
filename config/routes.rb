@@ -32,6 +32,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :forum_threads, path: 'forum' do
+   resources :forum_posts, path: 'posts', module: :forum_threads
+  end
   root 'pages#home'
 
   get '/support', :to => redirect('/subscribe')
