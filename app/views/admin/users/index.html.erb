@@ -1,58 +1,35 @@
 <% page_title "All Users" %>
-<div class="well">
-<div class="page-heading">
-		<!--<div class="col-sm-4 pull-right">
-			<%= form_tag admin_users_path, method: :get do %>
-				<%= text_field_tag :q, nil,  placeholder: 'Search Users', class: 'form-control'  %>
-			<% end %>
-		</div>
-		--->
 
-	<h1>All Users</h1>
-</div>
+<div class="well">
+	<div class="page-heading">
+		<h1>All Users</h1>
+	</div>
 
 	<%# if @users.suggestions.any? %>
 		<!-- <p class="lead">Did you mean: <%# @users.suggestions.first %>?</p> -->
 	<%# end %>
-<table class="table table-hover table-striped table-bordered table-responsive">
- <thead>
-        <tr>
-          <th>User ID:</th>
-          <th>Avatar</th>
-          <th>Username:</th>
-          <th>Email Address:</th>
-          <th>IP:</th>
-          <th>Last Seen:</th>
-          <th>Rank</th>
-          <th>UUID</th>
-        </tr>
-      </thead>
-      <tbody>
+	<table class="table table-hover table-striped table-bordered table-responsive">
+	 <thead>
+		  <tr>
+		    <th>User ID:</th>
+		    <th>Avatar</th>
+		    <th>Username:</th>
+		    <th>Email Address:</th>
+		    <th>IP:</th>
+		    <th>Last Seen:</th>
+		    <th>Rank</th>
+		    <th>UUID</th>
+		  </tr>
+		</thead>
+	  <tbody>
 
-<% @users.each do |user| %>
-        <tr>
-      <td> <%= link_to user.id, admin_user_path(user.id),class: "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: "Tooltip on left" } %> </td>
-      <td> <%= image_tag user.minecraft_avatar, :height => "64px", :class => "tag-tooltip", data: { 'data-toggle' => "tooltip", 'data-placement' => "left", title: user.dashed_uuid }  %> </td>
-  		<td><%= link_to user.username, user_path(user.username) %></td>
-	    <td><%= link_to user.email, admin_user_path(user.id) %> </td>
-        <td><%= user.last_sign_in_ip %></td>
-        <td><%= local_time_ago(user.last_sign_in_at) %> </td>
-         <td><% if user.admin? %> <span class="label label-danger">Admin</span> <% else %> <span class="label label-green">User</span> <% end %></td>
-        <td><% if user.minecraft_uuid.blank? %> No UUID has been linked <% else %> <%= user.dashed_uuid %> <% end %></td>
-        </tr>
-<% end %>
-      </tbody>
-    </table>
+			<%= render @users %>
 
-<% #Pagination Renderer %>
+	  </tbody>
+	</table>
+
 	<div class="center">
-	<%= will_paginate @user, renderer: BootstrapPagination::Rails %>
+		<%= will_paginate @user, renderer: BootstrapPagination::Rails %>
 	</div>
 
-</table>
-<!--
-<div class="alert alert-green">
-derp
-</div>
--->
-    </div><!-- /.well -->
+</div><!-- /.well -->
