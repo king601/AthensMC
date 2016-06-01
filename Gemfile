@@ -81,7 +81,7 @@ gem 'mojang_api', '~> 0.0.2'
 gem 'friendly_id', '~> 5.1.0'
 
 # Background Job Processing
-gem 'sucker_punch', '~> 1.6.0'
+gem 'sucker_punch', '~> 2.0'
 
 # Search is Awesome
 # gem 'searchkick'
