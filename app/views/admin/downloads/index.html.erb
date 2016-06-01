@@ -10,10 +10,10 @@
   <div class="row">
     <div class="col-md-12">
       <h2 style="float: right">
-        <%= link_to "New Download", new_admin_download_path %>
+        <%= link_to 'New Download', new_admin_download_path %>
       </h2>
       <h2 style="float: left">
-        <%= link_to "All", admin_downloads_path %>
+        <%= link_to 'All', admin_downloads_path %>
       </h2>
     </div>
   </div>
@@ -25,22 +25,21 @@
 
       <table class="table table-hover table-striped table-bordered">
        <thead>
-              <tr>
-                <th>Date Posted:</th>
-                <th>Name:</th>
-                <th>Description:</th>
-                <th>Map Download:</th>
-                <th>Admin Actions:</th>
-              </tr>
-            </thead>
-            <tbody>
-
-      <% @map_downloads.each do |map| %>
-  				<tr>
+        <tr>
+          <th>Date Posted:</th>
+          <th>Name:</th>
+          <th>Description:</th>
+          <th>Map Download:</th>
+          <th>Admin Actions:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @map_downloads.each do |map| %>
+    			<tr>
             <td><%= map.created_at.strftime("%m/%d/%Y") %>
             <td><%= map.name %></td>
             <td><%= map.description %></td>
-            <td><%= link_to "Download", map.link %></td>
+            <td><%= link_to 'Download', map.link %></td>
             <td>
             <%= link_to edit_admin_download_path(map) do %>
               <i class="fa fa-pencil fa-2x"></i>
@@ -51,15 +50,14 @@
             <% end %>
             </td>
           </tr>
-      <% end %>
-            </tbody>
-          </table>
-    <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %> <%# End if map_downloads exist block %>
 
-  	<% #Pagination Renderer %>
-  		<div class="center">
-  		<%= will_paginate @map_downloads, renderer: BootstrapPagination::Rails %>
-  		</div>
+  <div class="center">
+    <%= will_paginate @map_downloads, renderer: BootstrapPagination::Rails %>
+  </div>
 
 
 </div>
