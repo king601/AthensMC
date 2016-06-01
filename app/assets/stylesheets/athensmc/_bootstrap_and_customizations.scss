@@ -17,7 +17,14 @@ $well-bg: $white;
  .navbar-brand {
   font-weight: bold;
   font-family: $font-family-sans-serif;
+   //padding-top: 10px;
+   //padding-bottom: 15px;
+   padding: 18px 15px;
+   line-height: 24px;
+   height: 60px;
  }
- .navbar-links {
-  padding-top: 10px;
+ .navbar-nav>li>a {
+   padding-top: 18px;
+   padding-bottom: 18px;
+   line-height: 24px;
  }

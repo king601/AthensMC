@@ -1,36 +1,31 @@
-<!-- Start Header -->
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<header class="navbar navbar-default navbar-inverse navbar-static-top" role="banner">
   <div class="container">
- <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-links">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <div class="navbar-text">
-    <%= link_to image_tag("athensLogo.png", :width  => "229", :height => "40"), root_path %>
-    </div>
-    <% link_to "AthensMC", root_path, class: "navbar-brand" %>
-  </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#athensmc-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= image_tag('athensLogo.png', :width  => '171', :height => '30') %>
+      <% end %>
+    </div> <!-- ./navbar-header -->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse navbar-links">
+    <nav id="athensmc-navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
           <!-- Servers Dropdown -->
           <li class="dropdown">
             <%= link_to raw(("<i class='fa fa-inverse fa-server'></i> &nbsp;") + "Servers" +(" <i class='fa fa-caret-down'></i>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
-                <li role="presentation" class="dropdown-header">Minecraft</li>
                 <li>
                   <%= link_to servers_rrr_path do %>
-                    <i class="fa fa-th-large fa-fw"></i> &nbsp; Rockets Rifles Robots
+                    <%= fa_icon 'th-large fa-fw', text: 'Rockets Rifles Robots' %>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to servers_snapshot_path do %>
-                    <i class="fa fa-camera-retro fa-fw"></i> &nbsp; Snapshot Survival
+                    <%= fa_icon 'camera-retro fa-fw', text: 'Snapshot Survival' %>
                   <% end %>
                 </li>
               </ul>
@@ -38,20 +33,18 @@
             <!-- End Servers Dropdown -->
           <li>
             <%= link_to information_path do %>
-              <i class="fa fa-info-circle"></i> &nbsp; Support
+              <%= fa_icon 'info-circle', text: 'Support' %>
             <% end %>
           </li>
 
           <li>
             <%= link_to "http://forums.athensmc.com" do %>
-              <i class="fa fa-weixin"></i> &nbsp;
-              Forums
+              <%= fa_icon 'weixin', text: 'Forums' %>
             <% end %>
           </li>
 
 
-          <% if user_signed_in? #User is signed in, so show account dropdown and signed in links... %>
-
+          <% if user_signed_in? %>
             <li class="dropdown"> <!-- Signed In Dropdown -->
             <%= link_to raw(("<i class='fa fa-inverse fa-home'></i> &nbsp;") + "#{current_user.username}" +(" <i class='fa fa-caret-down'></i>")), information_path, :class => "dropdown-toggle", :data => {:toggle=>"dropdown"}  %>
               <ul class="dropdown-menu">
@@ -88,22 +81,21 @@
               </ul>
             </li> <!-- End User Signed In Dropdown -->
 
-          <% else #User is not signed in, so show sign in and create buttons %>
+          <% else %>
             <li>
               <%= link_to new_user_session_path do %>
-                <i class="fa fa-sign-in"></i> &nbsp;
-                Sign In
+                <%= fa_icon 'sign-in', text: 'Sign In' %>
               <% end %>
             </li>
            <li>
               <%= link_to new_user_registration_path do %>
-                <i class="fa fa-user-plus"></i> &nbsp;
-                Create Account
+                <%= fa_icon 'user-plus', text: 'Sign Up' %>
               <% end %>
             </li>
+
           <% end %>
 
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- End Container to help pull in navbar content-->
-</nav> <!-- End Header -->
+    </nav> <!-- navbar-collapse -->
+  </div> <!-- ./container -->
+</header>
