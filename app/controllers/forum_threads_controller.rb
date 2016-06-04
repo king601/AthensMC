@@ -3,7 +3,7 @@ class ForumThreadsController < ApplicationController
   before_action :set_forum_thread, except: [:index, :new, :create]
 
   def index
-    @forum_threads = ForumThread.all.paginate(page: params[:page], per_page: 10)
+    @forum_threads = ForumThread.all.includes(:forum_posts).order("forum_posts.created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def new
