@@ -97,3 +97,6 @@ gem 'chartkick', '~> 1.4.1'
 
 # Group things by their dates
 gem 'groupdate'
+
+# Trix editor by basecamp
+gem 'trix'

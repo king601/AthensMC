@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require local_time
+//= require trix
 //= require_tree .
 
 //$(function () {

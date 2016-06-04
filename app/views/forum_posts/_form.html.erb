@@ -1,6 +1,6 @@
 <%= form_for [@forum_thread, @forum_post] do |f| %>
   <div class="form-group">
-    <%= f.text_area :body, placeholder: "Write your reply", rows: 10, class: "form-control" %>
+    <%= f.trix_editor :body, placeholder: "Write your reply" %>
   </div>
 
   <div class="form-group">
