@@ -1,4 +1,16 @@
-<%= div_for forum_post do %>
-  <p class="text-muted">Posted by <%= forum_post.user.username %> <%= local_time_ago forum_post.created_at %></p>
-  <p><%= markdownify forum_post.body %></p>
+<%= div_for forum_post, class: forum_post_classes(forum_post) do %>
+  <div class="forum-post-header">
+    <%= link_to user_path(forum_post.user.username) do %>
+
+      <%= image_tag forum_post.user.minecraft_avatar %>
+      <p class="text-muted">
+        <strong><%= forum_post.user.username %></strong>
+    <% end %>
+    <%= user_badges(forum_post.user) %>
+       posted <%= local_time_ago forum_post.created_at %>:</p>
+  </div>
+  <div class="forum-post-body">
+    <p><%= forum_post.body %></p>
+  </div>
+
 <% end %>

@@ -1,5 +1,8 @@
 <% page_title "New Forum Post" %>
 <div class="well">
+  <%= link_to forum_threads_path do %>
+    <%= fa_icon "arrow-left", text: "Back to the forum" %>
+  <% end %>
   <h1 class="page-header">New Thread</h1>
 
   <%= render "form" %>

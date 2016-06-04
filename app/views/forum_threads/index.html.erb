@@ -8,4 +8,8 @@
   </h1>
 
   <%= render @forum_threads %>
+
+	<div class="center">
+	  <%= will_paginate @forum_threads, renderer: BootstrapPagination::Rails %>
+	</div>
 </div>

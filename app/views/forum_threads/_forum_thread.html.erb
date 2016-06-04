@@ -1,9 +1,10 @@
 <%= link_to forum_thread, class: 'forum-thread-card' do %>
   <h3><%= forum_thread.subject %></h3>
+  
     <div class="pull-right">
       <small><%= forum_thread.forum_posts.count %> posts</small>
-
     </div>
+
     <div class="text-muted">
       <%= image_tag forum_thread.user.minecraft_avatar %>  <%= forum_thread.user.username %> asked on <%= local_time forum_thread.created_at %>
     </div>

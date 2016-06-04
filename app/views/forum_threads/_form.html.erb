@@ -10,6 +10,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit "Create Forum Thread", class: "btn btn-primary btn-lg pull-right" %>
+    <%= link_to "Back to Forums", forum_threads_path, class: "btn btn-lg btn-default" %>
   </div>
 <% end %>
