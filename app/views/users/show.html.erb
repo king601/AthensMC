@@ -10,7 +10,7 @@
         <% end %>
         <%= @user.username %>'s Profile <small>(minecraft uuid: <%= @user.dashed_uuid %>)</small>
 
-</h1>
+</h1><%= user_badges(@user) %>
     </div>
   </div>
 

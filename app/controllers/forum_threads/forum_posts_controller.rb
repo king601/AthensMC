@@ -7,6 +7,7 @@ class ForumThreads::ForumPostsController < ApplicationController
     @forum_post.user = current_user
 
     if @forum_post.save
+      @forum_thread.touch(:last_post_created_at)
       redirect_to forum_thread_path(@forum_thread, anchor: "forum_post_#{@forum_post.id}"), notice: "Successfully posted!"
     else
       redirect_to @forum_thread, alert: "Unable to save your post"

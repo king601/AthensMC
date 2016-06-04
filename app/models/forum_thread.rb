@@ -4,7 +4,8 @@ class ForumThread < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :forum_posts
+  has_many :forum_posts, -> { order(:created_at => :ASC) }
+  
   # forum_thread.users
   has_many :users, through: :forum_posts
 

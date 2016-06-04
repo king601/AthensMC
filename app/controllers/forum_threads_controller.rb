@@ -3,7 +3,7 @@ class ForumThreadsController < ApplicationController
   before_action :set_forum_thread, except: [:index, :new, :create]
 
   def index
-    @forum_threads = ForumThread.all.includes(:forum_posts).order("forum_posts.created_at DESC").paginate(page: params[:page], per_page: 10)
+    @forum_threads = ForumThread.all.order("last_post_created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -16,6 +16,7 @@ class ForumThreadsController < ApplicationController
     @forum_thread.forum_posts.first.user_id = current_user.id
 
     if @forum_thread.save
+      @forum_thread.touch(:last_post_created_at)
       redirect_to @forum_thread
     else
       render action: :new
