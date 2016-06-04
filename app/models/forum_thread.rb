@@ -1,4 +1,7 @@
 class ForumThread < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :subject, use: :slugged
+
   belongs_to :user
 
   has_many :forum_posts

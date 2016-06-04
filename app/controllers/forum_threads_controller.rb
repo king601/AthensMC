@@ -32,6 +32,6 @@ class ForumThreadsController < ApplicationController
     end
 
     def set_forum_thread
-      @forum_thread = ForumThread.find(params[:id])
+      @forum_thread = ForumThread.friendly.find(params[:id])
     end
 end
