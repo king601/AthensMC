@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221051245) do
+ActiveRecord::Schema.define(version: 20160604024050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,26 @@ ActiveRecord::Schema.define(version: 20151221051245) do
 
   add_index "casts", ["episode"], name: "index_casts_on_episode", unique: true, using: :btree
   add_index "casts", ["user_id"], name: "index_casts_on_user_id", using: :btree
+
+  create_table "forum_posts", force: :cascade do |t|
+    t.integer  "forum_thread_id"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "forum_posts", ["forum_thread_id"], name: "index_forum_posts_on_forum_thread_id", using: :btree
+  add_index "forum_posts", ["user_id"], name: "index_forum_posts_on_user_id", using: :btree
+
+  create_table "forum_threads", force: :cascade do |t|
+    t.string   "subject"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "forum_threads", ["user_id"], name: "index_forum_threads_on_user_id", using: :btree
 
   create_table "map_downloads", force: :cascade do |t|
     t.string   "name"
@@ -84,5 +104,8 @@ ActiveRecord::Schema.define(version: 20151221051245) do
   add_index "whitelist_requests", ["user_id"], name: "index_whitelist_requests_on_user_id", using: :btree
 
   add_foreign_key "casts", "users"
+  add_foreign_key "forum_posts", "forum_threads"
+  add_foreign_key "forum_posts", "users"
+  add_foreign_key "forum_threads", "users"
   add_foreign_key "whitelist_requests", "users"
 end

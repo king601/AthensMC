@@ -1,0 +1,11 @@
+<% page_title "Forums" %>
+<div class="well">
+  <h1 class="page-header">
+    <div class="pull-right">
+      <%= link_to "New Topic", new_forum_thread_path, class: 'btn btn-primary' %>
+    </div>
+    Community Discussion
+  </h1>
+
+  <%= render @forum_threads %>
+</div>

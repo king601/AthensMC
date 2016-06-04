@@ -1,0 +1,23 @@
+.forum-thread-card {
+  display: block;
+  color: #666;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  h3 {
+    // This makes the forum thread title behave and not use so much space above
+    margin-top: 5px;
+  }
+}
+.forum-thread-card:hover {
+    text-decoration: none;
+    background-color: $athens_grey;
+  }
+.forum-thread-card, a {
+  text-decoration: none;
+  background-color: transparent;
+}
