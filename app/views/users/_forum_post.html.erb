@@ -1,0 +1,16 @@
+<%= div_for forum_post do %>
+  <div class="forum-post-header">
+    <%= link_to user_path(forum_post.user.username) do %>
+
+      <%= image_tag forum_post.user.minecraft_avatar %>
+      <p class="text-muted">
+        <strong><%= forum_post.user.username %></strong>
+    <% end %>
+
+       posted <%= local_time_ago forum_post.created_at %> in <strong><%= link_to forum_post.forum_thread.subject, forum_thread_path(forum_post.forum_thread) %></strong>:</p>
+  </div>
+  <div class="forum-post-body">
+    <%= html_render forum_post.body  %>
+  </div>
+
+<% end %>
