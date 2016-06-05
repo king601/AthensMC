@@ -7,6 +7,9 @@ class ForumThreadsController < ApplicationController
   end
 
   def edit
+    if @forum_thread.user != current_user
+      redirect_to @forum_thread, alert: 'You cannot edit that post.'
+    end
   end
 
   def update
