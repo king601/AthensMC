@@ -6,6 +6,17 @@ class ForumThreadsController < ApplicationController
     @forum_threads = ForumThread.all.order("last_post_created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
+  def edit
+  end
+
+  def update
+    if @forum_thread.update(forum_thread_params)
+      redirect_to @forum_thread, notice: 'Updated title of Forum Thread'
+    else
+      render 'edit', alert: 'An unknown error occurred, please try again.'
+    end
+  end
+
   def new
     @forum_thread = current_user.forum_threads.build
     @forum_thread.forum_posts.new

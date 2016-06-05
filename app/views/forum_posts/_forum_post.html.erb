@@ -1,5 +1,12 @@
 <%= div_for forum_post, class: forum_post_classes(forum_post) do %>
   <div class="forum-post-header">
+    <div class="pull-right">
+    <% if forum_post.user == current_user %>
+      <%= link_to edit_forum_thread_forum_post_path(forum_post.forum_thread, forum_post) do %>
+        <%= fa_icon "pencil" %>
+      <% end %>
+    <% end %>
+    </div>
     <%= link_to user_path(forum_post.user.username) do %>
 
       <%= image_tag forum_post.user.minecraft_avatar %>

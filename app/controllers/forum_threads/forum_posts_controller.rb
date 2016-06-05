@@ -14,6 +14,20 @@ class ForumThreads::ForumPostsController < ApplicationController
     end
   end
 
+  def edit
+    @forum_post = current_user.forum_posts.find(params[:id])
+  end
+
+  def update
+    @forum_post = current_user.forum_posts.find(params[:id])
+
+    if @forum_post.update(forum_post_params)
+      redirect_to @forum_thread, notice: 'Your post has been updated!'
+    else
+      render 'edit', alert: 'error occurred'
+    end
+  end
+
   private
 
     def set_forum_thread

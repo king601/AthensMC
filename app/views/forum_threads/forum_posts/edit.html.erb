@@ -1,0 +1,9 @@
+<% page_title "Editing Post" %>
+<div class="well">
+  <%= link_to forum_thread_path(@forum_thread) do %>
+    <%= fa_icon "arrow-left", text: "Back to the thread" %>
+  <% end %>
+  <h1 class="page-header">Editing reply on: <%= @forum_thread.subject %></h1>
+
+  <%= render "form" %>
+</div>
