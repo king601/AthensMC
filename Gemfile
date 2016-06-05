@@ -42,8 +42,8 @@ group :development, :test do
   gem 'spring'
 
   #Better Errors
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  #gem 'better_errors'
+  #gem 'binding_of_caller'
 
   #be quiet asset pipeline pls
   gem 'quiet_assets'
@@ -100,3 +100,6 @@ gem 'groupdate'
 
 # Trix editor by basecamp
 gem 'trix'
+
+# GoErrors
+gem "go_errors", github: "excid3/go_errors-rubygem"

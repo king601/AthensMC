@@ -1,6 +1,9 @@
 <%= link_to forum_thread, class: 'forum-thread-card' do %>
-  <h3><%= forum_thread.subject %></h3>
-  
+  <h3>  <% if forum_thread.sticky? %>
+      <%= fa_icon "thumb-tack" %>
+    <% end %>
+    <%= forum_thread.subject %></h3>
+
     <div class="pull-right">
       <small><%= forum_thread.forum_posts.count %> posts</small>
     </div>

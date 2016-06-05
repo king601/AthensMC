@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/excid3/go_errors-rubygem.git
+  revision: 769640614eeb0300b0ec56f22e0e9b5059ca9c40
+  specs:
+    go_errors (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,10 +47,6 @@ GEM
       execjs
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
-    better_errors (2.1.1)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -66,7 +68,6 @@ GEM
       capistrano (~> 3.0)
       sshkit (~> 1.2)
     chartkick (1.4.2)
-    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -228,8 +229,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  better_errors
-  binding_of_caller
   bootstrap-sass (~> 3.3.6)
   byebug
   capistrano (= 3.4.0)
@@ -242,6 +241,7 @@ DEPENDENCIES
   font-awesome-rails
   friendly_id (~> 5.1.0)
   github-markdown
+  go_errors!
   groupdate
   html-pipeline
   jbuilder (~> 2.0)
