@@ -1,6 +1,6 @@
 class RevisionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_revision, only: [:show, :edit, :update, :destroy]
+  before_action :set_revision, only: [:show, :edit, :update, :destroy]
   before_action :check_admin_status, only: [:new, :edit, :create, :destroy, :update]
 
   def index
@@ -11,12 +11,10 @@ class RevisionsController < ApplicationController
   end
 
   def create
-    # render plain: params[:revision].inspect
-    # @revision = Revision.new(revision_params)
     @revision = current_user.revisions.build(revision_params)
 
     if @revision.save
-      redirect_to @revision
+      redirect_to @revision, notice: 'Revision has been posted to the site.'
     else
       render 'new'
     end
@@ -31,7 +29,7 @@ class RevisionsController < ApplicationController
 
   def update
     if @revision.update(revision_params)
-      redirect_to @revision
+      redirect_to @revision, notice: 'Revision has been updated.'
     else
       render 'edit'
     end
@@ -39,13 +37,12 @@ class RevisionsController < ApplicationController
 
   def destroy
     @revision.destroy
-
-    redirect_to revisions_path
+    redirect_to revisions_path, notice: 'Revision has been destroyed'
   end
 
   private
 
-  def find_revision
+  def set_revision
     @revision = Revision.find(params[:id])
     end
 

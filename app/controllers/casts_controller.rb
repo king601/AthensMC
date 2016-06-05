@@ -1,6 +1,6 @@
 class CastsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_cast, only: [:show, :edit, :update, :destroy]
+  before_action :set_cast, only: [:show, :edit, :update, :destroy]
   before_action :check_admin_status, only: [:new, :edit, :create, :destroy, :update]
 
   def index
@@ -49,7 +49,7 @@ class CastsController < ApplicationController
 
   private
 
-  def find_cast
+  def set_cast
     @cast = Cast.friendly.find(params[:id])
   end
 
