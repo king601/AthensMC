@@ -7,12 +7,12 @@
 
   <h2 class="page-header">
     <div class="pull-right text-muted">
-      <% if @forum_thread.sticky? && current_user.admin? %>
+      <% if user_signed_in? && @forum_thread.sticky? && current_user.admin? %>
         <%= link_to unsticky_forum_thread_path(@forum_thread), method: :patch do %>
           <%= fa_icon "thumb-tack", text: 'Unstick' %>
         <% end %>
 
-      <% elsif current_user.admin? %>
+      <% elsif user_signed_in? && current_user.admin? %>
 
         <%= link_to sticky_forum_thread_path(@forum_thread), method: :patch do %>
           <%= fa_icon "sticky-note", text: 'Stick' %>
