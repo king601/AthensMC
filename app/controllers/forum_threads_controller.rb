@@ -7,9 +7,7 @@ class ForumThreadsController < ApplicationController
   end
 
   def edit
-    if @forum_thread.user != current_user
-      redirect_to @forum_thread, alert: 'You cannot edit that post.'
-    end
+    redirect_to @forum_thread, alert: 'You cannot edit that post title.' unless current_user.admin? || current_user == @forum_thread.user
   end
 
   def update
@@ -39,6 +37,16 @@ class ForumThreadsController < ApplicationController
 
   def show
     @forum_post = ForumPost.new
+  end
+
+  def destroy
+    if current_user.admin?
+      @forum_thread.forum_posts.destroy_all
+      @forum_thread.destroy
+      redirect_to forum_threads_path, notice: 'Forum Thread has been removed.'
+    else
+      redirect_to @forum_thread, alert: 'Sorry you cannot remove that forum thread!'
+    end
   end
 
   def sticky
