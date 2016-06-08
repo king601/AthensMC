@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//=require jquery-ui
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require local_time
 //= require trix
+//= require highcharts
+//= require chartkick
 //= require_tree .
 
 //$(function () {
