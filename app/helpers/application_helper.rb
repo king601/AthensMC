@@ -20,4 +20,17 @@ module ApplicationHelper
     end
     nil
   end
+
+  def forum_post_classes(forum_post)
+    klasses = []
+    klasses << "original-poster" if forum_post.user == @forum_thread.user
+    klasses
+  end
+
+  def user_badges(user)
+    badges = []
+    badges << content_tag(:span, 'Admin', class: 'label label-danger') if user.admin?
+    badges << content_tag(:span, 'Whitelisted', class: 'label label-success') if user.whitelisted?
+    badges.join(' ').html_safe
+  end
 end

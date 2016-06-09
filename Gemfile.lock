@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/excid3/go_errors-rubygem.git
+  revision: 769640614eeb0300b0ec56f22e0e9b5059ca9c40
+  specs:
+    go_errors (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,10 +47,6 @@ GEM
       execjs
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
-    better_errors (2.1.1)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -65,8 +67,7 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-    chartkick (1.4.2)
-    coderay (1.1.1)
+    chartkick (2.0.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -204,6 +205,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    trix (0.9.7)
+      rails
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -226,20 +229,19 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  better_errors
-  binding_of_caller
   bootstrap-sass (~> 3.3.6)
   byebug
   capistrano (= 3.4.0)
   capistrano-bundler (~> 1.1.4)
   capistrano-rails (~> 1.1.2)
   capistrano-rvm (~> 0.1.2)
-  chartkick (~> 1.4.1)
+  chartkick (~> 2.0.0)
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
   font-awesome-rails
   friendly_id (~> 5.1.0)
   github-markdown
+  go_errors!
   groupdate
   html-pipeline
   jbuilder (~> 2.0)
@@ -256,6 +258,7 @@ DEPENDENCIES
   slack-notifier (~> 1.5.1)
   spring
   sucker_punch (~> 2.0)
+  trix
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

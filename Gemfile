@@ -42,8 +42,8 @@ group :development, :test do
   gem 'spring'
 
   #Better Errors
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  #gem 'better_errors'
+  #gem 'binding_of_caller'
 
   #be quiet asset pipeline pls
   gem 'quiet_assets'
@@ -93,7 +93,13 @@ gem 'jquery-ui-rails'
 gem 'slack-notifier', '~> 1.5.1'
 
 # Charts are cool!
-gem 'chartkick', '~> 1.4.1'
+gem 'chartkick', '~> 2.0.0'
 
 # Group things by their dates
 gem 'groupdate'
+
+# Trix editor by basecamp
+gem 'trix'
+
+# GoErrors
+gem "go_errors", github: "excid3/go_errors-rubygem"

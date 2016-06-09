@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <%= form_for [@forum_thread, @forum_post] do |f| %>
+    <div class="form-group">
+      <%= f.trix_editor :body, placeholder: "Write your reply" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Add your comment", class: "btn btn-primary btn-lg" %>
+    </div>
+  <% end %>
+<% else %>
+  <h3 class="text-center">You must <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> to reply!</h3>
+<% end %>

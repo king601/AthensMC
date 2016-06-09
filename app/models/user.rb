@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
 
   has_many :revisions
   has_many :casts
+  
+  has_many :forum_threads
+  has_many :forum_posts
   has_one :whitelist_request, dependent: :destroy
 
   attr_accessor :dashed_uuid

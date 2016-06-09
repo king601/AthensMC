@@ -1,0 +1,16 @@
+<%= form_for @forum_thread do |f| %>
+  <div class="form-group">
+    <%= f.text_field :subject, placeholder: "What do you have to say?", class: "form-control input-lg" %>
+  </div>
+
+  <%= f.fields_for :forum_posts do |p| %>
+    <div class="form-group">
+      <%= p.trix_editor :body, placeholder: "Add your comment" %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit "Create Forum Thread", class: "btn btn-primary btn-lg pull-right" %>
+    <%= link_to "Back to Forums", forum_threads_path, class: "btn btn-lg btn-default" %>
+  </div>
+<% end %>

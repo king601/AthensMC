@@ -4,9 +4,14 @@
 
  @import "athensmc/variables";
  @import "athensmc/bootstrap_and_customizations";
- @import "font-awesome";
-
+ @import "athensmc/forum";
+ @import "athensmc/profiles";
  @import "athensmc/turbolinks";
+
+ @import "font-awesome";
+ @import "trix";
+
+ @import "athensmc/trix";
 
 
  .text-middle {
