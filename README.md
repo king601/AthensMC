@@ -1,6 +1,8 @@
 # README
 Source code for the webapp for AthensMC.com
 
+This app works to improve communication and coordination between the community and the operators. 
+
 ## Rules for Commits
 * No Commented Out Code
 * Try and be clean with HTML/ERB
@@ -9,9 +11,6 @@ Source code for the webapp for AthensMC.com
 ## Roadmap
 * Add welcome email
 * Add repeating email every month that sends an email with instructions to users who aren't whitelisted/have a whitelist app existing.
-* Upgrade to Ruby 2.2.4 or 2.3.0 + test app to ensure it doesn't break anything
-* Forum System
-* User Profile Pages
 * Revisit whitelist System
 * @User Mentions / Emojis
 * Search across Forums / Site
@@ -19,9 +18,9 @@ Source code for the webapp for AthensMC.com
 * Make the Linking Minecraft flash message actually link/explain why we need to link accounts
 
 ## Setting up local development environment
-1. Install Ruby
+1. Install Ruby (2.3.1)
 2. Install Bundler
-3. Install Rails (v4.2.5 currently)
+3. Install Rails (v4.2.6 currently)
 4. Install PostgreSQL/all requirements for OS
 5. Run
   * `cp config/secrets.yml.example config/secrets.yml`
