@@ -8,14 +8,16 @@ class User < ActiveRecord::Base
 
   before_validation :set_uuid, if: :minecraft_uuid_changed?
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { in: 2..32 }
+  validates :username, uniqueness: { case_sensitive: false },
+                       presence: true, length: { in: 2..32 }
+
   validates :username, format: { message: 'can only contain letters, numbers, underscores or dashes.', with: /\A[A-Za-z0-9\-\_]+\z/ }
 
   validates :minecraft_uuid, presence: true, on: :update, if: :minecraft_uuid_changed?
 
   has_many :revisions
   has_many :casts
-  
+
   has_many :forum_threads
   has_many :forum_posts
   has_one :whitelist_request, dependent: :destroy
@@ -31,29 +33,31 @@ class User < ActiveRecord::Base
   end
 
   def whitelisted?
-    # Check to make sure they have a whitelist request, then check if its approved.
+    # Check to make sure they have a whitelist request && that is approved.
     whitelist_request && whitelist_request.status == 'approved'
   end
 
-  def set_uuid
-    self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid
-  rescue Exception => e
-  end
-
   def dashed_uuid
-    unless minecraft_uuid.nil?
+    if minecraft_uuid.present?
       uuid = minecraft_uuid.to_s
       "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{uuid[20..31]}"
     else
       'No UUID associated with this account'
     end
-   end
+  end
 
   def minecraft_avatar
-    unless minecraft_uuid.nil?
+    if minecraft_uuid.present?
       "https://crafatar.com/avatars/#{minecraft_uuid}?overlay&size=64"
     else
       'https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?overlay&size=64'
     end
   end
+
+  private
+
+  def set_uuid
+    self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid
+  end
+
 end
