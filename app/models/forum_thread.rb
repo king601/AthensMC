@@ -4,8 +4,8 @@ class ForumThread < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :forum_posts, -> { order(:created_at => :ASC) }
-  
+  has_many :forum_posts, -> { order(:created_at => :ASC) }, dependent: :destroy
+
   # forum_thread.users
   has_many :users, through: :forum_posts
 
