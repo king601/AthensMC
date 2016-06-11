@@ -1,0 +1,14 @@
+<li class="notification">
+
+  <%= link_to forum_thread_path(notification.notifiable.forum_thread) do %>
+    <small>
+      <%= image_tag(notification.actor.minecraft_avatar, width: '24px', height: '24px') %>
+      <strong><%= notification.actor.username %></strong> 
+      <%= notification.action %> a reply on: <br>
+
+      <strong><%= notification.notifiable.forum_thread.subject %></strong><br>
+
+      <%=  local_time_ago notification.created_at %>
+    </small>
+  <% end %>
+</li>

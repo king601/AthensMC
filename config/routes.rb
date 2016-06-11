@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   resources :downloads, only: [:index]
 
+  resources :notifications do
+      collection do
+        post :mark_as_read
+      end
+    end
   namespace :admin do
     resources :downloads
     resources :users do

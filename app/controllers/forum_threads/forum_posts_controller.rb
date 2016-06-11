@@ -7,6 +7,12 @@ class ForumThreads::ForumPostsController < ApplicationController
     @forum_post.user = current_user
 
     if @forum_post.save
+      
+      # Create Notifications for Posts
+      (@forum_thread.users.uniq - [current_user]).each do |user|
+        Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @forum_post)
+      end
+
       @forum_thread.touch(:last_post_created_at)
       redirect_to forum_thread_path(@forum_thread, anchor: "forum_post_#{@forum_post.id}"), notice: "Successfully posted!"
     else

@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
   has_many :forum_threads
   has_many :forum_posts
+  has_many :notifications, foreign_key: :recipient_id
   has_one :whitelist_request, dependent: :destroy
 
   attr_accessor :dashed_uuid
