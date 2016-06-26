@@ -2,7 +2,7 @@
 <div class="well">
   <h1 class="page-header">
     <div class="pull-right">
-      <%= link_to "New Topic", new_forum_thread_path, class: 'btn btn-primary' %>
+      <%= link_to "New Topic", new_forum_thread_path, class: 'btn btn-primary' if user_signed_in? %>
     </div>
     Community Discussion
   </h1>
