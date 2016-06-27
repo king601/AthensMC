@@ -2,7 +2,12 @@
 <div class="well">
   <h1 class="page-header">
     <div class="pull-right">
-      <%= link_to "New Topic", new_forum_thread_path, class: 'btn btn-primary' if user_signed_in? %>
+        <%= link_to "New Topic", new_forum_thread_path, class: 'btn btn-primary' if user_signed_in? %>
+    </div>
+    <div class="pull-right" style="margin-right: 10px">
+        <%= form_tag forum_threads_path, method: :get, class: 'form-inline' do %>
+          <%= text_field_tag :q, nil, placeholder: 'Search...', class: 'form-control' %>
+        <% end %>
     </div>
     Community Discussion
   </h1>
@@ -11,5 +16,6 @@
 
 	<div class="center">
 	  <%= will_paginate @forum_threads, renderer: BootstrapPagination::Rails %>
+    <p class="text-muted">About <%= @forum_threads.total_count %> results (took <%= @forum_threads.took %>ms)</p>
 	</div>
 </div>

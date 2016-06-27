@@ -3,7 +3,8 @@ class ForumThreadsController < ApplicationController
   before_action :set_forum_thread, except: [:index, :new, :create]
 
   def index
-    @forum_threads = ForumThread.all.order('sticky DESC, last_post_created_at DESC').paginate(page: params[:page], per_page: 10)
+    query = params[:q].presence || "*"
+    @forum_threads = ForumThread.search(query, order: { sticky: :desc, last_post_created_at: :desc }, page: params[:page], per_page: 10)
   end
 
   def edit
