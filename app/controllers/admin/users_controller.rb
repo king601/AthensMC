@@ -21,6 +21,10 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def email_list
+    @users = User.all.order('id ASC')
+  end
+
   def autocomplete
     # render json: User.search(
     #		params[:term],
