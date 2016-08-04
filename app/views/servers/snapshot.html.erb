@@ -1,9 +1,9 @@
-<% page_title "Snapshot Survival" %>
+<% page_title "Elemental Fury - Snapshot Survival" %>
 <!-- Start of Page Content -->
 <div class="well">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="eventswell jumbotron center">
+			<div class="jumbotron center">
 				<h2>Snapshot Survival Server</h2>
 			</div>
 		</div> <!-- /.col-md-12 -->
@@ -11,10 +11,8 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<div class="well well-sm serverwell">
+			<div class="well">
 				<h2>Snapshot Survival Server</h2>
-				<p>
-					AthensMC is currently hosting a snapshot survival server on the latest Minecraft vanilla snapshot. </p>
 				<p>
 					Because of the nature of snapshots, we cannot gurantee that the server will be bug-free. So if you're interested in checking out the latest snapshots but not <em>too</em> worried about your builds
 					this server is for you!
@@ -41,48 +39,13 @@
 		</div> <!-- /col-md-4 -->
 	</div> <!-- /.row -->
 	<div class="row">
-
      <div class="col-md-6">
-      <div class="well">
-        <h2>FAQ</h2>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  How do I get whitelisted?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  Do I have to subscribe to play/pay any money?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
-
-              </div>
-            </div>
-          </div>
-
-      </div> <!-- End FAQ -->
-    </div> <!-- End Well-->
+      <%= render 'faq' %>
     </div>
   <!-- Twitter Col- -->
     <div class="col-md-6">
         <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AthensMinecraft" data-widget-id="471126696138002432">Tweets by @AthensMinecraft</a>
-                <script src="//platform.twitter.com/widgets.js"></script>
+          <script src="//platform.twitter.com/widgets.js"></script>
       </div>
   </div>
 

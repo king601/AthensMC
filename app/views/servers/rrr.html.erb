@@ -55,75 +55,8 @@
     </div>
 
   <div class="row">
-
      <div class="col-md-6">
-      <div class="well">
-        <h2>FAQ</h2>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  How do I get whitelisted?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  Do I have to subscribe to play/pay any money?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
-
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  Can you add mod XYZ to the pack?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                  At this time, we’re not looking to add additional mods to this pack. We do offer other packs for shorter time periods on a regular basis, so let us know what your interests are and we may use those ideas for one of our “temporary” mod packs! And as is the case with every mod pack, sooner or later everyone gets a hankering for the “new shinies”. When that happens we’ll most likely launch a new version of this pack, and start the process over again. But not enough until Elynn gets caught up on her sleep ;)
-              </div>
-            </div>
-          </div>
-
-       <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                  What mods are in the pack?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-              <div class="panel-body">
-                 <table class="table table-bordered table-striped">
-                    <tr><td><strong>Mod List:</strong></td></tr>
-                    <tr><td>We have way too many awesome ones to list!</td></tr>
-                  </table>
-              </div>
-            </div>
-          </div>
-
-      </div> <!-- End FAQ -->
-    </div> <!-- End Well-->
+      <%= render 'faq' %>
     </div>
   <!-- Twitter Col- -->
     <div class="col-md-6">

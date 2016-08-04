@@ -1,0 +1,52 @@
+<div class="well">
+  <h2>FAQ</h2>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            How do I get whitelisted?
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <% if user_signed_in? && current_user.whitelist_request.status == "approved" %>
+            <h3>You're whitelisted! You can access this server!</h3>
+          <% else %>
+            If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+            Do I have to subscribe to play/pay any money?
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body">
+          We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. <strong>You do not need to pay to be whitelisted</strong> however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+            Can you add mod XYZ to the pack?
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse">
+        <div class="panel-body">
+            Our Snapshot Survival Server is running on vanilla Minecraft so we don't use any mods for it. But our Rockets Rifles Robots pack has many mods that were chosen to work the best together. If you have a suggestion you can submit it to the team and we'll consider it for the next round, but no promises!
+        </div>
+      </div>
+    </div>
+
+</div> <!-- End FAQ -->
+</div> <!-- End Well-->
