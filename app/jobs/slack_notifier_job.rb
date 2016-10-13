@@ -1,5 +1,5 @@
 require 'slack-notifier'
-class SlackNotifierJob < ActiveJob::Base
+class SlackNotifierJob < ApplicationJob
   queue_as :default
 
   def perform(whitelist_request)

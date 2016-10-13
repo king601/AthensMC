@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # searchkick text_start: [:username], callbacks: :async, suggest: [:username]
 
   # Include default devise modules. Others available are:

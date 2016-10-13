@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.7'
+gem 'rails', '~> 5.0.0'
+
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -10,7 +13,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -19,7 +22,10 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 2.5.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.5'
+
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 3.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -36,17 +42,13 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 
-  #Better Errors
-  #gem 'better_errors'
-  #gem 'binding_of_caller'
-
-  #be quiet asset pipeline pls
-  gem 'quiet_assets'
+  gem 'listen', '~> 3.0.5'
 
   # Use Capistrano for deployment
   gem 'capistrano', '3.4.0'
@@ -55,6 +57,8 @@ group :development, :test do
   gem 'capistrano-rvm', '~> 0.1.2'
 end
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Formatting for Text Stuff!
 gem 'html-pipeline'
@@ -69,7 +73,7 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'local_time', '~> 1.0.3'
 
 # User Accounts
-gem 'devise', '~> 3.4.1'
+gem 'devise', '~> 4.1.1'
 
 #Postgres for deployment
 gem 'pg'
@@ -100,3 +104,6 @@ gem 'groupdate'
 
 # Trix editor by basecamp
 gem 'trix'
+
+# Record Tag helper gem for div_for
+gem 'record_tag_helper', '~> 1.0'

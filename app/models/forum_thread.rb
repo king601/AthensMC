@@ -1,4 +1,4 @@
-class ForumThread < ActiveRecord::Base
+class ForumThread < ApplicationRecord
   searchkick callbacks: :async
   extend FriendlyId
   friendly_id :subject, use: :slugged

@@ -1,4 +1,4 @@
-class Cast < ActiveRecord::Base
+class Cast < ApplicationRecord
   extend FriendlyId
   friendly_id :episode, use: :slugged
 

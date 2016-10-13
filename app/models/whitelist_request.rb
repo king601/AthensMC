@@ -1,4 +1,4 @@
-class WhitelistRequest < ActiveRecord::Base
+class WhitelistRequest < ApplicationRecord
   belongs_to :user
 
   validates :agree_rules, presence: { message: 'You need to agree to the Community Rules' }
