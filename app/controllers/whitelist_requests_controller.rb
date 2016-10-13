@@ -16,7 +16,7 @@ class WhitelistRequestsController < ApplicationController
     if @whitelist_request.save
       redirect_to root_path, notice: "You've submitted your request to join. You should receive an email in 24-48 hours with a response."
       # WhitelistMailer.request_received(current_user).deliver_later
-      SlackNotifierJob.perform_later(@whitelist_request) unless Rails.env.development?
+    #  SlackNotifierJob.perform_later(@whitelist_request) unless Rails.env.development?
     else
       render 'index', alert: 'An error occurred while submitting your request. Please try again.'
     end

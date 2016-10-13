@@ -1,6 +1,8 @@
 class WhitelistRequest < ApplicationRecord
   belongs_to :user
 
+  after_create :create_slack_notification unless Rails.env.development?
+
   validates :agree_rules, presence: { message: 'You need to agree to the Community Rules' }
 
   scope :status, -> (status) { where(status: status) } # WhitelistRequest.status("pending") || WhitelistRequest.status("approved")
@@ -11,4 +13,10 @@ class WhitelistRequest < ApplicationRecord
 
   scope :last_month, -> { where('created_at  BETWEEN ? AND ?', 1.month.ago,
     Time.zone.now.beginning_of_month) }
+
+  private
+
+  def create_slack_notification
+    SlackNotifierJob.perform_later(self)
+  end
 end
