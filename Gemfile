@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.5.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -62,11 +62,11 @@ gem 'github-markdown'
 gem 'sanitize'
 
 # Pagination
-gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate', '~> 3.1.3'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 #Local Time
-gem 'local_time', '~> 1.0.2'
+gem 'local_time', '~> 1.0.3'
 
 # User Accounts
 gem 'devise', '~> 3.4.1'
@@ -100,6 +100,3 @@ gem 'groupdate'
 
 # Trix editor by basecamp
 gem 'trix'
-
-# GoErrors
-gem "go_errors", github: "excid3/go_errors-rubygem"
