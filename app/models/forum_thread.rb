@@ -1,6 +1,8 @@
 # ForumThread
 class ForumThread < ApplicationRecord
   searchkick callbacks: :async
+  scope :search_import, -> { includes(:forum_posts) }
+
   extend FriendlyId
   friendly_id :subject, use: :slugged
 
@@ -15,4 +17,11 @@ class ForumThread < ApplicationRecord
 
   validates :subject, presence: true
   validates_associated :forum_posts
+
+  def search_data
+    attributes.merge(
+      subject: subject,
+      forum_posts: forum_posts
+     )
+  end
 end
