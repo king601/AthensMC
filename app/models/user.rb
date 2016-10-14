@@ -17,13 +17,14 @@ class User < ApplicationRecord
     with: /\A[A-Za-z0-9\-\_]+\z/
   }
 
-  validates :minecraft_uuid, presence: true, on: :update, if: :minecraft_uuid_changed?
+  validates :minecraft_uuid, presence: true, on: :update,
+                            if: :minecraft_uuid_changed?
 
-  has_many :revisions
-  has_many :casts
+  has_many :revisions, dependent: :destroy
+  has_many :casts, dependent: :destroy
 
-  has_many :forum_threads
-  has_many :forum_posts
+  has_many :forum_threads, dependent: :destroy
+  has_many :forum_posts, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
   has_one :whitelist_request, dependent: :destroy
 
