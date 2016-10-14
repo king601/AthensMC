@@ -1,3 +1,4 @@
+# User
 class User < ApplicationRecord
   # searchkick text_start: [:username], callbacks: :async, suggest: [:username]
 
@@ -11,7 +12,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: { case_sensitive: false },
                        presence: true, length: { in: 2..32 }
 
-  validates :username, format: { message: 'can only contain letters, numbers, underscores or dashes.', with: /\A[A-Za-z0-9\-\_]+\z/ }
+  validates :username, format: {
+    message: 'can only contain letters, numbers, underscores or dashes.',
+    with: /\A[A-Za-z0-9\-\_]+\z/ }
 
   validates :minecraft_uuid, presence: true, on: :update, if: :minecraft_uuid_changed?
 

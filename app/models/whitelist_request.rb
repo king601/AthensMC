@@ -1,3 +1,4 @@
+# WhitelistRequest
 class WhitelistRequest < ApplicationRecord
   belongs_to :user
 

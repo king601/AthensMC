@@ -1,4 +1,6 @@
 require 'slack-notifier'
+
+# SlackNotifierJob
 class SlackNotifierJob < ApplicationJob
   queue_as :default
 

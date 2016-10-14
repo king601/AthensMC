@@ -1,3 +1,4 @@
+# ForumThread
 class ForumThread < ApplicationRecord
   searchkick callbacks: :async
   extend FriendlyId
