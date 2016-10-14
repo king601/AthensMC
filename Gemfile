@@ -72,8 +72,9 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 #Local Time
 gem 'local_time', '~> 1.0.3'
 
-# User Accounts
+# User Accounts & Authentication
 gem 'devise', '~> 4.1.1'
+gem 'pundit', '~> 1.1.0'
 
 #Postgres for deployment
 gem 'pg'
