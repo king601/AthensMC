@@ -14,7 +14,8 @@ class User < ApplicationRecord
 
   validates :username, format: {
     message: 'can only contain letters, numbers, underscores or dashes.',
-    with: /\A[A-Za-z0-9\-\_]+\z/ }
+    with: /\A[A-Za-z0-9\-\_]+\z/
+                               }
 
   validates :minecraft_uuid, presence: true, on: :update, if: :minecraft_uuid_changed?
 
