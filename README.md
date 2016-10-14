@@ -1,7 +1,7 @@
 # README
 Source code for the webapp for AthensMC.com
 
-This app works to improve communication and coordination between the community and the operators. 
+This app works to improve communication and coordination between the community and the operators.
 
 ## Rules for Commits
 * No Commented Out Code
@@ -20,17 +20,25 @@ This app works to improve communication and coordination between the community a
 ## Setting up local development environment
 1. Install Ruby (2.3.1)
 2. Install Bundler
-3. Install Rails (v4.2.6 currently)
+3. Install Rails (5.0.0.1 currently)
 4. Install PostgreSQL/all requirements for OS
 5. Run
   * `cp config/secrets.yml.example config/secrets.yml`
   * `cp config/database.yml.example config/database.yml`
   * Make the changes to config/secrets.yml and config/database.yml relating to your development install. Then continue.
   * `bundle install`
-  * `rake db:create`
-  * `rake db:migrate`
+  * `rails db:create`
+  * `rails db:migrate`
 
 Then you should be good to go!
 
-You can start the development server locally by running:
-`rails server`
+## Server
+We don't explicitly require you to use Foreman but if you're so inclined..
+
+`gem install foreman`
+
+Then you can start the server with the included Procfile by running
+
+```
+foreman start -f Procfile.dev
+```
