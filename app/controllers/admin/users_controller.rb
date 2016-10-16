@@ -3,9 +3,9 @@ class Admin::UsersController < ApplicationController
   before_action :check_admin_status?, except: [:whitelisted]
 
   def index
-    @users = User.order('id ASC').paginate(page: params[:page], per_page: 20)
-    # query = params[:q].presence || "*"
-    # @users = User.search query, misspellings: {below: 5}, page: params[:page], per_page: 10, suggest: true
+    #@users = User.order('id ASC').paginate(page: params[:page], per_page: 20)
+     query = params[:q].presence || "*"
+     @users = User.search query, misspellings: {below: 5}, page: params[:page], per_page: 10, suggest: true
   end
 
   def show
@@ -26,11 +26,11 @@ class Admin::UsersController < ApplicationController
   end
 
   def autocomplete
-    # render json: User.search(
-    #		params[:term],
-    #		fields: [{username: :text_start}],
-    #			limit: 10,
-    #    misspellings: {below: 5}
-    #		).map(&:username)
+    render json: User.search(
+    		params[:term],
+    		fields: [{username: :text_start}],
+    			limit: 10,
+       misspellings: {below: 5}
+    		).map(&:username)
   end
 end

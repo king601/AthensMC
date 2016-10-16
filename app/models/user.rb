@@ -1,6 +1,6 @@
 # User
 class User < ApplicationRecord
-  # searchkick text_start: [:username], callbacks: :async, suggest: [:username]
+  searchkick text_start: [:username], callbacks: :async, suggest: [:username]
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

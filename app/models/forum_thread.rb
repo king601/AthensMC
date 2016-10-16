@@ -1,6 +1,6 @@
 # ForumThread
 class ForumThread < ApplicationRecord
-  searchkick callbacks: :async
+  searchkick fields: ["subject^10", "forum_posts"], callbacks: :async
   scope :search_import, -> { includes(:forum_posts) }
 
   extend FriendlyId
