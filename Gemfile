@@ -36,8 +36,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 #Font Awesome for Visual Improvements
 gem 'font-awesome-rails'
 
-#New for Rails 4.2.0
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -55,6 +54,11 @@ group :development, :test do
   gem 'capistrano-bundler', '~> 1.1.4'
   gem 'capistrano-rails', '~> 1.1.2'
   gem 'capistrano-rvm', '~> 0.1.2'
+end
+
+group :test do
+  gem 'minitest-rails', '~> 3.0'
+  gem 'minitest-rails-capybara'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
