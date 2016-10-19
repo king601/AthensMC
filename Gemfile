@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -13,25 +13,22 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2.0'
+gem 'coffee-rails', '~> 4.2.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 2.5.3'
+gem 'turbolinks', github: 'turbolinks/turbolinks-classic'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.6'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
 #Bootstrap for HTML framework
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.3.7'
 
 #Font Awesome for Visual Improvements
 gem 'font-awesome-rails'
@@ -70,14 +67,14 @@ gem 'github-markdown'
 gem 'sanitize'
 
 # Pagination
-gem 'will_paginate', '~> 3.1.3'
+gem 'will_paginate', '~> 3.1.5'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 #Local Time
 gem 'local_time', '~> 1.0.3'
 
 # User Accounts & Authentication
-gem 'devise', '~> 4.1.1'
+gem 'devise', '~> 4.2.0'
 gem 'pundit', '~> 1.1.0'
 
 #Postgres for deployment
