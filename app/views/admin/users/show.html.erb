@@ -1,7 +1,8 @@
-<% page_title "Admining: " + @users.username %>
+<% page_title "Admining: " + @user.username %>
 
 <div class="page-header">
-  <h1> <%= image_tag @users.minecraft_avatar %> <%=@users.username %> <small><%= @users.minecraft_uuid %></small></h1>
+  <h1> <%= image_tag @user.minecraft_avatar %> <%= @user.username %>
+    <small><%= @user.minecraft_uuid %></small></h1>
   <h3>Information</h3>
 </div>
 Things I want to see for the user:

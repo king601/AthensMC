@@ -1,12 +1,28 @@
-Rails:
-  Enabled: true
-  
-AllCops:
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-  Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
-    - !ruby/regexp /old_and_unused\.rb$/
+Style/AlignArray:
+  Enabled: false
+Style/AlignHash:
+  Enabled: false
+Style/AlignParameters:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Style/MultilineOperationIndentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ClosingParenthesisIndentation:
+  Enabled: false
+LineLength:
+  Max: 80
+ExtraSpacing:
+  Enabled: false
+AbcSize:
+  Enabled: false
+Style/SpaceBeforeFirstArg:
+  Enabled: false
+AmbiguousOperator:
+  Enabled: false
+MultilineMethodCallIndentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false

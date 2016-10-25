@@ -1,5 +1,6 @@
-class User < ActiveRecord::Base
-  # searchkick text_start: [:username], callbacks: :async, suggest: [:username]
+# User
+class User < ApplicationRecord
+  searchkick text_start: [:username], callbacks: :async, suggest: [:username]
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,15 +12,19 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: { case_sensitive: false },
                        presence: true, length: { in: 2..32 }
 
-  validates :username, format: { message: 'can only contain letters, numbers, underscores or dashes.', with: /\A[A-Za-z0-9\-\_]+\z/ }
+  validates :username, format: {
+    message: 'can only contain letters, numbers, underscores or dashes.',
+    with: /\A[A-Za-z0-9\-\_]+\z/
+  }
 
-  validates :minecraft_uuid, presence: true, on: :update, if: :minecraft_uuid_changed?
+  validates :minecraft_uuid, presence: true, on: :update,
+                            if: :minecraft_uuid_changed?
 
-  has_many :revisions
-  has_many :casts
+  has_many :revisions, dependent: :destroy
+  has_many :casts, dependent: :destroy
 
-  has_many :forum_threads
-  has_many :forum_posts
+  has_many :forum_threads, dependent: :destroy
+  has_many :forum_posts, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
   has_one :whitelist_request, dependent: :destroy
 

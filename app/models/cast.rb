@@ -1,4 +1,5 @@
-class Cast < ActiveRecord::Base
+# Cast - For AthensCast youtube episodes
+class Cast < ApplicationRecord
   extend FriendlyId
   friendly_id :episode, use: :slugged
 
