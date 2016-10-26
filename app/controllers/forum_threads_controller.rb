@@ -1,14 +1,13 @@
 class ForumThreadsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_forum_thread, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: %w(index show)
+  before_action :set_forum_thread, except: %w(index new create)
 
   def index
-    query = params[:q].presence || "*"
-    @forum_threads = ForumThread.search(query, order: { sticky: :desc, last_post_created_at: :desc }, page: params[:page], per_page: 10)
+    @forum_threads = ForumThread.search(search_query, search_params)
+    authorize @forum_threads
   end
 
   def edit
-    redirect_to @forum_thread, alert: 'You cannot edit that post title.' unless current_user.admin? || current_user == @forum_thread.user
   end
 
   def update
@@ -22,11 +21,13 @@ class ForumThreadsController < ApplicationController
   def new
     @forum_thread = current_user.forum_threads.build
     @forum_thread.forum_posts.new
+    authorize @forum_thread
   end
 
   def create
     @forum_thread = current_user.forum_threads.build(forum_thread_params)
     @forum_thread.forum_posts.first.user_id = current_user.id
+    authorize @forum_thread
 
     if @forum_thread.save
       @forum_thread.touch(:last_post_created_at)
@@ -41,13 +42,9 @@ class ForumThreadsController < ApplicationController
   end
 
   def destroy
-    if current_user.admin?
-      @forum_thread.forum_posts.destroy_all
-      @forum_thread.destroy
-      redirect_to forum_threads_path, notice: 'Forum Thread has been removed.'
-    else
-      redirect_to @forum_thread, alert: 'Sorry you cannot remove that forum thread!'
-    end
+    @forum_thread.forum_posts.destroy_all
+    @forum_thread.destroy
+    redirect_to forum_threads_path, notice: 'Forum Thread has been removed.'
   end
 
   def sticky
@@ -61,11 +58,25 @@ class ForumThreadsController < ApplicationController
   end
 
   private
-    def forum_thread_params
-      params.require(:forum_thread).permit(:subject, forum_posts_attributes: [:body])
-    end
 
-    def set_forum_thread
-      @forum_thread = ForumThread.friendly.find(params[:id])
-    end
+  def forum_thread_params
+    params.require(:forum_thread).permit(:subject, forum_posts_attributes: [:body])
+  end
+
+  def set_forum_thread
+    @forum_thread = ForumThread.friendly.find(params[:id])
+    authorize @forum_thread
+  end
+
+  def search_query
+    params[:q].presence || "*"
+  end
+
+  def search_params
+    {
+     order: { sticky: :desc, last_post_created_at: :desc },
+     page: params[:page],
+     per_page: 10
+    }
+  end
 end
