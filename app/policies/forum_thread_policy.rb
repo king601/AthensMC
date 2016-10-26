@@ -1,3 +1,4 @@
+# ForumThreadPolicy
 class ForumThreadPolicy < ApplicationPolicy
   attr_reader :user, :forum_thread
 
@@ -24,6 +25,7 @@ class ForumThreadPolicy < ApplicationPolicy
     end
   end
 
+  # ForumThreadPolicy Scope
   class Scope < Scope
     def resolve
       scope
