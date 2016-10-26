@@ -75,8 +75,7 @@ class ForumThreadsController < ApplicationController
   def search_params
     {
      order: { sticky: :desc,
-              last_post_created_at: :desc
-            },
+              last_post_created_at: :desc },
      page: params[:page],
      per_page: 10
     }
