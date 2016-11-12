@@ -3,9 +3,8 @@ class Admin::UsersController < ApplicationController
   before_action :authenticate_user!, except: [:whitelisted]
 
   def index
-     @users = User.search(search_params, additional_params)
-
-     authorize [:admin, @users]
+    @users = User.search(search_params, additional_params)
+    authorize [:admin, @users]
   end
 
   def show
