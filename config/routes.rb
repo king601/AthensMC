@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :revisions
   resources :casts
 
-  resources :downloads, only: [:index]
+  resources :downloads, only: %w(index)
 
   resources :notifications do
       collection do
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       end
     end
   namespace :admin do
+    resources :bans
     resources :downloads
     resources :users do
       collection do
@@ -39,11 +40,11 @@ Rails.application.routes.draw do
   end
 
   resources :forum_threads, path: 'forum' do
-   resources :forum_posts, path: 'posts', module: :forum_threads
-   member do
-     patch :sticky
-     patch :unsticky
-   end
+    resources :forum_posts, path: 'posts', module: :forum_threads
+    member do
+       patch :sticky
+      patch :unsticky
+    end
   end
   root 'pages#home'
 
@@ -57,5 +58,4 @@ Rails.application.routes.draw do
   get 'servers/rrr' => 'servers#rrr'
   get 'servers/direwolf20' => 'servers#direwolf20'
   get 'servers/snapshot' => 'servers#snapshot'
-
 end
