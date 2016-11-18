@@ -22,7 +22,6 @@ class User < ApplicationRecord
 
   has_many :revisions, dependent: :destroy
   has_many :casts, dependent: :destroy
-
   has_many :forum_threads, dependent: :destroy
   has_many :forum_posts, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
@@ -65,5 +64,4 @@ class User < ApplicationRecord
   def set_uuid
     self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid
   end
-
 end
