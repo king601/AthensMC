@@ -2,7 +2,7 @@
 class WhitelistRequest < ApplicationRecord
   belongs_to :user
 
-  after_create :create_slack_notification unless Rails.env.development?
+  after_create_commit :create_slack_notification unless Rails.env.development?
 
   validates :agree_rules, presence: { message: 'You need to agree to the Community Rules' }
 
