@@ -4,7 +4,7 @@ class Notifications
     @loadNotifications()
 
     if !window.notifications_interval?
-      window.notifications_interval = setInterval(@loadNotifications, 5000)
+      window.notifications_interval = setInterval(@loadNotifications, 10000)
 
   setEvents: ->
     $("[data-behavior='notifications']").on "click", @handleClick
