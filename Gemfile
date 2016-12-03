@@ -33,6 +33,9 @@ gem 'bootstrap-sass', '~> 3.3.7'
 #Font Awesome for Visual Improvements
 gem 'font-awesome-rails'
 
+# Decorators
+gem 'draper', '~> 3.0.0.pre1'
+
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
