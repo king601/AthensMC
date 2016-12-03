@@ -4,7 +4,9 @@ class Admin::WhitelistRequestsController < ApplicationController
   before_action :set_whitelist_id, only: [:approve, :deny, :destroy]
 
   def index
-    @whitelist_requests = WhitelistRequest.order('created_at DESC')
+    @whitelist_requests = Admin::WhitelistRequestDecorator.decorate_collection(
+      WhitelistRequest.order('created_at DESC')
+    )
   end
 
   def charts
@@ -14,22 +16,28 @@ class Admin::WhitelistRequestsController < ApplicationController
   end
 
   def pending
-    @whitelist_requests = WhitelistRequest.status('pending')
+    @whitelist_requests =  Admin::WhitelistRequestDecorator.decorate_collection(
+      WhitelistRequest.status('pending').order('created_at DESC')
+    )
     render action: :index
   end
 
   def approved
-    @whitelist_requests = WhitelistRequest.status('approved')
+    @whitelist_requests =  Admin::WhitelistRequestDecorator.decorate_collection(
+      WhitelistRequest.status('approved').order('created_at DESC')
+    )
     render action: :index
   end
 
   def denied
-    @whitelist_requests = WhitelistRequest.status('denied')
+    @whitelist_requests =  Admin::WhitelistRequestDecorator.decorate_collection(
+      WhitelistRequest.status('denied').order('created_at DESC')
+    )
     render action: :index
   end
 
   def show
-    @whitelist_request = WhitelistRequest.find(params[:id])
+    @whitelist_request = WhitelistRequest.find(params[:id]).decorate
   end
 
   # For Approving Whitelist Requests via patch
