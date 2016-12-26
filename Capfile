@@ -24,7 +24,7 @@ require 'capistrano/deploy'
 # require 'capistrano/passenger'
 
 set :rvm_type, :user                     # Defaults to: :auto
-set :rvm_ruby_version, '2.2.1'  
+set :rvm_ruby_version, '2.3.1'  
 
 # Load custom tasks from `lib/capistrano/tasks' if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
