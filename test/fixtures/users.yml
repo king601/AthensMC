@@ -3,7 +3,18 @@
 one:
   username: user1
   email: user1@test.athensmc.com
+  encrypted_password: 'password'
+  admin: false
 
 two:
   username: user2
   email: user2@test.athensmc.com
+  encrypted_password: 'password'
+  admin: false
+
+admin:
+  username: king601
+  email: king601@test.athensmc.com
+  encrypted_password: 'password'
+  minecraft_uuid: 991ef20946474fe1900648f31e9697e7
+  admin: true
