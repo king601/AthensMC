@@ -8,10 +8,6 @@ role :app, %w{deploy@a02.athensmc.com}
 role :web, %w{deploy@a02.athensmc.com}
 role :db,  %w{deploy@a02.athensmc.com}
 
-set :rvm_type, :user                     # Defaults to: :auto
-set :rvm_ruby_version, '2.3.1'  
-
-
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the
