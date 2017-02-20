@@ -8,6 +8,7 @@ role :app, %w{deploy@a02.athensmc.com}
 role :web, %w{deploy@a02.athensmc.com}
 role :db,  %w{deploy@a02.athensmc.com}
 
+set :bundle_jobs, 4 # default: nil, only available for Bundler >= 1.4
 # set :bundle_path, nil
 # set :bundle_binstubs, nil
 # set :bundle_flags, '--system'
