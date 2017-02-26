@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, path: 'u', only: [:show], param: :username
+  resources :users, path: 'u', only: %w(show), param: :username
 
   get 'links/minecraft' => 'links#minecraft'
   post 'links' => 'links#create'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :revisions
   resources :casts
 
-  resources :downloads, only: [:index]
+  resources :downloads, only: %w(index)
 
   resources :notifications do
       collection do
@@ -45,6 +45,7 @@ Rails.application.routes.draw do
      patch :unsticky
    end
   end
+
   root 'pages#home'
 
   get '/support', :to => redirect('/subscribe')
@@ -57,5 +58,4 @@ Rails.application.routes.draw do
   get 'servers/rrr' => 'servers#rrr'
   get 'servers/direwolf20' => 'servers#direwolf20'
   get 'servers/snapshot' => 'servers#snapshot'
-
 end
