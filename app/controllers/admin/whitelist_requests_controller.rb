@@ -34,14 +34,14 @@ class Admin::WhitelistRequestsController < ApplicationController
 
   # For Approving Whitelist Requests via patch
   def approve
-    @whitelist_request.update_attributes(approved_on: Time.now, status: 'approved')
+    @whitelist_request.update_attributes(approved_on: Time.now, status: 'approved', actor: current_user)
     redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been approved!"
     WhitelistMailer.request_approved(@whitelist_request).deliver_later
   end
 
   # For denying whitelist requests via a patch method
   def deny
-    @whitelist_request.update_attributes(denied_on: Time.now, status: 'denied')
+    @whitelist_request.update_attributes(denied_on: Time.now, status: 'denied', actor: current_user)
     redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been denied!"
     WhitelistMailer.request_denied(@whitelist_request).deliver_later
   end

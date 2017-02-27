@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611034350) do
+ActiveRecord::Schema.define(version: 20170227011329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +25,39 @@ ActiveRecord::Schema.define(version: 20160611034350) do
     t.integer  "user_id"
     t.text     "shownotes"
     t.string   "slug"
+    t.index ["episode"], name: "index_casts_on_episode", unique: true, using: :btree
+    t.index ["user_id"], name: "index_casts_on_user_id", using: :btree
   end
 
-  add_index "casts", ["episode"], name: "index_casts_on_episode", unique: true, using: :btree
-  add_index "casts", ["user_id"], name: "index_casts_on_user_id", using: :btree
+  create_table "conversation_users", force: :cascade do |t|
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_conversation_users_on_conversation_id", using: :btree
+    t.index ["user_id"], name: "index_conversation_users_on_user_id", using: :btree
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "messages_count",       default: 0
+    t.text     "last_message_content"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["messages_count"], name: "index_conversations_on_messages_count", using: :btree
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "activity"
+    t.text     "description"
+    t.datetime "start_time"
+    t.string   "host"
+    t.integer  "user_id"
+    t.boolean  "official_event", default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
 
   create_table "forum_posts", force: :cascade do |t|
     t.integer  "forum_thread_id"
@@ -37,10 +65,9 @@ ActiveRecord::Schema.define(version: 20160611034350) do
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["forum_thread_id"], name: "index_forum_posts_on_forum_thread_id", using: :btree
+    t.index ["user_id"], name: "index_forum_posts_on_user_id", using: :btree
   end
-
-  add_index "forum_posts", ["forum_thread_id"], name: "index_forum_posts_on_forum_thread_id", using: :btree
-  add_index "forum_posts", ["user_id"], name: "index_forum_posts_on_user_id", using: :btree
 
   create_table "forum_threads", force: :cascade do |t|
     t.string   "subject"
@@ -50,10 +77,9 @@ ActiveRecord::Schema.define(version: 20160611034350) do
     t.string   "slug"
     t.datetime "last_post_created_at"
     t.boolean  "sticky",               default: false
+    t.index ["slug"], name: "index_forum_threads_on_slug", unique: true, using: :btree
+    t.index ["user_id"], name: "index_forum_threads_on_user_id", using: :btree
   end
-
-  add_index "forum_threads", ["slug"], name: "index_forum_threads_on_slug", unique: true, using: :btree
-  add_index "forum_threads", ["user_id"], name: "index_forum_threads_on_user_id", using: :btree
 
   create_table "map_downloads", force: :cascade do |t|
     t.string   "name"
@@ -61,6 +87,17 @@ ActiveRecord::Schema.define(version: 20160611034350) do
     t.string   "link"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.boolean  "read_by_other_participant", default: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -80,9 +117,8 @@ ActiveRecord::Schema.define(version: 20160611034350) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.index ["user_id"], name: "index_revisions_on_user_id", using: :btree
   end
-
-  add_index "revisions", ["user_id"], name: "index_revisions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -100,10 +136,9 @@ ActiveRecord::Schema.define(version: 20160611034350) do
     t.boolean  "admin",                  default: false
     t.string   "username"
     t.string   "minecraft_uuid"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "whitelist_requests", force: :cascade do |t|
     t.integer  "user_id"
@@ -114,11 +149,12 @@ ActiveRecord::Schema.define(version: 20160611034350) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "referred_by"
+    t.integer  "actor_id"
+    t.index ["user_id"], name: "index_whitelist_requests_on_user_id", using: :btree
   end
 
-  add_index "whitelist_requests", ["user_id"], name: "index_whitelist_requests_on_user_id", using: :btree
-
   add_foreign_key "casts", "users"
+  add_foreign_key "events", "users"
   add_foreign_key "forum_posts", "forum_threads"
   add_foreign_key "forum_posts", "users"
   add_foreign_key "forum_threads", "users"

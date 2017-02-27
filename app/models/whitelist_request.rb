@@ -1,6 +1,7 @@
 # WhitelistRequest
 class WhitelistRequest < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, touch: true
+  belongs_to :actor, optional: true, class_name: 'User'
 
   after_create_commit :create_slack_notification unless Rails.env.development?
 
