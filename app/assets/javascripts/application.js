@@ -33,8 +33,8 @@ $(document).on("ready page:change", function() {
 
 $(document).on('ready', function(event) {
   // initialize persistent state
-  Turbolinks.enableProgressBar();
-//  Turbolinks.ProgressBar.enable();
+  // Turbolinks.enableProgressBar();
+ Turbolinks.ProgressBar.enable();
 });
 
 // Make alerts / notices fade out automatically after 5.5 seconds
@@ -44,4 +44,15 @@ $(document).ready(function() {
             $(this).remove();
         })
     }, 5500 );
+});
+
+$(document).on('trix-initialize', function() {
+  var element, i, len, ref, results;
+  ref = event.target.toolbarElement.querySelectorAll("button");
+  results = [];
+  for (i = 0, len = ref.length; i < len; i++) {
+    element = ref[i];
+    results.push(element.tabIndex = -1);
+  }
+  return results;
 });
