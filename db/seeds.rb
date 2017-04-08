@@ -1,7 +1,54 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+def setup
+  puts "Elasticsearch running with version: #{Searchkick.server_version}"
+rescue
+  puts 'Elasticsearch needs to be started. Starting now as daemon...'
+  system 'elasticsearch -d'
+end
+
+setup
+
+# These users will have super admin powers
+users = [
+  ['Admin', 'admin'],
+  ['King601', 'king601'],
+  ['Kaptoye', 'kaptoye']
+]
+
+users.each do |username, email|
+  User.create(
+    username: username,
+    email: "#{email}@athensmc.com",
+    password: 'password',
+    password_confirmation: 'password',
+    admin: true
+  )
+
+  puts "Creating #{username}."
+end
+
+10.times.each do |n|
+  user = User.create(
+           username: Faker::Internet.user_name,
+           email: Faker::Internet.email,
+           password: 'password',
+           password_confirmation: 'password',
+           admin: false
+         )
+
+  forum_thread = ForumThread.create(
+    subject: Faker::HowIMetYourMother.quote,
+    user: user
+  )
+
+  puts "Created Forum Thread: #{forum_thread.subject}"
+
+  rand(2..15).times.each do |posts|
+    forum_post = ForumPost.create(
+      forum_thread: forum_thread,
+      user: User.all.sample,
+      body: Faker::Lorem.paragraph(2, false, 4)
+    )
+
+    puts "  Created Post by #{forum_post.user.username}"
+  end
+end
