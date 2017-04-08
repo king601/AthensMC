@@ -26,14 +26,14 @@ users.each do |username, email|
   puts "Creating #{username}."
 end
 
-10.times.each do |n|
+10.times.each do
   user = User.create(
-           username: Faker::Internet.user_name,
-           email: Faker::Internet.email,
-           password: 'password',
-           password_confirmation: 'password',
-           admin: false
-         )
+    username: Faker::Internet.user_name,
+    email: Faker::Internet.email,
+    password: 'password',
+    password_confirmation: 'password',
+    admin: false
+  )
 
   forum_thread = ForumThread.create(
     subject: Faker::HowIMetYourMother.quote,
@@ -42,7 +42,7 @@ end
 
   puts "Created Forum Thread: #{forum_thread.subject}"
 
-  rand(2..15).times.each do |posts|
+  rand(2..15).times.each do
     forum_post = ForumPost.create(
       forum_thread: forum_thread,
       user: User.all.sample,
