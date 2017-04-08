@@ -1,10 +1,9 @@
-class Admin::DownloadsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :check_admin_status?
-  before_action :find_map_download, only: [:edit, :update, :destroy]
+class Admin::DownloadsController < Admin::BaseController
+  before_action :find_map_download, only: %w(edit update destroy)
 
   def index
-    @map_downloads = MapDownload.order('created_at DESC').paginate(page: params[:page], per_page: 15)
+    @map_downloads = MapDownload.order('created_at DESC').
+      paginate(page: params[:page], per_page: 15)
   end
 
   def create

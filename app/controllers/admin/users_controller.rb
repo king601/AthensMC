@@ -1,6 +1,7 @@
 # Admin::UsersController
-class Admin::UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:whitelisted]
+class Admin::UsersController < Admin::BaseController
+  skip_before_action :authenticate_user!, only: %w(whitelisted)
+  skip_before_action :check_admin_status?, only: %w(whitelisted)
 
   def index
     @users = User.search(search_params, additional_params)
