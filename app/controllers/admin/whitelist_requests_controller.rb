@@ -1,7 +1,5 @@
-class Admin::WhitelistRequestsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :check_admin_status?
-  before_action :set_whitelist_id, only: [:approve, :deny, :destroy]
+class Admin::WhitelistRequestsController < Admin::BaseController
+  before_action :set_whitelist_id, only: %w(approve deny destroy)
 
   def index
     @whitelist_requests = WhitelistRequest.order('created_at DESC')
@@ -34,22 +32,29 @@ class Admin::WhitelistRequestsController < ApplicationController
 
   # For Approving Whitelist Requests via patch
   def approve
-    @whitelist_request.update_attributes(approved_on: Time.now, status: 'approved', actor: current_user)
-    redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been approved!"
+    @whitelist_request.update_attributes(
+      approved_on: Time.now, status: 'approved', actor: current_user
+    )
+    flash[:notice] = "#{@whitelist_request.user.username}'s application has been approved!"
+    redirect_to admin_whitelist_requests_path
     WhitelistMailer.request_approved(@whitelist_request).deliver_later
   end
 
   # For denying whitelist requests via a patch method
   def deny
-    @whitelist_request.update_attributes(denied_on: Time.now, status: 'denied', actor: current_user)
-    redirect_to admin_whitelist_requests_path, notice: "#{@whitelist_request.user.username}'s application has been denied!"
+    @whitelist_request.update_attributes(
+      denied_on: Time.now, status: 'denied', actor: current_user
+    )
+    flash[:notice] =  "#{@whitelist_request.user.username}'s application has been denied!"
+    redirect_to admin_whitelist_requests_path
     WhitelistMailer.request_denied(@whitelist_request).deliver_later
   end
 
   def destroy
     WhitelistMailer.request_removed(@whitelist_request).deliver_later
     @whitelist_request.destroy
-    redirect_to admin_whitelist_requests_path, notice: 'Whitelist Request Destroyed'
+    flash[:notice] = 'Whitelist Request Destroyed'
+    redirect_to admin_whitelist_requests_path
   end
 
   private
