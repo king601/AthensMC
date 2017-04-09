@@ -20,7 +20,7 @@ class WhitelistRequestsController < ApplicationController
         " You should receive an email in 24-48 hours with a response."
       redirect_to root_path
     else
-      flash[:alert] = 'An error occurred while submitting your request. Please try again.'
+      flash[:alert] = 'An error occurred while submitting your request. Please refresh to try again.'
       render 'index'
     end
   end

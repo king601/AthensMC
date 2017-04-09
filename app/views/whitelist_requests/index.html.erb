@@ -3,6 +3,7 @@
   <div class="page-header">
     <h1>Request Access to the Servers</h1>
   </div>
+
   <div class="row">
     <div class="col-md-12">
       <p>Thank you for your interest in joining AthensMC! We are very excited to have you wish to join us. In order to process your application we need two things. A linked Minecraft account and your agreement to our <%= link_to "Community Rules & Information", information_path %>.</p>
@@ -12,25 +13,28 @@
       <% if current_user.whitelist_request %>
         <!-- If the user has a whitelist request tell them their status -->
         <% if current_user.whitelist_request.status == "pending" %>
-                <p class="text-info text-middle"><strong>Your request is still pending!</strong> <i class="fa fa-5x fa-pencil-square" style="float: right"></i></p>
+          <p class="text-info text-middle">
+            <strong>Your request is still pending!</strong>
+            <i class="fa fa-5x fa-pencil-square" style="float: right"></i>
+          </p>
         <% end %>
         <% if current_user.whitelist_request.status == "approved" %>
-                <p class="text-success text-middle"><strong>You are whitelisted!</strong> <i class="fa fa-5x fa-check-square-o" style="float: right"></i></p>
+          <p class="text-success text-middle">
+            <strong>You are whitelisted!</strong>
+            <i class="fa fa-5x fa-check-square-o" style="float: right"></i>
+          </p>
         <% end %>
         <% if current_user.whitelist_request.status == "denied" %>
-                <p class="text-danger text-middle"><strong>Your application has been denied!</strong> <i class="fa fa-5x fa-times-circle-o" style="float: right"></i></p>
+            <p class="text-danger text-middle">
+              <strong>Your application has been denied!</strong>
+              <i class="fa fa-5x fa-times-circle-o" style="float: right"></i>
+            </p>
         <% end %>
       <% else %>
         <!-- If no whitelist requests then we should show the form -->
 
-        <%= render 'form' %>
+        <%= render "form" %>
       <% end %>
-
-
-
     </div>
-
-
   </div>
-
 </div>

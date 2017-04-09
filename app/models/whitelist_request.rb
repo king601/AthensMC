@@ -14,12 +14,12 @@ class WhitelistRequest < ApplicationRecord
 
   # All whitelist requests in the current month
   scope :current_month, -> {
-    where('created_at  BETWEEN ? AND ?',
+    where('created_at BETWEEN ? AND ?',
           Time.zone.now.beginning_of_month,
           Time.zone.now.end_of_month)
   }
 
-  scope :last_month, -> { where('created_at  BETWEEN ? AND ?', 1.month.ago,
+  scope :last_month, -> { where('created_at BETWEEN ? AND ?', 1.month.ago,
     Time.zone.now.beginning_of_month) }
 
   private
