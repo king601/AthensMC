@@ -3,7 +3,6 @@ class ForumThreads::ForumPostsController < ApplicationController
   before_action :set_forum_thread
 
   def create
-
     @forum_post = @forum_thread.forum_posts.new(forum_post_params)
     @forum_post.user = current_user
 
