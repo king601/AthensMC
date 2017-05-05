@@ -3,11 +3,13 @@ class ForumThreads::ForumPostsController < ApplicationController
   before_action :set_forum_thread
 
   def create
+
     @forum_post = @forum_thread.forum_posts.new(forum_post_params)
     @forum_post.user = current_user
 
+    authorize @forum_post
     if @forum_post.save
-      
+
       # Create Notifications for Posts
       (@forum_thread.users.uniq - [current_user]).each do |user|
         Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @forum_post)
@@ -21,12 +23,14 @@ class ForumThreads::ForumPostsController < ApplicationController
   end
 
   def edit
-    @forum_post = current_user.forum_posts.find(params[:id])
+    @forum_post = ForumPost.find(params[:id])
+    authorize @forum_post
   end
 
   def update
-    @forum_post = current_user.forum_posts.find(params[:id])
+    @forum_post = ForumPost.find(params[:id])
 
+    authorize @forum_post
     if @forum_post.update(forum_post_params)
       redirect_to @forum_thread, notice: 'Your post has been updated!'
     else
