@@ -64,7 +64,4 @@ Rails.application.configure do
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
   config.action_mailer.perform_deliveries = true
-
-  # Add Sucker_punch as background job queue
-  config.active_job.queue_adapter = :sucker_punch
 end
