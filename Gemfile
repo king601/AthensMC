@@ -6,10 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5'
+gem 'rails', '~> 5.1'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -75,6 +75,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #Formatting for Text Stuff!
 gem 'html-pipeline'
 gem 'github-markdown'
+gem 'commonmarker'
 gem 'sanitize'
 
 # Pagination
@@ -85,7 +86,7 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'local_time', '~> 1.0.3'
 
 # User Accounts & Authentication
-gem 'devise', '~> 4.2.0'
+gem 'devise', '~> 4.3'
 gem 'pundit', '~> 1.1.0'
 
 #Postgres for deployment
@@ -101,7 +102,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'sucker_punch', '~> 2.0'
 
 # Search is Awesome
-gem 'searchkick'
+gem 'searchkick', '~> 1.3.6'
 
 # jQuery UI Gem for autocomplete and other stuff
 gem 'jquery-ui-rails'

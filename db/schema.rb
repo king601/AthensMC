@@ -15,142 +15,142 @@ ActiveRecord::Schema.define(version: 20170227011329) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "casts", force: :cascade do |t|
-    t.string   "episode"
-    t.string   "releasedate"
-    t.text     "description"
-    t.text     "embedcode"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
-    t.text     "shownotes"
-    t.string   "slug"
-    t.index ["episode"], name: "index_casts_on_episode", unique: true, using: :btree
-    t.index ["user_id"], name: "index_casts_on_user_id", using: :btree
-  end
-
-  create_table "conversation_users", force: :cascade do |t|
-    t.integer  "conversation_id"
-    t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["conversation_id"], name: "index_conversation_users_on_conversation_id", using: :btree
-    t.index ["user_id"], name: "index_conversation_users_on_user_id", using: :btree
-  end
-
-  create_table "conversations", force: :cascade do |t|
-    t.integer  "messages_count",       default: 0
-    t.text     "last_message_content"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.index ["messages_count"], name: "index_conversations_on_messages_count", using: :btree
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.string   "activity"
-    t.text     "description"
-    t.datetime "start_time"
-    t.string   "host"
-    t.integer  "user_id"
-    t.boolean  "official_event", default: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
-  end
-
-  create_table "forum_posts", force: :cascade do |t|
-    t.integer  "forum_thread_id"
-    t.text     "body"
-    t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["forum_thread_id"], name: "index_forum_posts_on_forum_thread_id", using: :btree
-    t.index ["user_id"], name: "index_forum_posts_on_user_id", using: :btree
-  end
-
-  create_table "forum_threads", force: :cascade do |t|
-    t.string   "subject"
-    t.integer  "user_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.string   "slug"
-    t.datetime "last_post_created_at"
-    t.boolean  "sticky",               default: false
-    t.index ["slug"], name: "index_forum_threads_on_slug", unique: true, using: :btree
-    t.index ["user_id"], name: "index_forum_threads_on_user_id", using: :btree
-  end
-
-  create_table "map_downloads", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "link"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer  "conversation_id"
-    t.integer  "user_id"
-    t.text     "content"
-    t.boolean  "read_by_other_participant", default: false
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
-    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
-  end
-
-  create_table "notifications", force: :cascade do |t|
-    t.integer  "recipient_id"
-    t.integer  "actor_id"
-    t.datetime "read_at"
-    t.string   "action"
-    t.integer  "notifiable_id"
-    t.string   "notifiable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "revisions", force: :cascade do |t|
-    t.string   "title"
-    t.text     "text"
+  create_table "casts", id: :serial, force: :cascade do |t|
+    t.string "episode"
+    t.string "releasedate"
+    t.text "description"
+    t.text "embedcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.index ["user_id"], name: "index_revisions_on_user_id", using: :btree
+    t.integer "user_id"
+    t.text "shownotes"
+    t.string "slug"
+    t.index ["episode"], name: "index_casts_on_episode", unique: true
+    t.index ["user_id"], name: "index_casts_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
+  create_table "conversation_users", id: :serial, force: :cascade do |t|
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_conversation_users_on_conversation_id"
+    t.index ["user_id"], name: "index_conversation_users_on_user_id"
+  end
+
+  create_table "conversations", id: :serial, force: :cascade do |t|
+    t.integer "messages_count", default: 0
+    t.text "last_message_content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["messages_count"], name: "index_conversations_on_messages_count"
+  end
+
+  create_table "events", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "activity"
+    t.text "description"
+    t.datetime "start_time"
+    t.string "host"
+    t.integer "user_id"
+    t.boolean "official_event", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "forum_posts", id: :serial, force: :cascade do |t|
+    t.integer "forum_thread_id"
+    t.text "body"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["forum_thread_id"], name: "index_forum_posts_on_forum_thread_id"
+    t.index ["user_id"], name: "index_forum_posts_on_user_id"
+  end
+
+  create_table "forum_threads", id: :serial, force: :cascade do |t|
+    t.string "subject"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.datetime "last_post_created_at"
+    t.boolean "sticky", default: false
+    t.index ["slug"], name: "index_forum_threads_on_slug", unique: true
+    t.index ["user_id"], name: "index_forum_threads_on_user_id"
+  end
+
+  create_table "map_downloads", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", id: :serial, force: :cascade do |t|
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.text "content"
+    t.boolean "read_by_other_participant", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "notifications", id: :serial, force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "actor_id"
+    t.datetime "read_at"
+    t.string "action"
+    t.integer "notifiable_id"
+    t.string "notifiable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "revisions", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_revisions_on_user_id"
+  end
+
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",                  default: false
-    t.string   "username"
-    t.string   "minecraft_uuid"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.boolean "admin", default: false
+    t.string "username"
+    t.string "minecraft_uuid"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "whitelist_requests", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "status"
-    t.boolean  "agree_rules"
+  create_table "whitelist_requests", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.string "status"
+    t.boolean "agree_rules"
     t.datetime "approved_on"
     t.datetime "denied_on"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "referred_by"
-    t.integer  "actor_id"
-    t.index ["user_id"], name: "index_whitelist_requests_on_user_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "referred_by"
+    t.integer "actor_id"
+    t.index ["user_id"], name: "index_whitelist_requests_on_user_id"
   end
 
   add_foreign_key "casts", "users"
