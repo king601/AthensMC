@@ -1,4 +1,4 @@
-class CreateForumPosts < ActiveRecord::Migration
+class CreateForumPosts < ActiveRecord::Migration[4.2]
   def change
     create_table :forum_posts do |t|
       t.references :forum_thread, index: true, foreign_key: true
