@@ -83,7 +83,7 @@ gem 'will_paginate', '~> 3.1.5'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 #Local Time
-gem 'local_time', '~> 1.0.3'
+gem 'local_time', '~> 2.0.0'
 
 # User Accounts & Authentication
 gem 'devise', '~> 4.3'
