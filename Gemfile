@@ -33,7 +33,8 @@ gem 'jbuilder', '~> 2.6'
 # gem 'redis', '~> 3.0'
 
 #Bootstrap for HTML framework
-gem 'bootstrap-sass', '~> 3.3.7'
+# gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.0.0.beta'
 
 #Font Awesome for Visual Improvements
 gem 'font-awesome-rails'
