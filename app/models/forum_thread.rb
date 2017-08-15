@@ -1,12 +1,12 @@
 # ForumThread
 class ForumThread < ApplicationRecord
-  searchkick fields: ["subject^10", "forum_posts"], callbacks: :async
+  searchkick callbacks: :async
   scope :search_import, -> { includes(:forum_posts) }
 
   extend FriendlyId
   friendly_id :subject, use: :slugged
 
-  belongs_to :user
+  belongs_to :user, required: true
 
   has_many :forum_posts, -> { order(:created_at => :ASC) }, dependent: :destroy
 
@@ -19,9 +19,12 @@ class ForumThread < ApplicationRecord
   validates_associated :forum_posts
 
   def search_data
-    attributes.merge(
+    {
       subject: subject,
-      forum_posts: forum_posts
-     )
+      slug: slug,
+      forum_posts: forum_posts,
+      sticky: sticky,
+      last_post_created_at: last_post_created_at
+    }
   end
 end

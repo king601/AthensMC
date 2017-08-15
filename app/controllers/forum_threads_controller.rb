@@ -19,14 +19,14 @@ class ForumThreadsController < ApplicationController
   end
 
   def new
-    @forum_thread = current_user.forum_threads.build
+    @forum_thread = current_user.forum_threads.new
     @forum_thread.forum_posts.new
     authorize @forum_thread
   end
 
   def create
     @forum_thread = current_user.forum_threads.build(forum_thread_params)
-    @forum_thread.forum_posts.first.user_id = current_user.id
+    @forum_thread.forum_posts.first.user = current_user
     authorize @forum_thread
 
     if @forum_thread.save
