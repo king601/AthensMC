@@ -82,7 +82,7 @@ gem 'sanitize'
 gem 'kaminari', '~> 1.0'
 
 #Local Time
-gem 'local_time', '~> 1.0.3'
+gem 'local_time', '~> 2.0'
 
 # User Accounts & Authentication
 gem 'devise', '~> 4.3'
