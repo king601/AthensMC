@@ -1,43 +1,44 @@
-<div class="well footer-well">
-	<div class="row">
-		<div class="col-md-6">
-			<p>&copy; 2014-<%= Time.zone.now.year %> AthensMC &nbsp;<%= link_to "Revisions", revisions_path %> | <%= link_to "Subscribe", subscribe_path %></p>
-		</div>
-		<div class="col-md-6">
-			<p class="pull-right">
-				<%= link_to 'https://github.com/AthensMC' do %>
-					<%= fa_icon 'github 2x' %>
-				<% end %>
-				<%= link_to 'http://twitter.com/AthensMinecraft' do %>
-					<%= fa_icon 'twitter 2x' %>
-				<% end %>
-			</p>
-		</div>
+<div class="row">
+	<div class="col-md-6">
+		<p>&copy; 2014-<%= Time.zone.now.year %> AthensMC &nbsp;
+			<%= link_to "Revisions", revisions_path %> |
+			<%= link_to "Subscribe", subscribe_path %>
+		</p>
 	</div>
 
-	<% if user_signed_in? %>
-	  <% if current_user.minecraft_uuid.blank? %>
-    	<img src="https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?overlay" height="64px" />
-    <% else %>
-      <img src="https://crafatar.com/avatars/<%= current_user.minecraft_uuid %>?overlay&size=64" />
-    <% end #end if current_user.minecraft_uuid.blank? %>
+	<div class="col-md-6">
+		<p class="pull-right">
+			<%= link_to 'https://github.com/AthensMC' do %>
+				<%= fa_icon 'github 2x' %>
+			<% end %>
+			<%= link_to 'http://twitter.com/AthensMinecraft' do %>
+				<%= fa_icon 'twitter 2x' %>
+			<% end %>
+		</p>
+	</div>
+</div>
 
-	  <%= "You are logged in as" %> <%= link_to "#{current_user.username}", user_path(current_user.username) %>
-		<% if current_user.try(:admin?) %>
-			<div class="pull-right">
-				<div class="btn-group dropup">
-				  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Admin QuickAction
-				    <span class="caret"></span>
-					</button>
-				  <div class="dropdown-menu">
-				    <%= link_to "All Users", admin_users_path, class: "dropdown-item" %>
-						<%= link_to "Map Downloads", admin_downloads_path, class: "dropdown-item" %>
-						<%= link_to "Whitelist Requests", admin_whitelist_requests_path, class: "dropdown-item" %>
-						<%= link_to "Forums", forum_threads_path, class: "dropdown-item" %>
-				  </div>
-				</div>
+<% if user_signed_in? %>
+	<% if current_user.try(:admin?) %>
+		<div class="mb-2 pull-right">
+			<div class="btn-group dropup">
+			  <button type="button"
+					class="btn btn-warning dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Admin Quick Action
+			    <span class="caret"></span>
+				</button>
+			  <div class="dropdown-menu">
+			    <%= link_to "All Users", admin_users_path,
+						class: "dropdown-item" %>
+					<%= link_to "Map Downloads", admin_downloads_path,
+						class: "dropdown-item" %>
+					<%= link_to "Whitelist Requests", admin_whitelist_requests_path,
+						class: "dropdown-item" %>
+					<%= link_to "Forums", forum_threads_path,
+						class: "dropdown-item" %>
+			  </div>
 			</div>
-		<% end # End admin only section %>
-	<% end # end if user is signed in section %>
-</div> <!-- /.footer-well well -->
+		</div>
+	<% end # End admin only section %>
+<% end # end if user is signed in section %>
