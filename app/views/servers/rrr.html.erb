@@ -1,141 +1,128 @@
-  <% page_title "Rockets Rifles Robots" %>
-  <div class="well">
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Header Image -->
-         <%= image_tag("/../images/rockets-rifles-robots/rrr_website_banner_trans.png", :class => "img-fluid")   %>
-      </div>
+<% page_title "Rockets Rifles Robots" %>
 
-    </div>
-  <br />
-  <br />
-    <div class="row">
-      <div class="col-md-8">
-        <div class="card card-body">
-          <h2>Rockets Rifles Robots</h2>
-            <p>  Do you dream of piloting a spaceship across the stars? Of building a super scientist’s lab and delving into technical mysteries and designing fantastic machines? Do you hope to have an army of robot minions, waiting to carry out your nefarious schemes?</p>
-
-            <p>Or do you just want a bunch of guns to shoot zombie hordes with?</p>
-
-            <p>If any of those things sound like fun, then Rockets, Rifles and Robots is the pack for you. This pack has a technical/industrial focus and all kinds of mods - old friends with exciting updated features, and new favorites! Join us and explore everything our signature mod pack has to offer. </p>
-          <h3>Installing</h3>
-
-            <p>Rockets, Rifles and Robots is our signature Athens modded Minecraft pack, designed by our staff and hosted via the Technic launcher, using Solder for ease of maintenance. In order to connect to our server, you will need to begin by downloading the Technic launcher at: </p>
-
-            <p>You can download the Technic Launcher from <%= link_to "this link", "http://www.technicpack.net " %>.</p>
-
-            <p>Once you have the Technic launcher installed, you will “+ Add New Pack” on the left side of the interface and when prompted, paste in the link below:</p>
-              <blockquote><samp>http://www.technicpack.net/api/modpack/rockets-rifles-robots</samp></blockquote>
-          <p><strong>Or search in the top left "Rockets Rifles Robots" and click the "Install" button on their new launcher</strong></p>
-           <p>Next check “Always use recommended builds.” This will keep your version of the pack in sync with whatever updates and changes are made. A full mod list and updates can be found here:
-            <%= link_to("http://www.technicpack.net/modpack/details/rockets-rifles-robots", "http://www.technicpack.net/modpack/details/rockets-rifles-robots") %>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <!-- Things to Know Card -->
-        <div class="card text-dark bg-warning mb-3">
-          <div class="card-header">Things to Know</div>
-          <div class="card-body">
-            <p class="card-text"><strong>Server IP:</strong> rrr.athensmc.com</p>
-            <p class="card-text"><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
-            <%= link_to("Forums", "http://forums.athensmc.com", class: "text-dark") %> |
-            <%= link_to("Technic Launcher", "http://technicpack.net", class: "text-dark") %>
-          </div>
-        </div>
-        <!-- Other Downloads Well -->
-        <!-- Hiding this because it's not useful for v4.0 at the moment -
-         <div class="well infowell">
-            <h4><Strong>Other Downloads</strong></h4>
-             <p><strong>Art Assets:</strong>  <%= link_to("RRR Assets", "http://cdn.athensmc.com/resources/downloads/rrr_assets.zip") %><br />
-               <strong>DIY Launcher Kit:</strong> <%= link_to("RRRv3.5_Client.zip", "http://cdn.athensmc.com/resources/downloads/RRRv3.5_Client.zip") %></p>
-             <p><%= link_to("MultiMC", "http://multimc.org/") %> | <%= link_to("Installing Forge on the Vanilla Launcher", "http://www.minecraftforge.net/wiki/Installation/Universal") %></p>
-         </div>
-       -->
-      </div>
-    </div>
-
-  <div class="row mt-2">
-
-     <div class="col-md-6">
-      <div class="card card-body">
-        <h2>FAQ</h2>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  How do I get whitelisted?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  Do I have to subscribe to play/pay any money?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
-
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  Can you add mod XYZ to the pack?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                  At this time, we’re not looking to add additional mods to this pack. We do offer other packs for shorter time periods on a regular basis, so let us know what your interests are and we may use those ideas for one of our “temporary” mod packs! And as is the case with every mod pack, sooner or later everyone gets a hankering for the “new shinies”. When that happens we’ll most likely launch a new version of this pack, and start the process over again. But not enough until Elynn gets caught up on her sleep ;)
-              </div>
-            </div>
-          </div>
-
-       <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                  What mods are in the pack?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-              <div class="panel-body">
-                 <table class="table table-bordered table-striped">
-                    <tr><td><strong>Mod List:</strong></td></tr>
-                    <tr><td>We have way too many awesome ones to list!</td></tr>
-                  </table>
-              </div>
-            </div>
-          </div>
-
-      </div> <!-- End FAQ -->
-    </div> <!-- End Well-->
-    </div>
-  <!-- Twitter Col- -->
-    <div class="col-md-6">
-      <div class="well">
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AthensMinecraft" data-widget-id="471126696138002432">Tweets by @AthensMinecraft</a>
-                <script src="//platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-
+<div class="row">
+  <div class="col-md-12">
+    <!-- Header Image -->
+     <%= image_tag("/../images/rockets-rifles-robots/rrr_website_banner_trans.png", class: "img-fluid")   %>
+  </div>
 </div>
 
+<div class="row mt-2">
+  <div class="col-md-8">
+    <div class="card card-body">
+      <h2>Rockets Rifles Robots</h2>
+        <p>  Do you dream of piloting a spaceship across the stars? Of building a super scientist’s lab and delving into technical mysteries and designing fantastic machines? Do you hope to have an army of robot minions, waiting to carry out your nefarious schemes?</p>
 
+        <p>Or do you just want a bunch of guns to shoot zombie hordes with?</p>
 
-  </div> <!-- End of Page Well -->
+        <p>If any of those things sound like fun, then Rockets, Rifles and Robots is the pack for you. This pack has a technical/industrial focus and all kinds of mods - old friends with exciting updated features, and new favorites! Join us and explore everything our signature mod pack has to offer. </p>
+      <h3>Installing</h3>
+
+        <p>Rockets, Rifles and Robots is our signature Athens modded Minecraft pack, designed by our staff and hosted via the Technic launcher, using Solder for ease of maintenance. In order to connect to our server, you will need to begin by downloading the Technic launcher at: </p>
+
+        <p>You can download the Technic Launcher from <%= link_to "this link", "http://www.technicpack.net " %>.</p>
+
+        <p>Once you have the Technic launcher installed, you will “+ Add New Pack” on the left side of the interface and when prompted, paste in the link below:</p>
+          <blockquote><samp>http://www.technicpack.net/api/modpack/rockets-rifles-robots</samp></blockquote>
+      <p><strong>Or search in the top left "Rockets Rifles Robots" and click the "Install" button on their new launcher</strong></p>
+       <p>Next check “Always use recommended builds.” This will keep your version of the pack in sync with whatever updates and changes are made. A full mod list and updates can be found here:
+        <%= link_to("http://www.technicpack.net/modpack/details/rockets-rifles-robots", "http://www.technicpack.net/modpack/details/rockets-rifles-robots") %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <!-- Things to Know Card -->
+    <div class="card text-dark bg-warning mb-3">
+      <div class="card-header">Things to Know</div>
+      <div class="card-body">
+        <p class="card-text"><strong>Server IP:</strong> rrr.athensmc.com</p>
+        <p class="card-text"><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
+        <%= link_to("Forums", "http://forums.athensmc.com", class: "text-dark") %> |
+        <%= link_to("Technic Launcher", "http://technicpack.net", class: "text-dark") %>
+      </div>
+    </div>
+    <!-- Other Downloads Well -->
+    <!-- Hiding this because it's not useful for v4.0 at the moment -
+     <div class="well infowell">
+        <h4><Strong>Other Downloads</strong></h4>
+         <p><strong>Art Assets:</strong>  <%= link_to("RRR Assets", "http://cdn.athensmc.com/resources/downloads/rrr_assets.zip") %><br />
+           <strong>DIY Launcher Kit:</strong> <%= link_to("RRRv3.5_Client.zip", "http://cdn.athensmc.com/resources/downloads/RRRv3.5_Client.zip") %></p>
+         <p><%= link_to("MultiMC", "http://multimc.org/") %> | <%= link_to("Installing Forge on the Vanilla Launcher", "http://www.minecraftforge.net/wiki/Installation/Universal") %></p>
+     </div>
+   -->
+  </div>
+</div>
+
+<div class="row mt-2">
+   <div class="col-md-6">
+    <div class="card card-body">
+      <h2>FAQ</h2>
+      <div class="panel-group" id="accordion">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                How do I get whitelisted?
+              </a>
+            </h5>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="card-body">
+              If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                Do I have to subscribe to play/pay any money?
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="card-body">
+              We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                Can you add mod XYZ to the pack?
+              </a>
+            </h5>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="card-body">
+                At this time, we’re not looking to add additional mods to this pack. We do offer other packs for shorter time periods on a regular basis, so let us know what your interests are and we may use those ideas for one of our “temporary” mod packs! And as is the case with every mod pack, sooner or later everyone gets a hankering for the “new shinies”. When that happens we’ll most likely launch a new version of this pack, and start the process over again. But not enough until Elynn gets caught up on her sleep ;)
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                What mods are in the pack?
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="card-body">
+               <table class="table table-bordered table-striped">
+                  <tr><td><strong>Mod List:</strong></td></tr>
+                  <tr><td>We have way too many awesome ones to list!</td></tr>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End FAQ -->
+    </div> <!-- End Well-->
+  </div>
+  <!-- Twitter Col- -->
+  <div class="col-md-6">
+    <%= render "shared/cards/twitter" %>
+  </div>
+</div>
