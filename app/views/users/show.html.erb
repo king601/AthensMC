@@ -1,52 +1,46 @@
 <% page_title "#{@user.username}" %>
-<div class="well">
-
 
   <div class="row user-profile">
-    <div class="col-sm-3 center">
+    <div class="col-sm-3 text-center">
+      <% if @user.minecraft_uuid.blank? %>
+        <%= image_tag "https://crafatar.com/renders/body/606e2ff0ed7748429d6ce1d3321c7838?scale=4&overlay" %>
+      <% else %>
+        <%= image_tag "https://crafatar.com/renders/body/#{@user.minecraft_uuid}?scale=4&overlay", class: 'text-left' %>
+      <% end %>
+      <h2><%= @user.username %></h2>
 
-        <% if @user.minecraft_uuid.blank? %>
-          <%= image_tag "https://crafatar.com/renders/body/606e2ff0ed7748429d6ce1d3321c7838?scale=4&overlay" %>
-        <% else %>
-          <%= image_tag "https://crafatar.com/renders/body/#{@user.minecraft_uuid}?scale=4&overlay", class: 'text-left' %>
-        <% end %>
-        <h2><%= @user.username %></h2>
+      <p class="text-muted"><%= @user.forum_posts.count %> forum posts.</p>
+      <hr>
 
-        <p class="text-muted"><%= @user.forum_posts.count %> forum posts.</p>
-        <hr>
-
-        <h3><%= user_badges(@user) %></h3>
-        <h5><%= fa_icon "clock-o" %> Joined on <%= @user.created_at.strftime("%B %d %Y") %>.</h5>
-        <hr>
+      <h3><%= user_badges(@user) %></h3>
+      <h5><%= fa_icon "clock-o" %> Joined on <%= @user.created_at.strftime("%B %d %Y") %>.</h5>
+      <hr>
     </div>
 
     <div class="col-sm-9">
       <div class="row">
         <div class="col-sm-12">
-          <h1>
+          <h2>
             <% if user_signed_in? && current_user.admin? %>
-              <div class="pull-right"><small>(<%= @user.dashed_uuid %>)</small></div>
+              <div class="pull-right"><small class="text-muted">(<%= @user.dashed_uuid %>)</small></div>
             <% end %>
             <%= @user.username %>
-          </h1>
+          </h2>
           <hr>
         </div>
       </div>
 
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="profile-section-header">Forum Posts</h2>
+        <h3 class="profile-section-header">Forum Posts</h3>
         <% if @user.forum_posts.empty? %>
           <h4 class="text-muted"><%= @user.username %> has made no forum posts yet.</h4>
         <% end %>
         <% @user.forum_posts.order("created_at desc").limit(3).includes(:forum_thread).each do |forum_post| %>
-          <%= render partial: "users/forum_post", locals: {forum_post: forum_post} %>
+          <%= render partial: "users/forum_post", locals: { forum_post: forum_post } %>
           <hr>
         <% end %>
       </div>
     </div>
   </div>
-</div>
-
-
 </div>
