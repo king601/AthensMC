@@ -3,7 +3,7 @@
     <%= link_to user.id, admin_user_path(user.id) %>
   </td>
   <td>
-    <%= image_tag user.minecraft_avatar,
+    <%= image_tag user.decorate.minecraft_avatar,
       :height => "48px",
       :class => "tag-tooltip",
       data: {

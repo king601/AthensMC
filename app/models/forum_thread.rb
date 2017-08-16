@@ -1,5 +1,7 @@
 # ForumThread
 class ForumThread < ApplicationRecord
+  include Paginatable
+
   searchkick callbacks: :async
   scope :search_import, -> { includes(:forum_posts) }
 
