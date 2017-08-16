@@ -46,8 +46,8 @@
 	<% end %>
 
 	<!-- Pagination Stuff  -->
-	<div class="center">
-	<%= will_paginate @revision, renderer: BootstrapPagination::Rails %>
+	<div class="text-center">
+		<%= paginate @revision %>
 	</div>
 
 	<% if current_user.try(:admin?) %>

@@ -26,7 +26,7 @@
 
 <%= render @forum_threads %>
 
-<%= will_paginate @forum_threads, renderer: BootstrapPagination::Rails %>
+<%= paginate @forum_threads %>
 
 <p class="text-muted text-center">
   About <%= @forum_threads.total_count %> results
