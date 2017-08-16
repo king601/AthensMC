@@ -1,4 +1,4 @@
-class CreateWhitelistRequests < ActiveRecord::Migration
+class CreateWhitelistRequests < ActiveRecord::Migration[4.2]
   def change
     create_table :whitelist_requests do |t|
       t.references :user, index: true

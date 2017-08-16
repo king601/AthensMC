@@ -29,36 +29,6 @@ ActiveRecord::Schema.define(version: 20170227011329) do
     t.index ["user_id"], name: "index_casts_on_user_id"
   end
 
-  create_table "conversation_users", id: :serial, force: :cascade do |t|
-    t.integer "conversation_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_conversation_users_on_conversation_id"
-    t.index ["user_id"], name: "index_conversation_users_on_user_id"
-  end
-
-  create_table "conversations", id: :serial, force: :cascade do |t|
-    t.integer "messages_count", default: 0
-    t.text "last_message_content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["messages_count"], name: "index_conversations_on_messages_count"
-  end
-
-  create_table "events", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.string "activity"
-    t.text "description"
-    t.datetime "start_time"
-    t.string "host"
-    t.integer "user_id"
-    t.boolean "official_event", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_events_on_user_id"
-  end
-
   create_table "forum_posts", id: :serial, force: :cascade do |t|
     t.integer "forum_thread_id"
     t.text "body"
@@ -87,17 +57,6 @@ ActiveRecord::Schema.define(version: 20170227011329) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "messages", id: :serial, force: :cascade do |t|
-    t.integer "conversation_id"
-    t.integer "user_id"
-    t.text "content"
-    t.boolean "read_by_other_participant", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "notifications", id: :serial, force: :cascade do |t|
@@ -154,7 +113,6 @@ ActiveRecord::Schema.define(version: 20170227011329) do
   end
 
   add_foreign_key "casts", "users"
-  add_foreign_key "events", "users"
   add_foreign_key "forum_posts", "forum_threads"
   add_foreign_key "forum_posts", "users"
   add_foreign_key "forum_threads", "users"
