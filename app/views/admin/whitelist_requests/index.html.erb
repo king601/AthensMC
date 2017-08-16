@@ -32,7 +32,6 @@
      <thead>
             <tr>
               <th>Request ID:</th>
-              <th>Avatar:</th>
               <th>AthensMC Username:</th>
               <th>Minecraft UUID:</th>
               <th>Last Sign In IP Address:</th>
@@ -47,20 +46,19 @@
     <% @whitelist_requests.each do |r| %>
         <tr>
           <td><%= r.id %></td>
-          <td><%= image_tag r.user.minecraft_avatar %></td>
-            <td><%= link_to r.user.username, user_path(r.user.username) %></td>
+          <td><%= link_to r.user.username, user_path(r.user.username) %></td>
           <td><%= r.user.dashed_uuid %></td>
-        <td><%= r.user.last_sign_in_ip %></td>
+          <td><%= r.user.last_sign_in_ip %></td>
           <td><%= r.referred_by %></td>
           <td>
             <% if r.status == "approved" %>
-            <span class="label label-green">Approved</span>
+            <span class="badge badge-success">Approved</span>
             <% end %>
             <% if r.status == "pending" %>
-            <span class="label label-warning">Pending</span>
+            <span class="badge badge-warning">Pending</span>
             <% end %>
             <% if r.status == "denied" %>
-              <span class="label label-danger">Denied</span>
+              <span class="badge badge-danger">Denied</span>
             <% end %>
           </td>
           <td>

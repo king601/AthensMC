@@ -42,12 +42,12 @@ class Notifications
     )
 
   updateUnreadCount: (count) =>
-    label = ""
+    badge = ""
 
     if count > 0
-       label = "<span class='label label-danger'>#{count}</span>"
+       badge = "<span class='badge badge-danger'>#{count}</span>"
 
-    $("[data-behavior='notifications-count']").html("<i class='fa fa-bell'></i> #{label} <span class='visible-xs-inline'>Notifications</span>")
+    $("[data-behavior='notifications-count']").html("<i class='fa fa-bell'></i> #{badge} <span class='visible-xs-inline'>Notifications</span>")
 
 jQuery ->
   new Notifications if $("[data-behavior='notifications']").length > 0
