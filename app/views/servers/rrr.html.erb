@@ -11,7 +11,7 @@
   <br />
     <div class="row">
       <div class="col-md-8">
-        <div class="well well-sm">
+        <div class="card card-body">
           <h2>Rockets Rifles Robots</h2>
             <p>  Do you dream of piloting a spaceship across the stars? Of building a super scientist’s lab and delving into technical mysteries and designing fantastic machines? Do you hope to have an army of robot minions, waiting to carry out your nefarious schemes?</p>
 
@@ -33,12 +33,15 @@
       </div>
 
       <div class="col-md-4">
-        <!-- Things to Know Well -->
-        <div class="well alertwell">
-          <h4><strong>Things to Know</strong></h4>
-           <p><strong>Server IP:</strong> rrr.athensmc.com</p>
-           <p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
-           <p><%= link_to("Forums", "http://forums.athensmc.com") %> | <%= link_to("Technic Launcher", "http://technicpack.net") %></p>
+        <!-- Things to Know Card -->
+        <div class="card text-dark bg-warning mb-3">
+          <div class="card-header">Things to Know</div>
+          <div class="card-body">
+            <p class="card-text"><strong>Server IP:</strong> rrr.athensmc.com</p>
+            <p class="card-text"><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
+            <%= link_to("Forums", "http://forums.athensmc.com", class: "text-dark") %> |
+            <%= link_to("Technic Launcher", "http://technicpack.net", class: "text-dark") %>
+          </div>
         </div>
         <!-- Other Downloads Well -->
         <!-- Hiding this because it's not useful for v4.0 at the moment -
@@ -50,14 +53,12 @@
          </div>
        -->
       </div>
-
-
     </div>
 
-  <div class="row">
+  <div class="row mt-2">
 
      <div class="col-md-6">
-      <div class="well">
+      <div class="card card-body">
         <h2>FAQ</h2>
         <div class="panel-group" id="accordion">
           <div class="panel panel-default">

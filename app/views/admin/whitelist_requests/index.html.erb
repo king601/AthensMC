@@ -7,18 +7,17 @@
 
 <div class="row">
   <div class="col-md-12">
-
-    <h2 style="float: right">
+    <h4 style="float: right">
       <%= link_to "Generate Whitelist", whitelisted_admin_users_path(:format => :json) %> |
       <%= link_to "Charts", charts_admin_whitelist_requests_path %>
-    </h2>
+    </h4>
 
-    <h2 style="float: left">
+    <h4 style="float: left">
       <%= link_to "All", admin_whitelist_requests_path %> |
       <%= link_to "Pending", pending_admin_whitelist_requests_path %> |
       <%= link_to "Approved", approved_admin_whitelist_requests_path %> |
       <%= link_to "Denied", denied_admin_whitelist_requests_path %>
-    </h2>
+    </h4>
   </div>
 </div>
 
