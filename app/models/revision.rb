@@ -1,5 +1,7 @@
 # Revision
 class Revision < ApplicationRecord
+  include Paginatable
+
   belongs_to :user
 
   validates :title, presence: true,
