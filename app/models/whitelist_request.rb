@@ -10,6 +10,9 @@ class WhitelistRequest < ApplicationRecord
   }
 
   scope :status, -> (status) { where(status: status) }
+  scope :approved, -> { where(status: "approved") }
+  scope :denied, -> { where(status: "denied") }
+  scope :pending, -> { where(status: "pending") }
   scope :agree, -> (agree) { where(agree_rules: agree) }
 
   # All whitelist requests in the current month
