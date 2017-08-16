@@ -12,193 +12,97 @@
 
  @import "athensmc/trix";
 
- .navbar {
-   margin-bottom: 2em;
+.navbar {
+ margin-bottom: 2em;
+}
+
+.flash-message {
+ // This is set to the negitive of the margin for the navbar spacing so alerts
+ // are flush with the bottom of the navbar
+ margin-top: -2em;
+}
+
+.form-field-error {
+ background-color: $red;
+ border-radius: $border-radius;
+ color: #FFF;
+ display: inline-block;
+ font-size: $font-size-sm;
+ font-weight: 400;
+ padding: 0 0.6em;
+ position: relative;
+ z-index: 3;
+
+ &::before {
+   border: solid transparent;
+   border-bottom-color: $red;
+   border-width: 6px;
+   bottom: 100%;
+   content: " ";
+   height: 0;
+   left: 10px;
+   pointer-events: none;
+   position: absolute;
+   width: 0;
  }
+}
 
- .flash-message {
-   // This is set to the negitive of the margin for the navbar spacing so alerts
-   // are flush with the bottom of the navbar
-   margin-top: -2em;
- }
+ .ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  _width: 160px;
+  padding: 4px 0;
+  margin: 2px 0 0 2px;
+  list-style: none;
+  background-color: $white;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
 
- .form-field-error {
-   background-color: $red;
-   border-radius: $border-radius;
-   color: #FFF;
-   display: inline-block;
-   font-size: $font-size-sm;
-   font-weight: 400;
-   padding: 0 0.6em;
-   position: relative;
-   z-index: 3;
+  .ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
 
-   &::before {
-     border: solid transparent;
-     border-bottom-color: $red;
-     border-width: 6px;
-     bottom: 100%;
-     content: " ";
-     height: 0;
-     left: 10px;
-     pointer-events: none;
-     position: absolute;
-     width: 0;
-   }
- }
-
-//  .text-middle {
-//  	line-height: 48px;
-//  	vertical-align: middle;
-//  }
-//  .center {
-//  	text-align: center;
-//  }
-//  // New Home Page Jumbotro
-//  .athens-banner {
-//    background: #45687F; //#d5abff;
-//    color: $white;
-//  }
-//  p {
-//    .lead-link {
-//     font-weight: bold;
-//     color: darken($athens_grey, 20%);
-//    }
-//  }
-//  .infowell {
-//  	background: #90C695; //#ecf0f1;
-//  	color: $black;
-//  	font-family: $font-family-with-orbitron;
-//  	font-weight: bold;
-//  }
-//  .alertwell {
-//  	background: #F5AB35; //Nice pretty orange
-//  	color: $black;
-//  	font-family: $font-family-with-orbitron;
-//  	font-weight: bold;
-//  }
-//  .eventswell {
-//  	background: #BE90D4; //Light Purple
-//  	color: $white;
-//  	font-family: $font-family-with-orbitron;
-//  }
-//  .eventswell a {
-//  	color: $black;
-//  }
-//  .jumboalert {
-//  	background: #C8F7C5; //#ecf0f1;
-//  }
-//  .jumbo-header {
-//  	color: $black;
-//  	font-family: $font-family-with-orbitron;
-//  }
-//  .footer-well {
-//  	background: #ecf0f1;
-//  	color: $black;
-//  	font-family: $font-family-with-orbitron;
-//  	font-weight: bold;
-//  	ul {
-//  		font-family: $font-family-sans-serif;
-//  	}
-//  	button {
-//  		font-family: $font-family-sans-serif;
-//  	}
-//  }
-//  .loginwell {
-//  	background: $athens_grey;
-//  }
-//  .shownotes-well {
-//  	background: $athens_grey;
-//  }
-//  .wrapper-login {
-//    margin-top: 15px;
-//    margin-bottom: 20px;
-//  }
-//  .episode-card {
-//  	font-weight: 300;
-//  	margin: 0px 0px 15px 0px;
-//  	min-height: 190px;
-//  	padding: 20px 20px 20px 20px;
-//  	position: relative;
-//  	text-align: left;
-//  }
-//  .episode-card .img_gloss {
-//  	color: #aaaaaa;
-//  	position: absolute;
-//  	top: 20px;
-//  	left: 10px;
-//  }
-//  .castholder {
-//  	margin: 0px 0px 15px 0px;
-//  	min-height: 250px;
-//  	position: relative;
-//  	text-align: left;
-//  }
-//
-//  [class*='-green'] {
-//  	background-color:#5BC236;
-//      color:#fff;
-//  }
-//  [class*='-green']:hover,[class*='-green']:active {
-//  	background-color:#6cd347;
-//      color:#fff;
-//  }
-//  .ui-autocomplete {
-//   position: absolute;
-//   top: 100%;
-//   left: 0;
-//   z-index: 1000;
-//   float: left;
-//   display: none;
-//   min-width: 160px;
-//   _width: 160px;
-//   padding: 4px 0;
-//   margin: 2px 0 0 2px;
-//   list-style: none;
-//   background-color: $white;
-//   border-color: #ccc;
-//   border-color: rgba(0, 0, 0, 0.2);
-//   border-style: solid;
-//   border-width: 1px;
-//   -webkit-border-radius: 5px;
-//   -moz-border-radius: 5px;
-//   border-radius: 5px;
-//   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-//   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-//   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-//   -webkit-background-clip: padding-box;
-//   -moz-background-clip: padding;
-//   background-clip: padding-box;
-//   *border-right-width: 2px;
-//   *border-bottom-width: 2px;
-//
-//   .ui-menu-item > a.ui-corner-all {
-//     display: block;
-//     padding: 3px 15px;
-//     clear: both;
-//     font-weight: normal;
-//     line-height: 18px;
-//     color: #555555;
-//     white-space: nowrap;
-//
-//     &.ui-state-hover, &.ui-state-active {
-//       color: $white;
-//       text-decoration: none;
-//       background-color: #0088cc;
-//       border-radius: 0px;
-//       -webkit-border-radius: 0px;
-//       -moz-border-radius: 0px;
-//       background-image: none;
-//     }
-//   }
-// }
-// .ui-helper-hidden-accessible {
-//     border: 0;
-//     clip: rect(0 0 0 0);
-//     height: 1px;
-//     margin: -1px;
-//     overflow: hidden;
-//     padding: 0;
-//     position: absolute;
-//     width: 1px;
-// }
+    &.ui-state-hover, &.ui-state-active {
+      color: $white;
+      text-decoration: none;
+      background-color: #0088cc;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      background-image: none;
+    }
+  }
+}
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

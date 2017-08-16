@@ -8,6 +8,7 @@ class UserDecorator < BaseDecorator
   private
 
   def no_uuid_skin
-    "https://crafatar.com/renders/body/606e2ff0ed7748429d6ce1d3321c7838?scale=4&overlay"
+    "https://crafatar.com/renders/body/606e2ff0ed7748429d6ce1d3321c7838?scale="\
+    "4&overlay"
   end
 end
