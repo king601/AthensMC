@@ -1,21 +1,33 @@
 <% page_title "Forums" %>
-<div class="well">
-  <h1 class="page-header">
-    <div class="pull-right">
-        <%= link_to "New Topic", new_forum_thread_path, class: 'btn btn-primary' if user_signed_in? %>
-    </div>
-    <div class="pull-right" style="margin-right: 10px">
-        <%= form_tag forum_threads_path, method: :get, class: 'form-inline' do %>
-          <%= text_field_tag :q, nil, placeholder: 'Search...', class: 'form-control' %>
+
+<h1>
+  <div class="pull-right">
+    <div class="input-group">
+      <%= form_tag forum_threads_path, method: :get, class: "input-group" do %>
+        <%= text_field_tag :q, params[:q], placeholder: "Search...", class: "form-control" %>
+        <% if params[:q].present? %>
+          <div class="input-group-btn">
+            <%= link_to forum_threads_path,
+              class: "btn btn-secondary" do %>
+              <span class="fa fa-close"></span>
+              <span>Clear search results</span>
+            <% end %>
+          </div>
         <% end %>
+      <% end %>
+
+      <%= link_to "New Topic", new_forum_thread_path,
+        class: "btn btn-primary ml-1" if user_signed_in? %>
     </div>
-    Community Discussion
-  </h1>
+  </div>
+  Community Discussion
+</h1>
 
-  <%= render @forum_threads %>
+<%= render @forum_threads %>
 
-	<div class="center">
-	  <%= will_paginate @forum_threads, renderer: BootstrapPagination::Rails %>
-    <p class="text-muted">About <%= @forum_threads.total_count %> results (took <%= @forum_threads.took %>ms)</p>
-	</div>
-</div>
+<%= will_paginate @forum_threads, renderer: BootstrapPagination::Rails %>
+
+<p class="text-muted text-center">
+  About <%= @forum_threads.total_count %> results
+  (took <%= @forum_threads.took %>ms)
+</p>

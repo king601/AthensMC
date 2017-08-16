@@ -25,18 +25,17 @@
 	  <%= "You are logged in as" %> <%= link_to "#{current_user.username}", user_path(current_user.username) %>
 		<% if current_user.try(:admin?) %>
 			<div class="pull-right">
-				<div class="dropup">
-				  <button class="btn btn-warning dropdown-toggle" type="button" id="admin_quickaction" data-toggle="dropdown" aria-expanded="true">
-				    Admin QuickAction
+				<div class="btn-group dropup">
+				  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Admin QuickAction
 				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" role="menu" aria-labelledby="admin_quickaction">
-				    <li role="presentation"><%= link_to "All Users", admin_users_path, role: "menuitem", tabindex: "-1" %></li>
-					    <li role="presentation"><%= link_to "Map Downloads", admin_downloads_path, role: "menuitem", tabindex: "-1" %></li>
-				    <li role="presentation"><%= link_to "Whitelist Requests", admin_whitelist_requests_path, role: "menuitem", tabindex: "-1" %></li>
-						<li role="presentation">	<%= link_to "Forums", forum_threads_path %></li>
-
-				  </ul>
+					</button>
+				  <div class="dropdown-menu">
+				    <%= link_to "All Users", admin_users_path, class: "dropdown-item" %>
+						<%= link_to "Map Downloads", admin_downloads_path, class: "dropdown-item" %>
+						<%= link_to "Whitelist Requests", admin_whitelist_requests_path, class: "dropdown-item" %>
+						<%= link_to "Forums", forum_threads_path, class: "dropdown-item" %>
+				  </div>
 				</div>
 			</div>
 		<% end # End admin only section %>
