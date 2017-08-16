@@ -32,9 +32,12 @@ class User < ApplicationRecord
 
   def search_data
     {
+      id: id,
       username: username,
       minecraft_uuid: minecraft_uuid,
-      email: email
+      email: email,
+      created_at: created_at,
+      updated_at: updated_at
     }
   end
 
@@ -48,7 +51,7 @@ class User < ApplicationRecord
       uuid = minecraft_uuid.to_s
       "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{uuid[20..31]}"
     else
-      'No UUID associated with this account'
+      'No UUID associated'
     end
   end
 
@@ -65,5 +68,4 @@ class User < ApplicationRecord
   def set_uuid
     self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid
   end
-
 end

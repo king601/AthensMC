@@ -1,48 +1,43 @@
 <% page_title "All Users" %>
 
-<div class="well">
-  <h1 class="page-header">
-    <div class="pull-right">
-			<% if params[:q].present? %>
-				<%= link_to admin_users_path,
-					class: "btn btn-primary" do %>
-					<span class="fa fa-close"></span>
-					<span>Clear search results</span>
-				<% end %>
-			<% end %>
-    </div>
-    <div class="pull-right" style="margin-right: 10px">
-        <%= form_tag admin_users_path, method: :get, class: 'form-inline' do %>
-          <%= text_field_tag :q, params[:q], placeholder: 'Search...', class: 'form-control' %>
-        <% end %>
-    </div>
-		All Users
-  </h1>
+<h1 class="page-header">
+  <div class="pull-right" style="margin-right: 10px">
+    <%= form_tag admin_users_path, method: :get, class: "input-group" do %>
+      <%= text_field_tag :q, params[:q],
+        placeholder: "Search...", class: "form-control" %>
+      <% if params[:q].present? %>
+        <div class="input-group-btn">
+    			<%= link_to admin_users_path,
+    				class: "btn btn-primary" do %>
+    				<span class="fa fa-close"></span>
+    				<span>Clear search results</span>
+    			<% end %>
+        </div>
+  		<% end %>
+    <% end %>
+  </div>
+	All Users
+</h1>
 
-	<% if @users.suggestions.any? %>
-	 	<p class="lead">Did you mean: <% @users.suggestions.first %>?</p>
-	<% end %>
+<% if @users.suggestions.any? %>
+ 	<p class="lead">Did you mean: <% @users.suggestions.first %>?</p>
+<% end %>
+<table class="table table-responsive table-hover table-bordered table-sm">
+ <thead>
+	  <tr>
+	    <th>User ID:</th>
+	    <th>Avatar:</th>
+	    <th>Username:</th>
+	    <th>Email Address:</th>
+	    <th>IP:</th>
+	    <th>Last Seen:</th>
+	    <th>Rank:</th>
+	    <th>UUID:</th>
+	  </tr>
+	</thead>
+  <tbody>
+		<%= render @users %>
+  </tbody>
+</table>
 
-	<table class="table table-hover table-striped table-bordered table-responsive">
-	 <thead>
-		  <tr>
-		    <th>User ID:</th>
-		    <th>Avatar</th>
-		    <th>Username:</th>
-		    <th>Email Address:</th>
-		    <th>IP:</th>
-		    <th>Last Seen:</th>
-		    <th>Rank</th>
-		    <th>UUID</th>
-		  </tr>
-		</thead>
-	  <tbody>
-			<%= render @users %>
-	  </tbody>
-	</table>
-
-	<div class="center">
-		<%= will_paginate @user, renderer: BootstrapPagination::Rails %>
-	</div>
-
-</div><!-- /.well -->
+<%= will_paginate @user, renderer: BootstrapPagination::Rails %>
