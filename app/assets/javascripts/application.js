@@ -22,16 +22,6 @@
 //= require chartkick
 //= require_tree .
 
-//$(function () {
-//  $('[data-toggle="tooltip"]').tooltip()
-//})
-// $(function() {
-//   $('.datepicker').datepicker();
-// });
-// $(document).on("ready page:change", function() {
-//     $('.tag-tooltip').tooltip();
-// });
-
 // $(document).on('ready', function(event) {
 //   // initialize persistent state
 //   // Turbolinks.enableProgressBar();
@@ -39,13 +29,13 @@
 // });
 
 // Make alerts / notices fade out automatically after 5.5 seconds
-// $(document).ready(function() {
-//   setTimeout(function() {
-//       $(".flash-message").fadeOut("slow", function() {
-//           $(this).remove();
-//       })
-//   }, 5500 );
-// });
+$(document).ready(function() {
+  setTimeout(function() {
+      $(".flash-message").fadeOut("slow", function() {
+          $(this).remove();
+      })
+  }, 5500 );
+});
 
 $(document).on('trix-initialize', function() {
   var element, i, len, ref, results;
