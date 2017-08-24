@@ -14,12 +14,12 @@
 
 	<% @revision.each do |revision| %>
 	<!-- Start Revision Post -->
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title"><strong><%= revision.title %></strong></h3>
+	<div class="card card-default">
+		<div class="card-header">
+			<h3 class="card-title"><strong><%= revision.title %></strong></h3>
 		</div>
 
-		<div class="panel-body">
+		<div class="card-body">
 			<p>
 				<%=  markdownify(revision.text) %>
 			</p>

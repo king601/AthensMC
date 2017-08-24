@@ -1,13 +1,13 @@
 <% page_title @revision.title %>
 
 <!-- Start Revision Post -->
-	<div class="panel panel-default">
-		<div class="panel-heading">
+	<div class="card card-default">
+		<div class="card-header">
 			<h2><strong><%= @revision.title %></strong> <!--<div class="pull-right"><% link_to "Go Back", revisions_path %></div>--></h2>
 
 		</div>
 
-		<div class="panel-body">
+		<div class="card-body">
 			<p>
 				<%=  markdownify(@revision.text) %>
 			</p>
