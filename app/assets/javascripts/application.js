@@ -13,37 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require bootstrap-sprockets
+//= require popper
+//= require bootstrap
 //= require turbolinks
-//= require local_time
+//= require local-time
 //= require trix
 //= require highcharts
 //= require chartkick
 //= require_tree .
 
-//$(function () {
-//  $('[data-toggle="tooltip"]').tooltip()
-//})
-$(function() {
-  $('.datepicker').datepicker();
-});
-$(document).on("ready page:change", function() {
-    $('.tag-tooltip').tooltip();
-});
-
-$(document).on('ready', function(event) {
-  // initialize persistent state
-  // Turbolinks.enableProgressBar();
- Turbolinks.ProgressBar.enable();
-});
-
 // Make alerts / notices fade out automatically after 5.5 seconds
 $(document).ready(function() {
-    setTimeout(function() {
-        $(".flash-message").fadeOut("slow", function() {
-            $(this).remove();
-        })
-    }, 5500 );
+  setTimeout(function() {
+      $(".flash-message").fadeOut("slow", function() {
+          $(this).remove();
+      })
+  }, 5500 );
 });
 
 $(document).on('trix-initialize', function() {

@@ -1,8 +1,5 @@
 <% page_title "Request access" %>
-<div class="well">
-  <div class="page-header">
-    <h1>Request Access to the Servers</h1>
-  </div>
+  <h1 class="display-5">Request Access to the Servers</h1>
 
   <div class="row">
     <div class="col-md-12">
@@ -15,24 +12,23 @@
         <% if current_user.whitelist_request.status == "pending" %>
           <p class="text-info text-middle">
             <strong>Your request is still pending!</strong>
-            <i class="fa fa-5x fa-pencil-square" style="float: right"></i>
+            <i class="fa fa-2x fa-pencil-square"></i>
           </p>
         <% end %>
         <% if current_user.whitelist_request.status == "approved" %>
           <p class="text-success text-middle">
             <strong>You are whitelisted!</strong>
-            <i class="fa fa-5x fa-check-square-o" style="float: right"></i>
+            <i class="fa fa-2x fa-check-square-o"></i>
           </p>
         <% end %>
         <% if current_user.whitelist_request.status == "denied" %>
             <p class="text-danger text-middle">
               <strong>Your application has been denied!</strong>
-              <i class="fa fa-5x fa-times-circle-o" style="float: right"></i>
+              <i class="fa fa-2x fa-times-circle-o"></i>
             </p>
         <% end %>
       <% else %>
         <!-- If no whitelist requests then we should show the form -->
-
         <%= render "form" %>
       <% end %>
     </div>

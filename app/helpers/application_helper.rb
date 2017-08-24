@@ -29,8 +29,8 @@ module ApplicationHelper
 
   def user_badges(user)
     badges = []
-    badges << content_tag(:span, 'Admin', class: 'label label-danger') if user.admin?
-    badges << content_tag(:span, 'Whitelisted', class: 'label label-success') if user.whitelisted?
+    badges << content_tag(:span, 'Admin', class: 'badge badge-danger') if user.admin?
+    badges << content_tag(:span, 'Whitelisted', class: 'badge badge-success') if user.whitelisted?
     badges.join(' ').html_safe
   end
 end

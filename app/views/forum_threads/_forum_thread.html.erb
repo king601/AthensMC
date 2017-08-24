@@ -1,5 +1,5 @@
 <%= link_to forum_thread, class: 'forum-thread-card' do %>
-  <h3>  <% if forum_thread.sticky? %>
+  <h3><% if forum_thread.sticky? %>
       <%= fa_icon "thumb-tack" %>
     <% end %>
     <%= forum_thread.subject %></h3>
@@ -9,6 +9,8 @@
     </div>
 
     <div class="text-muted">
-      <%= image_tag forum_thread.user.minecraft_avatar %>  <%= forum_thread.user.username %> asked on <%= local_time forum_thread.created_at %>
+      <%= image_tag forum_thread.user.decorate.minecraft_avatar %>
+      <%= forum_thread.user.username %> asked on
+      <%= local_time forum_thread.created_at %>
     </div>
 <% end %>

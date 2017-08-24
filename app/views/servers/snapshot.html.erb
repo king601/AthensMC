@@ -1,89 +1,81 @@
 <% page_title "Snapshot Survival" %>
 <!-- Start of Page Content -->
-<div class="well">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="eventswell jumbotron center">
-				<h2>Snapshot Survival Server</h2>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="jumbotron text-center">
+			<h2>Snapshot Survival Server</h2>
+		</div>
+	</div> <!-- /.col-md-12 -->
+</div> <!-- /.row -->
+
+<div class="row">
+	<div class="col-md-8">
+		<div class="card card-body">
+			<h2>Snapshot Survival Server</h2>
+			<p>
+				AthensMC is currently hosting a snapshot survival server on the latest Minecraft vanilla snapshot. </p>
+			<p>
+				Because of the nature of snapshots, we cannot gurantee that the server will be bug-free. So if you're interested in checking out the latest snapshots but not <em>too</em> worried about your builds
+				this server is for you!
+			</p>
+		</div> <!-- /.well -->
+	</div> <!-- /.col-md-8 -->
+
+	<div class="col-md-4">
+		<!-- Things to Know Card -->
+		<div class="card text-dark bg-warning mb-3">
+			<div class="card-header">Things to Know</div>
+			<div class="card-body">
+				<p class="card-text"><strong>Server IP:</strong> snapshot.athensmc.com</p>
+				<p class="card-text"><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
+				<%= link_to("Server Map", "http://a02.athensmc.com", class: "text-dark") %> |
+				<%= link_to("Forums", "http://forums.athensmc.com", class: "text-dark") %>
 			</div>
-		</div> <!-- /.col-md-12 -->
-	</div> <!-- /.row -->
+		</div>
+	</div> <!-- /col-md-4 -->
+</div> <!-- /.row -->
+<div class="row">
 
-	<div class="row">
-		<div class="col-md-8">
-			<div class="well well-sm serverwell">
-				<h2>Snapshot Survival Server</h2>
-				<p>
-					AthensMC is currently hosting a snapshot survival server on the latest Minecraft vanilla snapshot. </p>
-				<p>
-					Because of the nature of snapshots, we cannot gurantee that the server will be bug-free. So if you're interested in checking out the latest snapshots but not <em>too</em> worried about your builds
-					this server is for you!
-				</p>
-			</div> <!-- /.well -->
-		</div> <!-- /.col-md-8 -->
+	<div class="col-md-6">
+	 <div class="card card-body">
+		 <h2>FAQ</h2>
+		 <div class="panel-group" id="accordion">
+			 <div class="card">
+				 <div class="card-header">
+					 <h5 class="mb-0">
+						 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+							 How do I get whitelisted?
+						 </a>
+					 </h5>
+				 </div>
+				 <div id="collapseOne" class="panel-collapse collapse in">
+					 <div class="card-body">
+						 If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
+					 </div>
+				 </div>
+			 </div>
+			 <div class="card">
+				 <div class="card-header">
+					 <h5 class="mb-0">
+						 <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+							 Do I have to subscribe to play/pay any money?
+						 </a>
+					 </h5>
+				 </div>
+				 <div id="collapseTwo" class="panel-collapse collapse">
+					 <div class="card-body">
+						 We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
 
-		<div class="col-md-4">
-			<!-- Things to Know Well -->
-			<div class="well alertwell">
-				<h4><strong>Things to Know</strong></h4>
-				<p><strong>Server IP:</strong> snapshot.athensmc.com</p>
-				<p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
-				<p><%= link_to("Server Map", "http://a02.athensmc.com") %> | <%= link_to("Forums", "http://forums.athensmc.com") %></p>
-			</div>
-			<% if false #Lets Hide this for Now %>
-			<!-- Events Well -->
-			<div class="well eventswell">
-					<h4><Strong>Upcoming Events</strong></h4>
-						<p><strong>March 23rd, 2015:</strong>  <%= link_to("UHC EVENT #3", servers_snapshot_path ) %><br />
-						<p><strong>March 25th, 2015:</strong>  <%= link_to("UHC EVENT #4", servers_snapshot_path ) %><br />
-			</div>
-			<% end %>
-		</div> <!-- /col-md-4 -->
-	</div> <!-- /.row -->
-	<div class="row">
+					 </div>
+				 </div>
+			 </div>
+		 </div> <!-- End FAQ -->
+	 </div> <!-- End Well-->
+ </div>
 
-     <div class="col-md-6">
-      <div class="well">
-        <h2>FAQ</h2>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  How do I get whitelisted?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                If you're not currently whitelisted, you can go to <%= link_to "the whitelist request page", whitelist_requests_path %>. But you'll need an AthensMC account first if you haven't got one!
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  Do I have to subscribe to play/pay any money?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
-
-              </div>
-            </div>
-          </div>
-
-      </div> <!-- End FAQ -->
-    </div> <!-- End Well-->
-    </div>
-  <!-- Twitter Col- -->
-    <div class="col-md-6">
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AthensMinecraft" data-widget-id="471126696138002432">Tweets by @AthensMinecraft</a>
-                <script src="//platform.twitter.com/widgets.js"></script>
-      </div>
-  </div>
-
+	<!-- Twitter Col- -->
+	<div class="col-md-6">
+		<%= render "shared/cards/twitter" %>
+	</div>
 </div>

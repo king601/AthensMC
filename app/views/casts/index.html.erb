@@ -26,8 +26,8 @@
 	<% @cast.each do |cast| %>
 	  <div class="episode-card">
  		  <h3 style="margin-top:0px">
- 		  <!--<img src="http://placehold.it/300x150" class="img-responsive img_gloss"> -->
-	              <% if cast == @cast_latest %> <span class="pull-right label label-danger">New Episode</span> <% end %>
+ 		  <!--<img src="http://placehold.it/300x150" class="img-fluid img_gloss"> -->
+	              <% if cast == @cast_latest %> <span class="pull-right badge badge-danger">New Episode</span> <% end %>
 	              <%= link_to cast.episode, cast_path(cast) %>
           </h3>
            	<p><!-- Cast Release Date -->
@@ -56,7 +56,7 @@
 
 	<!-- Pagination Stuff  -->
 	<div class="center">
-	<%= will_paginate @cast, renderer: BootstrapPagination::Rails %>
+	<%= paginate @cast %>
 	</div>
 
 	<p class="center text-muted">We livestream AthensCasts on our twitch page <%= link_to "located here", "http://twitch.tv/kaptoye" %></p>

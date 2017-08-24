@@ -1,40 +1,37 @@
 <% page_title "Home" %>
-<div class="well">
 
-	<div class="jumbotron athens-banner center">
-		<div class="container">
-			<h1>Want a great gaming community?</h1>
-			<p>We want all of our players to enjoy themselves.<br> We offer both <%= link_to 'Modded Minecraft', servers_rrr_path, class: 'lead-link' %> or <%= link_to 'vanilla snapshot survival', servers_snapshot_path, class: 'lead-link' %> options.</p>
-			<%= link_to "Learn more", information_path, class: 'btn btn-lg btn-info' %>
-		</div>
+	<div class="jumbotron text-center">
+	  <h1 class="display-4">Want a great gaming community?</h1>
+	  <p class="lead">We want all of our players to enjoy themselves.</p>
+		<p>
+			We offer both <%= link_to "Modded Minecraft", servers_rrr_path,
+				class: "lead-link" %> or <%= link_to "vanilla snapshot survival",
+					servers_snapshot_path, class: "lead-link" %> options.
+		</p>
+	  <%= link_to "Learn more", information_path, class: 'btn btn-lg btn-primary' %>
 	</div>
-	<!--
-	<p>We're a gaming community focused on bringing high-quality servers to our community. We have a range of servers for your entertainment and we are constantly working to do more community events as well as add more servers. </p>
 
-	<p>If you'd like to find out more information click <%= link_to 'here', information_path %> or join us on our forums at <%= link_to 'http://forums.athensmc.com', 'http://forums.athensmc.com' %></p>
--->
 	<hr>
 	<div class="row">
 		<div class="col-md-12">
-					<%= image_tag "/../images/rockets-rifles-robots/rrr_cube.png", class: 'img-responsive pull-left' %><br>
-					<h1>Rockets Rifles Robots</h1>
-					<p class="lead">A customized modded Minecraft experience</p>
-					<p>Do you dream of piloting a spaceship across the stars? Of building a super scientist’s lab and delving into technical mysteries and designing fantastic machines? Do you hope to have an army of robot minions, waiting to carry out your nefarious schemes?</p>
+			<%= image_tag "/../images/rockets-rifles-robots/rrr_cube.png", class: "img-fluid pull-left" %>
+			<h1 class="display-5">Rockets Rifles Robots</h1>
+			<p class="lead">A customized modded Minecraft experience</p>
+			<p>Do you dream of piloting a spaceship across the stars? Of building a super scientist’s lab and delving into technical mysteries and designing fantastic machines? Do you hope to have an army of robot minions, waiting to carry out your nefarious schemes?</p>
 
-					<p>Or do you just want a bunch of guns to shoot zombie hordes with?</p>
+			<p>Or do you just want a bunch of guns to shoot zombie hordes with?</p>
 
-					<p>If any of those things sound like fun, then Rockets, Rifles and Robots is the pack for you. This pack has a technical/industrial focus and all kinds of mods - old friends with exciting updated features, and new favorites! Join us and explore everything our signature mod pack has to offer. </p>
-					<%= link_to "Learn more about Rockets Rifles Robots", servers_rrr_path, class: "btn btn-info" %>
+			<p>If any of those things sound like fun, then Rockets, Rifles and Robots is the pack for you. This pack has a technical/industrial focus and all kinds of mods - old friends with exciting updated features, and new favorites! Join us and explore everything our signature mod pack has to offer. </p>
+			<%= link_to "Learn more about Rockets Rifles Robots", servers_rrr_path, class: "btn btn-success" %>
 		</div>
 	</div>
+
 	<hr>
 	<div class="row">
-		<div class="col-md-12 center">
-			<h1>Are you ready to give us a try?</h1>
+		<div class="col-md-12 text-center">
+			<h1 class="display-5">Are you ready to give us a try?</h1>
 			<p class="lead">Check out the Community Information to learn what you need to do to join!</p>
 			<%= link_to "Community Information", information_path, class: "btn btn-primary" %>
 		</div>
 	</div>
 	<hr>
-
-</div>

@@ -1,19 +1,22 @@
 <% page_title "Edit Account" %>
 
-  <div class="wrapper-login">
-  <div class="form-editaccount">
+
+<div class="row">
+  <div class="col-lg-6 col-md-6 ml-auto mr-auto">
+    <h1 class="text-center">Edit Account</h1>
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-     <h2 class="form-editaccount-heading fancyfont">Edit Account</h2>
-      <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :username %><br />
+        <%= f.label :username %>
         <%= f.text_field :username, autofocus: true, class: "form-control" %>
+        <%= error_message_on(f.object, :username) %>
       </div>
 
       <div class="form-group">
-        <%= f.label :email %><br />
+        <%= f.label :email %>
         <%= f.email_field :email, autofocus: false, class: "form-control" %>
+        <%= error_message_on(f.object, :email) %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -21,25 +24,29 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        <%= error_message_on(f.object, :password) %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        <%= error_message_on(f.object, :password_confirmation) %>
       </div>
 
       <div class="form-group">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
         <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+        <%= error_message_on(f.object, :current_password) %>
       </div>
-      <div class="actions">
+
+      <div class="form-group">
         <%= f.submit "Update Settings", class: "btn btn-primary btn-lg btn-block" %>
       </div>
       <hr />
       <div class="form-group">
-          <%= image_tag current_user.minecraft_avatar, style: "float:right", height: "64px" %>
+          <%= image_tag current_user.decorate.minecraft_avatar, style: "float:right", height: "64px" %>
           <%= f.label :minecraft_uuid, "Minecraft UUID" %> <br />
           <%= current_user.dashed_uuid %> <br />
           <% if current_user.minecraft_uuid.nil? %>
@@ -68,17 +75,5 @@
       </div>
 
     <% end %>
-
-
   </div><!-- Form Signin -->
-
 </div>
-<% if false #Hide the Stuff %>
- <div class="well">
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-   <%= link_to "Back", :back %>
-
- </div>
-<% end %>

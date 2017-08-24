@@ -9,7 +9,7 @@
     </div>
 
     <%= link_to user_path(forum_post.user.username) do %>
-      <%= image_tag forum_post.user.minecraft_avatar %>
+      <%= image_tag forum_post.user.decorate.minecraft_avatar %>
       <p class="text-muted">
         <strong><%= forum_post.user.username %></strong>
     <% end %>

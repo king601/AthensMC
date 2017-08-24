@@ -1,35 +1,37 @@
 <% page_title "Statistics" %>
-<div class="well">
-	<div class="page-header">
-	<h1>Website Stats</h1>
-	</div>
+<h1>Website Stats</h1>
 
-	<!-- Stats Table -->
-	<table class="table table-striped table-bordered table-condensed table-responsive">
-	  <tr>
-		<td>Type:</td>
-		<td>Number of:</td>
-	  </tr>
-	  <!-- Users -->
-	  <tr>
-	  	<td>Users</td>
-	  	<td><%= @users.count %></td>
-	  </tr>
-	  <!-- Revisions -->
-	  <tr>
-	  	<td>Revisions</td>
-	  	<td><%= @revisions.count %></td>
-	  </tr>
-		<!-- Casts -->
-	  <tr>
-	  	<td>Casts</td>
-	  	<td><%= @casts.count %> </td>
-	  </tr>
-		<!-- Whitelisted Members -->
-			  <tr>
-			  	<td>Whitelisted members</td>
-			  	<td><%= @whitelist_requests.count %> </td>
-			  </tr>
-	</table>
-	<!-- End Stats Table -->
-</div>
+<hr />
+
+<!-- Stats Table -->
+<table class="table table-bordered table-sm table-responsive">
+  <tr>
+	<td>Type:</td>
+	<td>Number of:</td>
+  </tr>
+  <!-- Users -->
+  <tr>
+  	<td>Users</td>
+  	<td><%= @users.count %></td>
+  </tr>
+  <!-- Revisions -->
+  <tr>
+  	<td>Revisions</td>
+  	<td><%= @revisions.count %></td>
+  </tr>
+	<!-- Casts -->
+  <tr>
+  	<td>Casts</td>
+  	<td><%= @casts.count %></td>
+  </tr>
+	<!-- Whitelisted Members -->
+  <tr>
+  	<td>Whitelisted members</td>
+  	<td>Total: <%= @whitelist_requests.count %>
+			 (<%= @whitelist_requests.approved.count %> approved)
+			 (<%= @whitelist_requests.denied.count %> denied)
+			 (<%= @whitelist_requests.pending.count %> pending)
+		 </td>
+  </tr>
+</table>
+<!-- End Stats Table -->

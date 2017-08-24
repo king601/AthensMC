@@ -1,5 +1,7 @@
 # User
 class User < ApplicationRecord
+  include Paginatable
+
   searchkick text_start: [:username], callbacks: :async, suggest: [:username]
 
   # Include default devise modules. Others available are:
@@ -25,16 +27,19 @@ class User < ApplicationRecord
 
   has_many :forum_threads, dependent: :destroy
   has_many :forum_posts, dependent: :destroy
-  has_many :notifications, foreign_key: :recipient_id
+  has_many :notifications, foreign_key: :recipient_id, dependent: :destroy
   has_one :whitelist_request, dependent: :destroy
 
   attr_accessor :dashed_uuid
 
   def search_data
     {
+      id: id,
       username: username,
       minecraft_uuid: minecraft_uuid,
-      email: email
+      email: email,
+      created_at: created_at,
+      updated_at: updated_at
     }
   end
 
@@ -48,15 +53,7 @@ class User < ApplicationRecord
       uuid = minecraft_uuid.to_s
       "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{uuid[20..31]}"
     else
-      'No UUID associated with this account'
-    end
-  end
-
-  def minecraft_avatar
-    if minecraft_uuid.present?
-      "https://crafatar.com/avatars/#{minecraft_uuid}?overlay&size=64"
-    else
-      'https://crafatar.com/avatars/606e2ff0ed7748429d6ce1d3321c7838?overlay&size=64'
+      'No UUID associated'
     end
   end
 
@@ -65,5 +62,4 @@ class User < ApplicationRecord
   def set_uuid
     self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid
   end
-
 end

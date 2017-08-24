@@ -1,139 +1,130 @@
   <% page_title "Vanilla Survival" %>
-  <div class="well">
-    <div class="row">
-      <div class="col-md-12">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <%= link_to image_tag("/../images/vanilla/Vanilla1.png"), servers_vanilla_path %>
-            </div>
-
-            <div class="item">
-              <img src="../images/vanilla/Vanilla2.png" class="img-responsive" />
-              <!--<img src="http://placehold.it/1100x200" alt="" /> -->
-            </div>
-
-            <div class="item">
-                  <img src="../images/vanilla/Vanilla3.png" class="img-responsive" />
-            </div>
-
-            <div class="item">
-                  <img src="../images/vanilla/Vanilla4.png" class="img-responsive" />
-            </div>
-
-            <div class="item">
-                  <img src="../images/vanilla/Vanilla5.png" class="img-responsive" />
-            </div>
-        </div>
-          <!-- Controls -->
-          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-             <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-          </div>
-
-
-      </div>
-    </div>
-  <br />
-
-  <div class="alert alert-info">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    This server is currently offline, pending a suitable replacement for Bukkit. Once there is a build that supports plugins for Minecraft 1.8 we will re-open with a new world. <strong><%= link_to "Click here for the forums", "http://forums.athensmc.com" %></strong>
-  </div>
-    <div class="row">
-      <div class="col-md-8">
-        <div class="well well-sm">
-          <h2>Athens Vanilla Survival</h2>
-          <p>The vanilla server is all about having fun with the Athens community in an (almost) truly vanilla world. Building bases, exploring with friends and generally having fun is the aim here. Please be sure to follow a basic code of conduct (all the basic stuff, don't be mean to others, don't steal, generally be happy - that's a good aim!).  </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="well alertwell">
-          <h4><Strong>Server Addreses</strong></h4>
-           <p><strong>Minecraft IP:</strong> (currently offline)</p>
-           <p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
-           <%= link_to "Overviewer Map", "http://maps.athensmc.com" %> <br />
-           <%= link_to "Map Downloads", downloads_path %>
-        </div>
-      </div>
-    </div>
-
   <div class="row">
-    <div class="col-md-6">
-      <div class="well">
+    <div class="col-md-12">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
 
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AthensMinecraft" data-widget-id="471126696138002432">Tweets by @AthensMinecraft</a>
-                <script src="//platform.twitter.com/widgets.js"></script>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= link_to image_tag("/../images/vanilla/Vanilla1.png"), servers_vanilla_path %>
+          </div>
+
+          <div class="item">
+            <img src="../images/vanilla/Vanilla2.png" class="img-fluid" />
+            <!--<img src="http://placehold.it/1100x200" alt="" /> -->
+          </div>
+
+          <div class="item">
+                <img src="../images/vanilla/Vanilla3.png" class="img-fluid" />
+          </div>
+
+          <div class="item">
+                <img src="../images/vanilla/Vanilla4.png" class="img-fluid" />
+          </div>
+
+          <div class="item">
+                <img src="../images/vanilla/Vanilla5.png" class="img-fluid" />
+          </div>
+      </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+           <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        </div>
+
+
+    </div>
+  </div>
+<br />
+
+<div class="alert alert-info">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  This server is currently offline, pending a suitable replacement for Bukkit. Once there is a build that supports plugins for Minecraft 1.8 we will re-open with a new world. <strong><%= link_to "Click here for the forums", "http://forums.athensmc.com" %></strong>
+</div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card card-block">
+        <h2>Athens Vanilla Survival</h2>
+        <p>The vanilla server is all about having fun with the Athens community in an (almost) truly vanilla world. Building bases, exploring with friends and generally having fun is the aim here. Please be sure to follow a basic code of conduct (all the basic stuff, don't be mean to others, don't steal, generally be happy - that's a good aim!).  </p>
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="well">
-        <h2>FAQ</h2>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  How do I get whitelisted?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                <%= link_to 'Currently you will need to fill out an application on this thread.', 'http://forums.athensmc.com/threads/whitelist-application.12/'%> We may also request an example of a recent build, at our discretion. Whitelists are shared between all servers, so our members will get access to our Vanilla and modded servers.
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  Do I have to subscribe to play/pay any money?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
-
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  Can I purchase any in-game items to help me get started?
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                  No, we are a vanilla survival server and regardless of your subscription rank <strong>we do not give any in-game perks</strong>. We feel this is the best way to level the playing field for those who cannot subscribe to support us.
-              </div>
-            </div>
-          </div>
-      </div> <!-- End FAQ -->
-    </div> <!-- End Well-->
+    <div class="col-md-4">
+      <div class="well alertwell">
+        <h4><Strong>Server Addreses</strong></h4>
+         <p><strong>Minecraft IP:</strong> (currently offline)</p>
+         <p><strong>Mumble IP:</strong> mumble.athensmc.com (port: 64738)</p>
+         <%= link_to "Overviewer Map", "http://maps.athensmc.com" %> <br />
+         <%= link_to "Map Downloads", downloads_path %>
+      </div>
     </div>
   </div>
 
+<div class="row">
+  <!-- Twitter Col- -->
+	<div class="col-md-6">
+		<%= render "shared/cards/twitter" %>
+	</div>
 
+  <div class="col-md-6">
+    <div class="well">
+      <h2>FAQ</h2>
+      <div class="card-group" id="accordion">
+        <div class="card card-default">
+          <div class="card-header">
+            <h4 class="card-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                How do I get whitelisted?
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="card-collapse collapse in">
+            <div class="card-body">
+              <%= link_to 'Currently you will need to fill out an application on this thread.', 'http://forums.athensmc.com/threads/whitelist-application.12/'%> We may also request an example of a recent build, at our discretion. Whitelists are shared between all servers, so our members will get access to our Vanilla and modded servers.
+            </div>
+          </div>
+        </div>
+        <div class="card card-default">
+          <div class="card-header">
+            <h4 class="card-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                Do I have to subscribe to play/pay any money?
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="card-collapse collapse">
+            <div class="card-body">
+              We do have an option for supporters to assist with server costs, which is available <%= link_to 'here', subscribe_path %>. All money used for subscribers is used for this purpose, and there are no in-game perks associated. You do not need to pay to be whitelisted however, and paid members are subject to the same rules as our regular members. Supporters will receive access to supporter-only events about every month, including UHC games, CTM maps, etc.
 
-
-  </div> <!-- End of Page Well -->
+            </div>
+          </div>
+        </div>
+        <div class="card card-default">
+          <div class="card-header">
+            <h4 class="card-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                Can I purchase any in-game items to help me get started?
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="card-collapse collapse">
+            <div class="card-body">
+                No, we are a vanilla survival server and regardless of your subscription rank <strong>we do not give any in-game perks</strong>. We feel this is the best way to level the playing field for those who cannot subscribe to support us.
+            </div>
+          </div>
+        </div>
+    </div> <!-- End FAQ -->
+  </div> <!-- End Well-->
+  </div>
+</div>

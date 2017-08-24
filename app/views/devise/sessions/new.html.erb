@@ -1,33 +1,34 @@
 <% page_title "Login" %>
- <div class="loginwell">
-  <div class="wrapper-login">
-    <div class="form-signin">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <h2 class="form-signin-heading fancyfont">Please login</h2>
 
-        <div class="form-group">
-          <%= f.email_field :email, autofocus: true, :placeholder => "Email Address", class: "form-control" %>
-        </div>
+<div class="row">
+  <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+    <h1 class="text-center">Log in</h1>
 
-        <div class="form-group">
-          <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", class: "form-control" %>
-        </div>
-
-        <% if devise_mapping.rememberable? -%>
-          <div class="form-group">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end -%>
-
-        <div class="actions">
-          <%= f.button "Log in", class: "btn btn-lg btn-primary btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing in..."} %>
-        </div>
-      <% end %>
-      <br />
-      <%= link_to "Don't Have an Account?", new_user_registration_path, class: "btn btn-info btn-block" %>
-      <%= link_to "Forgot Password?", new_user_password_path, class: "btn btn-default btn-block" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: true, placeholder: 'Email Address', class: 'form-control' %>
       </div>
-    </div>
-</div>
 
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control' %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= f.check_box :remember_me, class: "form-check-input" %>
+            Remember me
+          </label>
+        </div>
+      <% end -%>
+
+      <div class="form-group">
+        <%= f.button "Log in", class: "btn btn-primary btn-block btn-lg", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing in..."} %>
+      </div>
+    <% end %>
+
+    <div class="text-center">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

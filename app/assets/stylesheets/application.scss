@@ -1,169 +1,60 @@
- @import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
- @import url(//fonts.googleapis.com/css?family=Lato:400,700);
+@import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
+@import url(//fonts.googleapis.com/css?family=Lato:400,700);
 
+@import "athensmc/variables";
+@import "bootstrap";
+@import "athensmc/forum";
+@import "athensmc/profiles";
 
- @import "athensmc/variables";
- @import "athensmc/bootstrap_and_customizations";
- @import "athensmc/forum";
- @import "athensmc/profiles";
- @import "athensmc/turbolinks";
+@import "font-awesome";
+@import "trix";
 
- @import "font-awesome";
- @import "trix";
+@import "athensmc/trix";
 
- @import "athensmc/trix";
+body {
+  min-height: 100vh;
+}
 
+.flex-grow {
+  flex: 1;
+}
 
- .text-middle {
- 	line-height: 48px;
- 	vertical-align: middle;
- }
- .center {
- 	text-align: center;
- }
- // New Home Page Jumbotro
- .athens-banner {
-   background: #45687F; //#d5abff;
-   color: $white;
- }
- p {
-   .lead-link {
-    font-weight: bold;
-    color: darken($athens_grey, 20%);
-   }
- }
- .infowell {
- 	background: #90C695; //#ecf0f1;
- 	color: $black;
- 	font-family: $font-family-with-orbitron;
- 	font-weight: bold;
- }
- .alertwell {
- 	background: #F5AB35; //Nice pretty orange
- 	color: $black;
- 	font-family: $font-family-with-orbitron;
- 	font-weight: bold;
- }
- .eventswell {
- 	background: #BE90D4; //Light Purple
- 	color: $white;
- 	font-family: $font-family-with-orbitron;
- }
- .eventswell a {
- 	color: $black;
- }
- .jumboalert {
- 	background: #C8F7C5; //#ecf0f1;
- }
- .jumbo-header {
- 	color: $black;
- 	font-family: $font-family-with-orbitron;
- }
- .footer-well {
- 	background: #ecf0f1;
- 	color: $black;
- 	font-family: $font-family-with-orbitron;
- 	font-weight: bold;
- 	ul {
- 		font-family: $font-family-sans-serif;
- 	}
- 	button {
- 		font-family: $font-family-sans-serif;
- 	}
- }
- .loginwell {
- 	background: $athens_grey;
- }
- .shownotes-well {
- 	background: $athens_grey;
- }
- .wrapper-login {
-   margin-top: 15px;
-   margin-bottom: 20px;
- }
- .episode-card {
- 	font-weight: 300;
- 	margin: 0px 0px 15px 0px;
- 	min-height: 190px;
- 	padding: 20px 20px 20px 20px;
- 	position: relative;
- 	text-align: left;
- }
- .episode-card .img_gloss {
- 	color: #aaaaaa;
- 	position: absolute;
- 	top: 20px;
- 	left: 10px;
- }
- .castholder {
- 	margin: 0px 0px 15px 0px;
- 	min-height: 250px;
- 	position: relative;
- 	text-align: left;
- }
+.navbar {
+  margin-bottom: 2em;
+}
 
- .form-signin {
-   max-width: 380px;
-   padding: 15px 35px 45px;
-   margin: 0 auto;
-   background-color: $white;
-   border: 1px solid rgba(0,0,0,0.1);
-   .form-signin-heading,
- 	.checkbox {
- 	  margin-bottom: 30px;
- 	  font-weight: normal;
- 	}
- 	.fancyfont {
- 		font-family: $font-family-with-orbitron;
- 	}
- 	.form-control {
- 	  position: relative;
- 	  font-size: 16px;
- 	  height: auto;
- 	  padding: 10px;
- 		@include box-sizing(border-box);
+.flash-message {
+  // This is set to the negitive of the margin for the navbar spacing so alerts
+  // are flush with the bottom of the navbar
+  margin-top: -2em;
+}
 
- 		&:focus {
- 		  z-index: 2;
- 		}
+.form-field-error {
+  background-color: $red;
+  border-radius: $border-radius;
+  color: $white;
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: 400;
+  padding: 0 0.6em;
+  position: relative;
+  z-index: 3;
 
- 	}
- }
- .form-editaccount {
-   max-width: 680px;
-   padding: 15px 35px 45px;
-   margin: 0 auto;
-   background-color: $white;
-   border: 1px solid rgba(0,0,0,0.1);
-   .form-signin-heading,
- 	.checkbox {
- 	  margin-bottom: 30px;
- 	  font-weight: normal;
- 	}
- 	.fancyfont {
- 		font-family: $font-family-with-orbitron;
- 	}
- 	.form-control {
- 	  position: relative;
- 	  font-size: 16px;
- 	  height: auto;
- 	  padding: 10px;
- 		@include box-sizing(border-box);
+  &::before {
+    border: solid transparent;
+    border-bottom-color: $red;
+    border-width: 6px;
+    bottom: 100%;
+    content: " ";
+    height: 0;
+    left: 10px;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+  }
+}
 
- 		&:focus {
- 		  z-index: 2;
- 		}
- 	}
- }
- [class*='-green'] {
- 	background-color:#5BC236;
-     color:#fff;
- }
- [class*='-green']:hover,[class*='-green']:active {
- 	background-color:#6cd347;
-     color:#fff;
- }
- .ui-autocomplete {
+.ui-autocomplete {
   position: absolute;
   top: 100%;
   left: 0;
@@ -213,12 +104,12 @@
   }
 }
 .ui-helper-hidden-accessible {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
