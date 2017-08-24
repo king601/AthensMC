@@ -11,6 +11,12 @@
 
 @import "athensmc/trix";
 
+body {
+  min-height: 100vh;
+}
+.flex-grow {
+   flex: 1;
+}
 .navbar {
   margin-bottom: 2em;
 }

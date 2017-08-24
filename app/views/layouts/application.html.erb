@@ -18,7 +18,7 @@
   <%= render "shared/navbar" %>
 
   <%= flash_messages %>
-  <div class="container">
+  <div class="container flex-grow">
 
   	<% unless controller_name == 'links' && action_name == 'minecraft'  %>
       <% if user_signed_in? %>

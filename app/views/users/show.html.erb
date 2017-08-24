@@ -25,6 +25,7 @@
         <h3 class="profile-section-header">Forum Posts</h3>
         <% if @user.forum_posts.empty? %>
           <h4 class="text-muted"><%= @user.username %> has made no forum posts yet.</h4>
+          <hr />
         <% end %>
         <% @user.forum_posts.order("created_at desc").limit(3).includes(:forum_thread).each do |forum_post| %>
           <%= render partial: "users/forum_post", locals: { forum_post: forum_post } %>
