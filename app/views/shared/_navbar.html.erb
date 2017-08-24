@@ -40,14 +40,16 @@
 
       <!-- Notifications -->
       <!-- TODO: Fix notifications styling -->
-      <li class="nav-item dropdown" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
-        <a class="dropdown-toggle nav-link" data-behavior="notifications-count" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= fa_icon "bell" %>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="notificationDropdown" data-behavior="notifications-list">
-          <!-- Notifications get inserted here -->
-        </div>
-      </li>
+      <% if false %>
+        <li class="nav-item dropdown" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
+          <a class="dropdown-toggle nav-link" data-behavior="notifications-count" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= fa_icon "bell" %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="notificationDropdown" data-behavior="notifications-list">
+            <!-- Notifications get inserted here -->
+          </div>
+        </li>
+      <% end %>
       <!-- ./notifications -->
 
       <li class="nav-item dropdown">
