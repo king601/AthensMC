@@ -67,6 +67,8 @@ end
 group :test do
   gem 'minitest-rails', '~> 3.0'
   gem 'minitest-rails-capybara'
+  gem 'webmock', '~> 2.1'
+  gem 'vcr', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
