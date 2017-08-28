@@ -11,6 +11,12 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should get stats page' do
+    sign_in users(:admin)
+    get stats_path
+    assert_response :success
+  end
+
   test 'should get subscription page' do
     get subscribe_path
     assert_response :success

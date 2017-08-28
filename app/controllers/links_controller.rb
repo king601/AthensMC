@@ -26,5 +26,5 @@ class LinksController < ApplicationController
 
   def user_params
     params.require(:user).permit(:minecraft_uuid)
-    end
+  end
 end

@@ -1,5 +1,6 @@
 # Cast - For AthensCast youtube episodes
 class Cast < ApplicationRecord
+  include Paginatable
   extend FriendlyId
   friendly_id :episode, use: :slugged
 
