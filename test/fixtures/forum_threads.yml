@@ -2,8 +2,10 @@
 
 one:
   subject: MyString
-  user_id: 
+  user: one
+  last_post_created_at: <%= 1.hour.ago %>
 
 two:
   subject: MyString
-  user_id: 
+  user: admin
+  last_post_created_at: <%= 1.hour.ago %>

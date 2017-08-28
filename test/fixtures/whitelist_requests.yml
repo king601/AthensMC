@@ -5,11 +5,10 @@ one:
   status: approved
   agree_rules: true
   approved_on: 2015-08-01 15:34:20
-  denied_on: 2015-08-01 15:34:20
+
 
 two:
   user: two
-  status: pending
-  agree_rules: false
-  approved_on: 2015-08-01 15:34:20
+  status: denied
+  agree_rules: true
   denied_on: 2015-08-01 15:34:20
