@@ -1,4 +1,11 @@
-Style/AlignArray:
+# https://raw.githubusercontent.com/thoughtbot/hound/master/config/style_guides/ruby.yml
+
+AllCops:
+  TargetRubyVersion: 2.3.3
+  Exclude:
+    - 'docs/**'
+
+Layout/AlignArray:
   Enabled: false
 Style/AlignHash:
   Enabled: false
@@ -8,9 +15,11 @@ Style/StringLiterals:
   Enabled: false
 Style/MultilineOperationIndentation:
   Enabled: false
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '()'
+    '%w': '()'
 Style/ClassAndModuleChildren:
-  Enabled: false
-Style/ClosingParenthesisIndentation:
   Enabled: false
 LineLength:
   Max: 80
@@ -25,4 +34,6 @@ AmbiguousOperator:
 MultilineMethodCallIndentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/ParenthesesAroundCondition:
   Enabled: false
