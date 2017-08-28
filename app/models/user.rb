@@ -60,6 +60,6 @@ class User < ApplicationRecord
   private
 
   def set_uuid
-    self.minecraft_uuid = MojangApi.get_profile_from_name(minecraft_uuid).uuid
+    Minecraft::AccountLinker.new(self).execute
   end
 end
