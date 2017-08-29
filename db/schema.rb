@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227011329) do
+ActiveRecord::Schema.define(version: 20170829182829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,9 @@ ActiveRecord::Schema.define(version: 20170227011329) do
     t.string "notifiable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_notifications_on_actor_id"
+    t.index ["notifiable_id", "notifiable_type"], name: "index_notifications_on_notifiable_id_and_notifiable_type"
+    t.index ["recipient_id"], name: "index_notifications_on_recipient_id"
   end
 
   create_table "revisions", id: :serial, force: :cascade do |t|
@@ -101,7 +104,7 @@ ActiveRecord::Schema.define(version: 20170227011329) do
 
   create_table "whitelist_requests", id: :serial, force: :cascade do |t|
     t.integer "user_id"
-    t.string "status"
+    t.string "status", default: "pending"
     t.boolean "agree_rules"
     t.datetime "approved_on"
     t.datetime "denied_on"
@@ -109,6 +112,7 @@ ActiveRecord::Schema.define(version: 20170227011329) do
     t.datetime "updated_at", null: false
     t.string "referred_by"
     t.integer "actor_id"
+    t.index ["actor_id"], name: "index_whitelist_requests_on_actor_id"
     t.index ["user_id"], name: "index_whitelist_requests_on_user_id"
   end
 
