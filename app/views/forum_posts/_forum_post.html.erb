@@ -1,23 +1,26 @@
-<%= div_for forum_post, class: forum_post_classes(forum_post) do %>
-  <div class="forum-post-header">
-    <div class="pull-right">
-    <% if user_signed_in? && policy(forum_post).edit? %>
-      <%= link_to edit_forum_thread_forum_post_path(forum_post.forum_thread, forum_post) do %>
-        <%= fa_icon "pencil" %>
+<%= div_for forum_post, class: ["card", "mb-3", forum_post_classes(forum_post)] do %>
+  <div class="card-header">
+   <div class="row">
+     <div class="col">
+       <%= link_to user_path(forum_post.user.username) do %>
+         <%= image_tag forum_post.user.decorate.minecraft_avatar, class: "rounded avatar", width: 24, height: 24 %>
+         <strong><%= forum_post.user.username %></strong>
       <% end %>
-    <% end %>
+      <small> commented on <%= link_to local_time(forum_post.created_at, "%b %d, %Y"), forum_thread_url(@forum_thread, anchor: "forum_post_#{forum_post.id}"), class: "plain-link" %>:</small>
+      <span class="float-md-right"><%= user_badges(forum_post.user) %></span>
+      </div>
+
+      <div class="col-1 text-right">
+        <% if user_signed_in? && policy(forum_post).edit? %>
+          <%= link_to edit_forum_thread_forum_post_path(forum_post.forum_thread, forum_post) do %>
+            <%= fa_icon "pencil" %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-
-    <%= link_to user_path(forum_post.user.username) do %>
-      <%= image_tag forum_post.user.decorate.minecraft_avatar %>
-      <p class="text-muted">
-        <strong><%= forum_post.user.username %></strong>
-    <% end %>
-    <%= user_badges(forum_post.user) %>
-       posted <%= local_time_ago forum_post.created_at %>:</p>
-  </div>
-  <div class="forum-post-body">
-    <p><%= html_render forum_post.body %></p>
   </div>
 
+  <div class="card-body">
+    <%= html_render forum_post.body %>
+  </div>
 <% end %>
