@@ -4,8 +4,10 @@ one:
   subject: MyString
   user: one
   last_post_created_at: <%= 1.hour.ago %>
+  sticky: false
 
 two:
   subject: MyString
   user: admin
   last_post_created_at: <%= 1.hour.ago %>
+  sticky: false
