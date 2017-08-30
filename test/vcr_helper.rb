@@ -7,5 +7,11 @@ module VcrHelper
 
     config.ignore_localhost = true
     config.debug_logger = File.open(Rails.root.join('log', 'vcr.log'), 'w')
+
+      %w(
+      SLACK_TOKEN
+    ).each do |var|
+      config.filter_sensitive_data("<#{var}>") { ENV[var] }
+    end
   end
 end

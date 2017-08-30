@@ -21,3 +21,4 @@ config/secrets.yml
 /bin/rails
 
 .byebug_history
+.rbenv-vars
