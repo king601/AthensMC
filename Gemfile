@@ -98,7 +98,7 @@ gem 'pg'
 gem 'mojang_api', '~> 0.0.2'
 
 # Friendly ID
-gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id', '~> 5.2.1'
 
 # Background Job Processing
 gem 'sucker_punch', '~> 2.0'
