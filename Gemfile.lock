@@ -147,7 +147,7 @@ GEM
       activesupport (>= 3)
     hashdiff (0.3.4)
     hashie (3.5.5)
-    html-pipeline (2.6.0)
+    html-pipeline (2.7.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
     httparty (0.15.5)
