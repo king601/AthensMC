@@ -8,6 +8,7 @@ class ForumThreadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
+    Reindexer.execute
     get forum_threads_path
     assert_response :success
   end
