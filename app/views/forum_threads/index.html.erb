@@ -17,16 +17,49 @@
         <% end %>
       <% end %>
 
-      <%= link_to "New Topic", new_forum_thread_path,
-        class: "btn btn-primary ml-1" if user_signed_in? %>
     </div>
   </div>
   Community Discussion
 </h1>
 
-<%= render @forum_threads %>
+<div class="row mt-3">
+  <div class="col-md-3">
+    <%= link_to "New Topic", new_forum_thread_path,
+      class: "btn btn-outline-primary btn-block" if user_signed_in? %>
 
-<%= paginate @forum_threads %>
+      <div class="forum-thread-filters mt-3">
+        <h5 class="mb-2"><strong>By Category</strong></h5>
+
+        <div class="list-group">
+          <%= forum_link_to forum_threads_path, exact: true do %>
+          <%= fa_icon "circle", class: "mr-2" %> All<% end %>
+          <% ForumCategory.sorted.each do |category| %>
+            <%= forum_link_to forum_category_forum_threads_path(category) do %>
+            <%= fa_icon "circle", class: "mr-2", style: "color: #{category.color}" %> <%= category.name %><% end %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-body">
+        <% if @forum_threads.none? %>
+          <div>
+            <h4>No results found for your search. Check out
+              <%= link_to "the latest posts", forum_threads_path %> instead?</h4>
+          </div>
+        <% else %>
+          <%= render partial: "forum_threads/forum_thread",
+            collection: @forum_threads, spacer_template: "shared/spacer" %>
+
+          <%= paginate @forum_threads %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <p class="text-muted text-center">
   About <%= @forum_threads.total_count %> results

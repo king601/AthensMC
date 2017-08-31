@@ -12,7 +12,7 @@ class ForumThreadsController < ApplicationController
 
   def update
     if @forum_thread.update(forum_thread_params)
-      redirect_to @forum_thread, notice: 'Updated title of forum thread'
+      redirect_to @forum_thread, notice: 'Updated Forum Thread'
     else
       render 'edit', alert: 'An unknown error occurred, please try again.'
     end
@@ -60,8 +60,9 @@ class ForumThreadsController < ApplicationController
   private
 
   def forum_thread_params
-    params.require(:forum_thread).permit(:subject,
-                                         forum_posts_attributes: [:body])
+    params.require(:forum_thread).permit(
+      :forum_category_id, :subject, forum_posts_attributes: [:body]
+    )
   end
 
   def set_forum_thread

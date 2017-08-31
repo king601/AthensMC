@@ -1,16 +1,28 @@
-<%= link_to forum_thread, class: 'forum-thread-card' do %>
-  <h3><% if forum_thread.sticky? %>
-      <%= fa_icon "thumb-tack" %>
-    <% end %>
-    <%= forum_thread.subject %></h3>
+<div class="forum-thread-preview">
+   <div class="forum-thread-avatar d-none d-sm-block">
+     <%= image_tag forum_thread.user.decorate.minecraft_avatar %>
+   </div>
 
-    <div class="pull-right">
-      <small><%= forum_thread.forum_posts.count %> posts</small>
-    </div>
+   <div class="forum-thread-details">
+     <h5>
+       <%= link_to forum_thread do %>
+         <%= fa_icon "thumb-tack", class: "text-muted" if forum_thread.sticky? %>
+         <%= forum_thread.subject %>
+       <% end %>
+     </h5>
 
-    <div class="text-muted">
-      <%= image_tag forum_thread.user.decorate.minecraft_avatar %>
-      <%= forum_thread.user.username %> asked on
-      <%= local_time forum_thread.created_at %>
-    </div>
-<% end %>
+     <div class="thread-details mb-2">
+       <strong><%= link_to forum_thread.forum_category.name, forum_category_forum_threads_path(forum_thread.forum_category), class: "forum-thread-category", style: "color: #{forum_thread.forum_category.color}" %></strong>
+       • Posted <%= local_time_ago forum_thread.created_at %> by <%= link_to forum_thread.user.username, user_path(forum_thread.user.username) %>
+     </div>
+
+     <div class="text-muted"><%= truncate(strip_tags(forum_thread.forum_posts.first.body), length: 200) %></div>
+   </div>
+
+   <div class="forum-thread-posts">
+     <%= link_to forum_thread, class: "text-muted text-center" do %>
+       <div class="count"><%= forum_thread.forum_posts_count %></div>
+       <div class="posts"><%= "post".pluralize(forum_thread.forum_posts_count) %></div>
+     <% end %>
+   </div>
+ </div>

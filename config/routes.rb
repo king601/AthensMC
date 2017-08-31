@@ -44,6 +44,9 @@ Rails.application.routes.draw do
      patch :sticky
      patch :unsticky
    end
+   collection do
+     get "category/:id", to: "forum_categories#index", as: :forum_category
+   end
   end
 
   root 'pages#home'

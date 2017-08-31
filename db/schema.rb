@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829182829) do
+ActiveRecord::Schema.define(version: 20170831034027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20170829182829) do
     t.string "slug"
     t.index ["episode"], name: "index_casts_on_episode", unique: true
     t.index ["user_id"], name: "index_casts_on_user_id"
+  end
+
+  create_table "forum_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.string "color", default: "#000000"
   end
 
   create_table "forum_posts", id: :serial, force: :cascade do |t|
@@ -47,6 +53,9 @@ ActiveRecord::Schema.define(version: 20170829182829) do
     t.string "slug"
     t.datetime "last_post_created_at"
     t.boolean "sticky", default: false
+    t.bigint "forum_category_id"
+    t.integer "forum_posts_count"
+    t.index ["forum_category_id"], name: "index_forum_threads_on_forum_category_id"
     t.index ["slug"], name: "index_forum_threads_on_slug", unique: true
     t.index ["user_id"], name: "index_forum_threads_on_user_id"
   end
@@ -119,6 +128,7 @@ ActiveRecord::Schema.define(version: 20170829182829) do
   add_foreign_key "casts", "users"
   add_foreign_key "forum_posts", "forum_threads"
   add_foreign_key "forum_posts", "users"
+  add_foreign_key "forum_threads", "forum_categories"
   add_foreign_key "forum_threads", "users"
   add_foreign_key "whitelist_requests", "users"
 end
