@@ -32,10 +32,14 @@
 
         <div class="list-group">
           <%= forum_link_to forum_threads_path, exact: true do %>
-          <%= fa_icon "circle", class: "mr-2" %> All<% end %>
+            <%= fa_icon "circle", class: "mr-2" %> All
+          <% end %>
+
           <% ForumCategory.sorted.each do |category| %>
             <%= forum_link_to forum_category_forum_threads_path(category) do %>
-            <%= fa_icon "circle", class: "mr-2", style: "color: #{category.color}" %> <%= category.name %><% end %>
+            <%= fa_icon "circle", class: "mr-2", style: "color: #{category.color}" %>
+              <%= category.name %>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -59,7 +63,6 @@
     </div>
   </div>
 </div>
-
 
 <p class="text-muted text-center">
   About <%= @forum_threads.total_count %> results
