@@ -9,7 +9,7 @@ set :branch, 'master'
 set :deploy_to, '/home/deploy/athensmc'
 set :user, 'deploy'
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml .rbenv-vars}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system}
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
