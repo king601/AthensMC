@@ -55,7 +55,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
 
   # Use Capistrano for deployment
-  gem 'capistrano', '3.8.0'
+  gem 'capistrano', '3.9.1'
   gem 'capistrano-bundler', '~> 1.1.4'
   gem 'capistrano-rails', '~> 1.1.2'
   gem 'capistrano-passenger', '~> 0.2.0'
