@@ -8,7 +8,7 @@ class SlackNotifierJob < ApplicationJob
     # Do something later
     notifier = Slack::Notifier.new Rails.application.secrets.slack_token
     notifier.username = 'AthensMC Whitelist System'
-    message = "<!channel> #{whitelist_request.user.username} just applied for the community\n[View Whitelist Requests](https://athensmc.com/admin/whitelist_requests)"
+    message = "<!channel> #{whitelist_request.user.username} just applied for the community\n[View Whitelist Requests](https://athensmc.com/admin/whitelist-requests)"
     Slack::Notifier::LinkFormatter.format(message)
     more_user_info = {
       fallback: "AthensMC Username: #{whitelist_request.user.username}\nMinecraft UUID: #{whitelist_request.user.minecraft_uuid}",

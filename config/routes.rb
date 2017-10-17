@@ -25,9 +25,12 @@ Rails.application.routes.draw do
         get :whitelisted
       end
     end
-    resources :whitelist_requests do
+
+    namespace :whitelist_requests, path: 'whitelist-requests' do
+      resources :charts, only: %w(index)
+    end
+    resources :whitelist_requests, path: 'whitelist-requests' do
       collection do
-        get :charts
         get :pending
         get :approved
         get :denied
