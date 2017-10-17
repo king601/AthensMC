@@ -62,9 +62,11 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1'
 
   gem 'faker', github: 'stympy/faker'
+  gem 'selenium-webdriver'
 end
 
 group :test do
+  gem 'byebug'
   gem 'minitest-rails', '~> 3.0'
   gem 'minitest-rails-capybara'
   gem 'webmock', '~> 2.1'
