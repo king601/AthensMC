@@ -112,7 +112,7 @@ gem 'searchkick', '~> 1.3.6'
 gem 'jquery-ui-rails'
 
 # Slack Notifier
-gem 'slack-notifier', '~> 1.5.1'
+gem 'slack-notifier', '~> 2.3.1'
 
 # Charts are cool!
 gem 'chartkick', '~> 2.2.4'
