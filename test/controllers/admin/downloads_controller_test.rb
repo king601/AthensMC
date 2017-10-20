@@ -10,4 +10,10 @@ class Admin::DownloadsControllerTest < ActionDispatch::IntegrationTest
     get admin_downloads_path
     assert_response :success
   end
+
+  test 'should not get index when unauthenticated' do
+    sign_out(@user)
+    get admin_downloads_path
+    assert_response :redirect
+  end
 end
