@@ -39,7 +39,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'font-awesome-rails'
 
 # Decorators
-gem 'draper', '~> 3.0.0'
+gem 'draper', '~> 3.0.1'
 
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
