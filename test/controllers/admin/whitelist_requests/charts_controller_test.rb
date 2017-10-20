@@ -13,7 +13,7 @@ module Admin
         assert_response :success
       end
 
-      test 'should not get index for unauthenticated user' do
+      test 'should not get index when unauthenticated' do
         sign_out(@user)
         get admin_whitelist_requests_charts_path
         assert_response :redirect
