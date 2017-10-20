@@ -84,7 +84,7 @@ gem 'commonmarker'
 gem 'sanitize'
 
 # Pagination
-gem 'kaminari', '~> 1.0'
+gem 'kaminari', '~> 1.1'
 
 #Local Time
 gem 'local_time', '~> 2.0'
