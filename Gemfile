@@ -42,9 +42,6 @@ gem 'font-awesome-rails'
 gem 'draper', '~> 3.0.0'
 
 group :development do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.0'
 
@@ -65,8 +62,11 @@ group :development do
   gem 'selenium-webdriver'
 end
 
-group :test do
+group :development, :test do
   gem 'byebug'
+end
+
+group :test do
   gem 'minitest-rails', '~> 3.0'
   gem 'minitest-rails-capybara'
   gem 'webmock', '~> 2.1'
@@ -84,7 +84,7 @@ gem 'commonmarker'
 gem 'sanitize'
 
 # Pagination
-gem 'kaminari', '~> 1.0'
+gem 'kaminari', '~> 1.1.1'
 
 #Local Time
 gem 'local_time', '~> 2.0'
