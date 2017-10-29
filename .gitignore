@@ -22,3 +22,6 @@ config/secrets.yml
 
 .byebug_history
 .rbenv-vars
+/public/packs
+/public/packs-test
+/node_modules
