@@ -115,7 +115,7 @@ gem 'jquery-ui-rails'
 gem 'slack-notifier', '~> 1.5.1'
 
 # Charts are cool!
-gem 'chartkick', '~> 2.2.4'
+gem 'chartkick', '~> 2.2.5'
 
 # Group things by their dates
 gem 'groupdate'
