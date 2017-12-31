@@ -14,9 +14,10 @@ class RevisionsController < ApplicationController
     @revision = current_user.revisions.build(revision_params)
 
     if @revision.save
-      redirect_to @revision, notice: 'Revision has been posted to the site.'
+      flash[:success] = 'Revision has been posted to the site.'
+      redirect_to @revision
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -29,15 +30,17 @@ class RevisionsController < ApplicationController
 
   def update
     if @revision.update(revision_params)
-      redirect_to @revision, notice: 'Revision has been updated.'
+      flash[:success] = 'Revision has been updated.'
+      redirect_to @revision,
     else
-      render 'edit'
+      render :edit
     end
   end
 
   def destroy
     @revision.destroy
-    redirect_to revisions_path, notice: 'Revision has been destroyed'
+    flash[:success] = "The revision has been removed."
+    redirect_to revisions_path
   end
 
   private

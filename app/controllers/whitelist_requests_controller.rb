@@ -16,7 +16,7 @@ class WhitelistRequestsController < ApplicationController
 
     @whitelist_request.status = 'pending'
     if @whitelist_request.save
-      flash[:notice] =  "You've submitted your request to join." \
+      flash[:success] =  "You've submitted your request to join." \
         " You should receive an email in 24-48 hours with a response."
       redirect_to root_path
     else

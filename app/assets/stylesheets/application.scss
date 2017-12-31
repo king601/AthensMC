@@ -1,22 +1,18 @@
 @import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
 @import url(//fonts.googleapis.com/css?family=Lato:400,700);
 
-@import "athensmc/variables";
-@import "bootstrap";
-@import "athensmc/forum";
-@import "athensmc/profiles";
+@import 'reboot/base';
+@import 'bootstrap/functions';
+@import 'athensmc/variables';
+@import 'bootstrap';
+@import 'athensmc/base';
 
-@import "font-awesome";
-@import "trix";
+@import 'font-awesome';
+@import 'trix';
 
-@import "athensmc/trix";
-
-body {
-  min-height: 100vh;
-}
-
-.flex-grow {
-  flex: 1;
+.logged-in,
+.logged-out {
+  margin-bottom: $footer-height;
 }
 
 .navbar {
@@ -45,7 +41,7 @@ body {
     border-bottom-color: $red;
     border-width: 6px;
     bottom: 100%;
-    content: " ";
+    content: ' ';
     height: 0;
     left: 10px;
     pointer-events: none;
@@ -92,7 +88,8 @@ body {
     color: #555555;
     white-space: nowrap;
 
-    &.ui-state-hover, &.ui-state-active {
+    &.ui-state-hover,
+    &.ui-state-active {
       color: $white;
       text-decoration: none;
       background-color: #0088cc;
@@ -112,55 +109,4 @@ body {
   padding: 0;
   position: absolute;
   width: 1px;
-}
-
-/* Forum thread preview */
-.forum-thread-filters .list-group-item.active {
-    z-index: 2;
-    color: #fff;
-    background-color: $gray-200;
-    border-color: $gray-200;
-    color: $gray-900;
-}
-
-.forum-thread-preview {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-
-  a {
-    color: $body-color;
-  }
-
-  .forum-thread-avatar {
-    margin-right: 20px;
-  }
-
-  .forum-thread-details {
-    font-size: 80%;
-    margin-right: auto;
-    width: 75%;
-
-    .thread-details {
-      .forum-thread-category {
-        text-transform: uppercase;
-      }
-    }
-  }
-}
-
-.thread-posts-count {
-  .count {
-    font-size: 1.5em;
-    line-height: 1em;
-  }
-  .posts {
-    font-size: 80%;
-  }
 }

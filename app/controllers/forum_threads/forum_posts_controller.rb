@@ -20,10 +20,10 @@ class ForumThreads::ForumPostsController < ApplicationController
       end
 
       @forum_thread.touch(:last_post_created_at)
-      flash[:notice] = "Successfully created your post"
+      flash[:success] = 'Successfully created your post'
       redirect_to forum_thread_path(@forum_thread, anchor: "forum_post_#{@forum_post.id}")
     else
-      flash[:alert] = "Unable to save your post"
+      flash[:alert] = 'Unable to save your post'
       redirect_to @forum_thread
     end
   end
@@ -35,9 +35,11 @@ class ForumThreads::ForumPostsController < ApplicationController
   def update
     authorize @forum_post
     if @forum_post.update(forum_post_params)
-      redirect_to @forum_thread, notice: 'Your post has been updated!'
+      flash[:success] = 'Your post has been updated!'
+      redirect_to @forum_thread
     else
-      render 'edit', alert: 'error occurred'
+      flash[:alert] = 'An error occurred'
+      render :edit
     end
   end
 

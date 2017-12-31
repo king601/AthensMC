@@ -12,9 +12,11 @@ class ForumThreadsController < ApplicationController
 
   def update
     if @forum_thread.update(forum_thread_params)
-      redirect_to @forum_thread, notice: 'Updated Forum Thread'
+      flash[:success] = 'The forum thread has been updated.'
+      redirect_to @forum_thread
     else
-      render 'edit', alert: 'An unknown error occurred, please try again.'
+      flash[:alert] = 'An unknown error occurred, please try again.'
+      render 'edit'
     end
   end
 
@@ -44,17 +46,20 @@ class ForumThreadsController < ApplicationController
   def destroy
     @forum_thread.forum_posts.destroy_all
     @forum_thread.destroy
-    redirect_to forum_threads_path, notice: 'Forum Thread has been removed.'
+    flash[:success] = 'The forum thread has been deleted.'
+    redirect_to forum_threads_path
   end
 
   def sticky
     @forum_thread.update_attributes(sticky: true)
-    redirect_to @forum_thread, notice: "#{@forum_thread.subject} has been stickied!"
+    flash[:success] = "#{@forum_thread.subject} has been stickied!"
+    redirect_to @forum_thread
   end
 
   def unsticky
     @forum_thread.update_attributes(sticky: false)
-    redirect_to @forum_thread, notice: "#{@forum_thread.subject} has been un-stickied!"
+    flash[:success] = "#{@forum_thread.subject} has been un-stickied!"
+    redirect_to @forum_thread
   end
 
   private

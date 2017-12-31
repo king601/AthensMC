@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  layout(:by_resource)
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -14,6 +15,14 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in_is_whitelisted?
 
   private
+
+  def by_resource
+    guest? ? 'unauthenticated' : 'application'
+  end
+
+  def guest?
+    devise_controller? && !user_signed_in?
+  end
 
   def user_not_authorized
     flash[:alert] = 'You are not authorized to perform this action.'

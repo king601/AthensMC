@@ -24,8 +24,13 @@
 
 <div class="row mt-3">
   <div class="col-md-3">
-    <%= link_to "New Topic", new_forum_thread_path,
-      class: "btn btn-outline-primary btn-block" if user_signed_in? %>
+    <% if user_signed_in? %>
+      <%= link_to new_forum_thread_path,
+        class: "btn btn-outline-primary align-middle btn-block" do %>
+         <i class="align-middle mr-1" data-feather="plus-square"></i>
+          New Topic
+      <% end %>
+    <% end %>
 
       <div class="forum-thread-filters mt-3">
         <h5 class="mb-2"><strong>By Category</strong></h5>

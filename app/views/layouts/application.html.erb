@@ -8,18 +8,16 @@
       "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application",
       "data-turbolinks-track": "reload" %>
-      <%= javascript_pack_tag 'application' %> 
+      <%= javascript_pack_tag 'application' %>
     <%= favicon_link_tag "/images/favicon.ico" %>
 
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
+  <body class="<%= body_classes %>">
 
   <%= render "shared/navbar" %>
-
-  <%= flash_messages %>
-  <div class="container flex-grow">
-
+  <%= render('shared/flash/app') %>
+  <div class="container">
   	<% unless controller_name == 'links' && action_name == 'minecraft'  %>
       <% if user_signed_in? %>
         <% if current_user.minecraft_uuid.blank? %>
@@ -46,7 +44,9 @@
     <%= yield %>
 
     <%= render "layouts/google_analytics" %>
+  </div>
+
     <%= render "shared/footer" %>
-  	</div>
+
   </body>
 </html>

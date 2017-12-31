@@ -3,6 +3,10 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  def body_classes
+    user_signed_in? ? 'logged-in' : 'logged-out'
+  end
+
   def bootstrap_class_for(flash_type)
     { success: 'alert-success', error: 'alert-danger', alert: 'alert-danger',
       notice: 'alert-info' }[flash_type.to_sym] || flash_type.to_s
