@@ -31,7 +31,7 @@ class RevisionsController < ApplicationController
   def update
     if @revision.update(revision_params)
       flash[:success] = 'Revision has been updated.'
-      redirect_to @revision,
+      redirect_to @revision
     else
       render :edit
     end
