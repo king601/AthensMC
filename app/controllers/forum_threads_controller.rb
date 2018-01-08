@@ -33,8 +33,10 @@ class ForumThreadsController < ApplicationController
 
     if @forum_thread.save
       @forum_thread.touch(:last_post_created_at)
+      flash[:success] = 'Your thread has been posted.'
       redirect_to @forum_thread
     else
+      flash[:alert] = 'Please try again'
       render action: :new
     end
   end
