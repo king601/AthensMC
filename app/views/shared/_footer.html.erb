@@ -1,4 +1,32 @@
-<div class="mt-4">
+<footer class="footer bg-dark text-light">
+  <div class="container">
+    <div class="text-center py-5">
+			<%= link_to(root_path, class: "footer-link",
+				target: "_blank") do %>
+				<%= image_tag("athensLogo.png",
+					class: "footer-logo mb-3") %>
+			<% end %>
+
+      <p class="text-white">
+        &copy; 2014-<%= Time.zone.now.year %>
+				<%= link_to 'Andrew Fomera', 'https://andrewfomera.com', class: 'text-white' %>
+      </p>
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item">
+          <%= link_to("Twitter", "https://twitter.com/AthensMinecraft",
+            class: "text-muted", target: "_blank") %>
+        </li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item">
+          <%= link_to("GitHub", "https://github.com/AthensMC",
+            class: "text-muted", target: "_blank") %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- <div class="mt-4">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
@@ -45,4 +73,4 @@
 			</div>
 		</div>
 	</div>
-</footer>
+</footer> -->

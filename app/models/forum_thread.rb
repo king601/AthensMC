@@ -9,7 +9,9 @@ class ForumThread < ApplicationRecord
   belongs_to :forum_category, required: true
   belongs_to :user, required: true
 
-  has_many :forum_posts, -> { order(:created_at => :ASC) }, dependent: :destroy
+  has_many :forum_posts, dependent: :destroy
+
+  default_scope { order(:created_at => :ASC) }
 
   # forum_thread.users
   has_many :users, through: :forum_posts

@@ -18,7 +18,7 @@ class CastsController < ApplicationController
     if @cast.save
       redirect_to @cast
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -35,7 +35,7 @@ class CastsController < ApplicationController
     if @cast.update(casts_params)
       redirect_to @cast
     else
-      render 'edit'
+      render :edit
     end
   end
 

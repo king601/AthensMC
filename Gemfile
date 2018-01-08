@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.2.1'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', github: 'turbolinks/turbolinks-classic'
+gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
@@ -35,7 +35,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 3.0'
 
 #Bootstrap for HTML framework
-gem 'bootstrap', '~> 4.0.0.beta3'
+gem 'hootstrap', github: 'ProctorU/hootstrap'
+
+# gem 'bootstrap', '~> 4.0.0.beta3'
 
 #Font Awesome for Visual Improvements
 gem 'font-awesome-rails'
