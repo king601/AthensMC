@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.4'
 gem 'webpacker'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.8'
+gem 'puma', '~> 3.11'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
