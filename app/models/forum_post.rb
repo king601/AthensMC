@@ -4,4 +4,7 @@ class ForumPost < ApplicationRecord
   belongs_to :user
 
   validates :body, presence: true
+
+  # Displays the forum posts in the threads from oldest to newest.
+  default_scope { order(created_at: :ASC) }
 end
