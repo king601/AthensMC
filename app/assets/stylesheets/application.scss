@@ -22,6 +22,10 @@ body {
   background-color: $gray-100;
 }
 
+.unread {
+  background-color: $athens_grey;
+}
+
 .logged-in,
 .logged-out {
   margin-bottom: $footer-height;

@@ -1,14 +1,10 @@
-<li class="notification">
+<%= link_to forum_thread_path(notification.notifiable.forum_thread), class: "mt-1 dropdown-item notification#{" unread" unless notification.read_at?}" do %>
+  <span class="text-muted">
+    <%= image_tag notification.actor.decorate.minecraft_avatar, height: 24, width: 24, class: "avatar" %>
+    <strong><%= notification.actor.username %></strong> <%= notification.action %> a reply on
+    <strong><%= notification.notifiable.forum_thread.subject %></strong>!
+  </span>
 
-  <%= link_to forum_thread_path(notification.notifiable.forum_thread) do %>
-    <small>
-      <%= image_tag(notification.actor.minecraft_avatar, width: '24px', height: '24px') %>
-      <strong><%= notification.actor.username %></strong> 
-      <%= notification.action %> a reply on: <br>
-
-      <strong><%= notification.notifiable.forum_thread.subject %></strong><br>
-
-      <%=  local_time_ago notification.created_at %>
-    </small>
-  <% end %>
-</li>
+  <br />
+  <span class="text-muted"><%= local_time_ago notification.created_at %></span>
+<% end %>
