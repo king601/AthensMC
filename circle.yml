@@ -1,8 +1,0 @@
-machine:
-  services:
-    - elasticsearch
-    - redis
-
-checkout:
-  post:
-    - cp config/secrets.yml.ci config/secrets.yml
