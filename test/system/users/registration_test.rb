@@ -7,17 +7,18 @@ class RegistrationTest < ApplicationSystemTestCase
   end
 
   test 'a user who fills out the form correctly is registered' do
-    click_on 'Create an Account!'
+    click_on 'Create Account'
     assert_text 'Welcome! You have signed up successfully.'
 
     # Assert the flash message shows for newly created users
-    assert_text 'Linking Minecraft Account'
+    assert_text 'Please Link Your Mojang Account'
   end
 
   test 'a user who incorrectly fills out the form is not registered' do
     fill_in 'user_password', with: ''
-    click_on 'Create an Account!'  
-    assert_text '2 errors prohibited this user from being saved'
+    click_on 'Create Account'
+    assert_text 'can\'t be blank'
+    assert_text 'doesn\'t match Password'
   end
 
   private
