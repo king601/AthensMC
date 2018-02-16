@@ -18,7 +18,6 @@ jobs:
           POSTGRES_PASSWORD: ""
       - image: circleci/elasticsearch
       - image: circleci/redis
-      - image: matrim/cmake-examples:3.5.1
     working_directory: ~/athensmc
 
     steps:
@@ -43,6 +42,8 @@ jobs:
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
             yarn install
+      - run: sudo apt-get install -y cmake
+
       - save_cache:
           key: gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
