@@ -18,6 +18,7 @@ jobs:
           POSTGRES_PASSWORD: ""
       - image: circleci/elasticsearch
       - image: circleci/redis
+      - image: sourceworks/cmake
     working_directory: ~/athensmc
 
     steps:
