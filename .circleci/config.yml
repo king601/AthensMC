@@ -37,6 +37,7 @@ jobs:
           name: copy secrets file
           command: |
             cp config/secrets.yml.ci config/secrets.yml
+            cp config/database.yml.example config/database.yml
 
       - run: sudo apt-get install -y cmake
 
