@@ -89,8 +89,8 @@ jobs:
             bundle exec rails test
 
       - run:
-        name: run tests
-        command: bundle exec rails test:system
+          name: run tests
+          command: bundle exec rails test:system
 
       # collect reports
       - store_test_results:
