@@ -37,13 +37,14 @@ jobs:
           name: copy secrets file
           command: |
             cp config/secrets.yml.ci config/secrets.yml
+
+      - run: sudo apt-get install -y cmake
+
       - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
             yarn install
-      - run: sudo apt-get install -y cmake
-
       - save_cache:
           key: gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
