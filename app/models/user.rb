@@ -27,6 +27,9 @@ class User < ApplicationRecord
 
   has_many :forum_threads, dependent: :destroy
   has_many :forum_posts, dependent: :destroy
+  has_many :conversation_users
+  has_many :conversations, through: :conversation_users
+  has_many :messages
   has_many :notifications, foreign_key: :recipient_id, dependent: :destroy
   has_one :whitelist_request, dependent: :destroy
 
