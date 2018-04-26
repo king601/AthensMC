@@ -99,7 +99,7 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     chartkick (2.2.5)
-    childprocess (0.8.0)
+    childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -297,7 +297,7 @@ GEM
       activemodel (>= 4.1)
       elasticsearch (>= 1)
       hashie
-    selenium-webdriver (3.10.0)
+    selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     skylight (1.7.0)
