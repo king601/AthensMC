@@ -73,7 +73,7 @@ end
 group :test do
   gem 'minitest-rails', '~> 3.0'
   gem 'minitest-rails-capybara'
-  gem 'webmock', '~> 2.1'
+  gem 'webmock', '~> 3.4'
   gem 'vcr', '~> 4.0'
   gem 'mocha', '~> 1.3'
 end
