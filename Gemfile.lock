@@ -75,7 +75,7 @@ GEM
       sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.0)
-    capistrano (3.8.0)
+    capistrano (3.10.2)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
@@ -315,7 +315,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.14.0)
+    sshkit (1.16.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     sucker_punch (2.0.3)
@@ -362,7 +362,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  capistrano (= 3.8.0)
+  capistrano (= 3.10.2)
   capistrano-bundler (~> 1.1.4)
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.1.2)
