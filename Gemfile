@@ -75,7 +75,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'webmock', '~> 2.1'
   gem 'vcr', '~> 4.0'
-  gem 'mocha', '~> 1.3'
+  gem 'mocha', '~> 1.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
