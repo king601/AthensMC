@@ -94,7 +94,7 @@ gem 'kaminari', '~> 1.1.1'
 gem 'local_time', '~> 2.0'
 
 # User Accounts & Authentication
-gem 'devise', '~> 4.3'
+gem 'devise', '~> 4.4'
 gem 'pundit', '~> 1.1.0'
 
 #Postgres for deployment
