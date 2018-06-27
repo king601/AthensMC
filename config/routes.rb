@@ -5,6 +5,16 @@ Rails.application.routes.draw do
   get 'links/minecraft' => 'links#minecraft'
   post 'links' => 'links#create'
 
+  # API Endpoints
+  namespace :api do
+    # Internal Endpoints are not given to any external users, and are subject
+    # to change at any time without prior notice.
+    # These are commonly used in scripts for automation.
+    namespace :internal do
+      resource :whitelist, only: %w(show)
+    end
+  end
+
   resources :whitelist_requests, path: 'join'
   resources :revisions
   resources :casts
