@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :whitelist_requests, path: 'join'
   resources :revisions
   resources :casts
+  resources :conversations do
+    resources :messages, module: :conversations
+  end
 
   resources :downloads, only: %w(index)
 

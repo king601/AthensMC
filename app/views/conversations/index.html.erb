@@ -1,0 +1,15 @@
+<% page_title "Conversations" %>
+
+<h1>
+  <div class="pull-right">
+    <%= link_to "New Conversation", new_conversation_path, class: "btn btn-primary" %>
+  </div>
+  Conversations
+</h1>
+
+<% @conversations.each do |conversation| %>
+  <h2><%= conversation.id %></h2>
+  <%= link_to "View conversation", conversation_path(conversation) %>
+  <%= conversation.last_message_content %>
+  <%= conversation.users.map(&:username).join(', ') %>
+<% end %>

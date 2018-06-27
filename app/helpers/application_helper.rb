@@ -31,6 +31,13 @@ module ApplicationHelper
     klasses
   end
 
+  def conversation_message_classes(message)
+    klasses = []
+    klasses << "original-poster" if message.user == current_user
+    klasses
+  end
+
+
   def user_badges(user)
     badges = []
     badges << content_tag(:span, 'Admin', class: 'badge badge-danger') if user.admin?

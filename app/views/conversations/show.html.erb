@@ -1,0 +1,11 @@
+<%= link_to conversations_path do %>
+  <%= fa_icon "arrow-left", text: "Back to your conversations" %>
+<% end %>
+
+<h1>
+  Conversation with <%= @conversation.users.map(&:username).join(", ") %>
+</h1>
+
+<%= render partial: "conversations/messages/message",
+  collection: @conversation.messages %>
+<%= render partial: "conversations/messages/form" %>
