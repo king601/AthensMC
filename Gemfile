@@ -110,7 +110,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'sucker_punch', '~> 2.0'
 
 # Search is Awesome
-gem 'searchkick', '~> 2.3.2'
+gem 'searchkick', '~> 3.1.0'
 
 # jQuery UI Gem for autocomplete and other stuff
 gem 'jquery-ui-rails'
