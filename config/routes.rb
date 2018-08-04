@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       end
     end
   namespace :admin do
+    resources :servers, only: %w(index show new create edit update) do
+    end
     resources :downloads
     resources :users do
       collection do

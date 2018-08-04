@@ -87,6 +87,26 @@
               class: "dropdown-item" do %>
               <i class="fa fa-sign-out"></i> &nbsp; Sign Out
             <% end %>
+
+            <div class="dropdown-divider"></div>
+
+            <% if user_signed_in? && current_user.admin? %>
+              <%= link_to admin_downloads_path, class: "dropdown-item" do %>
+                Admin Downloads
+              <% end %>
+
+              <%= link_to admin_users_path, class: "dropdown-item" do %>
+                Admin Users
+              <% end %>
+
+              <%= link_to admin_whitelist_requests_path, class: "dropdown-item" do %>
+                Admin Whitelist Requests
+              <% end %>
+
+              <%= link_to admin_servers_path, class: "dropdown-item" do %>
+                Admin Servers
+              <% end %>
+            <% end %>
           </div>
         </li>
       <% else %>

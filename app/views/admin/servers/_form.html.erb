@@ -1,0 +1,42 @@
+<%= form_for([:admin, server]) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :placeholder => "Name", class: "form-control" %>
+    <%= error_message_on(f.object, :name) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ip %>
+    <%= f.text_field :ip, :placeholder => "192.99.9.53", class: "form-control" %>
+    <%= error_message_on(f.object, :ip) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :game_port %>
+    <%= f.number_field :game_port, :placeholder => "25565", class: "form-control" %>
+    <%= error_message_on(f.object, :game_port) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rcon_port %>
+    <%= f.number_field :rcon_port, :placeholder => "25585", class: "form-control" %>
+    <%= error_message_on(f.object, :rcon_port) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rcon_password %>
+    <%= f.text_field :rcon_password, :placeholder => "hunter2", class: "form-control" %>
+    <%= error_message_on(f.object, :rcon_password) %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :query_port %>
+    <%= f.number_field :query_port, :placeholder => "25575", class: "form-control" %>
+    <%= error_message_on(f.object, :query_port) %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
