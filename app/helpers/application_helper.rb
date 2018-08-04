@@ -7,6 +7,19 @@ module ApplicationHelper
     user_signed_in? ? 'logged-in' : 'logged-out'
   end
 
+  def body_data_page
+     action = case action_name
+              when 'create' then 'new'
+              when 'update' then 'edit'
+              else action_name
+              end.downcase
+
+     path = controller.controller_path.split('/')
+     namespace = path.first if path.second
+
+     [namespace, controller.controller_name, action].compact.join(':')
+   end
+
   def bootstrap_class_for(flash_type)
     { success: 'alert-success', error: 'alert-danger', alert: 'alert-danger',
       notice: 'alert-info' }[flash_type.to_sym] || flash_type.to_s

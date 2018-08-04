@@ -1,5 +1,5 @@
 # UserDecorator
-class UserDecorator < BaseDecorator
+class UserDecorator < ApplicationDecorator
   def minecraft_avatar
     if object.minecraft_uuid.present?
       "https://crafatar.com/avatars/#{object.minecraft_uuid}?overlay&size=64"

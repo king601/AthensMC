@@ -1,0 +1,19 @@
+<% page_title "Managing #{@server.name}" %>
+
+<h1>Server Name: <%= @server.name %></h1>
+<h5>IP: <%= @server.ip %></h5>
+<h5>Ports: <%= @server.decorate.ports %></h5>
+Console:
+<div class="card">
+  <div class="card-body" data-behavior="rcon-response" data-server="<%= @server.id %>">
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-10">
+      <input type="text" class="form-control" placeholder="say hello" data-behavior="command-input"/>
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-block btn-primary" data-behavior="command-send">Send</button>
+    </div>
+  </div>
+</div>

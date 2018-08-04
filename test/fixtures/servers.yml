@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ip: MyString
+  game_port: MyString
+  integer: MyString
+  rcon_port: 1
+  query_port: 1
+  rcon_password: MyString
+
+two:
+  name: MyString
+  ip: MyString
+  game_port: MyString
+  integer: MyString
+  rcon_port: 1
+  query_port: 1
+  rcon_password: MyString
