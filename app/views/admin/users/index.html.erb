@@ -22,22 +22,24 @@
 <% if @users.suggestions.any? %>
  	<p class="lead">Did you mean: <% @users.suggestions.first %>?</p>
 <% end %>
-<table class="table table-responsive table-hover table-bordered table-sm">
- <thead>
-	  <tr>
-	    <th>User ID:</th>
-	    <th>Avatar:</th>
-	    <th>Username:</th>
-	    <th>Email Address:</th>
-	    <th>IP:</th>
-	    <th>Last Seen:</th>
-	    <th>Rank:</th>
-	    <th>UUID:</th>
-	  </tr>
-	</thead>
-  <tbody>
-		<%= render @users %>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-hover table-bordered table-sm">
+   <thead>
+  	  <tr>
+  	    <th>User ID:</th>
+  	    <th>Avatar:</th>
+  	    <th>Username:</th>
+  	    <th>Email Address:</th>
+  	    <th>IP:</th>
+  	    <th>Last Seen:</th>
+  	    <th>Rank:</th>
+  	    <th>UUID:</th>
+  	  </tr>
+  	</thead>
+    <tbody>
+  		<%= render @users %>
+    </tbody>
+  </table>
 
-<%= paginate @users %>
+  <%= paginate @users %>
+</div>
