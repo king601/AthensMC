@@ -12,4 +12,8 @@ class ServersChannel < ApplicationCable::Channel
       params["server_id"], params["command"]
     ).send!
   end
+
+  def fetch_logs(params)
+    SSH::TailLogs.new(Server.find(params["server_id"])).perform
+  end
 end

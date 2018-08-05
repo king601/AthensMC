@@ -9,7 +9,10 @@ export default class RconConsole {
       '[data-behavior="rcon-response"]'
     );
 
+    this.fetchLogsBtn = document.querySelector('[data-behavior="fetch-logs"]');
+
     this.handleCommandSend = this.handleCommandSend.bind(this);
+    this.handleFetchLogs = this.handleFetchLogs.bind(this);
   }
 
   init() {
@@ -18,6 +21,12 @@ export default class RconConsole {
 
   bindEventListeners() {
     this.commandSend.addEventListener('click', this.handleCommandSend);
+    this.fetchLogsBtn.addEventListener('click', this.handleFetchLogs);
+  }
+
+  handleFetchLogs() {
+    console;
+    App.server.fetch_logs();
   }
 
   handleCommandSend() {

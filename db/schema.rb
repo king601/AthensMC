@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180804015726) do
+ActiveRecord::Schema.define(version: 20180805000622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,11 @@ ActiveRecord::Schema.define(version: 20180804015726) do
     t.string "rcon_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ssh_username"
+    t.text "ssh_public_key"
+    t.text "encrypted_ssh_private_key"
+    t.string "encrypted_ssh_private_key_iv"
+    t.string "directory"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

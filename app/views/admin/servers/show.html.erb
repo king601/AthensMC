@@ -5,6 +5,14 @@
 <h5>Ports: <%= @server.decorate.ports %></h5>
 Console:
 <div class="card">
+  <button class="btn btn-primary btn-block" data-behavior="fetch-logs">Fetch Logs</button>
+  <div class="card-body" data-behavior="logs-response" style="color: grey; min-height: 200px; max-height: 400px; overflow-y: auto;">
+    <div class="logs">
+    </div>
+  </div>
+
+  <hr>
+
   <div class="card-body" data-behavior="rcon-response" data-server="<%= @server.id %>">
   </div>
   <hr>
@@ -15,5 +23,16 @@ Console:
     <div class="col-md-2">
       <button type="submit" class="btn btn-block btn-primary" data-behavior="command-send">Send</button>
     </div>
+  </div>
+</div>
+
+<div class="card mt-2">
+  <div class="card-body">
+    <h5>SSH Key</h5>
+    Add this to your server under ~/.ssh/authorized_keys for the user it needs to be on.
+    <hr />
+    <pre>
+      <code><%= @server.ssh_public_key %></code>
+    </pre>
   </div>
 </div>

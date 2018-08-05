@@ -36,6 +36,18 @@
     <%= error_message_on(f.object, :query_port) %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :ssh_username %>
+    <%= f.text_field :ssh_username, :placeholder => "minecraft", class: "form-control" %>
+    <%= error_message_on(f.object, :ssh_username) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :directory %>
+    <%= f.text_field :directory, :placeholder => "/home/minecraft/servers/devteam", class: "form-control" %>
+    <%= error_message_on(f.object, :directory) %>
+  </div>
+
   <div class="form-actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
