@@ -1,14 +1,17 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, only: [:stats]
-  # layout('new')
+  layout('new', except: %w(home information))
 
   def home
   end
 
   def stats
-    @users = User.all
-    @revisions = Revision.all
-    @casts = Cast.all
-    @whitelist_requests = WhitelistRequest.status('approved')
+    @users_count = User.all.count
+    @revisions_count = Revision.all.count
+    @casts_count = Cast.all.count
+    @whitelist_requests = WhitelistRequest.all
+    @forum_threads_count = ForumThread.all.count
+    @forum_category_count = ForumCategory.all.count
+    @forum_posts_count = ForumPost.all.count
   end
 end
