@@ -8,7 +8,7 @@ module SSH
     def perform
       on server, server.ssh_username do |ssh|
         logs = ssh.exec!("tail -n#{LINES} #{@server.directory}/logs/latest.log")
-        stripped_logs = logs.gsub("\n", "<br/>")
+        stripped_logs = logs.gsub("<", "[").gsub(">", "]").gsub("\n", "<br/>")
         ActionCable.server.broadcast(
           "servers_channel",
           server_id: server.id,
