@@ -1,7 +1,26 @@
 <% page_title "Edit Server" %>
-<div class="well">
-	<div class="page-header">
-		<h1>New Edit</h1>
-	</div>
-	<%= render "form", server: @server %>
+
+<div class="page-header">
+  <h4 class="page-title"><%= t('.title') %></h4>
+  <h5 class="page-subtitle"><%= t('.subtitle') %></h5>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card card-body mb-3">
+      <%= render("form", server: @server) %>
+    </div>
+
+
+    <div class="card mt-2">
+      <div class="card-body">
+        <h5>SSH Key</h5>
+        Add this to your server under ~/.ssh/authorized_keys for the user it needs to be on.
+        <hr />
+        <pre>
+          <code><%= @server.ssh_public_key %></code>
+        </pre>
+      </div>
+    </div>
+  </div>
 </div>

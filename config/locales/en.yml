@@ -32,3 +32,30 @@
 en:
   hello: "Hello world"
   welcome_home: "Welcome Home to AthensMC!"
+
+  admin:
+    servers:
+      index:
+        title: All Servers
+        subtitle: Click a server to control it
+      show:
+        title: "%{name} Server"
+        subtitle: View the information of your server
+      edit:
+        title: Edit Server
+        subtitle: Change the details of your server
+      new:
+        title: Add Server
+        subtitle: Enter the details of your server
+    whitelist_requests:
+      index:
+        title: Whitelist Requests
+        subtitle: Manage all members
+    downloads:
+      index:
+        title: All Downloads
+        subtitle: Manage Downloads
+    users:
+      index:
+        title: All users
+        subtitle: Manage all app users

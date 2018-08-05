@@ -16,7 +16,10 @@ class Admin::UsersController < Admin::BaseController
   def whitelisted
     @users = User.joins(:whitelist_request).where('whitelist_requests.status IN (?)', 'approved').references(:whitelist_request)
     respond_to do |format|
-      format.html { redirect_to admin_whitelist_requests_path, alert: 'Sorry only a JSON file is supported here' }
+      format.html do
+        flash[:danger] = 'Sorry only a JSON file is supported here'
+        redirect_to admin_whitelist_requests_path
+      end
       format.json
     end
 
