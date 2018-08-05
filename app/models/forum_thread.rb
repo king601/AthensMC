@@ -1,36 +1,44 @@
 # ForumThread
 class ForumThread < ApplicationRecord
+  include PgSearch
   include Paginatable
   extend FriendlyId
 
-  searchkick callbacks: :async
   friendly_id :subject, use: :slugged
 
   belongs_to :forum_category, required: true
   belongs_to :user, required: true
 
   has_many :forum_posts, dependent: :destroy
-
-  default_scope { order(:created_at => :ASC) }
-
   # forum_thread.users
   has_many :users, through: :forum_posts
+
+  default_scope { order(:created_at => :ASC) }
 
   accepts_nested_attributes_for :forum_posts
 
   validates :subject, presence: true
   validates_associated :forum_posts
 
-  scope :search_import, -> { includes(:forum_posts, :forum_category) }
+  scope :filter_search, (lambda do |query|
+    return all unless query.present?
+    search(query)
+  end)
 
-  def search_data
-    {
-      subject: subject,
-      slug: slug,
-      forum_posts: forum_posts,
-      sticky: sticky,
-      last_post_created_at: last_post_created_at,
-      forum_category_id: forum_category.id
+  scope :filter_by_category, (lambda do |query|
+    return all unless query.present?
+    where(forum_category_id: query)
+  end)
+
+  pg_search_scope(
+    :search,
+    against: %i(subject slug sticky last_post_created_at forum_category_id),
+    associated_against: {
+     forum_posts: %i(body),
+     forum_category: %i(id name)
+   },
+    using: {
+      tsearch: { prefix: true, negation: true }
     }
-  end
+  )
 end
