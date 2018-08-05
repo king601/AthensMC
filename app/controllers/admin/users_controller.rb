@@ -4,8 +4,9 @@ class Admin::UsersController < Admin::BaseController
   skip_before_action :check_admin_status?, only: %w(whitelisted)
 
   def index
-    @users = User.search(search_params, additional_params)
-    authorize [:admin, @users]
+    @users = User.filter_search(params[:q]).
+      paginate(page: params[:page], per_page: params[:per_page]).decorate
+    authorize [:admin, Draper.undecorate(@users)]
   end
 
   def show
@@ -29,29 +30,5 @@ class Admin::UsersController < Admin::BaseController
   def email_list
     @users = User.all.order('id ASC')
     authorize [:admin, @users]
-  end
-
-  def autocomplete
-    render json: User.search(
-    		params[:term],
-    		fields: [{username: :text_start}],
-    			limit: 10,
-       misspellings: {below: 5}
-    		).map(&:username)
-  end
-
-  private
-
-  def search_params
-    params[:q].presence || "*"
-  end
-
-  def additional_params
-    {
-     misspellings: { below: 5 },
-     page: params[:page],
-     per_page: 10,
-     suggest: true
-    }
   end
 end

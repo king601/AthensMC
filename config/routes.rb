@@ -36,7 +36,6 @@ Rails.application.routes.draw do
     resources :users do
       collection do
         get :email_list
-        get :autocomplete
         get :whitelisted
       end
     end
