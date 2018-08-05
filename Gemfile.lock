@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/ProctorU/hootstrap.git
-  revision: 15a18716cdaac960154d6dff7fbb3dc498c3a23f
+  revision: 3ebf3ff69bd5fb581ee344bbb57bc5dce631840e
   specs:
-    hootstrap (0.3.0)
-      bootstrap (~> 4.0)
+    hootstrap (0.4.0)
+      bootstrap (~> 4.0.0)
       rails (>= 4.2.0)
       sass-rails
 
@@ -71,7 +71,7 @@ GEM
     bcrypt (3.1.12)
     bcrypt (3.1.12-x86-mingw32)
     bindex (0.5.0)
-    bootstrap (4.1.1)
+    bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
