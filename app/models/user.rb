@@ -1,8 +1,7 @@
 # User
 class User < ApplicationRecord
+  include PgSearch
   include Paginatable
-
-  searchkick text_start: [:username], callbacks: :async, suggest: [:username]
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -32,16 +31,18 @@ class User < ApplicationRecord
 
   attr_accessor :dashed_uuid
 
-  def search_data
-    {
-      id: id,
-      username: username,
-      minecraft_uuid: minecraft_uuid,
-      email: email,
-      created_at: created_at,
-      updated_at: updated_at
+  scope :filter_search, (lambda do |query|
+    return all unless query.present?
+    search(query)
+  end)
+
+  pg_search_scope(
+    :search,
+    against: %i(username email minecraft_uuid),
+    using: {
+      tsearch: { prefix: true, negation: true }
     }
-  end
+  )
 
   def whitelisted?
     # Check to make sure they have a whitelist request && that is approved.
