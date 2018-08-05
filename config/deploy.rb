@@ -5,7 +5,7 @@ SSHKit.config.command_map[:rake] = "bundle exec rake"
 
 set :application, 'athensmc'
 set :repo_url, 'git@github.com:king601/AthensMC.git'
-set :branch, 'master'
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :deploy_to, '/home/deploy/athensmc'
 set :user, 'deploy'
 

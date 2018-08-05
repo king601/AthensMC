@@ -16,14 +16,15 @@
   <body class="<%= body_classes %>"  data-page="<%= body_data_page %>">
 
   <%= render("shared/masquerade") %>
-  <%= render "shared/navbar" %>
+  <%= render("shared/browse-happy") %>
+  <%= render("shared/navbar")%>
   <div class="container">
     <%= render('shared/flash/app') %>
 
   	<% unless controller_name == 'links' && action_name == 'minecraft'  %>
       <% if user_signed_in? %>
         <% if current_user.minecraft_uuid.blank? %>
-  	     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  	     <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -48,12 +49,10 @@
 
     <div class="card card-body mt-4">
       <%= yield %>
-
-      <%= render "layouts/google_analytics" %>
     </div>
   </div>
 
     <%= render "shared/footer" %>
-
+    <%= render("shared/google_analytics")%>
   </body>
 </html>
