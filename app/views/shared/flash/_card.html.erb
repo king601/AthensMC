@@ -1,6 +1,4 @@
 <% flash.each do |key, value| %>
-  <% if key == 'notice'; key = 'info'; end # re-map key to info if it's notice from controllers %>
-  <% if key == 'alert'; key = 'danger'; end %>
   <div class="alert alert-<%= key %> alert-app">
     <%= value %>
   </div>

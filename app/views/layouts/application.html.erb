@@ -15,9 +15,9 @@
   </head>
   <body class="<%= body_classes %>"  data-page="<%= body_data_page %>">
 
+  <%= render("shared/masquerade") %>
   <%= render "shared/navbar" %>
   <div class="container">
-
     <%= render('shared/flash/app') %>
 
   	<% unless controller_name == 'links' && action_name == 'minecraft'  %>
@@ -46,7 +46,7 @@
       <% end %>
     <% end #End Check for Link/minecraft controller and action %>
 
-    <div class="card card-body">
+    <div class="card card-body mt-4">
       <%= yield %>
 
       <%= render "layouts/google_analytics" %>

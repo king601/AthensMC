@@ -18,4 +18,20 @@
   <td><%= local_time_ago(user.last_sign_in_at) if user.last_sign_in_at.present? %> </td>
   <td><% if user.admin? %><span class="badge badge-danger">Admin</span> <% else %> <span class="badge badge-success">User</span> <% end %></td>
   <td><%= user.dashed_uuid %></td>
+  <td>
+    <% if policy([:admin, user]).masqueradeable? %>
+        <div class="d-inline-block align-middle">
+          <%= link_to(masquerade_path(user),
+            class: "btn btn-link btn-sm icon-15 text-primary",
+            title: "Login as this user",
+            data: {
+              toggle: "tooltip",
+              placement: "top-right"
+            }
+          ) do %>
+            <i data-feather="log-in" class="pointerless"></i>
+          <% end %>
+        </div>
+      <% end %>
+  </td>
 </tr>

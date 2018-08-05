@@ -1,9 +1,18 @@
 <tr>
-  <td>
-    <%= link_to server.id, admin_server_path(server.id) %>
-  </td>
-  <td><%= server.name %></td>
+  <td><%= link_to server.name, admin_server_path(server.id) %></td>
   <td><%= server.ip %></td>
   <td><%= server.ports %></td>
   <td><%= local_time_ago(server.created_at) %> </td>
+  <td class="text-right">
+    <%= link_to(edit_admin_server_url(server),
+      class: "btn btn-link btn-sm icon-15 text-primary",
+      title: "Edit Server",
+      data: {
+        toggle: "tooltip",
+        placement: "top-right"
+      }
+    ) do %>
+      <i data-feather="edit" class="pointerless"></i>
+    <% end %>
+  </td>
 </tr>

@@ -67,7 +67,8 @@ class CastsController < ApplicationController
     if current_user.admin
       return
     else
-      redirect_to casts_path, notice: 'You do not have permission to do that'
+      flash[:danger] = 'You do not have permission to do that'
+      redirect_to casts_path
     end
   end
 end

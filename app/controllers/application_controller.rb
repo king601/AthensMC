@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   layout(:by_resource)
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action(:masquerade_user!)
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
