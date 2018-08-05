@@ -32,7 +32,13 @@
 en:
   hello: "Hello world"
   welcome_home: "Welcome Home to AthensMC!"
-
+  pages:
+    subscribe:
+      title: Subscribe to AthensMC
+      subtitle: Support our servers
+    stats:
+      title: View Stats
+      subtitle: View statistics for the application
   admin:
     servers:
       index:

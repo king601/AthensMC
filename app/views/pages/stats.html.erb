@@ -1,37 +1,63 @@
 <% page_title "Statistics" %>
-<h1>Website Stats</h1>
 
-<hr />
+<div class="page-header">
+  <h4 class="page-title"><%= t('.title') %></h4>
+  <h5 class="page-subtitle"><%= t('.subtitle') %></h5>
+</div>
 
-<!-- Stats Table -->
-<table class="table table-bordered table-sm table-responsive">
-  <tr>
-	<td>Type:</td>
-	<td>Number of:</td>
-  </tr>
-  <!-- Users -->
-  <tr>
-  	<td>Users</td>
-  	<td><%= @users.count %></td>
-  </tr>
-  <!-- Revisions -->
-  <tr>
-  	<td>Revisions</td>
-  	<td><%= @revisions.count %></td>
-  </tr>
-	<!-- Casts -->
-  <tr>
-  	<td>Casts</td>
-  	<td><%= @casts.count %></td>
-  </tr>
-	<!-- Whitelisted Members -->
-  <tr>
-  	<td>Whitelisted members</td>
-  	<td>Total: <%= @whitelist_requests.count %>
-			 (<%= @whitelist_requests.approved.count %> approved)
-			 (<%= @whitelist_requests.denied.count %> denied)
-			 (<%= @whitelist_requests.pending.count %> pending)
-		 </td>
-  </tr>
-</table>
-<!-- End Stats Table -->
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card card-body mb-3">
+      <div class="table-responsive">
+        <table class="table table-border-around mb-0">
+          <tr>
+        	<td>Type:</td>
+        	<td>Number of:</td>
+          </tr>
+          <!-- Users -->
+          <tr>
+          	<td>Users</td>
+          	<td><%= @users_count %></td>
+          </tr>
+          <!-- Revisions -->
+          <tr>
+          	<td>Revisions</td>
+          	<td><%= @revisions_count %></td>
+          </tr>
+        	<!-- Casts -->
+          <tr>
+          	<td>Casts</td>
+          	<td><%= @casts_count %></td>
+          </tr>
+          <!-- Forum category -->
+          <tr>
+            <td>Forum Categories</td>
+            <td><%= @forum_category_count %></td>
+          </tr>
+
+          <!-- Forum Threads -->
+          <tr>
+            <td>Forum Threads</td>
+            <td><%= @forum_threads_count %></td>
+          </tr>
+
+          <!-- Forum Posts -->
+          <tr>
+            <td>Forum Posts</td>
+            <td><%= @forum_posts_count %></td>
+          </tr>
+        	<!-- Whitelisted Members -->
+          <tr>
+          	<td>Whitelisted members</td>
+          	<td>Total: <%= @whitelist_requests.count %>
+        			 (<%= @whitelist_requests.approved.count %> approved)
+        			 (<%= @whitelist_requests.denied.count %> denied)
+        			 (<%= @whitelist_requests.pending.count %> pending)
+        		 </td>
+          </tr>
+        </table>
+      </div>
+      <!-- End Stats Table -->
+    </div>
+  </div>
+</div>
