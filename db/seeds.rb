@@ -1,12 +1,3 @@
-def setup
-  puts "Elasticsearch running with version: #{Searchkick.server_version}"
-rescue
-  puts 'Elasticsearch needs to be started. Starting now as daemon...'
-  system 'elasticsearch -d'
-end
-
-setup
-
 # These users will have super admin powers
 users = [
   ['Admin', 'admin'],
@@ -69,5 +60,3 @@ end
     puts "  Created Post by #{forum_post.user.username}"
   end
 end
-
-Reindexer.execute

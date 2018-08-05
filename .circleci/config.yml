@@ -16,7 +16,6 @@ jobs:
           POSTGRES_USER: athensmc
           POSTGRES_DB: athensmc_test
           POSTGRES_PASSWORD: ""
-      - image: circleci/elasticsearch
       - image: circleci/redis
     working_directory: ~/athensmc
 
