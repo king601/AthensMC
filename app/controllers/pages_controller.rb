@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, only: [:stats]
-  layout('new', except: %w(home information))
+  layout('new', except: %w(home))
 
   def home
   end

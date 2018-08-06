@@ -33,6 +33,9 @@ en:
   hello: "Hello world"
   welcome_home: "Welcome Home to AthensMC!"
   pages:
+    information:
+      title: Community Rules & Information
+      subtitle: Rules and Information for playing on AthensMC
     subscribe:
       title: Subscribe to AthensMC
       subtitle: Support our servers
