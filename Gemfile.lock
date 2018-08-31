@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 9910aa58d92c018abab25d491191576fcc1a7707
+  revision: ce7aeca59b1840b8abed38e228ff44b5da452603
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -159,7 +159,7 @@ GEM
       nokogiri (>= 1.4)
     httparty (0.15.5)
       multi_xml (>= 0.5.2)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
