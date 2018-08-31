@@ -60,7 +60,7 @@ gem 'sucker_punch', '~> 2.0'
 gem 'searchkick', '~> 2.3.2'
 gem 'jquery-ui-rails'
 gem 'slack-notifier', '~> 1.5.1'
-gem 'chartkick', '~> 2.3.5'
+gem 'chartkick', '~> 3.0.1'
 gem 'groupdate'
 gem 'trix'
 # Record Tag helper gem for div_for
