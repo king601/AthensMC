@@ -110,7 +110,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commonmarker (0.17.9)
+    commonmarker (0.17.11)
       ruby-enum (~> 0.5)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
@@ -151,7 +151,7 @@ GEM
       nokogiri (>= 1.4)
     httparty (0.15.5)
       multi_xml (>= 0.5.2)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
