@@ -43,7 +43,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'webmock', '~> 3.4'
   gem 'vcr', '~> 4.0'
-  gem 'mocha', '~> 1.6'
+  gem 'mocha', '~> 1.7'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'html-pipeline'

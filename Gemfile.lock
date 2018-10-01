@@ -203,7 +203,7 @@ GEM
       minitest-capybara (~> 0.8)
       minitest-metadata (~> 0.6)
       minitest-rails (~> 3.0)
-    mocha (1.6.0)
+    mocha (1.7.0)
       metaclass (~> 0.0.1)
     mojang_api (0.0.2)
       httparty
@@ -383,7 +383,7 @@ DEPENDENCIES
   local_time (~> 2.0)
   minitest-rails (~> 3.0)
   minitest-rails-capybara
-  mocha (~> 1.6)
+  mocha (~> 1.7)
   mojang_api (~> 0.0.2)
   net-ssh (~> 5.0)
   pg
