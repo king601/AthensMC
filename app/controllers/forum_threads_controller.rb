@@ -1,6 +1,7 @@
 class ForumThreadsController < ApplicationController
   before_action :authenticate_user!, except: %w(index show)
   before_action :set_forum_thread, except: %w(index new create)
+  layout('new')
 
   def index
     @forum_threads = ForumThread.unscoped.
