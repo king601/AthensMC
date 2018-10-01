@@ -1,6 +1,7 @@
 class ForumCategoriesController < ApplicationController
   before_action :authenticate_user!, except: %w(index)
   before_action :set_category
+  layout('new')
 
   def index
     @forum_threads = ForumThread.filter_by_category(@category.id).
