@@ -1,4 +1,6 @@
 class ServersController < ApplicationController
+  layout('new')
+
   def rrr
   end
 

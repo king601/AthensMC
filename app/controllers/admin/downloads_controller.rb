@@ -10,7 +10,8 @@ class Admin::DownloadsController < Admin::BaseController
     @map_download = MapDownload.new(map_download_params)
 
     if @map_download.save
-      redirect_to admin_downloads_path, notice: 'Download has been added!'
+      flash[:success] = 'Download has been added!'
+      redirect_to admin_downloads_path
     else
       render 'new'
     end
@@ -22,7 +23,8 @@ class Admin::DownloadsController < Admin::BaseController
 
   def update
     if @map_download.update(map_download_params)
-      redirect_to admin_downloads_path, notice: 'Download has been updated!'
+      flash[:success] = 'Download has been updated!'
+      redirect_to admin_downloads_path
     else
       render 'edit'
     end
@@ -33,7 +35,8 @@ class Admin::DownloadsController < Admin::BaseController
 
   def destroy
     @map_download.destroy
-    redirect_to admin_downloads_path, notice: 'Download has been removed from the site.'
+    flash[:success] = 'Download has been removed from the site.'
+    redirect_to admin_downloads_path
   end
 
   private

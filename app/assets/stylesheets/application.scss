@@ -1,7 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
 @import url(//fonts.googleapis.com/css?family=Lato:400,700);
 
-@import 'reboot/base';
 @import 'bootstrap/functions';
 @import 'athensmc/variables';
 
@@ -12,14 +11,26 @@ $box_shadow: 0 0 0 1px rgba(62, 64, 64, 0.05), 0 1px 3px rgba(62, 64, 64, 0.1),
 $base-duration: 150ms;
 $base-timing: ease-in-out;
 
-@import 'bootstrap';
+$blue: #3498db;
+$brand-primary: #3498db;
+@import 'hootstrap';
 @import 'athensmc/base';
-
 @import 'font-awesome';
 @import 'trix';
 
-body {
-  background-color: $gray-100;
+.table {
+  td {
+    vertical-align: middle;
+  }
+
+  .td-actions {
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+.table-border-around {
+  border: 1px solid $table-border-color;
 }
 
 .unread {
@@ -29,41 +40,6 @@ body {
 .logged-in,
 .logged-out {
   margin-bottom: $footer-height;
-}
-
-.navbar {
-  margin-bottom: 2em;
-}
-
-.flash-message {
-  // This is set to the negitive of the margin for the navbar spacing so alerts
-  // are flush with the bottom of the navbar
-  margin-top: -2em;
-}
-
-.form-field-error {
-  background-color: $red;
-  border-radius: $border-radius;
-  color: $white;
-  display: inline-block;
-  font-size: $font-size-sm;
-  font-weight: 400;
-  padding: 0 0.6em;
-  position: relative;
-  z-index: 3;
-
-  &::before {
-    border: solid transparent;
-    border-bottom-color: $red;
-    border-width: 6px;
-    bottom: 100%;
-    content: ' ';
-    height: 0;
-    left: 10px;
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-  }
 }
 
 .ui-autocomplete {

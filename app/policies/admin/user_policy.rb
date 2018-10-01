@@ -19,6 +19,10 @@ module Admin
      true
    end
 
+   def masqueradeable?
+     user.admin?
+   end
+
    class Scope < Scope
      def resolve
        scope

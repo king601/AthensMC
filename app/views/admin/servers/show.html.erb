@@ -1,38 +1,44 @@
 <% page_title "Managing #{@server.name}" %>
 
-<h1>Server Name: <%= @server.name %></h1>
-<h5>IP: <%= @server.ip %></h5>
-<h5>Ports: <%= @server.decorate.ports %></h5>
-Console:
-<div class="card">
-  <button class="btn btn-primary btn-block" data-behavior="fetch-logs">Fetch Logs</button>
-  <div class="card-body" data-behavior="logs-response" style="color: grey; min-height: 200px; max-height: 400px; overflow-y: auto;">
-    <div class="logs">
-    </div>
-  </div>
 
-  <hr>
+<div class="page-header">
+  <h4 class="page-title"><%= t('.title', name: @server.name) %></h4>
+  <h5 class="page-subtitle"><%= t('.subtitle') %></h5>
 
-  <div class="card-body" data-behavior="rcon-response" data-server="<%= @server.id %>">
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-10">
-      <input type="text" class="form-control" placeholder="say hello" data-behavior="command-input"/>
-    </div>
-    <div class="col-md-2">
-      <button type="submit" class="btn btn-block btn-primary" data-behavior="command-send">Send</button>
-    </div>
+  <div class="page-actions mt-4">
   </div>
 </div>
 
-<div class="card mt-2">
-  <div class="card-body">
-    <h5>SSH Key</h5>
-    Add this to your server under ~/.ssh/authorized_keys for the user it needs to be on.
-    <hr />
-    <pre>
-      <code><%= @server.ssh_public_key %></code>
-    </pre>
+<div class="row justify-content-center">
+  <div class="col-lg-12">
+    <div class="card mb-3">
+      <div class="card-header">
+        <h5>Username: <%= @server.ssh_username %></h5>
+        <h5>Directory: <%= @server.directory %></h5>
+        <h5>Ports: <%= @server.decorate.ports %></h5>
+      </div>
+
+      <div class="card-body">
+        <div class="card">
+          <button class="btn btn-primary btn-block" data-behavior="fetch-logs">Fetch Logs</button>
+          <div class="card-body" data-behavior="logs-response" style="color: grey; min-height: 200px; max-height: 400px; overflow-y: auto;">
+            <div class="logs">
+            </div>
+          </div>
+
+          <div class="card-body" data-behavior="rcon-response" data-server="<%= @server.id %>">
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-10">
+              <input type="text" class="form-control" placeholder="say hello" data-behavior="command-input"/>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-block btn-primary" data-behavior="command-send">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
