@@ -1,38 +1,40 @@
 <% page_title "Map Downloads" %>
 
-  <h1>Map Downloads</h1>
+<div class="page-header">
+  <h4 class="page-title"><%= t(".title") %></h4>
+  <h5 class="page-subtitle"><%= t(".subtitle") %></h5>
 
-  <p class="text-center">There are <%= @map_downloads.count %> map downloads.</p>
-  <hr>
+  <div class="page-actions">
+    <%= link_to("Add Download", new_admin_download_path,
+      class: "btn btn-primary btn-sm") %>
+  </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <h4 style="float: right">
-        <%= link_to 'New Download', new_admin_download_path %>
-      </h4>
-      <h4 style="float: left">
-        <%= link_to 'All', admin_downloads_path %>
-      </h4>
+<div class="row justify-content-center">
+  <div class="col-lg-12">
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-border-around mb-0">
+            <thead>
+              <tr>
+                <th>Date Posted</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Map Download</th>
+                <th style="min-width: 140px;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render(partial: 'admin/downloads/map_download', collection: @map_downloads) %>
+            </tbody>
+          </table>
+
+          <div class="mt-3 row justify-content-center">
+            <%= paginate @map_downloads %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <% if @map_downloads.empty? %>
-    <h2>There are no map downloads currently! Check back soon!</h2>
-  <% else %>
-    <table class="table table-hover table-striped table-bordered">
-      <thead>
-        <tr>
-          <th>Date Posted:</th>
-          <th>Name:</th>
-          <th>Description:</th>
-          <th>Map Download:</th>
-          <th>Admin Actions:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render(partial: 'admin/downloads/map_download', collection: @map_downloads) %>
-      </tbody>
-    </table>
-  <% end %> <%# End if map_downloads exist block %>
-
-  <%= paginate @map_downloads %>
+</div>

@@ -88,9 +88,9 @@
               <i class="fa fa-sign-out"></i> &nbsp; Sign Out
             <% end %>
 
-            <div class="dropdown-divider"></div>
-
             <% if user_signed_in? && current_user.admin? %>
+              <div class="dropdown-divider"></div>
+
               <%= link_to admin_downloads_path, class: "dropdown-item" do %>
                 Admin Downloads
               <% end %>
