@@ -1,27 +1,13 @@
-# README
-Source code for the webapp for AthensMC.com
+# AthensMC
+AthensMC is a gaming community founded in 2014 that works to promote a sense of community between players. Our services range from Vanilla Minecraft, to Modded Minecraft packs off the shelf to even our own customized Modpacks. 
 
-This app works to improve communication and coordination between the community and the operators.
-
-## Rules for Commits
-* No Commented Out Code
-* Try and be clean with HTML/ERB
-* Work in a branch, then do a pull request!
-
-## Roadmap
-* Add welcome email
-* Add repeating email every month that sends an email with instructions to users who aren't whitelisted/have a whitelist app existing.
-* Revisit whitelist System
-* @User Mentions / Emojis
-* Search across Forums / Site
-* Give the ability to change MC Accounts for users to Admins
-* Make the Linking Minecraft flash message actually link/explain why we need to link accounts
+We strive to promote a fair playing experience for all members and want to encourage growth. This application provides the backbone of the community, with the Whitelist Requesting/Approval System that has been built out. 
 
 ## Setting up local development environment
-1. Install Ruby (2.3.1)
+1. Install Ruby (2.5.1)
 2. Install Bundler
-3. Install Rails (5.0.0.1 currently)
-4. Install PostgreSQL/all requirements for OS
+3. Install Rails (5.1.6 currently)
+4. Install PostgreSQL/all requirements for OS (Redis needed!)
 5. Run
   * `cp config/secrets.yml.example config/secrets.yml`
   * `cp config/database.yml.example config/database.yml`
