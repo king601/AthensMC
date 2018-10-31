@@ -4,7 +4,7 @@ lock '3.8.0'
 SSHKit.config.command_map[:rake] = "bundle exec rake"
 
 set :application, 'athensmc'
-set :repo_url, 'git@github.com:king601/AthensMC.git'
+set :repo_url, 'git@github.com:king601/athensmc.git'
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :deploy_to, '/home/deploy/athensmc'
 set :user, 'deploy'
