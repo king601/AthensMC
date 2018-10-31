@@ -85,7 +85,7 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
-    capistrano-bundler (1.1.4)
+    capistrano-bundler (1.4.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-passenger (0.2.0)
@@ -364,7 +364,7 @@ DEPENDENCIES
   attr_encrypted (~> 3.0, >= 3.0.3)
   byebug
   capistrano (= 3.8.0)
-  capistrano-bundler (~> 1.1.4)
+  capistrano-bundler (~> 1.4.0)
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.1.2)
   capistrano-rbenv (~> 2.1)
