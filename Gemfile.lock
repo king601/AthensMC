@@ -143,7 +143,6 @@ GEM
       railties (>= 3.2, < 6.0)
     friendly_id (5.2.4)
       activerecord (>= 4.0.0)
-    github-markdown (0.6.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     groupdate (4.0.2)
@@ -377,7 +376,6 @@ DEPENDENCIES
   faker!
   font-awesome-rails
   friendly_id (~> 5.2.4)
-  github-markdown
   groupdate
   hootstrap!
   html-pipeline

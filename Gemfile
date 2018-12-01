@@ -47,7 +47,6 @@ group :test do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'html-pipeline'
-gem 'github-markdown'
 gem 'commonmarker'
 gem 'sanitize'
 gem 'kaminari', '~> 1.1.1'
