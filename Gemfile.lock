@@ -129,9 +129,9 @@ GEM
       nokogiri (>= 1.4)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
-    i18n (1.5.2)
+    i18n (1.5.3)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.7.0)
+    jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
     jquery-rails (4.3.3)
@@ -346,7 +346,7 @@ DEPENDENCIES
   groupdate
   hootstrap (~> 0.10.0)
   html-pipeline
-  jbuilder (~> 2.7)
+  jbuilder (~> 2.8)
   jquery-rails
   kaminari (~> 1.1.1)
   listen (~> 3.0.5)
