@@ -1,9 +1,20 @@
 <% page_title "New Forum Post" %>
 
-<%= link_to forum_threads_path do %>
-  <%= fa_icon "arrow-left", text: "Back to the forum" %>
-<% end %>
+<div class="page-header">
+  <h4 class="page-title"><%= t('.title') %></h4>
+  <div class="page-actions">
+    <%= link_to forum_threads_path, class: "btn btn-secondary btn-sm" do %>
+      Back to the forum
+    <% end %>
+  </div>
+</div>
 
-<h1>New Thread</h1>
-
-<%= render "form" %>
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <div class="card mb-3">
+			<div class="card-body">
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
+</div>

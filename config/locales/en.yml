@@ -42,6 +42,9 @@ en:
     stats:
       title: View Stats
       subtitle: View statistics for the application
+  forum_threads:
+      new:
+        title: New Forum Thread
   admin:
     servers:
       index:
