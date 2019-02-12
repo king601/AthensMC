@@ -64,5 +64,5 @@ gem 'record_tag_helper', '~> 1.0'
 
 gem 'skylight'
 gem 'attr_encrypted', '~> 3.0', '>= 3.0.3'
-gem 'sshkey', '~> 1.8'
+gem 'sshkey', '~> 2.0'
 gem 'net-ssh', '~> 5.0'
