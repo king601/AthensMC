@@ -26,7 +26,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'listen', '~> 3.0.5'
-  gem 'faker', '~> 1.9.1'
+  gem 'faker', '~> 1.9.2'
   gem 'selenium-webdriver'
 end
 
