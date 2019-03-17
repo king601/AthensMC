@@ -18,7 +18,7 @@ gem 'redis', '~> 4.1'
 gem 'hootstrap', '~> 0.11.0'
 # gem 'hootstrap', path: '../hootstrap'
 gem 'font-awesome-rails'
-gem 'draper', '~> 3.0.0'
+gem 'draper', '~> 3.1.0'
 
 group :development do
   gem 'dotenv-rails', require: 'dotenv/rails-now'
