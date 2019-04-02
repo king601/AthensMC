@@ -7,6 +7,15 @@ module ApplicationHelper
     user_signed_in? ? 'logged-in' : 'logged-out'
   end
 
+  def bootstrap_class_for(flash_type)
+    {
+      success: "alert-success",
+      error: "alert-danger",
+      alert: "alert-warning",
+      notice: "alert-info"
+    }.stringify_keys[flash_type.to_s] || flash_type.to_s
+  end
+
   def body_data_page
      action = case action_name
               when 'create' then 'new'
