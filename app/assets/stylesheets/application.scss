@@ -1,5 +1,5 @@
-//@import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
-//@import url(//fonts.googleapis.com/css?family=Lato:400,700);
+@import url(//fonts.googleapis.com/css?family=Raleway:200,300,400,700);
+@import url(//fonts.googleapis.com/css?family=Comfortaa:200,300,400,700);
 
 @import 'bootstrap/functions';
 @import 'athensmc/variables';
@@ -9,13 +9,8 @@ $box_shadow: 0 0 0 1px rgba(62, 64, 64, 0.05), 0 1px 3px rgba(62, 64, 64, 0.1),
 $base-duration: 150ms;
 $base-timing: ease-in-out;
 
-// $blue: #3498db;
-// $brand-primary: #3498db;
-
 /*! `Signal` Bootstrap 4 theme */
-@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,700);
 $font-family-base:Raleway;
-@import url(https://fonts.googleapis.com/css?family=Comfortaa:200,300,400,700);
 $headings-font-family:Comfortaa;
 
 $primary:#06648C;
@@ -26,9 +21,6 @@ $info:#0F81C7;
 $warning:#0DE2EA;
 $light:#ececec;
 $dark:#222222;
-// $display1-weight:600;
-// $display2-weight:600;
-// $display3-weight:600;
 @import 'bootstrap';
 @import 'athensmc/base';
 @import 'font-awesome';
