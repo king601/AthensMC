@@ -1,19 +1,27 @@
-@import url(//fonts.googleapis.com/css?family=Orbitron:500,700);
-@import url(//fonts.googleapis.com/css?family=Lato:400,700);
+@import url(//fonts.googleapis.com/css?family=Raleway:200,300,400,700);
+@import url(//fonts.googleapis.com/css?family=Comfortaa:200,300,400,700);
 
 @import 'bootstrap/functions';
 @import 'athensmc/variables';
-
-$gray-100: #f5f7fa;
 
 $box_shadow: 0 0 0 1px rgba(62, 64, 64, 0.05), 0 1px 3px rgba(62, 64, 64, 0.1),
   0 1px 2px rgba(0, 0, 0, 0.05);
 $base-duration: 150ms;
 $base-timing: ease-in-out;
 
-$blue: #3498db;
-$brand-primary: #3498db;
-@import 'hootstrap';
+/*! `Signal` Bootstrap 4 theme */
+$font-family-base:Raleway;
+$headings-font-family:Comfortaa;
+
+$primary:#06648C;
+$secondary:#CACACA;
+$success:#015668;
+$danger:#FF304F;
+$info:#0F81C7;
+$warning:#0DE2EA;
+$light:#ececec;
+$dark:#222222;
+@import 'bootstrap';
 @import 'athensmc/base';
 @import 'font-awesome';
 @import 'trix';
@@ -35,11 +43,6 @@ $brand-primary: #3498db;
 
 .unread {
   background-color: $athens_grey;
-}
-
-.logged-in,
-.logged-out {
-  margin-bottom: $footer-height;
 }
 
 .ui-autocomplete {

@@ -21,7 +21,7 @@
 //= require chartkick
 //= require_tree .
 
-$(document).on('trix-initialize', function() {
+$(document).on('trix-initialize', function () {
   var element, i, len, ref, results;
   ref = event.target.toolbarElement.querySelectorAll('button');
   results = [];
