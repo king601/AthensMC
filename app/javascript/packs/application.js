@@ -4,7 +4,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 
 import "bootstrap"
-import "../stylesheets/application"
+import "../stylesheets/styles"
 
 const feather = require('feather-icons');
 import { namespace } from './utils/namespace';
