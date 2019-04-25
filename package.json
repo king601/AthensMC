@@ -1,10 +1,17 @@
 {
   "dependencies": {
-    "@rails/webpacker": "^3.5.5",
+    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/webpacker": "^4.0.2",
+    "bootstrap": "^4.3.1",
     "coffeescript": "1.12.7",
-    "feather-icons": "^4.5.0"
+    "expose-loader": "^0.7.5",
+    "feather-icons": "^4.5.0",
+    "jquery": "^3.4.0",
+    "popper.js": "^1.15.0",
+    "postcss-cssnext": "^3.1.0",
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.3.1"
   }
 }

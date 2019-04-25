@@ -1,8 +1,4 @@
 .footer-link {
-  .footer-logo {
-    transition: all $base-duration $base-timing;
-  }
-
   &:hover .footer-logo {
     transform: scale(1.02);
   }
