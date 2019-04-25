@@ -1,1 +1,7 @@
+@import 'athensmc/variables';
 @import "~bootstrap/scss/bootstrap";
+@import 'athensmc/base';
+
+.unread {
+  background-color: $athens_grey;
+}
