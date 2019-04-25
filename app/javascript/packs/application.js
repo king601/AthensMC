@@ -1,9 +1,14 @@
 /* eslint no-console:0 */
 
+require("@rails/ujs").start()
+require("turbolinks").start()
+
+import "bootstrap"
+import "../stylesheets/application"
+
+const feather = require('feather-icons');
 import { namespace } from './utils/namespace';
 import RconConsole from './servers/RconConsole';
-const feather = require('feather-icons');
-
 
 class Dispatcher {
   constructor() {
@@ -29,4 +34,6 @@ document.addEventListener('turbolinks:load', () => {
 
   dispatcher.feather();
   dispatcher.route();
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover();
 });

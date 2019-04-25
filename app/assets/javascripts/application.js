@@ -11,10 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
-//= require popper
-//= require bootstrap
-//= require turbolinks
 //= require local-time
 //= require trix
 //= require highcharts
