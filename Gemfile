@@ -15,7 +15,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.1'
-gem 'bootstrap', '~> 4.3'
 gem 'font-awesome-rails'
 gem 'draper', '~> 3.1.0'
 
