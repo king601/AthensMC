@@ -2,7 +2,6 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
-require "minitest/rails/capybara"
 require "minitest/pride"
 require "mocha/minitest"
 
@@ -13,5 +12,5 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-    include Devise::Test::IntegrationHelpers
+  include Devise::Test::IntegrationHelpers
 end
