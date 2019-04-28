@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
    "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.0.rc1'
 gem 'webpacker', '~> 4.0'
 gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
@@ -33,7 +33,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'minitest-rails', '~> 3.0'
+  # gem 'minitest-rails', '~> 3.0'
   gem 'webmock', '~> 3.4'
   gem 'vcr', '~> 4.0'
   gem 'mocha', '~> 1.6'
@@ -57,7 +57,7 @@ gem 'chartkick', '~> 3.0.2'
 gem 'groupdate'
 gem 'trix-rails', require: 'trix'
 # Record Tag helper gem for div_for
-gem 'record_tag_helper', '~> 1.0'
+gem 'record_tag_helper', github: 'rails/record_tag_helper'
 
 gem 'skylight'
 gem 'attr_encrypted', '~> 3.0', '>= 3.0.3'
