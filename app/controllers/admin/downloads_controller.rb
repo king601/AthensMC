@@ -2,7 +2,7 @@ class Admin::DownloadsController < Admin::BaseController
   before_action :find_map_download, only: %w(edit update destroy)
 
   def index
-    @map_downloads = MapDownload.order('created_at DESC').
+    @map_downloads = MapDownload.descending.
       paginate(page: params[:page], per_page: 15)
   end
 

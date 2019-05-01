@@ -7,7 +7,6 @@ import "bootstrap"
 import "../stylesheets/application"
 
 const feather = require('feather-icons');
-import { namespace } from './utils/namespace';
 import RconConsole from './servers/RconConsole';
 
 class Dispatcher {
@@ -19,7 +18,6 @@ class Dispatcher {
     switch (this.pageName) {
       case 'admin:servers:show':
         new RconConsole().init();
-        // new Pagination('websites').init();
         break;
     }
   }

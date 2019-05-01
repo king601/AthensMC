@@ -25,7 +25,6 @@ export default class RconConsole {
   }
 
   handleFetchLogs() {
-    console;
     App.server.fetch_logs();
   }
 
@@ -33,12 +32,6 @@ export default class RconConsole {
     if (!this.commandInput.value) {
       return;
     }
-    console.log(
-      'Clicked Send for server: ' +
-        this.serverId +
-        ' sending: ' +
-        this.commandInput.value
-    );
     const commandSent = this.buildCommandSentDiv(this.commandInput.value);
     // Send command to ActionCable
     App.server.send_command(this.commandInput.value);
