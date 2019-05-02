@@ -5,7 +5,8 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '914b5a5c2b7f4100baf0c79d4d04ac49287bdf5fbf4be609501a5553c3a491a94cbe1874d90f8201f0c03e9d3a68a175c34b660642862345fc661b54e1cad937'
-  config.secret_key = 'b2025dba509c0645d250c5d7f22e6e5f161df4a0da43063288655814e8b3ec17977cb8ebfee43430d7df506a42333f2af0c239d48be11454c48da1b364df40e5'
+  config.secret_key =
+    'b2025dba509c0645d250c5d7f22e6e5f161df4a0da43063288655814e8b3ec17977cb8ebfee43430d7df506a42333f2af0c239d48be11454c48da1b364df40e5'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -42,12 +43,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [ :email ]
+  config.case_insensitive_keys = %i[email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [ :email ]
+  config.strip_whitespace_keys = %i[email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -78,7 +79,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = %i[http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX

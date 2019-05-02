@@ -1,15 +1,15 @@
 class CastsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_cast, only: [:show, :edit, :update, :destroy]
-  before_action :check_admin_status, only: [:new, :edit, :create, :destroy, :update]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_cast, only: %i[show edit update destroy]
+  before_action :check_admin_status, only: %i[new edit create destroy update]
 
   def index
-    @cast = Cast.order('created_at DESC').paginate(page: params[:page], per_page: 5)
+    @cast =
+      Cast.order('created_at DESC').paginate(page: params[:page], per_page: 5)
     @cast_latest = Cast.last
   end
 
-  def show
-  end
+  def show; end
 
   def create
     # render plain: params[:cast].inspect
@@ -28,8 +28,7 @@ class CastsController < ApplicationController
     @cast = current_user.casts.build
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @cast.update(casts_params)
@@ -58,7 +57,13 @@ class CastsController < ApplicationController
   end
 
   def casts_params
-    params.require(:cast).permit(:episode, :releasedate, :description, :embedcode, :shownotes)
+    params.require(:cast).permit(
+      :episode,
+      :releasedate,
+      :description,
+      :embedcode,
+      :shownotes
+    )
   end
 
   def check_admin_status

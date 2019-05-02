@@ -1,9 +1,9 @@
 class Admin::DownloadsController < Admin::BaseController
-  before_action :find_map_download, only: %w(edit update destroy)
+  before_action :find_map_download, only: %w[edit update destroy]
 
   def index
-    @map_downloads = MapDownload.descending.
-      paginate(page: params[:page], per_page: 15)
+    @map_downloads =
+      MapDownload.descending.paginate(page: params[:page], per_page: 15)
   end
 
   def create
@@ -30,8 +30,7 @@ class Admin::DownloadsController < Admin::BaseController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def destroy
     @map_download.destroy

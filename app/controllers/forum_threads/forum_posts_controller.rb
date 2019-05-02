@@ -1,27 +1,30 @@
 class ForumThreads::ForumPostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_forum_thread
-  before_action :set_forum_post, only: %w(edit update destroy)
+  before_action :set_forum_post, only: %w[edit update destroy]
 
   def create
-    @forum_post = @forum_thread.forum_posts.new(
-      forum_post_params.merge(user: current_user)
-    )
+    @forum_post =
+      @forum_thread.forum_posts.new(forum_post_params.merge(user: current_user))
 
     authorize @forum_post
     if @forum_post.save
-
       # Create Notifications for Posts
       (@forum_thread.users.uniq - [current_user]).each do |user|
         Notification.create(
-          recipient: user, actor: current_user,
-          action: "posted", notifiable: @forum_post
+          recipient: user,
+          actor: current_user,
+          action: 'posted',
+          notifiable: @forum_post
         )
       end
 
       @forum_thread.touch(:last_post_created_at)
       flash[:success] = 'Successfully created your post'
-      redirect_to forum_thread_path(@forum_thread, anchor: "forum_post_#{@forum_post.id}")
+      redirect_to forum_thread_path(
+                    @forum_thread,
+                    anchor: "forum_post_#{@forum_post.id}"
+                  )
     else
       flash[:alert] = 'Unable to save your post'
       redirect_to @forum_thread

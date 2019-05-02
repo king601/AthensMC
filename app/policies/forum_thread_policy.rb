@@ -7,22 +7,16 @@ class ForumThreadPolicy < ApplicationPolicy
     @forum_thread = forum_thread
   end
 
-  %w(index show new create).each do |action|
-    define_method("#{action}?") do
-      true
-    end
+  %w[index show new create].each do |action|
+    define_method("#{action}?") { true }
   end
 
-  %w(edit update).each do |action|
-    define_method("#{action}?") do
-      owner?(forum_thread) || user.admin?
-    end
+  %w[edit update].each do |action|
+    define_method("#{action}?") { owner?(forum_thread) || user.admin? }
   end
 
-  %w(sticky unsticky destroy).each do |action|
-    define_method("#{action}?") do
-      user.admin?
-    end
+  %w[sticky unsticky destroy].each do |action|
+    define_method("#{action}?") { user.admin? }
   end
 
   # ForumThreadPolicy Scope

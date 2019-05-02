@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users,
-    controllers: {
-      registrations: 'users/registrations'
-    }
-  resources :users, path: 'u', only: %w(show), param: :username
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+  resources :users, path: 'u', only: %w[show], param: :username
 
   get 'links/minecraft' => 'links#minecraft'
   post 'links' => 'links#create'
@@ -14,7 +11,7 @@ Rails.application.routes.draw do
     # to change at any time without prior notice.
     # These are commonly used in scripts for automation.
     namespace :internal do
-      resource :whitelist, only: %w(show)
+      resource :whitelist, only: %w[show]
     end
   end
 
@@ -22,15 +19,13 @@ Rails.application.routes.draw do
   resources :revisions
   resources :casts
 
-  resources :downloads, only: %w(index)
+  resources :downloads, only: %w[index]
 
   resources :notifications do
-      collection do
-        post :mark_as_read
-      end
-    end
+    collection { post :mark_as_read }
+  end
   namespace :admin do
-    resources :servers, only: %w(index show new create edit update) do
+    resources :servers, only: %w[index show new create edit update] do
     end
     resources :downloads
     resources :users do
@@ -41,7 +36,7 @@ Rails.application.routes.draw do
     end
 
     namespace :whitelist_requests, path: 'whitelist-requests' do
-      resources :charts, only: %w(index)
+      resources :charts, only: %w[index]
     end
     resources :whitelist_requests, path: 'whitelist-requests' do
       collection do
@@ -56,22 +51,22 @@ Rails.application.routes.draw do
   end
 
   resources :forum_threads, path: 'forum' do
-   resources :forum_posts, path: 'posts', module: :forum_threads
-   member do
-     patch :sticky
-     patch :unsticky
-   end
-   collection do
-     get "category/:id", to: "forum_categories#index", as: :forum_category
-   end
+    resources :forum_posts, path: 'posts', module: :forum_threads
+    member do
+      patch :sticky
+      patch :unsticky
+    end
+    collection do
+      get 'category/:id', to: 'forum_categories#index', as: :forum_category
+    end
   end
 
   root 'pages#home'
 
-  get '/support', :to => redirect('/subscribe')
+  get '/support', to: redirect('/subscribe')
   get 'information' => 'pages#information'
   get 'stats' => 'pages#stats'
-  get '/change_log', :to => redirect('/revisions')
+  get '/change_log', to: redirect('/revisions')
   get 'subscribe' => 'pages#subscribe'
   get 'servers' => 'servers#home'
   get 'servers/vanilla' => 'servers#vanilla'

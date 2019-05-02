@@ -7,29 +7,15 @@ class ForumPostPolicy < ApplicationPolicy
     @forum_post = forum_post
   end
 
-  %w(index show ).each do |action|
-    define_method("#{action}?") do
-      true
-    end
+  %w[index show].each { |action| define_method("#{action}?") { true } }
+
+  %w[new create].each { |action| define_method("#{action}?") { true } }
+
+  %w[edit update].each do |action|
+    define_method("#{action}?") { owner?(forum_post) || user.admin? }
   end
 
-  %w(new create).each do |action|
-    define_method("#{action}?") do
-      true
-    end
-  end
-
-  %w(edit update).each do |action|
-    define_method("#{action}?") do
-      owner?(forum_post) || user.admin?
-    end
-  end
-
-  %w(destroy).each do |action|
-    define_method("#{action}?") do
-      user.admin?
-    end
-  end
+  %w[destroy].each { |action| define_method("#{action}?") { user.admin? } }
 
   # ForumPostPolicy Scope
   class Scope < Scope

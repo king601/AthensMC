@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class CastsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @cast = casts(:one)
-  end
+  setup { @cast = casts(:one) }
 
   test 'should get index' do
     get casts_url

@@ -1,19 +1,18 @@
 class ForumThreadsController < ApplicationController
-  before_action :authenticate_user!, except: %w(index show)
-  before_action :set_forum_thread, except: %w(index new create)
+  before_action :authenticate_user!, except: %w[index show]
+  before_action :set_forum_thread, except: %w[index new create]
   layout('new')
 
   def index
-    @forum_threads = ForumThread.unscoped.
-      order(sticky: :desc).
-      filter_search(params[:q]).
-      order(updated_at: :desc).
-      paginate(page: params[:page], per_page: params[:per_page])
+    @forum_threads =
+      ForumThread.unscoped.order(sticky: :desc).filter_search(params[:q]).order(
+        updated_at: :desc
+      )
+        .paginate(page: params[:page], per_page: params[:per_page])
     authorize @forum_threads
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @forum_thread.update(forum_thread_params)
@@ -33,7 +32,7 @@ class ForumThreadsController < ApplicationController
 
   def create
     @forum_thread = current_user.forum_threads.build(forum_thread_params)
-    @forum_thread.forum_posts.each{ |post| post.user_id = current_user.id }
+    @forum_thread.forum_posts.each { |post| post.user_id = current_user.id }
     authorize @forum_thread
 
     if @forum_thread.save
@@ -73,7 +72,9 @@ class ForumThreadsController < ApplicationController
 
   def forum_thread_params
     params.require(:forum_thread).permit(
-      :forum_category_id, :subject, forum_posts_attributes: [:body]
+      :forum_category_id,
+      :subject,
+      forum_posts_attributes: %i[body]
     )
   end
 
@@ -83,15 +84,14 @@ class ForumThreadsController < ApplicationController
   end
 
   def search_query
-    params[:q].presence || "*"
+    params[:q].presence || '*'
   end
 
   def search_params
     {
-     order: { sticky: :desc,
-              last_post_created_at: :desc },
-     page: params[:page],
-     per_page: 10
+      order: { sticky: :desc, last_post_created_at: :desc },
+      page: params[:page],
+      per_page: 10
     }
   end
 end

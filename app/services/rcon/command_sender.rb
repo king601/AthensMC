@@ -16,7 +16,7 @@ module Rcon
 
       if command_output
         ActionCable.server.broadcast(
-          "servers_channel",
+          'servers_channel',
           server_id: @server.id,
           command_recieved: "#{@command}",
           html: "<div>#{command_output}</div>"
