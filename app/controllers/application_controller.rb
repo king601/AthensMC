@@ -33,7 +33,8 @@ class ApplicationController < ActionController::Base
   def check_minecraft_uuid?
     # Check that the Minecraft UUID for the user isn't nil, if it is make them fill it out
     unless current_user.minecraft_uuid
-      flash[:alert] = 'We need you to link a Minecraft Account before allowing you to continue.'
+      flash[:alert] =
+        'We need you to link a Minecraft Account before allowing you to continue.'
       redirect_to links_minecraft_path
     end
   end
@@ -49,15 +50,26 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u|
-      u.permit(:username, :email, :password, :password_confirmation, :remember_me)
-    }
-    devise_parameter_sanitizer.permit(:sign_in) { |u|
+    devise_parameter_sanitizer.permit(:sign_up) do |u|
+      u.permit(
+        :username,
+        :email,
+        :password,
+        :password_confirmation,
+        :remember_me
+      )
+    end
+    devise_parameter_sanitizer.permit(:sign_in) do |u|
       u.permit(:login, :username, :email, :password, :remember_me)
-    }
-    devise_parameter_sanitizer.permit(:account_update) { |u|
-      u.permit(:username, :email, :password,
-              :password_confirmation, :current_password)
-    }
+    end
+    devise_parameter_sanitizer.permit(:account_update) do |u|
+      u.permit(
+        :username,
+        :email,
+        :password,
+        :password_confirmation,
+        :current_password
+      )
+    end
   end
 end

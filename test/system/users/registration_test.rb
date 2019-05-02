@@ -17,8 +17,8 @@ class RegistrationTest < ApplicationSystemTestCase
   test 'a user who incorrectly fills out the form is not registered' do
     fill_in 'user_password', with: ''
     click_on 'Create Account'
-    assert_text 'can\'t be blank'
-    assert_text 'doesn\'t match Password'
+    assert_text "can't be blank"
+    assert_text "doesn't match Password"
   end
 
   private

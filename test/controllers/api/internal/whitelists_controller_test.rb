@@ -13,8 +13,8 @@ module Api
         response_body = JSON.parse(response.body)
         assert_equal 1, response_body.size
         assert_equal 2, response_body.first.keys.size
-        assert response_body.first.keys.include?("name")
-        assert response_body.first.keys.include?("uuid")
+        assert response_body.first.keys.include?('name')
+        assert response_body.first.keys.include?('uuid')
       end
     end
   end

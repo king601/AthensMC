@@ -5,21 +5,30 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :masqueradable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :masqueradable
 
   before_validation :set_uuid, if: :minecraft_uuid_changed?
 
-  validates :username, uniqueness: { case_sensitive: false },
-                       presence: true, length: { in: 2..32 }
+  validates :username,
+            uniqueness: { case_sensitive: false },
+            presence: true,
+            length: { in: 2..32 }
 
-  validates :username, format: {
-    message: 'can only contain letters, numbers, underscores or dashes.',
-    with: /\A[A-Za-z0-9\-\_]+\z/
-  }
+  validates :username,
+            format: {
+              message:
+                'can only contain letters, numbers, underscores or dashes.',
+              with: /\A[A-Za-z0-9\-\_]+\z/
+            }
 
-  validates :minecraft_uuid, presence: true, on: :update,
-                            if: :minecraft_uuid_changed?
+  validates :minecraft_uuid,
+            presence: true, on: :update, if: :minecraft_uuid_changed?
 
   has_many :revisions, dependent: :destroy
   has_many :casts, dependent: :destroy
@@ -31,17 +40,18 @@ class User < ApplicationRecord
 
   attr_accessor :dashed_uuid
 
-  scope :filter_search, (lambda do |query|
-    return all unless query.present?
-    search(query)
-  end)
+  scope :filter_search,
+        (
+          lambda { |query|
+            return all unless query.present?
+            search(query)
+          }
+        )
 
   pg_search_scope(
     :search,
-    against: %i(username email minecraft_uuid),
-    using: {
-      tsearch: { prefix: true, negation: true }
-    }
+    against: %i[username email minecraft_uuid],
+    using: { tsearch: { prefix: true, negation: true } }
   )
 
   def whitelisted?
@@ -52,7 +62,9 @@ class User < ApplicationRecord
   def dashed_uuid
     if minecraft_uuid.present?
       uuid = minecraft_uuid.to_s
-      "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{uuid[20..31]}"
+      "#{uuid[0..7]}-#{uuid[8..11]}-#{uuid[12..15]}-#{uuid[16..19]}-#{
+        uuid[20..31]
+      }"
     else
       'No UUID associated'
     end

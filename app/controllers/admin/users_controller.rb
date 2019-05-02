@@ -1,11 +1,14 @@
 # Admin::UsersController
 class Admin::UsersController < Admin::BaseController
-  skip_before_action :authenticate_user!, only: %w(whitelisted)
-  skip_before_action :check_admin_status?, only: %w(whitelisted)
+  skip_before_action :authenticate_user!, only: %w[whitelisted]
+  skip_before_action :check_admin_status?, only: %w[whitelisted]
 
   def index
-    @users = User.filter_search(params[:q]).
-      paginate(page: params[:page], per_page: params[:per_page]).decorate
+    @users =
+      User.filter_search(params[:q]).paginate(
+        page: params[:page], per_page: params[:per_page]
+      )
+        .decorate
     authorize [:admin, Draper.undecorate(@users)]
   end
 
@@ -15,7 +18,12 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def whitelisted
-    @users = User.joins(:whitelist_request).where('whitelist_requests.status IN (?)', 'approved').references(:whitelist_request)
+    @users =
+      User.joins(:whitelist_request).where(
+        'whitelist_requests.status IN (?)',
+        'approved'
+      )
+        .references(:whitelist_request)
     respond_to do |format|
       format.html do
         flash[:danger] = 'Sorry only a JSON file is supported here'

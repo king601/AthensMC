@@ -42,8 +42,14 @@ module Admin
 
     def server_params
       params.require(:server).permit(
-        :name, :ip, :game_port, :rcon_port, :query_port, :rcon_password,
-        :ssh_username, :directory
+        :name,
+        :ip,
+        :game_port,
+        :rcon_port,
+        :query_port,
+        :rcon_password,
+        :ssh_username,
+        :directory
       )
     end
   end

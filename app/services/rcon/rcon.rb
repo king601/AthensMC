@@ -1,6 +1,5 @@
 module RCON
   class Query
-
     #
     # Convenience method to scrape input from cvar output and return that data.
     # Returns integers as a numeric type if possible.
@@ -21,8 +20,7 @@ module RCON
     end
   end
 
-  class Packet
-  end
+  class Packet; end
 
   class Packet::Source
     # execution command
@@ -54,7 +52,7 @@ module RCON
     # argument.
     #
     def command(string)
-      @request_id = rand(1000)
+      @request_id = rand(1_000)
       @string1 = string
       @string2 = TRAILER
       @command_type = COMMAND_EXEC
@@ -70,7 +68,7 @@ module RCON
     # argument.
     #
     def auth(string)
-      @request_id = rand(1000)
+      @request_id = rand(1_000)
       @string1 = string
       @string2 = TRAILER
       @command_type = COMMAND_AUTH
@@ -86,7 +84,9 @@ module RCON
     # that srcds actually needs.
     #
     def build_packet
-      return [@request_id, @command_type, @string1, @string2].pack("VVa#{@string1.length}a2")
+      return [@request_id, @command_type, @string1, @string2].pack(
+        "VVa#{@string1.length}a2"
+      )
     end
 
     # Returns a string representation of the packet, useful for
@@ -94,9 +94,8 @@ module RCON
     def to_s
       packet = build_packet
       @packet_size = packet.length
-      return [@packet_size].pack("V") + packet
+      return [@packet_size].pack('V') + packet
     end
-
   end
 
   class Source < Query
@@ -120,7 +119,7 @@ module RCON
     # before commands can be sent.
     #
 
-    def initialize(host = 'localhost', port = 25575)
+    def initialize(host = 'localhost', port = 25_575)
       @host = host
       @port = port
       @socket = nil
@@ -147,9 +146,10 @@ module RCON
     #
 
     def command(command)
-
-      if ! @authed
-        raise NetworkException.new("You must authenticate the connection successfully before sending commands.")
+      if !@authed
+        raise NetworkException.new(
+                'You must authenticate the connection successfully before sending commands.'
+              )
       end
 
       @packet = Packet::Source.new
@@ -159,7 +159,9 @@ module RCON
       rpacket = build_response_packet
 
       if rpacket.command_type != Packet::Source::RESPONSE_NORM
-        raise NetworkException.new("error sending command: #{rpacket.command_type}")
+        raise NetworkException.new(
+                "error sending command: #{rpacket.command_type}"
+              )
       end
 
       if @return_packets
@@ -186,7 +188,9 @@ module RCON
       2.times { rpacket = build_response_packet }
 
       if rpacket.command_type != Packet::Source::RESPONSE_AUTH
-        raise NetworkException.new("error authenticating: #{rpacket.command_type}")
+        raise NetworkException.new(
+                "error authenticating: #{rpacket.command_type}"
+              )
       end
 
       @authed = true
@@ -222,9 +226,8 @@ module RCON
       total_size = 0
       request_id = 0
       type = 0
-      response = ""
-      message = ""
-
+      response = ''
+      message = ''
 
       loop do
         break unless IO.select([@socket], nil, nil, 10)
@@ -234,14 +237,12 @@ module RCON
         #
 
         tmp = @socket.recv(14)
-        if tmp.nil?
-          return nil
-        end
-        size, request_id, type, message = tmp.unpack("VVVa*")
+        return nil if tmp.nil?
+        size, request_id, type, message = tmp.unpack('VVVa*')
         total_size += size
 
         # special case for authentication
-        break if message.sub! /\x00\x00$/, ""
+        break if message.sub! /\x00\x00$/, ''
 
         response << message
 
@@ -251,7 +252,7 @@ module RCON
 
         tmp = @socket.recv(size - 10)
         response << tmp
-        response.sub! /\x00\x00$/, ""
+        response.sub! /\x00\x00$/, ''
       end
 
       rpacket.packet_size = total_size
@@ -259,17 +260,14 @@ module RCON
       rpacket.command_type = type
 
       # strip nulls (this is actually the end of string1 and string2)
-      rpacket.string1 = response.sub /\x00\x00$/, ""
+      rpacket.string1 = response.sub /\x00\x00$/, ''
       return rpacket
     end
 
     # establishes a connection to the server.
     def establish_connection
-      if @socket.nil?
-        @socket = TCPSocket.new(@host, @port)
-      end
+      @socket = TCPSocket.new(@host, @port) if @socket.nil?
     end
-
   end
 
   class Minecraft < Query
@@ -293,14 +291,14 @@ module RCON
     # before commands can be sent.
     #
 
-    def initialize(host = 'localhost', port = 25575)
+    def initialize(host = 'localhost', port = 25_575)
       @host = host
       @port = port
       @socket = nil
       @packet = nil
       @authed = false
       @return_packets = false
-   end
+    end
 
     #
     # See Query#cvar.
@@ -320,9 +318,10 @@ module RCON
     #
 
     def command(command)
-
-      if ! @authed
-        raise NetworkException.new("You must authenticate the connection successfully before sending commands.")
+      if !@authed
+        raise NetworkException.new(
+                'You must authenticate the connection successfully before sending commands.'
+              )
       end
 
       @packet = Packet::Source.new
@@ -332,7 +331,9 @@ module RCON
       rpacket = build_response_packet
 
       if rpacket.command_type != Packet::Source::RESPONSE_NORM
-        raise NetworkException.new("error sending command: #{rpacket.command_type}")
+        raise NetworkException.new(
+                "error sending command: #{rpacket.command_type}"
+              )
       end
 
       if @return_packets
@@ -347,7 +348,6 @@ module RCON
     # password. Is only expected to be used once.
     #
 
-
     def auth(password)
       establish_connection
 
@@ -359,7 +359,9 @@ module RCON
       rpacket = build_response_packet
 
       if rpacket.command_type != Packet::Source::RESPONSE_AUTH
-        raise NetworkException.new("error authenticating: #{rpacket.command_type}")
+        raise NetworkException.new(
+                "error authenticating: #{rpacket.command_type}"
+              )
       end
 
       @authed = true
@@ -395,17 +397,15 @@ module RCON
       total_size = 0
       request_id = 0
       type = 0
-      response = ""
-      message = ""
-      message2 = ""
+      response = ''
+      message = ''
+      message2 = ''
 
       tmp = @socket.recv(4)
-      if tmp.nil?
-        return nil
-      end
-      size = tmp.unpack("V1")
+      return nil if tmp.nil?
+      size = tmp.unpack('V1')
       tmp = @socket.recv(size[0])
-      request_id, type, message, message2 = tmp.unpack("V1V1a*a*")
+      request_id, type, message, message2 = tmp.unpack('V1V1a*a*')
       total_size = size[0]
 
       rpacket.packet_size = total_size
@@ -413,8 +413,8 @@ module RCON
       rpacket.command_type = type
 
       # strip nulls (this is actually the end of string1 and string2)
-      message.sub! /\x00\x00$/, ""
-      message2.sub! /\x00\x00$/, ""
+      message.sub! /\x00\x00$/, ''
+      message2.sub! /\x00\x00$/, ''
       rpacket.string1 = message
       rpacket.string2 = message2
       return rpacket
@@ -422,13 +422,9 @@ module RCON
 
     # establishes a connection to the server.
     def establish_connection
-      if @socket.nil?
-        @socket = TCPSocket.new(@host, @port)
-      end
+      @socket = TCPSocket.new(@host, @port) if @socket.nil?
     end
-
   end
 
-  class NetworkException < Exception
-  end
+  class NetworkException < Exception; end
 end

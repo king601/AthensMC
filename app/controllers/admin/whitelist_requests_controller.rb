@@ -1,5 +1,5 @@
 class Admin::WhitelistRequestsController < Admin::BaseController
-  before_action :set_whitelist_id, only: %w(approve deny destroy)
+  before_action :set_whitelist_id, only: %w[approve deny destroy]
 
   def index
     @whitelist_requests = WhitelistRequest.order('created_at DESC')
@@ -29,7 +29,8 @@ class Admin::WhitelistRequestsController < Admin::BaseController
     @whitelist_request.update_attributes(
       approved_on: Time.now, status: 'approved', actor: current_user
     )
-    flash[:success] = "#{@whitelist_request.user.username}'s application has been approved!"
+    flash[:success] =
+      "#{@whitelist_request.user.username}'s application has been approved!"
     redirect_to admin_whitelist_requests_path
     WhitelistMailer.request_approved(@whitelist_request).deliver_later
   end
@@ -39,7 +40,8 @@ class Admin::WhitelistRequestsController < Admin::BaseController
     @whitelist_request.update_attributes(
       denied_on: Time.now, status: 'denied', actor: current_user
     )
-    flash[:success] =  "#{@whitelist_request.user.username}'s application has been denied!"
+    flash[:success] =
+      "#{@whitelist_request.user.username}'s application has been denied!"
     redirect_to admin_whitelist_requests_path
     WhitelistMailer.request_denied(@whitelist_request).deliver_later
   end
