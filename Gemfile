@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
    "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 6.0.0.rc1'
+gem 'rails', '~> 6.0.0'
 gem 'webpacker', '~> 4.0'
 gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
@@ -56,7 +56,7 @@ gem 'sucker_punch', '~> 2.1'
 gem 'slack-notifier', '~> 1.5.1'
 gem 'chartkick', '~> 3.0.2'
 gem 'groupdate'
-gem 'trix-rails', require: 'trix'
+gem 'trix-rails', require: 'trix', github: 'king601/trix', branch: 'rails-6'
 # Record Tag helper gem for div_for
 gem 'record_tag_helper', github: 'rails/record_tag_helper'
 
