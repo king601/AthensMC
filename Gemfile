@@ -56,7 +56,7 @@ gem 'sucker_punch', '~> 2.1'
 gem 'slack-notifier', '~> 1.5.1'
 gem 'chartkick', '~> 3.0.2'
 gem 'groupdate'
-gem 'trix-rails', require: 'trix', github: 'king601/trix', branch: 'rails-6'
+gem 'trix-rails', require: 'trix'
 # Record Tag helper gem for div_for
 gem 'record_tag_helper', github: 'rails/record_tag_helper'
 
