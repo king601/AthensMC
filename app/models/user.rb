@@ -1,6 +1,6 @@
 # User
 class User < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   include Paginatable
 
   # Include default devise modules. Others available are:

@@ -1,6 +1,6 @@
 # ForumThread
 class ForumThread < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
   include Paginatable
   extend FriendlyId
 
