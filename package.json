@@ -1,4 +1,5 @@
 {
+  "license": "UNLICENSED",
   "dependencies": {
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.2",
