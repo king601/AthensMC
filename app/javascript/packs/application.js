@@ -1,13 +1,13 @@
 /* eslint no-console:0 */
 
-require("@rails/ujs").start()
-require("turbolinks").start()
+require("@rails/ujs").start();
+require("turbolinks").start();
 
-import "bootstrap"
-import "../stylesheets/application"
+import "bootstrap";
+import "../stylesheets/application";
 
-const feather = require('feather-icons');
-import RconConsole from './servers/RconConsole';
+const feather = require("feather-icons");
+import RconConsole from "../servers/RconConsole";
 
 class Dispatcher {
   constructor() {
@@ -16,7 +16,7 @@ class Dispatcher {
 
   route() {
     switch (this.pageName) {
-      case 'admin:servers:show':
+      case "admin:servers:show":
         new RconConsole().init();
         break;
     }
@@ -27,7 +27,7 @@ class Dispatcher {
   }
 }
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener("turbolinks:load", () => {
   const dispatcher = new Dispatcher();
 
   dispatcher.feather();
