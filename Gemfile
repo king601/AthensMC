@@ -36,7 +36,7 @@ end
 group :test do
   # gem 'minitest-rails', '~> 3.0'
   gem 'webmock', '~> 3.6'
-  gem 'vcr', '~> 4.0'
+  gem 'vcr', '~> 5.0'
   gem 'mocha', '~> 1.6'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
