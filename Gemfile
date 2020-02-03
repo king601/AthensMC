@@ -43,7 +43,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'html-pipeline'
 gem 'commonmarker'
 gem 'sanitize'
-gem 'kaminari', '~> 1.1.1'
+gem 'kaminari', '~> 1.2.0'
 gem 'local_time', '~> 2.0'
 gem 'devise', '~> 4.6'
 gem 'devise_masquerade', '~> 0.6.5'
