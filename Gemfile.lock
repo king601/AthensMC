@@ -185,7 +185,7 @@ GEM
       httparty
     multi_xml (0.6.0)
     net-ssh (5.2.0)
-    nio4r (2.5.2)
+    nio4r (2.5.4)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.7-x86-mingw32)
@@ -199,7 +199,7 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
     public_suffix (4.0.1)
-    puma (4.3.1)
+    puma (4.3.6)
       nio4r (~> 2.0)
     pundit (2.0.1)
       activesupport (>= 3.0.0)
@@ -353,7 +353,7 @@ DEPENDENCIES
   net-ssh (~> 5.2)
   pg
   pg_search
-  puma (~> 4.3)
+  puma (~> 4.3.6)
   pundit (~> 2.0.0)
   rails (~> 6.0.0)
   record_tag_helper!
